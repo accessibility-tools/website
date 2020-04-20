@@ -47,7 +47,6 @@ export const typography = {
   type: {
     primary: '"Roboto", Helvetica, Arial, sans-serif',
     secondary: '"Lora", "Times New Roman", Georgia, serif',
-    code: '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
   },
   weight: {
     regular: '400',
