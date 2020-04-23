@@ -13,6 +13,11 @@ export const bodyStyles = css`
   -webkit-overflow-scrolling: touch;
   * {
     box-sizing: border-box;
+
+    &:focus {
+      outline: ${color.white} solid 3px;
+      box-shadow: 0 0 0 7px ${color.darkBlue};
+    }
   }
   h1,
   h2,
@@ -34,6 +39,8 @@ export const bodyStyles = css`
     font-family: ${typography.type.primary};
     font-weight: ${typography.weight.medium};
     text-transform: uppercase;
+    letter-spacing: 0.07rem;
+    margin: 0;
   }
   sub,
   sup {
@@ -48,6 +55,12 @@ export const bodyStyles = css`
   b,
   em {
     font-weight: ${typography.weight.bold};
+  }
+  .icon {
+    width: 1em;
+    height: 1em;
+    max-width: 100%;
+    max-height: 100%;
   }
 `;
 

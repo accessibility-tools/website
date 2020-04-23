@@ -5,7 +5,7 @@ export const background = {
   pureWhite: '#FFFFFF',
   mixedWhite: '#FAFAFA',
   extraLightPurple: '#F5F6FF',
-  LightPurple: '#F2F3FF',
+  lightPurple: '#F2F3FF',
 };
 
 export const color = {
@@ -38,8 +38,9 @@ export const spacing = {
     large: 40,
   },
   borderRadius: {
-    small: 3,
-    default: 6,
+    small: 1,
+    medium: 3,
+    large: 6,
   },
 };
 
