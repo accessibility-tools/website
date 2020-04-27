@@ -22,8 +22,8 @@ const BadgeWrapper = styled.div`
 `
 export function Badge({ ...props }) {
   const levelIcon = {
-    critical: <Icon color={color.red} icon="issue"/>,
-    serious: <Icon color={color.red} icon="issue"/>,
+    critical: <Icon color={color.error} icon="circle"/>,
+    serious: <Icon color={color.error} icon="issue"/>,
     moderate: <Icon color={color.darkPurple} icon="issue"/>,
     minor: <Icon color={color.primary} icon="issue"/>,
   }

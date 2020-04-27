@@ -15,8 +15,8 @@ export const bodyStyles = css`
     box-sizing: border-box;
 
     &:focus {
-      outline: ${color.white} solid 3px;
-      box-shadow: 0 0 0 7px ${color.darkBlue};
+      outline: ${color.darkBlue} solid 4px;
+      outline-offset: 3px;
     }
   }
   h1,
