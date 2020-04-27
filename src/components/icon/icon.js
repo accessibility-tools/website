@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {icons} from '../../shared/icons.js';
+import { color } from '../../shared/style.js';
 
 const Svg = styled.svg`
   display: ${props => (props.block ? 'block' : 'inline-block')};
@@ -12,7 +13,7 @@ const Svg = styled.svg`
 `;
 
 const Path = styled.path`
-  fill: currentColor;
+  fill: ${props => (props.color || "currentColor")};
 `;
 
 /**

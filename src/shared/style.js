@@ -57,7 +57,7 @@ export const typography = {
   size: {
     h1: css`
     font-size: calc(34px + (56 - 34) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));`,
+    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));'`,
     h2: css`
     font-size: calc(28px + (34 - 28) * ((100vw - 300px) / (1600 - 300)));
     line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));`,

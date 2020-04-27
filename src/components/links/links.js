@@ -13,7 +13,6 @@ const StyledLink = styled.a`
     border-bottom: 2px solid ${color.darkPurple}; 
     color: ${color.darkPurple};
   }
-
   &:hover {
     border-bottom: 2px solid ${color.lightBlue};  
     color: ${color.lightBlue};
@@ -22,7 +21,6 @@ const StyledLink = styled.a`
   &:active {
     border-bottom: 2px solid ${color.darkBlue}; 
     color: ${color.darkBlue};
-    cursor: wait;
   }
 
   ${props =>
@@ -41,7 +39,6 @@ const StyledLink = styled.a`
       &:active {
         border-bottom: none;
         color: ${color.black};
-        cursor: wait;
       }
     `
   }
@@ -58,11 +55,17 @@ const StyledLink = styled.a`
   }
 `
 
-export const Link = ({children, icon, ...props}) => {
+export const Link = ({children, icon, isExternal, ...props}) => {
+  const externalConfig = {
+  target: "_blank",
+  rel: "noopener noreferrer"
+  }
+  if(isExternal) props = {...props, ...externalConfig}
   return (
-    <StyledLink icon={icon ? true : false}{...props}>
+    <StyledLink icon={icon ? true : false} {...props}>
       {icon && <Icon icon={icon}/>}
       {children}
     </StyledLink>
   )
 }
+

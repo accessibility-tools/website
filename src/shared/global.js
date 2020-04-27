@@ -38,6 +38,8 @@ export const bodyStyles = css`
   .subtitle {
     font-family: ${typography.type.primary};
     font-weight: ${typography.weight.medium};
+    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
     text-transform: uppercase;
     letter-spacing: 0.07rem;
     margin: 0;
