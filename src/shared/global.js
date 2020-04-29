@@ -4,7 +4,8 @@ import { color, typography } from './style';
 export const bodyStyles = css`
   font-family: ${typography.type.primary};
   font-weight: ${typography.weight.regular};
-  font-size: ${typography.size.p}px;
+  font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
   color: ${color.primary};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,6 +45,11 @@ export const bodyStyles = css`
     letter-spacing: 0.07rem;
     margin: 0;
   }
+
+  li {
+    list-style: none;
+  }
+  
   sub,
   sup {
     font-size: 0.8em;
