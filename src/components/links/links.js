@@ -69,3 +69,12 @@ export const Link = ({children, icon, isExternal, ...props}) => {
   )
 }
 
+Link.propTypes = {
+  href: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  isExternal: PropTypes.bool,
+};
+
+Link.defaultProps = {
+  isExternal: false,
+};

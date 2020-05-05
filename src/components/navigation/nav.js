@@ -14,10 +14,11 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: ${spacing.padding.small}px  ${spacing.padding.large}px;
 `
 
 const StyledList = styled.ul`
-  margin-left: ${spacing.padding.large}px;
+  margin: 0;
   padding: 0;
   & > li {
     display: inline;

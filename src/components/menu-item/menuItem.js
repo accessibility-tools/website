@@ -66,7 +66,7 @@ const StyledMenuItem = styled.a`
 export const MenuItem = ({children, icon, ...props}) => {
   return (
     <li>    
-      <StyledMenuItem onClick={props.onSelect} icon={icon ? true : false}{...props}>
+      <StyledMenuItem href="#" onClick={props.onSelect} icon={icon ? true : false}{...props}>
         {children}
         {icon && <Icon icon={icon}/>}
       </StyledMenuItem>

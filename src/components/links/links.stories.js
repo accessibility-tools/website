@@ -21,10 +21,10 @@ const ListItem = styled.div`
 
 export const AllLinks = () => (
   <ListItem>
-    <Link>Hello Link</Link>
-    <Link isSecondary={true}>Hello Link</Link>
-    <Link isSecondary={true} icon="extLink">Hello Link</Link>
-    <Link isExternal={true} icon="extLink">Hello Link</Link>
+    <Link href="#">Hello Link</Link>
+    <Link href="#" isSecondary={true}>Hello Link</Link>
+    <Link href="#" isSecondary={true} icon="extLink">Hello Link</Link>
+    <Link href="#" isExternal={true} icon="extLink">Hello Link</Link>
   </ListItem>
 )
 

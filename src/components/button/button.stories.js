@@ -16,7 +16,7 @@ const ListItem = styled.div`
   & > button {
     margin: 1rem;
   }
-
+  
 `
 
 export const allButtons = () => (
