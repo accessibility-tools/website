@@ -14,7 +14,6 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${spacing.padding.small}px  ${spacing.padding.large}px;
 `
 
 const StyledList = styled.ul`
