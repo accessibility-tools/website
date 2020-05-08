@@ -33,23 +33,23 @@ const StyledRadioButton = styled.div`
     position: absolute;
     visibility: ${props => props.checked ? 'visible' : 'hidden'};
     width: 8px;
-
-    &:hover {
-      background-color: ${color.lightBlue};
-    }
-  
-    &:active {
-      background-color: ${color.darkBlue};
-    }
   }
 
   &:hover {
-    border-color: ${color.lightBlue};
+    border: 3px solid ${color.lightBlue};
     cursor: pointer;
+
+    &::after {
+      background-color: ${color.lightBlue};
+    }
   }
 
   &:active {
     border-color: ${color.darkBlue};
+
+    &::after {
+      background-color: ${color.darkBlue};
+    }
   }
 ` 
 

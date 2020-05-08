@@ -43,10 +43,18 @@ const StyledCheckbox = styled.div`
   &:hover {
     border-color: ${color.lightBlue};
     cursor: pointer;
+
+    &::after {
+      background-color: ${color.lightBlue};
+    }
   }
 
   &:active {
     border-color: ${color.darkBlue};
+
+    &::after {
+      background-color: ${color.darkBlue};
+    }
   }
 ` 
 
