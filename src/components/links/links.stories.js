@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
-import { Link } from './links.js';
+import { Link } from './links';
 
 export default {
   title: 'Design System|Link',

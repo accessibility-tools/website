@@ -39,7 +39,6 @@ const StyledButton = styled.button`
     props.isSecondary === true && `
       background-color: ${color.white};
       border: 2px solid ${color.primary};
-      //box-shadow: inset 0px 0px 0px 2px ${color.primary};
       color: ${color.primary};
 
       &:hover {
