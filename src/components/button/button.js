@@ -6,8 +6,6 @@ import {Icon} from '../icon/icon';
 
 const StyledButton = styled.button`
   background-color: ${color.blue};
-  border: 0;
-  border-radius: ${spacing.borderRadius.small}px;
   color: ${color.white};
   cursor: pointer;
   display: inline-block;
@@ -40,7 +38,8 @@ const StyledButton = styled.button`
   ${props => 
     props.isSecondary === true && `
       background-color: ${color.white};
-      box-shadow: inset 0px 0px 0px 2px ${color.primary};
+      border: 2px solid ${color.primary};
+      //box-shadow: inset 0px 0px 0px 2px ${color.primary};
       color: ${color.primary};
 
       &:hover {
@@ -50,12 +49,13 @@ const StyledButton = styled.button`
         background-color: ${color.purple};
       }
       &:focus {
-        box-shadow: inset 0 0 0 2px ${color.primary},
+        box-shadow:  0 0 0 3px ${color.white},
                     0 0 0 7px ${color.darkBlue};
       }
       &:disabled {
         background-color: ${color.white};
-        box-shadow: inset 0px 0px 0px 2px ${color.disabled};
+        border: 2px solid transparent;
+        box-shadow: 0px 0px 0px 2px ${color.disabled};
         color: ${color.disabled};
         cursor: not-allowed !important;
       }

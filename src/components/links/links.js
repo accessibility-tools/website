@@ -5,21 +5,21 @@ import { color } from '../../shared/style';
 import {Icon} from '../icon/icon';
 
 const StyledLink = styled.a`
-  text-decoration: none;
-  border-bottom: 2px solid ${color.blue};  
+  text-decoration: underline solid inherited 2px;
+  //border-bottom: 2px solid ${color.blue};  
   color: ${color.blue};
 
   &:visited {
-    border-bottom: 2px solid ${color.darkPurple}; 
+    text-decoration: underline solid ${color.darkPurple} 2px;
     color: ${color.darkPurple};
   }
   &:hover {
-    border-bottom: 2px solid ${color.lightBlue};  
+    //border-bottom: 2px solid ${color.lightBlue};  
     color: ${color.lightBlue};
     cursor: pointer;
   }
   &:active {
-    border-bottom: 2px solid ${color.darkBlue}; 
+    //border-bottom: 2px solid ${color.darkBlue}; 
     color: ${color.darkBlue};
   }
 

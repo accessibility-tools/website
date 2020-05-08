@@ -16,8 +16,9 @@ export const bodyStyles = css`
     box-sizing: border-box;
 
     &:focus {
-      outline: ${color.darkBlue} solid 4px;
-      outline-offset: 3px;
+      outline: none;
+      box-shadow: 0 0 0 3px ${color.white},
+                  0 0 0 7px ${color.darkBlue};    
     }
   }
   h1,
@@ -48,6 +49,20 @@ export const bodyStyles = css`
 
   li {
     list-style: none;
+  }
+
+  button {
+    border: 3px solid transparent;
+    border-radius: 2px;
+  }
+
+  a {
+    border: 4px solid transparent;
+    border-radius: 3px;
+
+    &:focus{  
+      box-shadow: 0 0 0 4px ${color.darkBlue};  
+    } 
   }
   
   sub,

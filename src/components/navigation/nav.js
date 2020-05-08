@@ -14,13 +14,14 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 ${spacing.padding.medium}px;
 `
 
 const StyledList = styled.ul`
   margin: 0;
   padding: 0;
   & > li {
-    display: inline;
+    display: inline-flex;
   }
 `
 

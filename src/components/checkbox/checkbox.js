@@ -32,16 +32,17 @@ const StyledCheckbox = styled.div`
     position: absolute;
 
     &:hover {
-      background-color: ${color.lightBlue};
+      color: ${color.lightBlue};
     }
   
     &:active {
-      background-color: ${color.darkBlue};
+      color: ${color.darkBlue};
     }
   }
 
   &:hover {
     border-color: ${color.lightBlue};
+    cursor: pointer;
   }
 
   &:active {
@@ -50,13 +51,16 @@ const StyledCheckbox = styled.div`
 ` 
 
 const CheckboxContainer = styled.label`
+  border: 4px solid transparent;
+  border-radius: 3px;
   display: inline-flex;
   margin: ${spacing.padding.medium}px;
   vertical-align: middle;
+  transition: all 150ms ease-out;
+  transform: translate3d(0,0,0);
 
   &:focus-within {
-    outline: ${color.darkBlue} solid 4px;
-    outline-offset: 3px;
+    box-shadow: 0 0 0 4px ${color.darkBlue}; 
   }
 `
 

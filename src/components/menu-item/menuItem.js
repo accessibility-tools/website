@@ -5,10 +5,7 @@ import { background, color, spacing } from '../../shared/style';
 import {Icon} from '../icon/icon';
 
 const StyledList = styled.li`
-  background-color: ${color.white};
   box-sizing: border-box;
-  margin: 4px;
-  padding: ${spacing.padding.medium}px ${spacing.padding.medium}px;
   position: relative;
 
   &::after {
@@ -25,13 +22,6 @@ const StyledList = styled.li`
     -webkit-transition: transform .2s ease-out;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-  }
-
-  &:focus-within {
-    border: 4px solid ${color.darkBlue};
-    border-radius: ${spacing.borderRadius.medium}px;
-    margin: 0;
-    outline: none;
   }
 
   &:hover {
@@ -64,9 +54,8 @@ const StyledList = styled.li`
 const StyledMenuItem = styled.a`
   color: ${color.primary};
   cursor: pointer;
-  display: inline-block;
-  margin: 0; 
-  opacity: 1;
+  display: block;
+  padding: ${spacing.padding.medium}px ${spacing.padding.medium}px;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -75,10 +64,6 @@ const StyledMenuItem = styled.a`
   vertical-align: top;
   user-select: none;
   white-space: nowrap;
-
-  &:focus {
-    outline: none; 
-  }
 `
 
 export const MenuItem = ({children, icon, ...props}) => {
