@@ -6,11 +6,12 @@ import {Icon} from '../icon/icon';
 
 const StyledLink = styled.a`
   text-decoration: underline solid inherited 2px;
-  //border-bottom: 2px solid ${color.blue};  
   color: ${color.blue};
+  text-underline-position: under;
 
   &:visited {
-    text-decoration: underline solid ${color.darkPurple} 2px;
+    text-decoration-thickness: 2px;
+    text-decoration: underline purple 2px;
     color: ${color.darkPurple};
   }
   &:hover {

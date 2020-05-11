@@ -35,13 +35,39 @@ export const bodyStyles = css`
   h2 {
     font-family: ${typography.type.secondary};
   }
+
+  h1 {
+    font-size: calc(34px + (56 - 34) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  }
+  h2 {
+    font-size: calc(28px + (34 - 28) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  }
+  h3 {
+    font-size: calc(22px + (26 - 22) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  }
+  h4 {
+    font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  }
+  h5, p, button,
+  a {
+    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  }
+
+  .subtitle {
+    font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  }
+
   button,
   a,
   .subtitle {
     font-family: ${typography.type.primary};
     font-weight: ${typography.weight.medium};
-    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
     text-transform: uppercase;
     letter-spacing: 0.07rem;
     margin: 0;

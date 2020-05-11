@@ -54,29 +54,6 @@ export const typography = {
     medium: '500',
     bold: '700',
   },
-  size: {
-    h1: css`
-    font-size: calc(34px + (56 - 34) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));'`,
-    h2: css`
-    font-size: calc(28px + (34 - 28) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));`,
-    h3: css`
-    font-size: calc(22px + (26 - 22) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));`,
-    h4: css`
-    font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));`,
-    h5: css`
-    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));`,
-    sub: css`
-    font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));`,
-    p: css`
-    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));`, // also valid for links and labels
-  },
 };
 
 // export const breakpoint = 600;

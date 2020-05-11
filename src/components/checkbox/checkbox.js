@@ -103,28 +103,7 @@ Checkbox.propTypes = {
   checked: PropTypes.bool
 }
 
-
 Checkbox.defaultProps = {
   checked: false
 }
-
-
-
-// export const CheckboxContainer = () => {
-//   const [checked, setChecked] = React.useState(false)
-//   const handleCheckboxChange = event => {
-//     setChecked(event.target.checked)
-//   }
-//   return (
-//     <div>
-//       <label>
-//         <Checkbox
-//           checked={checked}
-//           onChange={handleCheckboxChange}
-//         />
-//         <span>Label Text</span>
-//       </label>
-//     </div>    
-//   ) 
-// }
 
