@@ -36,7 +36,7 @@ export default {
 };
 
 export const labels = () => (
-  <Fragment>
+  <>
     There are {Object.keys(icons).length} icons
     <List>
       {Object.keys(icons).map(key => (
@@ -46,18 +46,18 @@ export const labels = () => (
         </Item>
       ))}
     </List>
-  </Fragment>
+  </>
 );
 
 
 export const inline = () => (
-  <Fragment>
+  <>
     this is an inline <Icon icon="plus" aria-label="plus" /> icon (default)
-  </Fragment>
+  </>
 );
 
 export const block = () => (
-  <Fragment>
+  <>
     this is a block <Icon icon="plus" aria-label="plus" block /> icon
-  </Fragment>
+  </>
 );
