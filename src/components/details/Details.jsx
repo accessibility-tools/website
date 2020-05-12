@@ -12,6 +12,8 @@ const DetailsContainer = styled.details `
 `
 
 const StyledSummary = styled.summary`
+  border: 3px solid transparent;
+  border-radius: 2px;
   padding: 16px;
   position: relative;
   display: flex;
@@ -23,10 +25,6 @@ const StyledSummary = styled.summary`
   
   &:hover {
     cursor: pointer; 
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 4px ${color.darkBlue}; 
   }
 
   &::before {
