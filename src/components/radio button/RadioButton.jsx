@@ -68,7 +68,7 @@ const RadioButtonContainer = styled.label`
 `
 
 
-export const RadioButton = ({className, checked, children, ...props }) => {
+export const RadioButton = ({className, checked, label, ...props }) => {
   const [isChecked, setChecked] = React.useState(props.checked)
   const handleKeyPress = (event) => {
     if (event.key === " ") {
@@ -89,7 +89,7 @@ export const RadioButton = ({className, checked, children, ...props }) => {
       >
       </StyledRadioButton>
       <span>
-        {children}
+        {label}
       </span> 
     </RadioButtonContainer>
   )
