@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { spacing } from '../../shared/style';
 import { MenuItem } from '../menu-item/MenuItem';
@@ -26,7 +26,7 @@ const StyledList = styled.ul`
 `
 
 export const Nav = () => {
-  const [selected, setSelected] = React.useState(VALUES.TOOLS)
+  const [selected, setSelected] = useState(VALUES.TOOLS)
   return (
   <StyledNav>
     <StyledList>
