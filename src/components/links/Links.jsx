@@ -5,52 +5,63 @@ import { color } from '../../shared/style';
 import { Icon } from '../icon/Icon';
 
 const StyledLink = styled.a`
-  text-decoration: underline solid inherited 2px;
   color: ${color.blue};
-  text-underline-position: under;
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
 
   &:visited {
-    text-decoration-thickness: 2px;
-    text-decoration: underline purple 2px;
     color: ${color.darkPurple};
   }
-  &:hover {
-    //border-bottom: 2px solid ${color.lightBlue};  
+  &:hover { 
     color: ${color.lightBlue};
     cursor: pointer;
   }
-  &:active {
-    //border-bottom: 2px solid ${color.darkBlue}; 
+  &:active { 
     color: ${color.darkBlue};
   }
 
-  ${props =>
-    props.isSecondary === true &&`
-      border-bottom: none;
-      color: ${color.primary};
+  & > span {
+    position: relative;
 
-      &:visited {
-        border-bottom: none;
-      }
-      &:hover { 
-        border-bottom: none;
-        color: ${color.mediumGrey};
-        cursor: pointer;
-      }
-      &:active {
-        border-bottom: none;
-        color: ${color.black};
+    &::after {
+      content:"";
+      width: 100%;
+      height: 0px;
+      background-color: currentColor;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      position: absolute;
+    }
+  }
+
+  ${props =>
+    props.icon === true &&`      
+      svg {
+        margin-right: 0.5em;
       }
     `
   }
 
   ${props =>
-    props.icon === true &&`
-      display: inline-block;
-      
-      svg{
-        margin-right: 0.5em;
-        margin-top: -0.2rem;
+    props.isSecondary === true &&`
+      color: ${color.primary};
+
+      & > span {   
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      &:hover { 
+        color: ${color.mediumGrey};
+        cursor: pointer;
+      }
+      &:active {
+        color: ${color.black};
       }
     `
   }
@@ -65,7 +76,7 @@ export const Link = ({children, icon, isExternal, ...props}) => {
   return (
     <StyledLink icon={icon ? true : false} {...props}>
       {icon && <Icon icon={icon}/>}
-      {children}
+      <span>{children}</span>
     </StyledLink>
   )
 }
