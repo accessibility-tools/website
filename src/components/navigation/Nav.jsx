@@ -35,9 +35,8 @@ export const Nav = () => {
         value={item} 
         onSelect={() => setSelected(item)} 
         isSelected={item === selected}
-      >
-        {item}
-      </MenuItem>
+        text={item}
+      />
     ))}
     </StyledList>
     <Sponsor/>

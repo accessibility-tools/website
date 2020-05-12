@@ -65,11 +65,11 @@ const StyledMenuItem = styled.a`
   white-space: nowrap;
 `
 
-export const MenuItem = ({children, icon, ...props}) => {
+export const MenuItem = ({text, icon, ...props}) => {
   return (
     <StyledList {...props}>    
       <StyledMenuItem href="#" onClick={props.onSelect} icon={icon ? true : false}{...props}>
-        {children}
+        {text}
         {icon && <Icon icon={icon}/>}
       </StyledMenuItem>
     </StyledList>

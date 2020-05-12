@@ -20,7 +20,7 @@ const ListItem = styled.div`
 
 export const AllMenuItems = () => (
   <ListItem>
-    <MenuItem>Menu Item</MenuItem>
-    <MenuItem isSelected={true}>Menu Item</MenuItem>
+    <MenuItem text="Menu Item"/>
+    <MenuItem isSelected={true} text="Menu Item"/>
   </ListItem>
 )
