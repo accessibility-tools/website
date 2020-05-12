@@ -71,7 +71,7 @@ const CheckboxContainer = styled.label`
 `
 
 
-export const Checkbox = ({className, checked, children, ...props }) => {
+export const Checkbox = ({className, checked, label, ...props }) => {
   const [isChecked, setChecked] = React.useState(props.checked)
   const handleKeyPress = (event) => {
     if (event.key === " ") {
@@ -93,7 +93,7 @@ export const Checkbox = ({className, checked, children, ...props }) => {
         <Icon icon="checkmark"/>
       </StyledCheckbox>
       <span>
-        {children}
+        {label}
       </span> 
     </CheckboxContainer>
   )

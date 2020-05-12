@@ -6,4 +6,4 @@ export default {
   component: Checkbox,
 };
 
-export const CheckboxSelector = () => <Checkbox icon>Option 1</Checkbox>;
+export const CheckboxSelector = () => <Checkbox icon label="Option 1"/>;
