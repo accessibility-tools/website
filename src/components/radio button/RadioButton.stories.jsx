@@ -6,4 +6,4 @@ export default {
   component: RadioButton,
 };
 
-export const RadioButtonSelector = () => <RadioButton>Option 1</RadioButton>;
+export const radioButtonSelector = () => <RadioButton>Option 1</RadioButton>;

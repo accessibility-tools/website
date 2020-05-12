@@ -18,7 +18,7 @@ const ListItem = styled.div`
 
 `
 
-export const AllLinks = () => (
+export const allLinks = () => (
   <ListItem>
     <Link href="#">Hello Link</Link>
     <Link href="#" isSecondary={true}>Hello Link</Link>

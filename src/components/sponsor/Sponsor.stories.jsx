@@ -6,4 +6,4 @@ export default {
   component: Sponsor,
 };
 
-export const FuturiceSponsor = () => <Sponsor/>;
+export const futuriceSponsor = () => <Sponsor/>;

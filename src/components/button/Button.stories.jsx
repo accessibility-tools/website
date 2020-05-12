@@ -29,9 +29,9 @@ export const allButtons = () => (
   </ListItem>
 )
 
-export const Primary = () => <Button isSecondary={false}>Hello Button</Button>;
-export const Secondary = () => <Button isSecondary={true}>Hello Button</Button>;
-export const Disabled = () => (
+export const primary = () => <Button isSecondary={false}>Hello Button</Button>;
+export const secondary = () => <Button isSecondary={true}>Hello Button</Button>;
+export const disabled = () => (
   <ListItem>
     <Button disabled={true}>Hello Button</Button><br></br>
     <Button isSecondary={true} disabled={true}>Hello Button</Button>

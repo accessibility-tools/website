@@ -18,7 +18,7 @@ const ListItem = styled.div`
 
 `
 
-export const AllMenuItems = () => (
+export const allMenuItems = () => (
   <ListItem>
     <MenuItem text="Menu Item"/>
     <MenuItem isSelected={true} text="Menu Item"/>
