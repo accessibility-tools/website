@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { background, color, spacing } from '../../shared/style';
-import {Icon} from '../icon/icon';
+import {Icon} from '../icon/Icon';
 
 const StyledButton = styled.button`
   background-color: ${color.blue};

@@ -1,7 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { Checkbox } from './checkbox';
+import { Checkbox } from './Checkbox';
 
 export default {
   title: 'Design System|Checkbox',

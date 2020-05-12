@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { color, spacing } from '../../shared/style';
-import { Icon } from '../icon/icon';
+import { Icon } from '../icon/Icon';
 
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   clip: rect(0 0 0 0);

@@ -1,7 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { RadioButton } from './radiobutton';
+import { RadioButton } from './RadioButton';
 
 export default {
   title: 'Design System|RadioButton',

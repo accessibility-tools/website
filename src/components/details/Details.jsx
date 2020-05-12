@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { background, color, spacing } from '../../shared/style';
-import {Icon} from '../icon/icon';
+import { color } from '../../shared/style';
+import { Icon } from '../icon/Icon';
 
 
 const DetailsContainer = styled.details `

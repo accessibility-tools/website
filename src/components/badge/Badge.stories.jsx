@@ -1,7 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { Badge } from './badge';
+import styled from 'styled-components';
+import { Badge } from './Badge';
 
 export default {
   title: 'Design System|Badge',

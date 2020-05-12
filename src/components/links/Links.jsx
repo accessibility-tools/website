@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { color } from '../../shared/style';
-import {Icon} from '../icon/icon';
+import { Icon } from '../icon/Icon';
 
 const StyledLink = styled.a`
   text-decoration: underline solid inherited 2px;

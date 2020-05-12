@@ -1,7 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { Button } from './button';
+import styled from 'styled-components';
+import { Button } from './Button';
 
 export default {
   title: 'Design System|Button',

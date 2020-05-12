@@ -1,4 +1,3 @@
-import { css } from 'styled-components';
 
 // Global style variables
 export const background = {

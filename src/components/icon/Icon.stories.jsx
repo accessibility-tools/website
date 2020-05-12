@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
-import styled, { css } from 'styled-components';
-
-import { Icon } from './icon.js';
-import { icons } from '../../shared/icons.js';
+import styled from 'styled-components';
+import { icons } from '../../shared/icons';
+import { Icon } from './Icon';
 
 const Meta = styled.div`
   color: #666;

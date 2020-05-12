@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MenuItem } from '../menu-item/menuItem';
-import { Sponsor } from '../sponsor/sponsor';
 import { spacing } from '../../shared/style';
+import { MenuItem } from '../menu-item/MenuItem';
+import { Sponsor } from '../sponsor/Sponsor';
 
 const VALUES = {
   TOOLS: "the tools",

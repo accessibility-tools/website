@@ -1,7 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { Nav } from './nav';
+import { Nav } from './Nav';
 
 export default {
   title: 'Design System|Navigation',

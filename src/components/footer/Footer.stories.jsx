@@ -1,7 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { Footer } from './footer';
+import { Footer } from './Footer';
 
 export default {
   title: 'Design System|Footer',

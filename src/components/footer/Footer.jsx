@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Icon} from '../icon/icon';
 import { spacing } from '../../shared/style';
-import { Link } from '../links/links';
+import { Icon } from '../icon/Icon';
+import { Link } from '../links/Links';
 
 const StyledFooter = styled.footer`
   display: flex;

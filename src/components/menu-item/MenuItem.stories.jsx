@@ -1,7 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { MenuItem } from './menuItem';
+import styled from 'styled-components';
+import { MenuItem } from './MenuItem';
 
 export default {
   title: 'Design System|Menu Item',

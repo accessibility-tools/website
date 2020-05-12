@@ -1,7 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { Details } from './details';
+import styled from 'styled-components';
+import { Details } from './Details';
 
 export default {
   title: 'Design System|Details',
