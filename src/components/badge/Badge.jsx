@@ -19,15 +19,17 @@ const BadgeWrapper = styled.div`
     margin-right: ${spacing.padding.small}px;
   }
 `
-export function Badge({ ...props }) {
+export const Badge = ({ ...props }) => {
   const levelIcon = {
     critical: <Icon color={color.error} icon="circle"/>,
     serious: <Icon color={color.error} icon="issue"/>,
     moderate: <Icon color={color.darkPurple} icon="issue"/>,
     minor: <Icon color={color.primary} icon="issue"/>,
   }
-  return <BadgeWrapper {...props}>
+  return (
+  <BadgeWrapper {...props}>
     {levelIcon[props.level]}
     {props.level}{" issues"}
-  </BadgeWrapper>;
+  </BadgeWrapper>
+  )
 }

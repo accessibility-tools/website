@@ -26,7 +26,7 @@ const ShoutOut = styled.div`
   margin: 0 ${spacing.padding.large}px;
 `
 
-export function Sponsor ({ block, ...props}) {
+export const Sponsor = ({ block, ...props}) => {
   return (
     <ShoutOut>
       <p>Sponsored by</p>
