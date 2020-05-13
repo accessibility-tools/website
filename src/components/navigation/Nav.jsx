@@ -30,7 +30,7 @@ export const Nav = () => {
   return (
   <StyledNav>
     <StyledList>
-    {[VALUES.TOOLS, VALUES.LEARN, VALUES.ABOUT].map(item => (
+    {Object.values(VALUES).map(item => (
       <MenuItem 
         value={item} 
         onSelect={() => setSelected(item)} 
