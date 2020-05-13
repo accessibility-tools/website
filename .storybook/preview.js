@@ -5,6 +5,6 @@ import { GlobalStyle } from '../src/shared/global';
 addDecorator(story => (
   <>
     <GlobalStyle />
-    {story()}
-  </>
+    {story()} 
+  </> 
 ));

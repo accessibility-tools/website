@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Badge } from './Badge';
+import { StoryWrapper } from '../story-wrapper/StoryWrapper';
 
 export default {
   title: 'Design System|Badge',
@@ -14,22 +15,11 @@ const LEVELS = {
   MINOR: 'minor',
 };
 
-const ListItem = styled.div`
-  display: flex;
-  margin: 1rem;
-  flex-wrap: wrap;
-  
-  & > div {
-    margin: 1rem;
-  }
-
-`
-
 export const allBadges = () => (
-  <ListItem> 
+  <StoryWrapper> 
     <Badge level={LEVELS.CRITICAL}/>
     <Badge level={LEVELS.SERIOUS}/>
     <Badge level={LEVELS.MODERATE}/>
     <Badge level={LEVELS.MINOR}/>
-  </ListItem>
+  </StoryWrapper>
 )

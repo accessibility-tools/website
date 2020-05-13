@@ -6,4 +6,6 @@ export default {
   component: Nav,
 };
 
-export const navigation = () => (<Nav/>)
+export const navigation = () => (
+    <Nav/>
+)

@@ -1,20 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Details } from './Details';
+import { StoryWrapper } from '../story-wrapper/StoryWrapper';
+
 
 export default {
   title: 'Design System|Details',
   component: Details,
 };
 
-const ListItem = styled.div`
-  margin: 1rem;  
-`
-
 export const details = () => (
-  <ListItem>
+  <StoryWrapper>
     <Details title="Details Title">
       <p>Ipsum lorem dolore sica blabla...</p>
     </Details>
-  </ListItem>
+  </StoryWrapper>
 )

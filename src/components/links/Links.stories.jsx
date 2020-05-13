@@ -1,29 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from './Links';
+import { StoryWrapper } from '../story-wrapper/StoryWrapper';
 
 export default {
   title: 'Design System|Link',
   component: Link,
 };
 
-const ListItem = styled.div`
-  display: flex;
-  margin: 1rem;
-  flex-wrap: wrap;
-  
-  & > a {
-    margin: 1rem;
-  }
-
-`
-
 export const allLinks = () => (
-  <ListItem>
+  <StoryWrapper>
     <Link href="#">Hello Link</Link>
     <Link href="#" isSecondary={true}>Hello Link</Link>
     <Link href="#" isSecondary={true} icon="extLink">Hello Link</Link>
     <Link href="#" isExternal={true} icon="extLink">Hello Link</Link>
-  </ListItem>
+  </StoryWrapper>
 )
 
