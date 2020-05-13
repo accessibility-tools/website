@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TextInput from './TextInput';
 import { text, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 const StoryWrapper = styled.div`
   margin: 1rem;
@@ -24,6 +25,7 @@ export const textInput = () => (
       errorText={text('errorText', '')}
       valid={boolean('valid', undefined)}
       required={boolean('required', false)}
+      onChange={action('input-change')}
     />
   </StoryWrapper>
 );

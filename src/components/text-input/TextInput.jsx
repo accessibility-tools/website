@@ -71,8 +71,8 @@ const TextInput = ({
   required,
   disabled,
   placeholder,
-}) => {
-  return (
+  onChange
+}) =>  (
     <TextInputWrapper>
       <StyledLabel htmlFor={id} id={`${id}-label`}>
         {label}
@@ -84,12 +84,12 @@ const TextInput = ({
           error={!!errorText}
           valid={valid}
           aria-invalid={valid !== undefined ? !valid : false}
-          aria-describedby={`${id}-hint ${id}-error`}
+          aria-describedby={(hintText || errorText) && `${id}-hint ${id}-error`}
           required={!!required}
           disabled={disabled}
           placeholder={placeholder}
+          onChange={onChange}
         />
-        {console.log(valid)}
         {(valid || errorText) && (
           <IconWrapper>
             <Icon
@@ -107,7 +107,6 @@ const TextInput = ({
       )}
     </TextInputWrapper>
   );
-};
 
 TextInput.propTypes = {
   id: PropTypes.string.isRequired,
