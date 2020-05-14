@@ -39,7 +39,7 @@ const StyledButton = styled.button`
   }
 
   ${(props) =>
-    props.isSecondary === true &&
+    props.isSecondary &&
     `
       background-color: ${color.white};
       border: 2px solid ${color.primary};
@@ -65,7 +65,7 @@ const StyledButton = styled.button`
     `}
 
   ${(props) =>
-    props.icon === true &&
+    !!props.icon &&
     `
     display: flex;
     align-items: center;
