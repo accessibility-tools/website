@@ -1,15 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { color } from '../../shared/style';
-import { Icon } from '../icon/Icon';
+import React, { useState } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { color } from "../../shared/style";
+import Icon from "../icon/Icon";
 
-
-const DetailsContainer = styled.details `
+const DetailsContainer = styled.details`
   &:active {
     background-color: ${color.purple};
   }
-`
+`;
 
 const StyledSummary = styled.summary`
   border: 3px solid transparent;
@@ -22,13 +21,13 @@ const StyledSummary = styled.summary`
   &::-webkit-details-marker {
     display: none;
   }
-  
+
   &:hover {
-    cursor: pointer; 
+    cursor: pointer;
   }
 
   &::before {
-    content:"";
+    content: "";
     display: block;
     border-radius: 5px;
     border: 2px solid ${color.primary};
@@ -37,25 +36,27 @@ const StyledSummary = styled.summary`
     left: 0;
     position: absolute;
   }
-`
+`;
 
-export const Details = ({children, title}) => {
-  const [isOpened, setOpened] = React.useState(false)
+const Details = ({ children, title }) => {
+  const [isOpened, setOpened] = useState(false);
   const handleOpen = (event) => {
-    setOpened(event.currentTarget.open)
-  }
+    setOpened(event.currentTarget.open);
+  };
   return (
     <DetailsContainer onToggle={handleOpen}>
       <StyledSummary>
         <h5>{title}</h5>
-        <Icon icon={isOpened ? "minus" : "plus"}/>
+        <Icon icon={isOpened ? "minus" : "plus"} />
       </StyledSummary>
       {children}
     </DetailsContainer>
-
-  )
-}
+  );
+};
 
 Details.propTypes = {
-  title: PropTypes.string.isRequired
-}
+  title: PropTypes.string.isRequired,
+  children: PropTypes.any,
+};
+
+export default Details;
