@@ -1,33 +1,32 @@
-
 // Global style variables
 export const background = {
-  pureWhite: '#FFFFFF',
-  mixedWhite: '#FAFAFA',
-  extraLightPurple: '#F5F6FF',
-  lightPurple: '#F2F3FF',
+  pureWhite: "#FFFFFF",
+  mixedWhite: "#FAFAFA",
+  extraLightPurple: "#F5F6FF",
+  lightPurple: "#F2F3FF",
 };
 
 export const color = {
   // text
-  black: '#292929', // only on pressed state
-  primary: '#464646', // darkGrey
-  mediumGrey: '#636363', // only on hover state
-  white: '#FFFFFF',
-  blue: '#001CFF',
+  black: "#292929", // only on pressed state
+  primary: "#464646", // darkGrey
+  mediumGrey: "#636363", // only on hover state
+  white: "#FFFFFF",
+  blue: "#001CFF",
 
-  lightBlue: '#4B5FFF',
-  darkBlue: '#00119E',
-  purple: '#D4D7FF',
-  darkPurple: '#6642D1',
+  lightBlue: "#4B5FFF",
+  darkBlue: "#00119E",
+  purple: "#D4D7FF",
+  darkPurple: "#6642D1",
 
   // state
-  error: '#CC1818',
-  disabled: '#979797',
+  error: "#CC1818",
+  disabled: "#979797",
 
   // only for illustration
-  yellow: '#FFF361',
-  pink: '#FF7FB1',
-  red: '#F94B4B',
+  yellow: "#FFF361",
+  pink: "#FF7FB1",
+  red: "#F94B4B",
 };
 
 export const spacing = {
@@ -45,13 +44,13 @@ export const spacing = {
 
 export const typography = {
   type: {
-    primary: '"Roboto", Helvetica, Arial, sans-serif',
-    secondary: '"Lora", "Times New Roman", Georgia, serif',
+    primary: "Roboto, Helvetica, Arial, sans-serif",
+    secondary: "Lora, Times New Roman, Georgia, serif",
   },
   weight: {
-    regular: '400',
-    medium: '500',
-    bold: '700',
+    regular: "400",
+    medium: "500",
+    bold: "700",
   },
 };
 

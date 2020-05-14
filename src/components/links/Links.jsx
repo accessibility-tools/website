@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { color } from '../../shared/style';
-import { Icon } from '../icon/Icon';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { color } from "../../shared/style";
+import Icon from "../icon/Icon";
 
 const StyledLink = styled.a`
   color: ${color.blue};
@@ -13,11 +13,11 @@ const StyledLink = styled.a`
   &:visited {
     color: ${color.darkPurple};
   }
-  &:hover { 
+  &:hover {
     color: ${color.lightBlue};
     cursor: pointer;
   }
-  &:active { 
+  &:active {
     color: ${color.darkBlue};
   }
 
@@ -25,7 +25,7 @@ const StyledLink = styled.a`
     position: relative;
 
     &::after {
-      content:"";
+      content: "";
       width: 100%;
       height: 0px;
       background-color: currentColor;
@@ -38,16 +38,17 @@ const StyledLink = styled.a`
     }
   }
 
-  ${props =>
-    props.icon === true &&`      
+  ${(props) =>
+    props.icon === true &&
+    `      
       svg {
         margin-right: 0.5em;
       }
-    `
-  }
+    `}
 
-  ${props =>
-    props.isSecondary === true &&`
+  ${(props) =>
+    props.isSecondary === true &&
+    `
       color: ${color.primary};
 
       & > span {   
@@ -63,26 +64,26 @@ const StyledLink = styled.a`
       &:active {
         color: ${color.black};
       }
-    `
-  }
-`
+    `}
+`;
 
-export const Link = ({children, icon, isExternal, ...props}) => {
+const Link = ({ linkText, icon, isExternal, ...props }) => {
   const externalConfig = {
-  target: "_blank",
-  rel: "noopener noreferrer"
-  }
-  if(isExternal) props = {...props, ...externalConfig}
+    target: "_blank",
+    rel: "noopener noreferrer",
+  };
+  if (isExternal) props = { ...props, ...externalConfig };
   return (
     <StyledLink icon={icon ? true : false} {...props}>
-      {icon && <Icon icon={icon}/>}
-      <span>{children}</span>
+      {icon && <Icon icon={icon} />}
+      <span>{linkText}</span>
     </StyledLink>
-  )
-}
+  );
+};
 
 Link.propTypes = {
   href: PropTypes.string.isRequired,
+  linkText: PropTypes.string.isRequired,
   icon: PropTypes.string,
   isExternal: PropTypes.bool,
 };
@@ -90,3 +91,5 @@ Link.propTypes = {
 Link.defaultProps = {
   isExternal: false,
 };
+
+export default Link;

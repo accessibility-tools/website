@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Layout = styled.div`
   display: flex;
@@ -9,13 +10,14 @@ const Layout = styled.div`
   & > * {
     margin: 1rem;
   }
+`;
 
-`
+const StoryWrapper = ({ children }) => {
+  return <Layout>{children}</Layout>;
+};
 
-export const StoryWrapper = ({children}) => { 
-  return (
-    <Layout>
-      {children}
-    </Layout>
-  )
-}
+StoryWrapper.propTypes = {
+  children: PropTypes.any,
+};
+
+export default StoryWrapper;
