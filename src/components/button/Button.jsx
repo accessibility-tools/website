@@ -24,11 +24,14 @@ const StyledButton = styled.button`
 
   &:hover {
     background-color: ${color.lightBlue};
+    cursor: pointer;
   }
+
   &:active {
     background-color: ${color.darkBlue};
     box-shadow: inset 0 0 0 2px ${color.blue};
   }
+
   &:disabled {
     background-color: ${color.disabled};
     color: ${color.white};
@@ -36,7 +39,7 @@ const StyledButton = styled.button`
   }
 
   ${(props) =>
-    props.isSecondary &&
+    props.isSecondary === true &&
     `
       background-color: ${color.white};
       border: 2px solid ${color.primary};
@@ -62,7 +65,7 @@ const StyledButton = styled.button`
     `}
 
   ${(props) =>
-    !!props.icon &&
+    props.icon === true &&
     `
     display: flex;
     align-items: center;
