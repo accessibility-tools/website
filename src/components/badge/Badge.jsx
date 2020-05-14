@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { typography, color, spacing } from '../../shared/style';
-import { Icon } from '../icon/Icon';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { typography, color, spacing } from "../../shared/style";
+import Icon from "../icon/Icon";
 
 const BadgeWrapper = styled.div`
   align-items: center;
@@ -18,18 +19,26 @@ const BadgeWrapper = styled.div`
   svg {
     margin-right: ${spacing.padding.small}px;
   }
-`
-export const Badge = ({ ...props }) => {
+`;
+
+const Badge = ({ level, ...props }) => {
   const levelIcon = {
-    critical: <Icon color={color.error} icon="circle"/>,
-    serious: <Icon color={color.error} icon="issue"/>,
-    moderate: <Icon color={color.darkPurple} icon="issue"/>,
-    minor: <Icon color={color.primary} icon="issue"/>,
-  }
+    critical: <Icon color={color.error} icon="circle" />,
+    serious: <Icon color={color.error} icon="issue" />,
+    moderate: <Icon color={color.darkPurple} icon="issue" />,
+    minor: <Icon color={color.primary} icon="issue" />,
+  };
   return (
-  <BadgeWrapper {...props}>
-    {levelIcon[props.level]}
-    {props.level}{" issues"}
-  </BadgeWrapper>
-  )
-}
+    <BadgeWrapper {...props}>
+      {levelIcon[level]}
+      {level}
+      {" issues"}
+    </BadgeWrapper>
+  );
+};
+
+Badge.propTypes = {
+  level: PropTypes.string,
+};
+
+export default Badge;
