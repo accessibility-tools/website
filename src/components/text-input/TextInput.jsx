@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { spacing, typography, color } from '../../shared/style';
-import { Icon } from '../icon/icon';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { spacing, typography, color } from "../../shared/style";
+import Icon from "../icon/Icon";
 
 const TextInputWrapper = styled.div`
   display: flex;
@@ -11,9 +11,9 @@ const TextInputWrapper = styled.div`
   align-items: left;
 `;
 
-const StyledInput = styled.input.attrs({ type: 'text' })`
+const StyledInput = styled.input.attrs({ type: "text" })`
   height: 48px;
-  width: 340px;
+  width: ${(props) => (props.width ? `${props.width}px` : "340px")};
   border: 2px solid
     ${(props) =>
       props.error ? color.error : props.valid ? color.blue : color.primary};
@@ -71,42 +71,44 @@ const TextInput = ({
   required,
   disabled,
   placeholder,
-  onChange
-}) =>  (
-    <TextInputWrapper>
-      <StyledLabel htmlFor={id} id={`${id}-label`}>
-        {label}
-      </StyledLabel>
-      <InputWrapper>
-        <StyledInput
-          id={id}
-          name={id}
-          error={!!errorText}
-          valid={valid}
-          aria-invalid={valid !== undefined ? !valid : false}
-          aria-describedby={(hintText || errorText) && `${id}-hint ${id}-error`}
-          required={!!required}
-          disabled={disabled}
-          placeholder={placeholder}
-          onChange={onChange}
-        />
-        {(valid || errorText) && (
-          <IconWrapper>
-            <Icon
-              icon={valid ? 'success' : 'error'}
-              color={valid ? color.darkBlue : color.error}
-            />
-          </IconWrapper>
-        )}
-      </InputWrapper>
-      {hintText && <StyledText id={`${id}-hint`}>Hint: {hintText}</StyledText>}
-      {errorText && (
-        <StyledText id={`${id}-error`} error>
-          Error: {errorText}
-        </StyledText>
+  onChange,
+  width,
+}) => (
+  <TextInputWrapper>
+    <StyledLabel htmlFor={id} id={`${id}-label`}>
+      {label}
+    </StyledLabel>
+    <InputWrapper>
+      <StyledInput
+        id={id}
+        name={id}
+        error={!!errorText}
+        valid={valid}
+        aria-invalid={valid !== undefined ? !valid : false}
+        aria-describedby={(hintText || errorText) && `${id}-hint ${id}-error`}
+        required={!!required}
+        disabled={disabled}
+        placeholder={placeholder}
+        onChange={onChange}
+        width={width}
+      />
+      {(valid || errorText) && (
+        <IconWrapper>
+          <Icon
+            icon={valid ? "success" : "error"}
+            color={valid ? color.darkBlue : color.error}
+          />
+        </IconWrapper>
       )}
-    </TextInputWrapper>
-  );
+    </InputWrapper>
+    {hintText && <StyledText id={`${id}-hint`}>Hint: {hintText}</StyledText>}
+    {errorText && (
+      <StyledText id={`${id}-error`} error>
+        Error: {errorText}
+      </StyledText>
+    )}
+  </TextInputWrapper>
+);
 
 TextInput.propTypes = {
   id: PropTypes.string.isRequired,
@@ -115,6 +117,10 @@ TextInput.propTypes = {
   hintText: PropTypes.string,
   valid: PropTypes.bool,
   required: PropTypes.bool,
+  disabled: PropTypes.bool,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  width: PropTypes.number,
 };
 
 export default TextInput;
