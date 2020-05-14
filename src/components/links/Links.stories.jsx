@@ -9,9 +9,9 @@ export default {
 
 export const allLinks = () => (
   <StoryWrapper>
-    <Link href="#" linkText="Hello Link" />
-    <Link href="#" isSecondary={true} linkText="Hello Link" />
-    <Link href="#" isSecondary={true} icon="extLink" linkText="Hello Link" />
-    <Link href="#" isExternal={true} icon="extLink" linkText="Hello Link" />
+    <Link href="#" text="Hello Link" />
+    <Link href="#" isSecondary={true} text="Hello Link" />
+    <Link href="#" isSecondary={true} icon="extLink" text="Hello Link" />
+    <Link href="#" isExternal={true} icon="extLink" text="Hello Link" />
   </StoryWrapper>
 );

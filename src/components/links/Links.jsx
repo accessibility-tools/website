@@ -67,7 +67,7 @@ const StyledLink = styled.a`
     `}
 `;
 
-const Link = ({ linkText, icon, isExternal, ...props }) => {
+const Link = ({ text, icon, isExternal, ...props }) => {
   const externalConfig = {
     target: "_blank",
     rel: "noopener noreferrer",
@@ -76,14 +76,14 @@ const Link = ({ linkText, icon, isExternal, ...props }) => {
   return (
     <StyledLink icon={icon ? true : false} {...props}>
       {icon && <Icon icon={icon} />}
-      <span>{linkText}</span>
+      <span>{text}</span>
     </StyledLink>
   );
 };
 
 Link.propTypes = {
   href: PropTypes.string.isRequired,
-  linkText: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   icon: PropTypes.string,
   isExternal: PropTypes.bool,
 };
