@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { background, color, spacing } from '../../shared/style';
-import {Icon} from '../icon/Icon';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { background, color, spacing } from "../../shared/style";
+import Icon from "../icon/Icon";
 
 const StyledButton = styled.button`
   background-color: ${color.blue};
@@ -14,13 +15,13 @@ const StyledButton = styled.button`
   text-align: center;
   text-decoration: none;
   transition: all 150ms ease-out;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
   vertical-align: top;
   white-space: nowrap;
   user-select: none;
   opacity: 1;
-  margin: 0; 
-  
+  margin: 0;
+
   &:hover {
     background-color: ${color.lightBlue};
   }
@@ -34,8 +35,9 @@ const StyledButton = styled.button`
     cursor: not-allowed !important;
   }
 
-  ${props => 
-    props.isSecondary === true && `
+  ${(props) =>
+    props.isSecondary &&
+    `
       background-color: ${color.white};
       border: 2px solid ${color.primary};
       color: ${color.primary};
@@ -57,11 +59,11 @@ const StyledButton = styled.button`
         color: ${color.disabled};
         cursor: not-allowed !important;
       }
-    `
-  }
+    `}
 
-  ${props =>
-  props.icon === true &&`
+  ${(props) =>
+    !!props.icon &&
+    `
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,15 +71,22 @@ const StyledButton = styled.button`
     svg{
       margin-left: 1em;
     }
-  `
-  }
-`
+  `}
+`;
 
-export const Button = ({children, icon, ...props}) => {
+const Button = ({ text, icon, ...props }) => {
   return (
-    <StyledButton icon={icon ? true : false}{...props}>
-      {children}
-      {icon && <Icon icon={icon}/>}
+    <StyledButton icon={!!icon} {...props}>
+      {text}
+      {icon && <Icon icon={icon} />}
     </StyledButton>
-  ) 
-}
+  );
+};
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  isSecondary: PropTypes.bool,
+};
+
+export default Button;

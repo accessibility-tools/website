@@ -1,9 +1,9 @@
-import React from 'react';
-import { Footer } from './Footer';
+import React from "react";
+import Footer from "./Footer";
 
 export default {
-  title: 'Design System|Footer',
+  title: "Design System|Footer",
   component: Footer,
 };
 
-export const footer = () => <Footer/>;
+export const footer = () => <Footer />;

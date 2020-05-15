@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
-import { icons } from '../../shared/icons';
-import { Icon } from './Icon';
+import React from "react";
+import styled from "styled-components";
+import { icons } from "../../shared/icons";
+import Icon from "./Icon";
 
 const Meta = styled.div`
   color: #666;
@@ -31,7 +31,7 @@ const List = styled.ul`
 `;
 
 export default {
-  title: 'Design System|Icon',
+  title: "Design System|Icon",
   component: Icon,
 };
 
@@ -39,7 +39,7 @@ export const labels = () => (
   <>
     There are {Object.keys(icons).length} icons
     <List>
-      {Object.keys(icons).map(key => (
+      {Object.keys(icons).map((key) => (
         <Item key={key}>
           <Icon icon={key} aria-hidden />
           <Meta>{key}</Meta>
@@ -48,7 +48,6 @@ export const labels = () => (
     </List>
   </>
 );
-
 
 export const inline = () => (
   <>

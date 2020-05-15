@@ -1,9 +1,9 @@
-import React from 'react';
-import { Sponsor } from './Sponsor';
+import React from "react";
+import Sponsor from "./Sponsor";
 
 export default {
-  title: 'Design System|Sponsor',
+  title: "Design System|Sponsor",
   component: Sponsor,
 };
 
-export const futuriceSponsor = () => <Sponsor/>;
+export const futuriceSponsor = () => <Sponsor />;
