@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import { color } from "../../shared/style";
 import Icon from "../icon/Icon";
 
-const DetailsContainer = styled.details`
+export const DetailsContainer = styled.details`
+  width: 100%;
   &:active {
     background-color: ${color.purple};
   }
