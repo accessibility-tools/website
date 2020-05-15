@@ -20,11 +20,9 @@ const StyledButton = styled.button`
   white-space: nowrap;
   user-select: none;
   opacity: 1;
-  margin: 0;
 
   &:hover {
     background-color: ${color.lightBlue};
-    cursor: pointer;
   }
 
   &:active {
@@ -57,8 +55,8 @@ const StyledButton = styled.button`
       }
       &:disabled {
         background-color: ${color.white};
-        border: 2px solid transparent;
-        box-shadow: 0px 0px 0px 2px ${color.disabled};
+        border: 2px solid ${color.disabled};
+        border-radius: 2px;
         color: ${color.disabled};
         cursor: not-allowed !important;
       }
