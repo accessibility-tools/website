@@ -1,12 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import TextInput from "./TextInput";
 import { text, boolean, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
-
-const StoryWrapper = styled.div`
-  margin: 1rem;
-`;
+import StoryWrapper from "../story-wrapper/StoryWrapper";
 
 export default {
   title: "Design System|TextInput",

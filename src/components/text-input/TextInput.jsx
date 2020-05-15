@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { spacing, typography, color } from "../../shared/style";
+import { spacing, color } from "../../shared/style";
 import Icon from "../icon/Icon";
 
 const TextInputWrapper = styled.div`
@@ -41,12 +41,6 @@ const StyledInput = styled.input.attrs({ type: "text" })`
   }
 `;
 
-const StyledLabel = styled.label`
-  font-weight: ${typography.weight.regular};
-  letter-spacing: 0.07rem;
-  text-transform: uppercase;
-`;
-
 const StyledText = styled.span`
   color: ${(props) => (props.error ? color.error : color.mediumGrey)};
 `;
@@ -75,9 +69,9 @@ const TextInput = ({
   width,
 }) => (
   <TextInputWrapper>
-    <StyledLabel htmlFor={id} id={`${id}-label`}>
+    <label htmlFor={id} id={`${id}-label`}>
       {label}
-    </StyledLabel>
+    </label>
     <InputWrapper>
       <StyledInput
         id={id}
