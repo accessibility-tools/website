@@ -1,4 +1,5 @@
 import React from "react";
+import { boolean } from "@storybook/addon-knobs";
 import MenuItem from "./MenuItem";
 import StoryWrapper from "../story-wrapper/StoryWrapper";
 
@@ -9,7 +10,7 @@ export default {
 
 export const allMenuItems = () => (
   <StoryWrapper>
-    <MenuItem text="Menu Item" />
-    <MenuItem isSelected={true} text="Menu Item" />
+    <MenuItem text="Menu Item 1" />
+    <MenuItem isSelected={boolean("is selected", true)} text="Menu Item 2" />
   </StoryWrapper>
 );
