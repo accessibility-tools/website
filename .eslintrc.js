@@ -22,13 +22,19 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
   },
-  plugins: ["react", "jsx-a11y"],
+  plugins: ["react"],
   rules: {
-    indent: ["error", 2],
+    indent: ["error", 2, { ignoredNodes: ["ConditionalExpression"] }],
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        tabWidth: 2,
+        tabs: false,
+      },
+    ],
   },
   settings: {
     react: {
