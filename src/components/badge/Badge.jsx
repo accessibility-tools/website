@@ -28,18 +28,19 @@ const Badge = ({ level, issueCount, ...props }) => {
     moderate: <Icon color={color.darkPurple} icon="issue" />,
     minor: <Icon color={color.primary} icon="issue" />,
   };
+  console.log(props);
   return (
     <BadgeWrapper {...props}>
       {levelIcon[level]}
       {issueCount} {level}
-      {issueCount ? " issues" : ""}
+      {(issueCount || issueCount === 0) && " issues"}
     </BadgeWrapper>
   );
 };
 
 Badge.propTypes = {
-  level: PropTypes.string.isRequired,
-  issueCount: PropTypes.number.isRequired,
+  level: PropTypes.string,
+  issueCount: PropTypes.number,
 };
 
 export default Badge;
