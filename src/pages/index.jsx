@@ -1,7 +1,7 @@
 import React from "react";
 
-function HomePage() {
-  return <div>Welcome to Next.js!</div>;
-}
+const LandingPage = () => {
+  return <div>Landing page</div>;
+};
 
-export default HomePage;
+export default LandingPage;
