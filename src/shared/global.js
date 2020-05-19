@@ -115,7 +115,6 @@ export const bodyStyles = css`
 `;
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500;700&display=swap');
   body {
     ${bodyStyles}
     margin: 0;
