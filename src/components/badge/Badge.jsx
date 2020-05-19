@@ -28,7 +28,7 @@ const Badge = ({ level, issueCount, ...props }) => {
     moderate: <Icon color={color.darkPurple} icon="issue" />,
     minor: <Icon color={color.primary} icon="issue" />,
   };
-  console.log(props);
+
   return (
     <BadgeWrapper {...props}>
       {levelIcon[level]}
