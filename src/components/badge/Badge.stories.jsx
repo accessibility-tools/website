@@ -8,25 +8,24 @@ export default {
   component: Badge,
 };
 
-const issues = {
-  critical: 6,
-  serious: 10,
-  moderate: 3,
-  minor: 1,
+const LEVELS = {
+  CRITICAL: "critical",
+  SERIOUS: "serious",
+  MODERATE: "moderate",
+  MINOR: "minor",
 };
 
 const label = "level: ";
-const levels = ["critical", "serious", "moderate", "minor"];
 
 export const allBadges = () => {
   return (
     <StoryWrapper>
-      {Object.keys(issues).map((key) => {
+      {Object.values(LEVELS).map((value) => {
         return (
           <Badge
-            key={"level name: " + key}
-            level={select(label + key, levels, key)}
-            issueCount={number(key + " issues", issues[key], { min: 0 })}
+            key={"level name: " + value}
+            level={select(label + value, LEVELS, value)}
+            issueCount={number(value + " issues", 6, { min: 0 })}
           />
         );
       })}
