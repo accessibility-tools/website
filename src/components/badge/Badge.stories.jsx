@@ -1,4 +1,5 @@
 import React from "react";
+import { select, number } from "@storybook/addon-knobs";
 import Badge from "./Badge";
 import StoryWrapper from "../story-wrapper/StoryWrapper";
 
@@ -14,11 +15,20 @@ const LEVELS = {
   MINOR: "minor",
 };
 
-export const allBadges = () => (
-  <StoryWrapper>
-    <Badge level={LEVELS.CRITICAL} />
-    <Badge level={LEVELS.SERIOUS} />
-    <Badge level={LEVELS.MODERATE} />
-    <Badge level={LEVELS.MINOR} />
-  </StoryWrapper>
-);
+const label = "level: ";
+
+export const allBadges = () => {
+  return (
+    <StoryWrapper>
+      {Object.values(LEVELS).map((value) => {
+        return (
+          <Badge
+            key={"level name: " + value}
+            level={select(label + value, LEVELS, value)}
+            issueCount={number(value + " issues", 6, { min: 0 })}
+          />
+        );
+      })}
+    </StoryWrapper>
+  );
+};

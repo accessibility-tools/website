@@ -21,24 +21,26 @@ const BadgeWrapper = styled.div`
   }
 `;
 
-const Badge = ({ level, ...props }) => {
+const Badge = ({ level, issueCount, ...props }) => {
   const levelIcon = {
     critical: <Icon color={color.error} icon="circle" />,
     serious: <Icon color={color.error} icon="issue" />,
     moderate: <Icon color={color.darkPurple} icon="issue" />,
     minor: <Icon color={color.primary} icon="issue" />,
   };
+
   return (
     <BadgeWrapper {...props}>
       {levelIcon[level]}
-      {level}
-      {" issues"}
+      {issueCount} {level}
+      {(issueCount || issueCount === 0) && " issues"}
     </BadgeWrapper>
   );
 };
 
 Badge.propTypes = {
   level: PropTypes.string,
+  issueCount: PropTypes.number,
 };
 
 export default Badge;
