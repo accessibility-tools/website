@@ -22,7 +22,7 @@ export const criticalBadge = () => {
     <StoryWrapper>
       <Badge
         level={select(label, LEVELS, LEVELS.CRITICAL)}
-        issueCount={number("issue count", 6, { min: 0 })}
+        issueCount={number("issueCount", 6, { min: 0 })}
       />
       <Badge level={select(label, LEVELS, LEVELS.CRITICAL)} />
     </StoryWrapper>
@@ -34,7 +34,7 @@ export const seriousBadge = () => {
     <StoryWrapper>
       <Badge
         level={select(label, LEVELS, LEVELS.SERIOUS)}
-        issueCount={number("issue count", 10, { min: 0 })}
+        issueCount={number("issueCount", 10, { min: 0 })}
       />
       <Badge level={select(label, LEVELS, LEVELS.SERIOUS)} />
     </StoryWrapper>
@@ -46,7 +46,7 @@ export const moderateBadge = () => {
     <StoryWrapper>
       <Badge
         level={select(label, LEVELS, LEVELS.MODERATE)}
-        issueCount={number("issue count", 7, { min: 0 })}
+        issueCount={number("issueCount", 7, { min: 0 })}
       />
       <Badge level={select(label, LEVELS, LEVELS.MODERATE)} />
     </StoryWrapper>
@@ -58,7 +58,7 @@ export const minorBadge = () => {
     <StoryWrapper>
       <Badge
         level={select(label, LEVELS, LEVELS.MINOR)}
-        issueCount={number("issue count", 2, { min: 0 })}
+        issueCount={number("issueCount", 2, { min: 0 })}
       />
       <Badge level={select(label, LEVELS, LEVELS.MINOR)} />
     </StoryWrapper>
