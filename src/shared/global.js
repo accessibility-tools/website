@@ -54,7 +54,8 @@ export const bodyStyles = css`
   h5,
   p,
   button,
-  a {
+  a,
+  label {
     font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
     line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
   }
@@ -66,6 +67,7 @@ export const bodyStyles = css`
 
   button,
   a,
+  label,
   .subtitle {
     font-family: ${typography.type.primary};
     font-weight: ${typography.weight.medium};

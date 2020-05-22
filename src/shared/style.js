@@ -18,6 +18,8 @@ export const color = {
   darkBlue: "#00119E",
   purple: "#D4D7FF",
   darkPurple: "#6642D1",
+  lightPurple: "#E7E9FF",
+  extraLightPurple: "#F5F6FF",
 
   // state
   error: "#CC1818",

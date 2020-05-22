@@ -1,12 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { GlobalStyle } from "../shared/global";
+import Layout from "../components/layout-components/Layout";
 
 const App = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 };
