@@ -8,7 +8,7 @@ const Layout = styled.div`
   flex-wrap: wrap;
 
   & > * {
-    margin: 1rem;
+    margin: 1em;
   }
 `;
 

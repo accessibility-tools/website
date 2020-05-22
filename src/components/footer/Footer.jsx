@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
 `;
 const StyledLink = styled(Link)`
   display: inline-flex;
-  align-item: baseline;
+  align-items: center;
   & > :first-child {
     margin-right: 4px;
   }
