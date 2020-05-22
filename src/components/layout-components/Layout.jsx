@@ -4,11 +4,13 @@ import Nav from "../navigation/Nav";
 import Footer from "../footer/Footer";
 
 const Layout = ({ children }) => (
-  <body>
-    <Nav />
-    {children}
+  <div>
+    <header>
+      <Nav />
+    </header>
+    <main>{children}</main>
     <Footer />
-  </body>
+  </div>
 );
 
 Layout.propTypes = {
