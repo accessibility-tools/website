@@ -34,7 +34,7 @@ const ToolDetails = ({ title, tool }) => (
             and fix accessibility issues. In addition you get introduced to best
             practices and guidlines.
           </p>
-          <Stack space="small">
+          <Stack>
             <Button text="Check out the tool" />
             <Button text="Check out the tool" isSecondary icon="github" />
           </Stack>

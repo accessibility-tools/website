@@ -6,11 +6,10 @@ const spacing = {
   small: "1rem",
   medium: "2rem",
   large: "3.5rem",
-  extraLarge: "9rem",
 };
 
 const Stack = styled.div`
-  --stack-space: ${(props) => spacing[props.space]};
+  --stack-space: ${(props) => (props.space ? spacing[props.space] : "2rem")};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

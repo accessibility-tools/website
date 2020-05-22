@@ -22,17 +22,11 @@ const HeaderWrapper = styled(Center)`
 `;
 
 const Section = styled.section`
-  padding-left: 2rem;
-  padding-right: 2rem;
-  &:first-child {
-    padding-top: 10rem;
-  }
-  &:nth-child(2) {
-    padding: 10rem 2rem;
-  }
+  padding: 8rem 2rem;
 
   &:nth-child(even) {
     background-color: ${color.lightPurple};
+    padding: calc(10rem + 10%) 2rem;
     clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
   }
 `;
