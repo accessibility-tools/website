@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { typography, color, spacing } from "../../shared/style";
@@ -19,6 +19,11 @@ const PaginationWrapper = styled.div`
   }
 `;
 
+const keyCodes = {
+  arrowLeft: 37,
+  arrowRight: 39,
+};
+
 const Pagination = ({ pageNum, totalPages }) => {
   const [currentPage, setCurrentPage] = useState(pageNum);
   const onPrevPage = (currentPage) => {
@@ -27,6 +32,26 @@ const Pagination = ({ pageNum, totalPages }) => {
   const onNextPage = (currentPage) => {
     setCurrentPage(currentPage + 1);
   };
+
+  useEffect(() => {
+    const onKeyPress = (e) => {
+      if (e.keyCode === keyCodes.arrowLeft && currentPage !== 1) {
+        setCurrentPage(currentPage - 1);
+      } else if (
+        e.keyCode === keyCodes.arrowRight &&
+        currentPage !== totalPages
+      ) {
+        setCurrentPage(currentPage + 1);
+      } else {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyPress);
+    return () => {
+      document.removeEventListener("keydown", onKeyPress);
+    };
+  });
 
   return (
     <PaginationWrapper>
