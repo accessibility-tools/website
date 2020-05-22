@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { spacing } from "../../shared/style";
 import Icon from "../icon/Icon";
-import Link from "../links/Links";
+import Link from "../links/Link";
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -23,12 +23,14 @@ const StyledLink = styled(Link)`
 const Footer = () => {
   return (
     <StyledFooter>
-      <StyledLink isSecondary={true}>
+      <StyledLink isSecondary={true} href="/">
         <Icon className="icon" icon="creativeCommon1" />
         <Icon className="icon" icon="creativeCommon2" />
         Licence name
       </StyledLink>
-      <Link isSecondary={true}>imprint</Link>
+      <Link isSecondary={true} href="/">
+        imprint
+      </Link>
     </StyledFooter>
   );
 };
