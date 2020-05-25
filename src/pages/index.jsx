@@ -31,7 +31,7 @@ const Section = styled.section`
   }
 `;
 
-const Tools = styled(Center)`
+const ToolsIntro = styled(Center)`
   max-width: 20rem;
 `;
 
@@ -64,7 +64,7 @@ const LandingPage = () => {
         </Section>
         <Section>
           <Stack space="large">
-            <Tools>
+            <ToolsIntro>
               <h2>The tools</h2>
               <p>
                 Everybody should be able to use digital products regardless of
@@ -72,7 +72,7 @@ const LandingPage = () => {
                 prodcuts with accessibility in mind.
               </p>
               <Button text="Learn more" isSecondary />
-            </Tools>
+            </ToolsIntro>
             <ToolDetails title="Accessibility Web Checker" tool="webChecker" />
           </Stack>
         </Section>
