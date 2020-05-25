@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { typography, color, spacing } from "../../shared/style";
@@ -19,39 +19,14 @@ const PaginationWrapper = styled.nav`
   }
 `;
 
-const keyCodes = {
-  arrowLeft: 37,
-  arrowRight: 39,
-};
-
 const Pagination = ({ pageNum, totalPages }) => {
   const [currentPage, setCurrentPage] = useState(pageNum);
-  const onPrevPage = (currentPage) => {
+  const onPrevPage = () => {
     setCurrentPage(currentPage - 1);
   };
-  const onNextPage = (currentPage) => {
+  const onNextPage = () => {
     setCurrentPage(currentPage + 1);
   };
-
-  useEffect(() => {
-    const onKeyPress = (e) => {
-      if (e.keyCode === keyCodes.arrowLeft && currentPage !== 1) {
-        setCurrentPage(currentPage - 1);
-      } else if (
-        e.keyCode === keyCodes.arrowRight &&
-        currentPage !== totalPages
-      ) {
-        setCurrentPage(currentPage + 1);
-      } else {
-        e.preventDefault();
-      }
-    };
-
-    document.addEventListener("keydown", onKeyPress);
-    return () => {
-      document.removeEventListener("keydown", onKeyPress);
-    };
-  });
 
   return (
     <PaginationWrapper>
@@ -59,7 +34,7 @@ const Pagination = ({ pageNum, totalPages }) => {
         type="submit"
         aria-label="previous page"
         disabled={currentPage === 1}
-        onClick={() => onPrevPage(currentPage)}
+        onClick={onPrevPage}
       >
         <Icon aria-hidden="true" icon="sArrow" arrowDirection="left" />
       </button>
@@ -68,7 +43,7 @@ const Pagination = ({ pageNum, totalPages }) => {
         type="submit"
         aria-label="next page"
         disabled={currentPage === totalPages}
-        onClick={() => onNextPage(currentPage)}
+        onClick={onNextPage}
       >
         <Icon aria-hidden="true" icon="sArrow" arrowDirection="right" />
       </button>
