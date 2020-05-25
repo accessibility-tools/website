@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Pagination from "./Pagination";
 import StoryWrapper from "../story-wrapper/StoryWrapper";
 
@@ -9,20 +9,62 @@ export default {
 
 const totalPages = 10;
 
-export const firstPage = () => (
-  <StoryWrapper>
-    <Pagination pageNum={1} totalPages={totalPages} />
-  </StoryWrapper>
-);
+export const firstPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const onPrevPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+  const onNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+  return (
+    <StoryWrapper>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPrevPage={onPrevPage}
+        onNextPage={onNextPage}
+      />
+    </StoryWrapper>
+  );
+};
 
-export const lastPage = () => (
-  <StoryWrapper>
-    <Pagination pageNum={totalPages} totalPages={totalPages} />
-  </StoryWrapper>
-);
+export const lastPage = () => {
+  const [currentPage, setCurrentPage] = useState(totalPages);
+  const onPrevPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+  const onNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+  return (
+    <StoryWrapper>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPrevPage={onPrevPage}
+        onNextPage={onNextPage}
+      />
+    </StoryWrapper>
+  );
+};
 
-export const otherPages = () => (
-  <StoryWrapper>
-    <Pagination pageNum={5} totalPages={totalPages} />
-  </StoryWrapper>
-);
+export const otherPages = () => {
+  const [currentPage, setCurrentPage] = useState(5);
+  const onPrevPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+  const onNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+  return (
+    <StoryWrapper>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPrevPage={onPrevPage}
+        onNextPage={onNextPage}
+      />
+    </StoryWrapper>
+  );
+};

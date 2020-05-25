@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { typography, color, spacing } from "../../shared/style";
@@ -19,41 +19,33 @@ const PaginationWrapper = styled.nav`
   }
 `;
 
-const Pagination = ({ pageNum, totalPages }) => {
-  const [currentPage, setCurrentPage] = useState(pageNum);
-  const onPrevPage = () => {
-    setCurrentPage(currentPage - 1);
-  };
-  const onNextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
-
-  return (
-    <PaginationWrapper>
-      <button
-        type="submit"
-        aria-label="previous page"
-        disabled={currentPage === 1}
-        onClick={onPrevPage}
-      >
-        <Icon aria-hidden="true" icon="sArrow" arrowDirection="left" />
-      </button>
-      PAGE {currentPage} OF {totalPages}
-      <button
-        type="submit"
-        aria-label="next page"
-        disabled={currentPage === totalPages}
-        onClick={onNextPage}
-      >
-        <Icon aria-hidden="true" icon="sArrow" arrowDirection="right" />
-      </button>
-    </PaginationWrapper>
-  );
-};
+const Pagination = ({ currentPage, totalPages, onPrevPage, onNextPage }) => (
+  <PaginationWrapper>
+    <button
+      type="submit"
+      aria-label="previous page"
+      disabled={currentPage === 1}
+      onClick={onPrevPage}
+    >
+      <Icon aria-hidden="true" icon="sArrow" arrowDirection="left" />
+    </button>
+    PAGE {currentPage} OF {totalPages}
+    <button
+      type="submit"
+      aria-label="next page"
+      disabled={currentPage === totalPages}
+      onClick={onNextPage}
+    >
+      <Icon aria-hidden="true" icon="sArrow" arrowDirection="right" />
+    </button>
+  </PaginationWrapper>
+);
 
 Pagination.propTypes = {
-  pageNum: PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
+  onPrevPage: PropTypes.func.isRequired,
+  onNextPage: PropTypes.func.isRequired,
 };
 
 export default Pagination;
