@@ -117,6 +117,10 @@ export const bodyStyles = css`
 `;
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     ${bodyStyles}
     margin: 0;
