@@ -6,7 +6,7 @@ import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Center from "../layout-components/Center";
 
-// TODO: This is just an initial implementation, and needs maybe some rethinking when we actually have every detail forevery tool that uses this component
+// TODO: This is just an initial implementation, and needs maybe some rethinking when we actually have every detail for every tool that uses this component
 const toolImages = {
   webChecker: "/illustrations/start.svg",
   ciTool: "/illustrations/start.svg",
@@ -32,7 +32,7 @@ const ToolDetails = ({ title, tool }) => (
           <p>
             With our tool for web you can run a check for any website to detect
             and fix accessibility issues. In addition you get introduced to best
-            practices and guidlines.
+            practices and guidelines.
           </p>
           <Stack>
             <Button text="Check out the tool" />
