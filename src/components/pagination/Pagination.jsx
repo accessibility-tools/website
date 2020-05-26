@@ -14,44 +14,35 @@ const PaginationWrapper = styled.nav`
   }
 `;
 
-const Pagination = ({
-  href,
-  currentPage,
-  totalPages,
-  onPrevPage,
-  onNextPage,
-}) => (
+const Pagination = ({ prevHref, nextHref, currentPage, totalPages }) => (
   <PaginationWrapper>
-    <a href={href} aria-label="previous page">
+    <a href={prevHref} aria-label="previous page">
       <Icon
         aria-hidden="true"
         icon="sArrow"
         arrowDirection="left"
         disabled={currentPage === 1}
-        onClick={onPrevPage}
       />
     </a>
     <span className="subtitle">
       PAGE {currentPage} OF {totalPages}
     </span>
-    <a href={href} aria-label="next page">
+    <a href={nextHref} aria-label="next page">
       <Icon
         aria-hidden="true"
         icon="sArrow"
         arrowDirection="right"
         disabled={currentPage === totalPages}
-        onClick={onNextPage}
       />
     </a>
   </PaginationWrapper>
 );
 
 Pagination.propTypes = {
-  href: PropTypes.string.isRequired,
+  prevHref: PropTypes.string.isRequired,
+  nextHref: PropTypes.string.isRequired,
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
-  onPrevPage: PropTypes.func.isRequired,
-  onNextPage: PropTypes.func.isRequired,
 };
 
 export default Pagination;
