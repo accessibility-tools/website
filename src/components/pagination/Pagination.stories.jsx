@@ -20,6 +20,7 @@ export const firstPage = () => {
   return (
     <StoryWrapper>
       <Pagination
+        href="#"
         currentPage={currentPage}
         totalPages={totalPages}
         onPrevPage={onPrevPage}
@@ -40,6 +41,7 @@ export const lastPage = () => {
   return (
     <StoryWrapper>
       <Pagination
+        href="#"
         currentPage={currentPage}
         totalPages={totalPages}
         onPrevPage={onPrevPage}
@@ -60,6 +62,7 @@ export const otherPages = () => {
   return (
     <StoryWrapper>
       <Pagination
+        href="#"
         currentPage={currentPage}
         totalPages={totalPages}
         onPrevPage={onPrevPage}

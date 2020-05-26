@@ -1,47 +1,53 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { typography, color, spacing } from "../../shared/style";
+import { color } from "../../shared/style";
 import Icon from "../icon/Icon";
 
 const PaginationWrapper = styled.nav`
-  align-items: center;
-  border: 1px solid ${color.primary};
-  border-radius: ${spacing.borderRadius.medium}px;
   display: flex;
-  font-weight: ${typography.weight.bold};
-  justify-content: center;
-  letter-spacing: 0.07rem;
-  vertical-align: top;
+  align-items: center;
+  box-shadow: 0.1em 0.1em 0.2em ${color.disabled};
 
-  svg {
-    margin: ${spacing.padding.small}px;
+  span {
+    padding: 0 1.5em;
   }
 `;
 
-const Pagination = ({ currentPage, totalPages, onPrevPage, onNextPage }) => (
+const Pagination = ({
+  href,
+  currentPage,
+  totalPages,
+  onPrevPage,
+  onNextPage,
+}) => (
   <PaginationWrapper>
-    <button
-      type="submit"
-      aria-label="previous page"
-      disabled={currentPage === 1}
-      onClick={onPrevPage}
-    >
-      <Icon aria-hidden="true" icon="sArrow" arrowDirection="left" />
-    </button>
-    PAGE {currentPage} OF {totalPages}
-    <button
-      type="submit"
-      aria-label="next page"
-      disabled={currentPage === totalPages}
-      onClick={onNextPage}
-    >
-      <Icon aria-hidden="true" icon="sArrow" arrowDirection="right" />
-    </button>
+    <a href={href} aria-label="previous page">
+      <Icon
+        aria-hidden="true"
+        icon="sArrow"
+        arrowDirection="left"
+        disabled={currentPage === 1}
+        onClick={onPrevPage}
+      />
+    </a>
+    <span className="subtitle">
+      PAGE {currentPage} OF {totalPages}
+    </span>
+    <a href={href} aria-label="next page">
+      <Icon
+        aria-hidden="true"
+        icon="sArrow"
+        arrowDirection="right"
+        disabled={currentPage === totalPages}
+        onClick={onNextPage}
+      />
+    </a>
   </PaginationWrapper>
 );
 
 Pagination.propTypes = {
+  href: PropTypes.string.isRequired,
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
   onPrevPage: PropTypes.func.isRequired,

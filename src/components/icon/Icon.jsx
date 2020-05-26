@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { icons } from "../../shared/icons";
+import { color } from "../../shared/style";
 
 const Svg = styled.svg`
   display: ${(props) => (props.block ? "block" : "inline-block")};
@@ -12,10 +13,12 @@ const Svg = styled.svg`
 
   transform: ${(props) =>
     props.arrowDirection === "left" ? "rotate(90deg)" : "rotate(-90deg)"};
+  pointer-events: ${(props) => props.disabled && "none"};
 `;
 
 const Path = styled.path`
   fill: ${(props) => props.color || "currentColor"};
+  fill: ${(props) => props.disabled && color.disabled};
 `;
 
 /**
@@ -25,16 +28,17 @@ const Path = styled.path`
  * - *decorative only*: for example, it illustrates a label next to it. We must ensure that it is ignored by screen readers, by setting `aria-hidden` attribute (ex: `<Icon icon="check" aria-hidden />`)
  * - *non-decorative*: it means that it delivers information. For example, an icon as only child in a button. The meaning can be obvious visually, but it must have a proper text alternative via `aria-label` for screen readers. (ex: `<Icon icon="print" aria-label="Print this document" />`)
  */
-const Icon = ({ icon, block, arrowDirection, ...otherProps }) => {
+const Icon = ({ icon, block, arrowDirection, disabled, ...otherProps }) => {
   return (
     <Svg
       viewBox="0 0 16 16"
       className="icon"
       block={block}
       arrowDirection={arrowDirection}
+      disabled={disabled}
       {...otherProps}
     >
-      <Path d={icons[icon]} />
+      <Path d={icons[icon]} disabled={disabled} />
     </Svg>
   );
 };
@@ -43,6 +47,7 @@ Icon.propTypes = {
   icon: PropTypes.string.isRequired,
   block: PropTypes.bool,
   arrowDirection: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 Icon.defaultProps = {
