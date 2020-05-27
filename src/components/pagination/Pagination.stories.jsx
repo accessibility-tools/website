@@ -9,34 +9,23 @@ export default {
 
 const totalPages = 10;
 
-export const firstPage = () => (
+export const paginationActive = () => (
   <StoryWrapper>
     <Pagination
       prevHref="#"
       nextHref="#"
-      currentPage={1}
+      currentPage={2}
       totalPages={totalPages}
     />
   </StoryWrapper>
 );
 
-export const lastPage = () => (
+export const paginationDisabled = () => (
   <StoryWrapper>
     <Pagination
       prevHref="#"
       nextHref="#"
       currentPage={totalPages}
-      totalPages={totalPages}
-    />
-  </StoryWrapper>
-);
-
-export const otherPages = () => (
-  <StoryWrapper>
-    <Pagination
-      prevHref="#"
-      nextHref="#"
-      currentPage={5}
       totalPages={totalPages}
     />
   </StoryWrapper>

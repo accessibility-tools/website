@@ -2,39 +2,47 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { color } from "../../shared/style";
-import Icon from "../icon/Icon";
+import PageArrow from "../icon/PageArrow";
 
 const PaginationWrapper = styled.nav`
   display: flex;
   align-items: center;
-  box-shadow: 0.1em 0.1em 0.2em ${color.disabled};
 
   span {
     padding: 0 1.5em;
   }
 `;
 
+const PageLink = styled.a`
+  ${({ "aria-disabled": ariaDisabled }) =>
+    ariaDisabled &&
+    `
+  pointer-events: none;
+  & > * {
+    fill: ${color.disabled};
+  }
+  `}
+`;
+
 const Pagination = ({ prevHref, nextHref, currentPage, totalPages }) => (
   <PaginationWrapper>
-    <a href={prevHref} aria-label="previous page">
-      <Icon
-        aria-hidden="true"
-        icon="sArrow"
-        arrowDirection="left"
-        disabled={currentPage === 1}
-      />
-    </a>
+    <PageLink
+      aria-label="previous page"
+      aria-disabled={currentPage === 1}
+      href={prevHref}
+    >
+      <PageArrow aria-hidden="true" icon="bArrow" direction="left" />
+    </PageLink>
     <span className="subtitle">
       PAGE {currentPage} OF {totalPages}
     </span>
-    <a href={nextHref} aria-label="next page">
-      <Icon
-        aria-hidden="true"
-        icon="sArrow"
-        arrowDirection="right"
-        disabled={currentPage === totalPages}
-      />
-    </a>
+    <PageLink
+      aria-label="next page"
+      aria-disabled={currentPage === totalPages}
+      href={nextHref}
+    >
+      <PageArrow aria-hidden="true" icon="bArrow" direction="right" />
+    </PageLink>
   </PaginationWrapper>
 );
 
