@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { color } from "../../shared/style";
-import PageArrow from "../icon/PageArrow";
+import ArrowIcon from "../icon/ArrowIcon";
 
 const PaginationWrapper = styled.nav`
   display: flex;
@@ -31,7 +31,7 @@ const Pagination = ({ prevHref, nextHref, currentPage, totalPages }) => (
       aria-disabled={currentPage === 1}
       href={prevHref}
     >
-      <PageArrow aria-hidden="true" icon="bArrow" direction="left" />
+      <ArrowIcon aria-hidden="true" icon="bArrow" direction="left" />
     </PageLink>
     <span className="subtitle">
       PAGE {currentPage} OF {totalPages}
@@ -41,7 +41,7 @@ const Pagination = ({ prevHref, nextHref, currentPage, totalPages }) => (
       aria-disabled={currentPage === totalPages}
       href={nextHref}
     >
-      <PageArrow aria-hidden="true" icon="bArrow" direction="right" />
+      <ArrowIcon aria-hidden="true" icon="bArrow" direction="right" />
     </PageLink>
   </PaginationWrapper>
 );
