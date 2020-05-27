@@ -29,10 +29,12 @@ export const bodyStyles = css`
     font-weight: ${typography.weight.bold};
     margin: 0;
     padding: 0;
+    max-width: 40ch;
   }
   h1,
   h2 {
     font-family: ${typography.type.secondary};
+    max-width: 40ch;
   }
 
   h1 {

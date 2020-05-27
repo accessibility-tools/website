@@ -3,8 +3,8 @@
 import styled from "styled-components";
 
 const Switcher = styled.div`
-  --threshold: ${(props) => (props.treshold ? props.treshold : "55rem")};
-  --switcher-space: ${(props) => (props.space ? props.space : "2rem")};
+  --threshold: ${props => (props.treshold ? props.treshold : "25rem")};
+  --switcher-space: ${props => (props.space ? props.space : "2rem")};
 
   & > * {
     display: flex;
