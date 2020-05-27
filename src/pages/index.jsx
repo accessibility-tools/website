@@ -108,19 +108,25 @@ const LandingPage = () => {
           <Center>
             <Stack space="medium">
               <h2>Accessibility tools coming soon</h2>
-              <Switcher treshold="50rem" space="9rem">
+              <Switcher treshold="40rem" space="3.5rem">
                 <div>
                   <Stack space="small">
-                    <img src="/illustrations/product-ci.svg" alt="" />
-                    <h3>Command line tool</h3>
+                    <Center>
+                      <img src="/illustrations/product-ci.svg" alt="" />
+                      <h3>Command line tool</h3>
+                    </Center>
                   </Stack>
                   <Stack space="small">
-                    <img src="/illustrations/product-ios.svg" alt="" />
-                    <h3>iOS Checker</h3>
+                    <Center>
+                      <img src="/illustrations/product-ios.svg" alt="" />
+                      <h3>iOS Checker</h3>
+                    </Center>
                   </Stack>
                   <Stack space="small">
-                    <img src="/illustrations/product-android.svg" alt="" />
-                    <h3>Android Checker</h3>
+                    <Center>
+                      <img src="/illustrations/product-android.svg" alt="" />
+                      <h3>Android Checker</h3>
+                    </Center>
                   </Stack>
                 </div>
               </Switcher>
@@ -134,27 +140,31 @@ const LandingPage = () => {
           <Center>
             <Stack>
               <h2>How can the tools help you?</h2>
-              <Switcher treshold="30rem" space="3.5rem">
+              <Switcher treshold="35rem" space="3.5rem">
                 <div>
                   <Stack>
                     <img src="/illustrations/persona-a.svg" alt="" />
-                    <h3>As a developer</h3>
-                    <p>
-                      Detect accessibility issue like the non-use of labels in
-                      form elements, missing descriptive alternative text for
-                      images, links and other non-text content – and learn how
-                      to solve them.
-                    </p>
+                    <Center>
+                      <h3>As a developer</h3>
+                      <p>
+                        Detect accessibility issue like the non-use of labels in
+                        form elements, missing descriptive alternative text for
+                        images, links and other non-text content – and learn how
+                        to solve them.
+                      </p>
+                    </Center>
                   </Stack>
                   <Stack>
                     <img src="/illustrations/persona-b.svg" alt="" />
-                    <h3>As a designer</h3>
-                    <p>
-                      Make sure everybody can use your interface and get pointed
-                      to issues like insufficient font sizing, lack of color
-                      contrast and more and learn how to easily fix the
-                      problems.
-                    </p>
+                    <Center>
+                      <h3>As a designer</h3>
+                      <p>
+                        Make sure everybody can use your interface and get
+                        pointed to issues like insufficient font sizing, lack of
+                        color contrast and more and learn how to easily fix the
+                        problems.
+                      </p>
+                    </Center>
                   </Stack>
                 </div>
               </Switcher>
@@ -171,14 +181,9 @@ const LandingPage = () => {
                   and how to get started?
                 </p>
               </Center>
-              <Switcher treshold="30rem" space="5rem">
+              <Switcher treshold="35rem" space="5rem">
                 <div>
-                  <Img
-                    src="/illustrations/learn-more.svg"
-                    alt=""
-                    width="40vw"
-                    maxWidth="20rem"
-                  />
+                  <Img src="/illustrations/learn-more.svg" alt="" />
                   <FAQ />
                 </div>
               </Switcher>
