@@ -115,7 +115,37 @@ const LandingPage = () => {
             </Stack>
           </Center>
         </Section>
-        <Section></Section>
+        <Section>
+          <Center>
+            <Stack>
+              <h2>How can the tools help you?</h2>
+              <Switcher treshold="30rem" space="3.5rem">
+                <div>
+                  <Stack>
+                    <img src="/illustrations/persona-a.svg" alt="" />
+                    <h3>As a developer</h3>
+                    <p>
+                      Detect accessibility issue like the non-use of labels in
+                      form elements, missing descriptive alternative text for
+                      images, links and other non-text content – and learn how
+                      to solve them.
+                    </p>
+                  </Stack>
+                  <Stack>
+                    <img src="/illustrations/persona-b.svg" alt="" />
+                    <h3>As a designer</h3>
+                    <p>
+                      Make sure everybody can use your interface and get pointed
+                      to issues like insufficient font sizing, lack of color
+                      contrast and more and learn how to easily fix the
+                      problems.
+                    </p>
+                  </Stack>
+                </div>
+              </Switcher>
+            </Stack>
+          </Center>
+        </Section>
       </Index>
     </>
   );
