@@ -14,14 +14,13 @@ const PaginationWrapper = styled.nav`
 `;
 
 const PageLink = styled.a`
-  ${({ "aria-disabled": ariaDisabled }) =>
-    ariaDisabled &&
-    `
-  pointer-events: none;
-  & > * {
+  &[aria-disabled="true"] {
+    pointer-events: none;
+  }
+
+  &[aria-disabled="true"] > * {
     fill: ${color.disabled};
   }
-  `}
 `;
 
 const Pagination = ({ prevHref, nextHref, currentPage, totalPages }) => (
