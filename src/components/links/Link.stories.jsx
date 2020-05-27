@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "./Links";
+import Link from "./Link";
 import StoryWrapper from "../story-wrapper/StoryWrapper";
 
 export default {
