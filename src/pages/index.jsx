@@ -46,19 +46,21 @@ const Section = styled.section`
   }
 
   & > * {
-    max-width: 60rem;
+    max-width: 100rem;
   }
 `;
 
-const ToolsIntro = styled(Center)`
-  max-width: 20rem;
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
-const Img = styled.img`
-  max-width: ${props => (props.maxWidth ? props.maxWidth : "40rem")};
-  width: ${props => (props.width ? props.width : "50vw")};
+const LandingImg = styled.img`
+  width: 80%;
   height: 100%;
   z-index: 100;
+  position: relative;
+  top: calc(11rem + (15 - 11) * ((100vw - 300px) / (1600 - 300)));
 `;
 
 const LandingPage = () => {
@@ -68,7 +70,7 @@ const LandingPage = () => {
       <Index space="extraLarge">
         <Section>
           <Center>
-            <Switcher>
+            <Switcher treshold="35rem" space="1rem">
               <div>
                 <HeaderWrapper>
                   <h1>Accessibility checking tools</h1>
@@ -77,7 +79,7 @@ const LandingPage = () => {
                   </h2>
                 </HeaderWrapper>
                 <Center>
-                  <Img src="/illustrations/start.svg" alt="" />
+                  <LandingImg src="/illustrations/start.svg" alt="" />
                 </Center>
               </div>
             </Switcher>
@@ -86,7 +88,7 @@ const LandingPage = () => {
         <Section>
           <Center>
             <Stack space="large">
-              <ToolsIntro>
+              <Center>
                 <h2>The tools</h2>
                 <p>
                   Everybody should be able to use digital products regardless of
@@ -94,7 +96,7 @@ const LandingPage = () => {
                   prodcuts with accessibility in mind.
                 </p>
                 <a href="#learnMore">Learn more</a>
-              </ToolsIntro>
+              </Center>
               <ToolDetails
                 title="Accessibility Web Checker"
                 tool="webChecker"
