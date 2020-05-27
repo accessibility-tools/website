@@ -7,6 +7,7 @@ import Switcher from "../components/layout-components/Switcher";
 import Stack from "../components/layout-components/Stack";
 import Center from "../components/layout-components/Center";
 import SEO from "../components/SEO/SEO";
+import FAQ from "../components/LearnMoreQuestions/LearnMoreQuestions";
 
 const Index = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -53,9 +54,9 @@ const ToolsIntro = styled(Center)`
 `;
 
 const Img = styled.img`
-  width: 50vw;
-  max-width: 40rem;
-
+  max-width: ${props => (props.maxWidth ? props.maxWidth : "40rem")};
+  width: ${props => (props.width ? props.width : "50vw")};
+  height: 100%;
   z-index: 100;
 `;
 
@@ -152,6 +153,30 @@ const LandingPage = () => {
                       problems.
                     </p>
                   </Stack>
+                </div>
+              </Switcher>
+            </Stack>
+          </Center>
+        </Section>
+        <Section id="learnMore">
+          <Center>
+            <Stack>
+              <Center>
+                <h2>Learn more</h2>
+                <p>
+                  Why should designers and developers care about accessibility
+                  and how to get started?
+                </p>
+              </Center>
+              <Switcher treshold="30rem" space="5rem">
+                <div>
+                  <Img
+                    src="/illustrations/learn-more.svg"
+                    alt=""
+                    width="40vw"
+                    maxWidth="20rem"
+                  />
+                  <FAQ />
                 </div>
               </Switcher>
             </Stack>

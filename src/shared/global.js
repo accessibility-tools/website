@@ -55,9 +55,11 @@ export const bodyStyles = css`
   p,
   button,
   a,
-  label {
+  label,
+  summary {
     font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
     line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
+    max-width: 40ch;
   }
 
   .subtitle {
@@ -113,6 +115,10 @@ export const bodyStyles = css`
     height: 1em;
     max-width: 100%;
     max-height: 100%;
+  }
+
+  summary {
+    font-weight: ${typography.weight.bold};
   }
 `;
 
