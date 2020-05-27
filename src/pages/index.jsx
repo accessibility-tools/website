@@ -42,6 +42,10 @@ const Section = styled.section`
     clip-path: polygon(0% 4rem, 100% 0%, 100% 100%, 0% 100%);
     -webkit-clip-path: polygon(0% 4rem, 100% 0%, 100% 100%, 0% 100%);
   }
+
+  & > * {
+    max-width: 60rem;
+  }
 `;
 
 const ToolsIntro = styled(Center)`
@@ -61,33 +65,40 @@ const LandingPage = () => {
       <SEO siteTitle="Accessibility checking tools" />
       <Index space="extraLarge">
         <Section>
-          <Switcher>
-            <div>
-              <HeaderWrapper>
-                <h1>Accessibility checking tools</h1>
-                <h2 className="subtitle">
-                  Helping designers and developers build accessible products
-                </h2>
-              </HeaderWrapper>
-              <Center>
-                <Img src="/illustrations/start.svg" alt="" />
-              </Center>
-            </div>
-          </Switcher>
+          <Center>
+            <Switcher>
+              <div>
+                <HeaderWrapper>
+                  <h1>Accessibility checking tools</h1>
+                  <h2 className="subtitle">
+                    Helping designers and developers build accessible products
+                  </h2>
+                </HeaderWrapper>
+                <Center>
+                  <Img src="/illustrations/start.svg" alt="" />
+                </Center>
+              </div>
+            </Switcher>
+          </Center>
         </Section>
         <Section>
-          <Stack space="large">
-            <ToolsIntro>
-              <h2>The tools</h2>
-              <p>
-                Everybody should be able to use digital products regardless of
-                ability, context, or situation. Our tools can help you create
-                prodcuts with accessibility in mind.
-              </p>
-              <Button text="Learn more" isSecondary />
-            </ToolsIntro>
-            <ToolDetails title="Accessibility Web Checker" tool="webChecker" />
-          </Stack>
+          <Center>
+            <Stack space="large">
+              <ToolsIntro>
+                <h2>The tools</h2>
+                <p>
+                  Everybody should be able to use digital products regardless of
+                  ability, context, or situation. Our tools can help you create
+                  prodcuts with accessibility in mind.
+                </p>
+                <a href="#learnMore">Learn more</a>
+              </ToolsIntro>
+              <ToolDetails
+                title="Accessibility Web Checker"
+                tool="webChecker"
+              />
+            </Stack>
+          </Center>
         </Section>
         <Section>
           <Center>
