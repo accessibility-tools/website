@@ -26,8 +26,21 @@ const Section = styled.section`
 
   &:nth-child(even) {
     background-color: ${color.lightPurple};
-    padding: calc(10rem + 10%) 2rem;
-    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    padding: 10rem 2rem;
+    clip-path: polygon(0% 4rem, 100% 0%, 100% calc(100% - 4rem), 0% 100%);
+    -webkit-clip-path: polygon(
+      0% 4rem,
+      100% 0%,
+      100% calc(100% - 4rem),
+      0% 100%
+    );
+  }
+
+  &:nth-child(even):last-child {
+    background-color: ${color.lightPurple};
+    padding: 10rem 2rem;
+    clip-path: polygon(0% 4rem, 100% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 4rem, 100% 0%, 100% 100%, 0% 100%);
   }
 `;
 
