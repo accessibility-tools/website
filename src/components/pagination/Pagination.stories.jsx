@@ -11,22 +11,12 @@ const totalPages = 10;
 
 export const paginationActive = () => (
   <StoryWrapper>
-    <Pagination
-      prevHref="#"
-      nextHref="#"
-      currentPage={2}
-      totalPages={totalPages}
-    />
+    <Pagination currentPage={2} totalPages={totalPages} />
   </StoryWrapper>
 );
 
 export const paginationDisabled = () => (
   <StoryWrapper>
-    <Pagination
-      prevHref="#"
-      nextHref="#"
-      currentPage={totalPages}
-      totalPages={totalPages}
-    />
+    <Pagination currentPage={totalPages} totalPages={totalPages} />
   </StoryWrapper>
 );

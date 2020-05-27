@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import LinkTo from "@storybook/addon-links/react";
 import { color } from "../../shared/style";
 import ArrowIcon from "../icon/ArrowIcon";
 
@@ -13,7 +14,7 @@ const PaginationWrapper = styled.nav`
   }
 `;
 
-const PageLink = styled.a`
+const PageLink = styled(LinkTo)`
   &[aria-disabled="true"] {
     pointer-events: none;
   }
@@ -23,12 +24,14 @@ const PageLink = styled.a`
   }
 `;
 
-const Pagination = ({ prevHref, nextHref, currentPage, totalPages }) => (
+const Pagination = ({ currentPage, totalPages }) => (
   <PaginationWrapper>
     <PageLink
       aria-label="previous page"
       aria-disabled={currentPage === 1}
-      href={prevHref}
+      kind="Design System|Badge"
+      story="critical badge"
+      title="link to badges"
     >
       <ArrowIcon aria-hidden="true" icon="bArrow" direction="left" />
     </PageLink>
@@ -38,7 +41,9 @@ const Pagination = ({ prevHref, nextHref, currentPage, totalPages }) => (
     <PageLink
       aria-label="next page"
       aria-disabled={currentPage === totalPages}
-      href={nextHref}
+      kind="Design System|Pagination"
+      story="pagination disabled"
+      title="link to pagination"
     >
       <ArrowIcon aria-hidden="true" icon="bArrow" direction="right" />
     </PageLink>
@@ -46,8 +51,6 @@ const Pagination = ({ prevHref, nextHref, currentPage, totalPages }) => (
 );
 
 Pagination.propTypes = {
-  prevHref: PropTypes.string.isRequired,
-  nextHref: PropTypes.string.isRequired,
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
 };
