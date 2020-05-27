@@ -8,6 +8,7 @@ import Stack from "../components/layout-components/Stack";
 import Center from "../components/layout-components/Center";
 import SEO from "../components/SEO/SEO";
 import FAQ from "../components/LearnMoreQuestions/LearnMoreQuestions";
+import Link from "../components/links/Link";
 
 const Index = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -179,6 +180,23 @@ const LandingPage = () => {
                   <FAQ />
                 </div>
               </Switcher>
+            </Stack>
+          </Center>
+        </Section>
+        <Section>
+          <Center>
+            <Stack>
+              <h2>About & Contact</h2>
+              <p>
+                We are a group of developers and designers, who are passionate
+                about accessibility. If you want to be part of this open source
+                project, have questions or feedback feel free to reach out.
+              </p>
+              <Center>
+                <Link href="mailto:accessibility@futurice.com" icon="mailto">
+                  accessibility@futurice.com
+                </Link>
+              </Center>
             </Stack>
           </Center>
         </Section>
