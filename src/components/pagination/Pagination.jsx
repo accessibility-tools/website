@@ -21,6 +21,10 @@ const PageLink = styled.a`
   &[aria-disabled="true"] > * {
     fill: ${color.disabled};
   }
+
+  &:active {
+    background-color: ${color.purple};
+  }
 `;
 
 const Pagination = ({ currentPage, totalPages, href }) => {
