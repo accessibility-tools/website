@@ -38,7 +38,7 @@ const StyledLink = styled.a`
     }
   }
 
-  ${(props) =>
+  ${props =>
     props.icon === true &&
     `      
       svg {
@@ -46,7 +46,7 @@ const StyledLink = styled.a`
       }
     `}
 
-  ${(props) =>
+  ${props =>
     props.isSecondary === true &&
     `
       color: ${color.primary};
@@ -67,14 +67,14 @@ const StyledLink = styled.a`
     `}
 `;
 
-const Link = ({ children, icon, isExternal, ...props }) => {
+const Link = ({ children, icon, isExternal, ...otherProps }) => {
   const externalConfig = {
     target: "_blank",
     rel: "noopener noreferrer",
   };
-  if (isExternal) props = { ...props, ...externalConfig };
+  if (isExternal) otherProps = { ...otherProps, ...externalConfig };
   return (
-    <StyledLink icon={icon ? true : false} {...props}>
+    <StyledLink icon={icon ? true : false} {...otherProps}>
       {icon && <Icon icon={icon} />}
       <span>{children}</span>
     </StyledLink>

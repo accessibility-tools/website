@@ -32,7 +32,7 @@ const StyledList = styled.li`
     background-color: ${color.purple};
   }
 
-  ${(props) =>
+  ${props =>
     props.isSelected === true &&
     `
       &::after {
@@ -66,14 +66,14 @@ const StyledMenuItem = styled.a`
   white-space: nowrap;
 `;
 
-const MenuItem = ({ text, icon, onSelect, ...props }) => {
+const MenuItem = ({ text, icon, onSelect, ...otherProps }) => {
   return (
-    <StyledList {...props}>
+    <StyledList {...otherProps}>
       <StyledMenuItem
         href="#"
         onClick={onSelect}
         icon={icon ? true : false}
-        {...props}
+        {...otherProps}
       >
         {text}
         {icon && <Icon icon={icon} />}
