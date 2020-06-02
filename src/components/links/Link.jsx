@@ -10,6 +10,10 @@ const StyledLink = styled.a`
   align-items: baseline;
   text-decoration: none;
 
+  &:focus {
+    box-shadow: 0 0 0 4px ${color.darkBlue};
+  }
+
   &:visited {
     color: ${color.darkPurple};
   }

@@ -86,12 +86,7 @@ export const bodyStyles = css`
   }
 
   a {
-    border: 4px solid transparent;
     border-radius: 3px;
-
-    &:focus {
-      box-shadow: 0 0 0 4px ${color.darkBlue};
-    }
   }
 
   sub,
