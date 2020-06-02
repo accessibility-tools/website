@@ -7,21 +7,19 @@ import ArrowIcon from "../icon/ArrowIcon";
 const PaginationWrapper = styled.nav`
   display: flex;
   align-items: center;
-
   span {
     padding: 0 1.5em;
   }
 `;
 
 const PageLink = styled.a`
+  display: flex;
   &[aria-disabled="true"] {
     pointer-events: none;
   }
-
   &[aria-disabled="true"] > * {
     fill: ${color.disabled};
   }
-
   &:active {
     background-color: ${color.purple};
   }
