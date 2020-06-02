@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { icons } from "../../shared/icons";
 
-const Svg = styled.svg`
+export const Svg = styled.svg`
   display: ${(props) => (props.block ? "block" : "inline-block")};
   vertical-align: middle;
-
   shape-rendering: inherit;
   transform: translate3d(0, 0, 0);
 `;
