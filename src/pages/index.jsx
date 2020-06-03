@@ -7,7 +7,7 @@ import Switcher from "../components/layout-components/Switcher";
 import Stack from "../components/layout-components/Stack";
 import Center from "../components/layout-components/Center";
 import SEO from "../components/SEO/SEO";
-import FAQ from "../components/LearnMoreQuestions/LearnMoreQuestions";
+import FAQ from "../components/learn-more-questions/LearnMoreQuestions";
 import Link from "../components/links/Link";
 
 const Index = styled(Stack)`
@@ -70,7 +70,7 @@ const LandingPage = () => {
       <Index space="extraLarge">
         <Section>
           <Center>
-            <Switcher treshold="35rem" space="1rem">
+            <Switcher threshold="35rem" space="1rem">
               <div>
                 <HeaderWrapper>
                   <h1>Accessibility checking tools</h1>
@@ -108,7 +108,7 @@ const LandingPage = () => {
           <Center>
             <Stack space="medium">
               <h2>Accessibility tools coming soon</h2>
-              <Switcher treshold="40rem" space="3.5rem">
+              <Switcher threshold="40rem" space="3.5rem">
                 <div>
                   <Stack space="small">
                     <Center>
@@ -140,7 +140,7 @@ const LandingPage = () => {
           <Center>
             <Stack>
               <h2>How can the tools help you?</h2>
-              <Switcher treshold="35rem" space="3.5rem">
+              <Switcher threshold="35rem" space="3.5rem">
                 <div>
                   <Stack>
                     <img src="/illustrations/persona-a.svg" alt="" />
@@ -181,7 +181,7 @@ const LandingPage = () => {
                   and how to get started?
                 </p>
               </Center>
-              <Switcher treshold="35rem" space="5rem">
+              <Switcher threshold="35rem" space="5rem">
                 <div>
                   <Img src="/illustrations/learn-more.svg" alt="" />
                   <FAQ />

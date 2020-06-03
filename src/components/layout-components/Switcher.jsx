@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 const Switcher = styled.div`
-  --threshold: ${props => (props.treshold ? props.treshold : "25rem")};
+  --threshold: ${props => (props.threshold ? props.threshold : "25rem")};
   --switcher-space: ${props => (props.space ? props.space : "2rem")};
 
   & > * {
