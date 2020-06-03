@@ -34,7 +34,6 @@ export const bodyStyles = css`
   h1,
   h2 {
     font-family: ${typography.type.secondary};
-    max-width: 40ch;
   }
 
   h1 {

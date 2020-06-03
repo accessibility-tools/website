@@ -143,7 +143,10 @@ const LandingPage = () => {
               <Switcher threshold="35rem" space="3.5rem">
                 <div>
                   <Stack>
-                    <img src="/illustrations/persona-a.svg" alt="" />
+                    <img
+                      src="/illustrations/persona-a.svg"
+                      alt="illustration of a developer"
+                    />
                     <Center>
                       <h3>As a developer</h3>
                       <p>
@@ -155,7 +158,10 @@ const LandingPage = () => {
                     </Center>
                   </Stack>
                   <Stack>
-                    <img src="/illustrations/persona-b.svg" alt="" />
+                    <img
+                      src="/illustrations/persona-b.svg"
+                      alt="illustration of a designer"
+                    />
                     <Center>
                       <h3>As a designer</h3>
                       <p>
@@ -200,7 +206,11 @@ const LandingPage = () => {
                 project, have questions or feedback feel free to reach out.
               </p>
               <Center>
-                <Link href="mailto:accessibility@futurice.com" icon="mailto">
+                <Link
+                  href="mailto:accessibility@futurice.com"
+                  isSecondary={true}
+                  icon="mailto"
+                >
                   accessibility@futurice.com
                 </Link>
               </Center>
