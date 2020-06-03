@@ -5,7 +5,7 @@ import { icons } from "../../shared/icons";
 import { spacing } from "../../shared/style";
 
 const Logo = styled.svg`
-  display: ${(props) => (props.block ? "block" : "inline-block")};
+  display: ${props => (props.block ? "block" : "inline-block")};
   vertical-align: middle;
   height: 1em;
   max-width: 100%;
@@ -17,7 +17,7 @@ const Logo = styled.svg`
 `;
 
 const Path = styled.path`
-  fill: ${(props) => props.color || "currentColor"};
+  fill: ${props => props.color || "currentColor"};
 `;
 
 const ShoutOut = styled.div`
@@ -27,9 +27,10 @@ const ShoutOut = styled.div`
   margin: 0 ${spacing.padding.large}px;
 `;
 
-const Sponsor = ({ block }) => {
+/* expose the className prop on exported component to receive new className */
+const Sponsor = ({ block, className }) => {
   return (
-    <ShoutOut>
+    <ShoutOut className={className}>
       <p>Sponsored by</p>
       <Logo viewBox="0 0 100 21" className="Logo" block={block}>
         <Path d={icons["FutuLogo"]} />
@@ -40,6 +41,7 @@ const Sponsor = ({ block }) => {
 
 Sponsor.propTypes = {
   block: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Sponsor;
