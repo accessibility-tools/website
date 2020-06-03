@@ -45,7 +45,6 @@ const LearnMoreQuestions = () => (
         other non-text content, instructions, error messages, and notifications,
         lack of responsiveness and the use of CAPTCHA interfaces.
       </Paragraph>
-      <Paragraph>Learn more here</Paragraph>
     </Details>
     <Details title="What are common issues for designers and how to solve them?">
       <Paragraph>
@@ -54,7 +53,6 @@ const LearnMoreQuestions = () => (
         styles for different states, lack of responsivness of elements and not
         testing with real users.
       </Paragraph>
-      <Paragraph>Learn more here</Paragraph>
     </Details>
   </StyledLearnMoreQuestions>
 );
