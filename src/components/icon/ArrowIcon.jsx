@@ -4,9 +4,20 @@ import styled from "styled-components";
 import { icons } from "../../shared/icons";
 import { Svg } from "./Icon";
 
+const handleArrowDirection = direction => {
+  switch (direction) {
+    case "left":
+      return "rotate(90deg)";
+    case "right":
+      return "rotate(-90deg)";
+    case "up":
+      return "rotate(180deg)";
+    default:
+      return;
+  }
+};
 const ArrowSvg = styled(Svg)`
-  transform: ${(props) =>
-    props.direction === "left" ? "rotate(90deg)" : "rotate(-90deg)"};
+  transform: ${props => handleArrowDirection(props.direction)};
 `;
 
 const ArrowIcon = ({ icon, direction }) => {
@@ -20,7 +31,6 @@ const ArrowIcon = ({ icon, direction }) => {
 ArrowIcon.propTypes = {
   icon: PropTypes.string.isRequired,
   direction: PropTypes.string,
-  disabled: PropTypes.bool,
 };
 
 export default ArrowIcon;
