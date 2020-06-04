@@ -11,27 +11,23 @@ const VALUES = {
 };
 
 const StyledList = styled.ul`
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  & > li {
-    display: inline-flex;
-  }
+width: 100%;
+margin: 0;
+padding: 0;
+display: flex;
 
-  @media (max-width: 48rem) {
-    --spacing-nav: 2.5rem;
-    flex-flow: column nowrap;
-    align-items: center;
-    z-index: 999;
-    background-color: #ffffff;
-    position: fixed;
-    top: var(--spacing-nav);
-    right: 0;
-    height: calc(100% - var(--spacing-nav));
-    width: 100vw;
-    padding-top: var(--spacing-nav);
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+@media (max-width: 48rem) {
+  --spacing-nav: 2rem;
+  flex-flow: column nowrap;
+  position: fixed;
+  top: var(--spacing-nav);
+  height: calc(100% - var(--spacing-nav) * 2);
+  transform: ${({ open }) => (open ? "translatex(0)" : "translateX(100%)")};
+
+  & > li {
+    ::after {
+	  border: none
+	}
   }
 `;
 
