@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { spacing } from "../../shared/style";
 import ArrowIcon from "../icon/ArrowIcon";
-import MenuList from "./MenuList";
+import MenuList from "../menu/MenuList";
 
 const MenuLabel = styled.div`
   display: none;

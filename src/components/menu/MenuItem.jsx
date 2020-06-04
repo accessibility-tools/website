@@ -32,7 +32,7 @@ const StyledList = styled.li`
     background-color: ${color.purple};
   }
 
-  ${(props) =>
+  ${props =>
     props.isSelected === true &&
     `
       &::after {
