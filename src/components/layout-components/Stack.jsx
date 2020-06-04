@@ -1,6 +1,6 @@
 // The Stack-pattern from https://every-layout.dev/
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const spacing = {
   small: "1rem",
@@ -8,8 +8,8 @@ const spacing = {
   large: "3.5rem",
 };
 
-const Stack = styled.div`
-  --stack-space: ${(props) => (props.space ? spacing[props.space] : "2rem")};
+export const stackStyles = css`
+  --stack-space: ${props => (props.space ? spacing[props.space] : "2rem")};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -22,6 +22,10 @@ const Stack = styled.div`
   & > * + * {
     margin-top: var(--stack-space);
   }
+`;
+
+const Stack = styled.div`
+  ${stackStyles}
 `;
 
 export default Stack;
