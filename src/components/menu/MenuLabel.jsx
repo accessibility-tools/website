@@ -15,6 +15,9 @@ const StyledLabel = styled.div`
     &:active {
       background-color: ${color.purple};
     }
+    &:focus {
+      border: 4px solid ${color.darkBlue};
+    }
     p {
       padding: ${spacing.padding.small}px;
       font-weight: ${typography.weight.medium};

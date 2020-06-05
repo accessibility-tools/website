@@ -65,7 +65,7 @@ const ListItemLink = styled.a`
   user-select: none;
   white-space: nowrap;
   &:focus:active {
-    box-shadow: none;
+    border: none;
   }
 `;
 

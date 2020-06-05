@@ -17,12 +17,11 @@ const StyledList = styled.ul`
   display: flex;
 
   @media (max-width: 48rem) {
-    --spacing-nav: 2rem;
     flex-flow: column nowrap;
     border-top: 2px solid #464646;
     position: fixed;
-    top: var(--spacing-nav);
-    height: calc(100% - var(--spacing-nav) * 2);
+    top: 2.5rem;
+    bottom: 0;
     transition: transform 0.1s linear;
     transform: ${({ open }) => (open ? "translateY(0)" : "translateY(100%)")};
 

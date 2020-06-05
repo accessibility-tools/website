@@ -6,24 +6,24 @@ import MenuLabel from "../menu/MenuLabel";
 import MenuList from "../menu/MenuList";
 
 const NavContainer = styled.nav`
-  background-color: ${color.white};
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index:999;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 ${spacing.padding.medium}px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: ${color.white};
+  z-index: 999;
   & > * {
-    align-items: center
+    align-items: center;
   }
-  
+
   @media (max-width: 48rem) {
     ${stackStyles};
     & > * {
-      background-color: ${color.white};
-      z-index: 999;
+      background-color: inherit;
+    }
   }
 `;
 
