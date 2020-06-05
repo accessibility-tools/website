@@ -30,7 +30,7 @@ const MenuIcon = styled(ArrowIcon)`
 const MenuLabel = ({ open, toggleOpen }) => (
   <StyledLabel open={open} onClick={toggleOpen}>
     <p>MENU</p>
-    <MenuIcon icon="bArrow" direction="up" />
+    <MenuIcon iconPath="bArrow" direction="up" />
   </StyledLabel>
 );
 

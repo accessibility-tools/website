@@ -14,14 +14,14 @@ const PaginationWrapper = styled.nav`
 
 const PageLink = styled.a`
   display: flex;
+  &:active {
+    background-color: ${color.purple};
+  }
   &[aria-disabled="true"] {
     pointer-events: none;
   }
-  &[aria-disabled="true"] > * {
+  &[aria-disabled="true"] > * > * {
     fill: ${color.disabled};
-  }
-  &:active {
-    background-color: ${color.purple};
   }
 `;
 
@@ -34,7 +34,12 @@ const Pagination = ({ currentPage, totalPages, href }) => {
         href={href + (currentPage - 1)}
         target="_self"
       >
-        <ArrowIcon aria-hidden="true" icon="bArrow" direction="left" />
+        <ArrowIcon
+          aria-hidden="true"
+          iconPath="bArrow"
+          direction="left"
+          color={color.primary}
+        />
       </PageLink>
 
       <span className="subtitle">
@@ -46,7 +51,12 @@ const Pagination = ({ currentPage, totalPages, href }) => {
         href={href + (currentPage + 1)}
         target="_self"
       >
-        <ArrowIcon aria-hidden="true" icon="bArrow" direction="right" />
+        <ArrowIcon
+          aria-hidden="true"
+          iconPath="bArrow"
+          direction="right"
+          color={color.primary}
+        />
       </PageLink>
     </PaginationWrapper>
   );
