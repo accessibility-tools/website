@@ -19,6 +19,7 @@ display: flex;
 @media (max-width: 48rem) {
   --spacing-nav: 2rem;
   flex-flow: column nowrap;
+  border-top: 2px solid #464646;
   position: fixed;
   top: var(--spacing-nav);
   height: calc(100% - var(--spacing-nav) * 2);

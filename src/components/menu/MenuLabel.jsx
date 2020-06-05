@@ -6,16 +6,19 @@ import ArrowIcon from "../icon/ArrowIcon";
 
 const StyledLabel = styled.div`
   display: none;
-  p {
-    padding: ${spacing.padding.small}px;
-    font-weight: ${typography.weight.medium};
-    letter-spacing: 0.07rem;
-  }
+
   @media (max-width: 48rem) {
     display: flex;
+    justify-content: center;
+    width: 100%;
     position: fixed;
     &:active {
       background-color: ${color.purple};
+    }
+    p {
+      padding: ${spacing.padding.small}px;
+      font-weight: ${typography.weight.medium};
+      letter-spacing: 0.07rem;
     }
   }
 `;
