@@ -17,7 +17,6 @@ export const bodyStyles = css`
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 3px ${color.white}, 0 0 0 7px ${color.darkBlue};
     }
   }
   h1,
@@ -90,7 +89,7 @@ export const bodyStyles = css`
     border-radius: 3px;
 
     &:focus {
-      box-shadow: 0 0 0 4px ${color.darkBlue};
+      border: 4px solid ${color.darkBlue};
     }
   }
 
