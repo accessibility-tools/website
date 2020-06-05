@@ -6,6 +6,11 @@ import MenuLabel from "../menu/MenuLabel";
 import MenuList from "../menu/MenuList";
 
 const NavContainer = styled.nav`
+  background-color: ${color.white};
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:999;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +23,7 @@ const NavContainer = styled.nav`
     ${stackStyles};
     & > * {
       background-color: ${color.white};
-      z-index: 999
+      z-index: 999;
   }
 `;
 

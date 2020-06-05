@@ -11,24 +11,27 @@ const VALUES = {
 };
 
 const StyledList = styled.ul`
-width: 100%;
-margin: 0;
-padding: 0;
-display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
 
-@media (max-width: 48rem) {
-  --spacing-nav: 2rem;
-  flex-flow: column nowrap;
-  border-top: 2px solid #464646;
-  position: fixed;
-  top: var(--spacing-nav);
-  height: calc(100% - var(--spacing-nav) * 2);
-  transform: ${({ open }) => (open ? "translatex(0)" : "translateX(100%)")};
+  @media (max-width: 48rem) {
+    --spacing-nav: 2rem;
+    flex-flow: column nowrap;
+    border-top: 2px solid #464646;
+    position: fixed;
+    top: var(--spacing-nav);
+    height: calc(100% - var(--spacing-nav) * 2);
+    transition: transform 0.1s linear;
+    transform: ${({ open }) => (open ? "translateY(0)" : "translateY(100%)")};
 
-  & > li {
-    ::after {
-	  border: none
-	}
+    & > li {
+      width: 100%;
+      ::after {
+        border: none;
+      }
+    }
   }
 `;
 

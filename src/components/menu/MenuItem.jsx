@@ -64,6 +64,9 @@ const ListItemLink = styled.a`
   vertical-align: top;
   user-select: none;
   white-space: nowrap;
+  &:focus:active {
+    box-shadow: none;
+  }
 `;
 
 const MenuItem = ({ text, icon, onSelect, ...props }) => {
