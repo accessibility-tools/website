@@ -45,7 +45,7 @@ const StyledLogo = styled(Sponsor)`
 const MenuList = ({ open }) => {
   const [selected, setSelected] = useState(VALUES.TOOLS);
   return (
-    <StyledList open={open}>
+    <StyledList aria-label="menu list" open={open}>
       {Object.values(VALUES).map(item => (
         <MenuItem
           key={item}

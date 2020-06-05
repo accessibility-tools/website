@@ -4,7 +4,7 @@ import PropType from "prop-types";
 import { background, color, spacing } from "../../shared/style";
 import Icon from "../icon/Icon";
 
-const StyledList = styled.li`
+const ListItem = styled.li`
   box-sizing: border-box;
   position: relative;
 
@@ -51,7 +51,7 @@ const StyledList = styled.li`
     `}
 `;
 
-const StyledMenuItem = styled.a`
+const ListItemLink = styled.a`
   color: ${color.primary};
   cursor: pointer;
   display: block;
@@ -68,8 +68,8 @@ const StyledMenuItem = styled.a`
 
 const MenuItem = ({ text, icon, onSelect, ...props }) => {
   return (
-    <StyledList {...props}>
-      <StyledMenuItem
+    <ListItem aria-label="menu item" {...props}>
+      <ListItemLink
         href="#"
         onClick={onSelect}
         icon={icon ? true : false}
@@ -77,8 +77,8 @@ const MenuItem = ({ text, icon, onSelect, ...props }) => {
       >
         {text}
         {icon && <Icon icon={icon} />}
-      </StyledMenuItem>
-    </StyledList>
+      </ListItemLink>
+    </ListItem>
   );
 };
 
