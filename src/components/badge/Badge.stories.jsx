@@ -1,5 +1,5 @@
 import React from "react";
-import { select, number } from "@storybook/addon-knobs";
+import { select, number, text } from "@storybook/addon-knobs";
 import Badge from "./Badge";
 import { color } from "../../shared/style";
 import StoryWrapper from "../story-wrapper/StoryWrapper";
@@ -9,28 +9,46 @@ export default {
   component: Badge,
 };
 
-const LEVELS = {
-  CRITICAL: "critical",
-  SERIOUS: "serious",
-  MODERATE: "moderate",
-  MINOR: "minor",
+const reportData = {
+  CRITICAL: {
+    iconName: "circle",
+    iconColor: color.error,
+    issueCount: 3,
+  },
+  SERIOUS: {
+    iconName: "issue",
+    iconColor: color.error,
+    issueCount: 7,
+  },
+  MODERATE: {
+    iconName: "issue",
+    iconColor: color.darkPurple,
+    issueCount: 10,
+  },
+  MINOR: {
+    iconName: "issue",
+    iconColor: color.primary,
+    issueCount: 1,
+  },
 };
 
-const label = "level";
+const reportLabel = "level";
+const levels = Object.keys(reportData);
+const details = Object.keys(reportData).map(key => reportData[key]);
 
 export const criticalBadge = () => {
   return (
     <StoryWrapper>
       <Badge
-        level={select(label, LEVELS, LEVELS.CRITICAL)}
-        issueCount={number("issueCount", 6, { min: 0 })}
-        iconColor={color.error}
-        iconName="circle"
+        label={select(reportLabel, levels, levels[0])}
+        issueCount={number("issueCount", details[0].issueCount, { min: 0 })}
+        iconName={details[0].iconName}
+        iconColor={details[0].iconColor}
       />
       <Badge
-        level={select(label, LEVELS, LEVELS.CRITICAL)}
-        iconColor={color.error}
-        iconName="circle"
+        label={select(reportLabel, levels, levels[0])}
+        iconName={details[0].iconName}
+        iconColor={details[0].iconColor}
       />
     </StoryWrapper>
   );
@@ -40,15 +58,15 @@ export const seriousBadge = () => {
   return (
     <StoryWrapper>
       <Badge
-        level={select(label, LEVELS, LEVELS.SERIOUS)}
-        issueCount={number("issueCount", 10, { min: 0 })}
-        iconColor={color.error}
-        iconName="issue"
+        label={select(reportLabel, levels, levels[1])}
+        issueCount={number("issueCount", details[1].issueCount, { min: 0 })}
+        iconName={details[1].iconName}
+        iconColor={details[1].iconColor}
       />
       <Badge
-        level={select(label, LEVELS, LEVELS.SERIOUS)}
-        iconColor={color.error}
-        iconName="issue"
+        label={select(reportLabel, levels, levels[1])}
+        iconName={details[1].iconName}
+        iconColor={details[1].iconColor}
       />
     </StoryWrapper>
   );
@@ -58,15 +76,15 @@ export const moderateBadge = () => {
   return (
     <StoryWrapper>
       <Badge
-        level={select(label, LEVELS, LEVELS.MODERATE)}
-        issueCount={number("issueCount", 7, { min: 0 })}
-        iconColor={color.darkBlue}
-        iconName="issue"
+        label={select(reportLabel, levels, levels[2])}
+        issueCount={number("issueCount", details[2].issueCount, { min: 0 })}
+        iconName={details[2].iconName}
+        iconColor={details[2].iconColor}
       />
       <Badge
-        level={select(label, LEVELS, LEVELS.MODERATE)}
-        iconColor={color.darkBlue}
-        iconName="issue"
+        label={select(reportLabel, levels, levels[2])}
+        iconName={details[2].iconName}
+        iconColor={details[2].iconColor}
       />
     </StoryWrapper>
   );
@@ -76,15 +94,27 @@ export const minorBadge = () => {
   return (
     <StoryWrapper>
       <Badge
-        level={select(label, LEVELS, LEVELS.MINOR)}
-        issueCount={number("issueCount", 2, { min: 0 })}
-        iconColor={color.primary}
-        iconName="issue"
+        label={select(reportLabel, levels, levels[3])}
+        issueCount={number("issueCount", details[3].issueCount, { min: 0 })}
+        iconName={details[3].iconName}
+        iconColor={details[3].iconColor}
       />
       <Badge
-        level={select(label, LEVELS, LEVELS.MINOR)}
-        iconColor={color.primary}
-        iconName="issue"
+        label={select(reportLabel, levels, levels[3])}
+        iconName={details[3].iconName}
+        iconColor={details[3].iconColor}
+      />
+    </StoryWrapper>
+  );
+};
+
+export const comingSoonBadge = () => {
+  return (
+    <StoryWrapper>
+      <Badge
+        label={text("text", "COMING SOON")}
+        iconName="bArrow"
+        iconColor={color.darkBlue}
       />
     </StoryWrapper>
   );
