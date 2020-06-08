@@ -1,8 +1,9 @@
 import React from "react";
-import { select, number, text } from "@storybook/addon-knobs";
+import { select, number } from "@storybook/addon-knobs";
 import Badge from "./Badge";
 import { color } from "../../shared/style";
 import StoryWrapper from "../story-wrapper/StoryWrapper";
+import ComingSoonBadge from "./ComingSoonBadge";
 
 export default {
   title: "Design System|Badge",
@@ -111,11 +112,7 @@ export const minorBadge = () => {
 export const comingSoonBadge = () => {
   return (
     <StoryWrapper>
-      <Badge
-        label={text("text", "COMING SOON")}
-        iconName="bArrow"
-        iconColor={color.darkBlue}
-      />
+      <ComingSoonBadge />
     </StoryWrapper>
   );
 };

@@ -32,7 +32,7 @@ const Badge = ({ label, issueCount, iconName, iconColor, ...props }) => {
 };
 
 Badge.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   issueCount: PropTypes.number,
   iconName: PropTypes.string,
   iconColor: PropTypes.string,
