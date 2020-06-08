@@ -14,7 +14,7 @@ export const DetailsContainer = styled.details`
 const StyledSummary = styled.summary`
   border: 3px solid transparent;
   border-radius: 2px;
-  padding: 16px;
+  padding: 1rem;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -41,13 +41,13 @@ const StyledSummary = styled.summary`
 
 const Details = ({ children, title }) => {
   const [isOpened, setOpened] = useState(false);
-  const handleOpen = (event) => {
+  const handleOpen = event => {
     setOpened(event.currentTarget.open);
   };
   return (
     <DetailsContainer onToggle={handleOpen}>
       <StyledSummary>
-        <h5>{title}</h5>
+        {title}
         <Icon icon={isOpened ? "minus" : "plus"} />
       </StyledSummary>
       {children}
