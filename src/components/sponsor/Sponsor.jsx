@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { spacing } from "../../shared/style";
+import { spacing, color } from "../../shared/style";
 import Icon from "../icon/Icon";
 
 const Logo = styled(Icon)`
@@ -26,6 +26,7 @@ const Sponsor = ({ block, className }) => (
         className="Logo"
         block={block}
         iconPath="FutuLogo"
+        color={color.primary}
       ></Logo>
     </a>
   </LogoWrapper>
