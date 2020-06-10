@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { color } from "../shared/style";
 import Button from "../components/button/Button";
+import Badge from "../components/badge/Badge";
 import ToolDetails from "../components/tool-details/ToolDetails";
 import Switcher from "../components/layout-components/Switcher";
 import Stack from "../components/layout-components/Stack";
@@ -9,6 +10,7 @@ import Center from "../components/layout-components/Center";
 import SEO from "../components/SEO/SEO";
 import FAQ from "../components/learn-more-questions/LearnMoreQuestions";
 import Link from "../components/links/Link";
+import TextInput from "../components/text-input/TextInput";
 
 const Index = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -40,6 +42,11 @@ const Section = styled.section`
     max-width: 100rem;
   }
 
+  h2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   p {
     max-width: 36rem;
   }
@@ -69,6 +76,12 @@ const LandingImg = styled.img`
   top: calc(11rem + (15 - 11) * ((100vw - 300px) / (1600 - 300)));
 `;
 
+const SignupWrapper = styled.div`
+  & > * {
+    text-align: left;
+  }
+`;
+
 const LandingPage = () => {
   return (
     <>
@@ -93,6 +106,7 @@ const LandingPage = () => {
             </Switcher>
           </Center>
         </Section>
+
         <Section>
           <Center>
             <Stack space="large">
@@ -106,43 +120,73 @@ const LandingPage = () => {
               </Center>
               <ToolDetails
                 title="Command Line Accessibility Checker"
-                tool="ciTool"
+                toolName="ciTool"
+                hasBadge={false}
+                hasLink={true}
               />
             </Stack>
           </Center>
         </Section>
+
         <Section>
           <Center>
-            <Stack space="medium">
-              <h2>Accessibility tools coming soon</h2>
-              <Switcher threshold="40rem" space="3.5rem">
-                <div>
-                  <Stack space="small">
-                    <Center>
-                      <img src="/illustrations/product-ci.svg" alt="" />
-                      <h3>Command line tool</h3>
-                    </Center>
-                  </Stack>
-                  <Stack space="small">
-                    <Center>
-                      <img src="/illustrations/product-ios.svg" alt="" />
-                      <h3>iOS Checker</h3>
-                    </Center>
-                  </Stack>
-                  <Stack space="small">
-                    <Center>
-                      <img src="/illustrations/product-android.svg" alt="" />
-                      <h3>Android Checker</h3>
-                    </Center>
-                  </Stack>
-                </div>
-              </Switcher>
-              <Center>
-                <Button text="View on github" icon="github" isSecondary />
-              </Center>
-            </Stack>
+            <Switcher threshold="40rem" space="3.5rem">
+              <ToolDetails
+                title="Accessibility Web Checker"
+                toolName="webChecker"
+                hasBadge={true}
+                hasLink={false}
+              />
+            </Switcher>
           </Center>
         </Section>
+
+        <Section>
+          <Center>
+            <Switcher threshold="40rem" space="3.5rem">
+              <div>
+                <Center>
+                  <Stack>
+                    <Badge level="serious" />
+                    <img src="/illustrations/product-ios.svg" alt="" />
+                    <h3>iOS Checker</h3>
+                  </Stack>
+                </Center>
+                <Center>
+                  <Stack>
+                    <Badge level="serious" />
+                    <img src="/illustrations/product-android.svg" alt="" />
+                    <h3>Android Checker</h3>
+                  </Stack>
+                </Center>
+              </div>
+            </Switcher>
+          </Center>
+        </Section>
+
+        <Section>
+          <Center>
+            <Switcher threshold="35rem" space="3.5rem">
+              <div>
+                <Stack>
+                  <h2>Sign up to be notified for the release</h2>
+                  <Center>
+                    <SignupWrapper>
+                      <p>Email</p>
+                      <TextInput></TextInput>
+                      <p>
+                        Your e-mail will not be used for any other purposes. No
+                        spam. We promise.
+                      </p>
+                    </SignupWrapper>
+                  </Center>
+                  <Button text="Sign Up" />
+                </Stack>
+              </div>
+            </Switcher>
+          </Center>
+        </Section>
+
         <Section>
           <Center>
             <Stack>
@@ -184,6 +228,7 @@ const LandingPage = () => {
             </Stack>
           </Center>
         </Section>
+
         <Section id="learnMore">
           <Center>
             <Stack>
@@ -203,6 +248,7 @@ const LandingPage = () => {
             </Stack>
           </Center>
         </Section>
+
         <Section>
           <Center>
             <Stack>
