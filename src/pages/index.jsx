@@ -14,15 +14,6 @@ const Index = styled(Stack)`
   background-color: ${color.extraLightPurple};
 `;
 
-const HeaderWrapper = styled(Center)`
-  max-width: 40rem;
-  margin-bottom: auto;
-  margin-top: auto;
-  & > h1 {
-    margin-bottom: 1rem;
-  }
-`;
-
 const Section = styled.section`
   padding: 8rem 2rem;
 
@@ -48,6 +39,22 @@ const Section = styled.section`
   & > * {
     max-width: 100rem;
   }
+
+  p {
+    max-width: 36rem;
+  }
+`;
+
+const Tagline = styled(Stack)`
+  & > * {
+    max-width: 30rem;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-weight: 500;
+  }
 `;
 
 const Img = styled.img`
@@ -59,7 +66,6 @@ const LandingImg = styled.img`
   width: 80%;
   height: 100%;
   z-index: 100;
-  position: relative;
   top: calc(11rem + (15 - 11) * ((100vw - 300px) / (1600 - 300)));
 `;
 
@@ -72,12 +78,14 @@ const LandingPage = () => {
           <Center>
             <Switcher threshold="35rem" space="1rem">
               <div>
-                <HeaderWrapper>
-                  <h1>Accessibility checking tools</h1>
-                  <h2 className="subtitle">
-                    Helping designers and developers build accessible products
-                  </h2>
-                </HeaderWrapper>
+                <Center>
+                  <Tagline>
+                    <h1>Accessibility checking tools</h1>
+                    <h5>
+                      Helping designers and developers build accessible products
+                    </h5>
+                  </Tagline>
+                </Center>
                 <Center>
                   <LandingImg src="/illustrations/start.svg" alt="" />
                 </Center>
@@ -89,17 +97,16 @@ const LandingPage = () => {
           <Center>
             <Stack space="large">
               <Center>
-                <h2>The tools</h2>
+                <h1>The tools</h1>
                 <p>
                   Everybody should be able to use digital products regardless of
                   ability, context, or situation. Our tools can help you create
                   prodcuts with accessibility in mind.
                 </p>
-                <a href="#learnMore">Learn more</a>
               </Center>
               <ToolDetails
-                title="Accessibility Web Checker"
-                tool="webChecker"
+                title="Command Line Accessibility Checker"
+                tool="ciTool"
               />
             </Stack>
           </Center>

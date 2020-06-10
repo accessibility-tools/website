@@ -7,10 +7,11 @@ const Center = styled.div`
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: var(--measure);
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
 `;
 
 export default Center;
