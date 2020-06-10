@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { color } from "../../shared/style";
 import MenuItem from "./MenuItem";
 import Sponsor from "../sponsor/Sponsor";
 
@@ -18,11 +19,11 @@ const StyledList = styled.ul`
 
   @media (max-width: 48rem) {
     flex-flow: column nowrap;
-    border-top: 2px solid #464646;
+    border-top: 2px solid ${color.primary};
     position: fixed;
-    top: 2.5rem;
+    top: 4rem;
     bottom: 0;
-    transition: transform 0.1s linear;
+    transition: transform 0.1s ease-in-out;
     transform: ${({ open }) => (open ? "translateY(0)" : "translateY(100%)")};
 
     & > li {
