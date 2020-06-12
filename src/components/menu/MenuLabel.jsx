@@ -1,22 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { spacing, typography, color } from "../../shared/style";
+import { spacing, typography, background, color } from "../../shared/style";
 import ArrowIcon from "../icon/ArrowIcon";
 
 const StyledLabel = styled.div`
   display: none;
+  border: 4px solid transparent;
 
   @media (max-width: 48rem) {
     display: flex;
     justify-content: center;
     width: 100%;
     position: fixed;
-    &:active {
-      background-color: ${color.purple};
+    &:hover {
+      background-color: ${background.lightPurple};
     }
     &:focus {
       border: 4px solid ${color.darkBlue};
+    }
+    &:active {
+      background-color: ${color.lightPurple};
     }
     p {
       padding: ${spacing.padding.small}px;
@@ -29,7 +33,7 @@ const StyledLabel = styled.div`
 const MenuLabel = ({ open, toggleOpen }) => (
   <StyledLabel tabIndex="0" open={open} onClick={toggleOpen}>
     <p>MENU</p>
-    <ArrowIcon icon="bArrow" direction="up" open={open} />
+    <ArrowIcon icon="sArrow" direction="up" open={open} />
   </StyledLabel>
 );
 
