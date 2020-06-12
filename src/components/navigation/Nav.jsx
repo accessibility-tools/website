@@ -17,7 +17,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <NavContainer aria-label="navigation menu" space="0">
+    <NavContainer aria-label="main navigation" space="0">
       <div>
         <MenuLabel open={open} toggleOpen={() => setOpen(!open)} />
         <MenuList open={open} />
