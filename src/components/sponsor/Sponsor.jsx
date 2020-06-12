@@ -14,11 +14,16 @@ const LogoWrapper = styled.div`
   display: inline-flex;
   align-items: baseline;
   justify-content: flex-start;
+  margin-left: auto;
+
+  @media (max-width: 48rem) {
+    margin-top: auto;
+    margin-left: inherit;
+  }
 `;
 
-/* expose the className prop on exported component to receive new className */
-const Sponsor = ({ block, className }) => (
-  <LogoWrapper className={className}>
+const Sponsor = ({ block }) => (
+  <LogoWrapper>
     <p>Sponsored by</p>
     <a href="https://futurice.com/">
       <Logo

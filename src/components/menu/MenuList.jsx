@@ -44,16 +44,6 @@ const StyledList = styled.ul`
   }
 `;
 
-const StyledLogo = styled(Sponsor)`
-  align-items: center;
-  margin-left: auto;
-
-  @media (max-width: 48rem) {
-    margin-top: auto;
-    margin-left: inherit;
-  }
-`;
-
 const MenuList = ({ open }) => {
   const [selected, setSelected] = useState(VALUES.TOOLS);
   return (
@@ -67,7 +57,7 @@ const MenuList = ({ open }) => {
           text={item}
         />
       ))}
-      <StyledLogo />
+      <Sponsor />
     </StyledList>
   );
 };
