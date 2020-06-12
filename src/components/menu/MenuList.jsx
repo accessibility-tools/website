@@ -21,10 +21,19 @@ const StyledList = styled.ul`
     flex-flow: column nowrap;
     border-top: 2px solid ${color.primary};
     position: fixed;
-    top: 4rem;
+    top: 4.5rem;
     bottom: 0;
-    transition: transform 0.1s ease-in-out;
-    transform: ${({ open }) => (open ? "translateY(0)" : "translateY(100%)")};
+
+    ${({ open }) =>
+      open
+        ? `& {
+          opacity: 1;
+          transition: opacity 200ms 0ms;
+        }`
+        : `& { 
+          opacity: 0;
+          transition: opacity 200ms 0ms;
+        }`};
 
     & > li {
       width: 100%;
