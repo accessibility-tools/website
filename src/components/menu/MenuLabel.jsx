@@ -26,14 +26,10 @@ const StyledLabel = styled.div`
   }
 `;
 
-const MenuIcon = styled(ArrowIcon)`
-  transform: rotate(180deg);
-`;
-
 const MenuLabel = ({ open, toggleOpen }) => (
   <StyledLabel tabIndex="0" open={open} onClick={toggleOpen}>
     <p>MENU</p>
-    <MenuIcon icon="bArrow" direction="up" />
+    <ArrowIcon icon="bArrow" direction="up" open={open} />
   </StyledLabel>
 );
 
