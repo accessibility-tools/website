@@ -23,15 +23,12 @@ const ListItem = styled.li`
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
   }
-
   &:hover {
     background-color: ${background.lightPurple};
   }
-
   &:active {
-    background-color: ${color.purple};
+    background-color: ${color.lightPurple};
   }
-
   ${props =>
     props.isSelected === true &&
     `
@@ -64,9 +61,6 @@ const ListItemLink = styled.a`
   vertical-align: top;
   user-select: none;
   white-space: nowrap;
-  &:focus:active {
-    border: none;
-  }
 `;
 
 const MenuItem = ({ text, icon, onSelect, ...props }) => {
