@@ -24,6 +24,7 @@ const Sponsor = ({ block, className }) => (
       <Logo
         viewBox="0 0 100 21"
         className="Logo"
+        alt="corporate logo of sponsor"
         block={block}
         icon="FutuLogo"
         color={color.primary}
