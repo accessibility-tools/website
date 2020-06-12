@@ -90,6 +90,7 @@ export const bodyStyles = css`
 
     &:focus {
       border: 4px solid ${color.darkBlue};
+      transition: border 0.6s ease-in-out;
     }
   }
 
