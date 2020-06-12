@@ -20,7 +20,7 @@ const LogoWrapper = styled.div`
 const Sponsor = ({ block, className }) => (
   <LogoWrapper className={className}>
     <p>Sponsored by</p>
-    <a href="https://futurice.com/" target="__blank">
+    <a href="https://futurice.com/">
       <Logo
         viewBox="0 0 100 21"
         className="Logo"
