@@ -71,7 +71,7 @@ const ListItemLink = styled.a`
 
 const MenuItem = ({ text, icon, onSelect, ...props }) => {
   return (
-    <ListItem aria-label="menu item" {...props}>
+    <ListItem {...props}>
       <ListItemLink
         href="#"
         onClick={onSelect}

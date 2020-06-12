@@ -31,12 +31,7 @@ const MenuIcon = styled(ArrowIcon)`
 `;
 
 const MenuLabel = ({ open, toggleOpen }) => (
-  <StyledLabel
-    tabIndex="0"
-    aria-label="menu label"
-    open={open}
-    onClick={toggleOpen}
-  >
+  <StyledLabel tabIndex="0" open={open} onClick={toggleOpen}>
     <p>MENU</p>
     <MenuIcon iconPath="bArrow" direction="up" />
   </StyledLabel>
