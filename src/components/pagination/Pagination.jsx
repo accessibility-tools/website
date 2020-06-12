@@ -36,7 +36,7 @@ const Pagination = ({ currentPage, totalPages, href }) => {
       >
         <ArrowIcon
           aria-hidden="true"
-          iconPath="bArrow"
+          icon="bArrow"
           direction="left"
           color={color.primary}
         />
@@ -53,7 +53,7 @@ const Pagination = ({ currentPage, totalPages, href }) => {
       >
         <ArrowIcon
           aria-hidden="true"
-          iconPath="bArrow"
+          icon="bArrow"
           direction="right"
           color={color.primary}
         />

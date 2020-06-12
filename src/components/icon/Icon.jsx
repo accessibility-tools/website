@@ -21,15 +21,15 @@ const Path = styled.path`
  * - *decorative only*: for example, it illustrates a label next to it. We must ensure that it is ignored by screen readers, by setting `aria-hidden` attribute (ex: `<Icon icon="check" aria-hidden />`)
  * - *non-decorative*: it means that it delivers information. For example, an icon as only child in a button. The meaning can be obvious visually, but it must have a proper text alternative via `aria-label` for screen readers. (ex: `<Icon icon="print" aria-label="Print this document" />`)
  */
-const Icon = ({ block, iconPath, color, ...props }) => (
+const Icon = ({ block, icon, color, ...props }) => (
   <Svg viewBox="0 0 16 16" className="icon" block={block} {...props}>
-    <Path d={icons[iconPath]} color={color} />
+    <Path d={icons[icon]} color={color} />
   </Svg>
 );
 
 Icon.propTypes = {
   block: PropTypes.bool,
-  iconPath: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
   color: PropTypes.string,
 };
 

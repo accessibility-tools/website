@@ -25,7 +25,7 @@ const Sponsor = ({ block, className }) => (
         viewBox="0 0 100 21"
         className="Logo"
         block={block}
-        iconPath="FutuLogo"
+        icon="FutuLogo"
         color={color.primary}
       ></Logo>
     </a>

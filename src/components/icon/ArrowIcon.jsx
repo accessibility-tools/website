@@ -19,12 +19,12 @@ const StyledArrowIcon = styled(Icon)`
   transform: ${props => handleArrowDirection(props.direction)};
 `;
 
-const ArrowIcon = ({ iconPath, color, direction }) => (
-  <StyledArrowIcon iconPath={iconPath} color={color} direction={direction} />
+const ArrowIcon = ({ icon, color, direction }) => (
+  <StyledArrowIcon icon={icon} color={color} direction={direction} />
 );
 
 ArrowIcon.propTypes = {
-  iconPath: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
   direction: PropTypes.string,
   color: PropTypes.string,
 };
