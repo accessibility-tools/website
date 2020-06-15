@@ -114,6 +114,16 @@ export const bodyStyles = css`
     max-width: 100%;
     max-height: 100%;
   }
+
+  .visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px));
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`

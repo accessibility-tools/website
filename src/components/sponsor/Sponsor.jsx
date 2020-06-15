@@ -14,22 +14,18 @@ const LogoWrapper = styled.div`
   display: inline-flex;
   align-items: baseline;
   justify-content: flex-start;
-  margin-left: auto;
-
-  @media (max-width: 48rem) {
-    margin-top: auto;
-    margin-left: inherit;
-  }
 `;
 
 const Sponsor = ({ block }) => (
   <LogoWrapper>
     <p>Sponsored by</p>
     <a href="https://futurice.com/">
+      <span className="visually-hidden">Futurice.com</span>
       <Logo
         viewBox="0 0 100 21"
         className="Logo"
         alt="corporate logo of sponsor"
+        aria-hidden="true"
         block={block}
         icon="FutuLogo"
         color={color.primary}
