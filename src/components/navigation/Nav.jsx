@@ -15,11 +15,14 @@ const NavContainer = styled(Switcher)`
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
+  const toggleOpen = () => {
+    setOpen(!open);
+  };
 
   return (
     <NavContainer aria-label="main navigation" space="0">
       <div>
-        <MenuLabel open={open} toggleOpen={() => setOpen(!open)} />
+        <MenuLabel open={open} toggleOpen={toggleOpen} />
         <MenuList open={open} />
       </div>
     </NavContainer>
