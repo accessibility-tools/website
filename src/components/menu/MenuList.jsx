@@ -27,8 +27,8 @@ const StyledList = styled.ul`
     top: 4.5rem;
     bottom: 0;
 
-    ${({ open }) =>
-      open
+    ${({ expanded }) =>
+      expanded
         ? `& {
           opacity: 1;
           transition: opacity 200ms 0ms;
@@ -53,10 +53,10 @@ const StyledList = styled.ul`
   }
 `;
 
-const MenuList = ({ open }) => {
+const MenuList = ({ expanded }) => {
   const [selected, setSelected] = useState(VALUES.TOOLS);
   return (
-    <StyledList aria-label="menu list" id="menu-list" open={open}>
+    <StyledList aria-label="menu list" id="menu-list" expanded={expanded}>
       {Object.values(VALUES).map(item => (
         <MenuItem
           key={item}
@@ -74,7 +74,7 @@ const MenuList = ({ open }) => {
 };
 
 MenuList.propTypes = {
-  open: PropTypes.bool.isRequired,
+  expanded: PropTypes.bool.isRequired,
 };
 
 export default MenuList;

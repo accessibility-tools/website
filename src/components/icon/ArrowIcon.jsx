@@ -16,16 +16,16 @@ const handleArrowDirection = direction => {
   }
 };
 const StyledArrowIcon = styled(Icon)`
-  transform: ${props =>
-    props.open ? handleArrowDirection : handleArrowDirection(props.direction)};
+  transform: ${({ expanded, direction }) =>
+    expanded ? handleArrowDirection : handleArrowDirection(direction)};
 `;
 
-const ArrowIcon = ({ icon, color, direction, open }) => (
+const ArrowIcon = ({ icon, color, direction, expanded }) => (
   <StyledArrowIcon
     icon={icon}
     color={color}
     direction={direction}
-    open={open}
+    expanded={expanded}
   />
 );
 
@@ -33,7 +33,7 @@ ArrowIcon.propTypes = {
   icon: PropTypes.string.isRequired,
   color: PropTypes.string,
   direction: PropTypes.string,
-  open: PropTypes.bool,
+  expanded: PropTypes.bool,
 };
 
 export default ArrowIcon;

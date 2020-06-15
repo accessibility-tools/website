@@ -30,20 +30,20 @@ const StyledLabel = styled.button`
   }
 `;
 
-const MenuLabel = ({ open, toggleOpen }) => (
+const MenuLabel = ({ expanded, toggleExpanded }) => (
   <StyledLabel
-    aria-expanded={open}
+    aria-expanded={expanded}
     aria-controls="menu-list"
-    onClick={toggleOpen}
+    onClick={toggleExpanded}
   >
     <p>MENU</p>
-    <ArrowIcon icon="sArrow" direction="up" open={open} />
+    <ArrowIcon icon="sArrow" direction="up" expanded={expanded} />
   </StyledLabel>
 );
 
 MenuLabel.propTypes = {
-  open: PropTypes.bool.isRequired,
-  toggleOpen: PropTypes.func.isRequired,
+  expanded: PropTypes.bool.isRequired,
+  toggleExpanded: PropTypes.func.isRequired,
 };
 
 export default MenuLabel;
