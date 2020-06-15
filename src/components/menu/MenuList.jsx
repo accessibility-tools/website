@@ -16,6 +16,9 @@ const StyledList = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
+  & > :last-child {
+    margin-left: auto;
+  }
 
   @media (max-width: 48rem) {
     flex-flow: column nowrap;
@@ -36,10 +39,16 @@ const StyledList = styled.ul`
         }`};
 
     & > li {
+      display: inline;
+      text-align: center;
       width: 100%;
       ::after {
         border: none;
       }
+    }
+
+    & > :last-child {
+      margin-top: auto;
     }
   }
 `;
@@ -57,7 +66,9 @@ const MenuList = ({ open }) => {
           text={item}
         />
       ))}
-      <Sponsor />
+      <li>
+        <Sponsor />
+      </li>
     </StyledList>
   );
 };
