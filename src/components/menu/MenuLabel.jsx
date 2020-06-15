@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { spacing, typography, background, color } from "../../shared/style";
 import ArrowIcon from "../icon/ArrowIcon";
 
-const StyledLabel = styled.button`
+const MenuButton = styled.button`
   display: none;
   border: 4px solid transparent;
 
@@ -31,14 +31,14 @@ const StyledLabel = styled.button`
 `;
 
 const MenuLabel = ({ expanded, toggleExpanded }) => (
-  <StyledLabel
+  <MenuButton
     aria-expanded={expanded}
     aria-controls="menu-list"
     onClick={toggleExpanded}
   >
     <p>MENU</p>
     <ArrowIcon icon="sArrow" direction="up" expanded={expanded} />
-  </StyledLabel>
+  </MenuButton>
 );
 
 MenuLabel.propTypes = {
