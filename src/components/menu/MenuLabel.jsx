@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { spacing, typography, background, color } from "../../shared/style";
 import ArrowIcon from "../icon/ArrowIcon";
 
-const StyledLabel = styled.div`
+const StyledLabel = styled.button`
   display: none;
   border: 4px solid transparent;
 
@@ -31,7 +31,11 @@ const StyledLabel = styled.div`
 `;
 
 const MenuLabel = ({ open, toggleOpen }) => (
-  <StyledLabel tabIndex="0" open={open} onClick={toggleOpen}>
+  <StyledLabel
+    aria-expanded={open}
+    aria-controls="menu-list"
+    onClick={toggleOpen}
+  >
     <p>MENU</p>
     <ArrowIcon icon="sArrow" direction="up" open={open} />
   </StyledLabel>

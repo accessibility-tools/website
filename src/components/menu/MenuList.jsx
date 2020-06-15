@@ -56,7 +56,7 @@ const StyledList = styled.ul`
 const MenuList = ({ open }) => {
   const [selected, setSelected] = useState(VALUES.TOOLS);
   return (
-    <StyledList aria-label="menu list" open={open}>
+    <StyledList aria-label="menu list" id="menu-list" open={open}>
       {Object.values(VALUES).map(item => (
         <MenuItem
           key={item}
