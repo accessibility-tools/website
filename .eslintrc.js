@@ -24,6 +24,11 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    indent: [
+      "error",
+      2,
+      { ignoredNodes: ["ConditionalExpression"], SwitchCase: 1 },
+    ],
     quotes: ["error", "double"],
     semi: ["error", "always"],
     "prettier/prettier": [
