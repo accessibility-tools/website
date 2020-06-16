@@ -61,12 +61,8 @@ const Tagline = styled(Stack)`
     text-transform: uppercase;
     letter-spacing: 0.15rem;
     font-weight: 500;
+    line-height: 1.56;
   }
-`;
-
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
 `;
 
 const LandingImg = styled.img`
@@ -74,6 +70,16 @@ const LandingImg = styled.img`
   height: 100%;
   z-index: 100;
   top: calc(11rem + (15 - 11) * ((100vw - 300px) / (1600 - 300)));
+`;
+
+const LearnMoreImg = styled.img`
+  width: 204px;
+  height: 324px;
+
+  @media (min-width: 48rem) {
+    width: 276px;
+    height: 439px;
+  }
 `;
 
 const LandingPage = () => {
@@ -233,7 +239,7 @@ const LandingPage = () => {
                 </Center>
                 <Switcher threshold="35rem" space="5rem">
                   <div>
-                    <Img src="/illustrations/learn-more.svg" alt="" />
+                    <LearnMoreImg src="/illustrations/learn-more.svg" alt="" />
                     <FAQ />
                   </div>
                 </Switcher>
