@@ -13,9 +13,9 @@ const TextInputWrapper = styled.div`
 
 const StyledInput = styled.input.attrs({ type: "text" })`
   height: 48px;
-  width: ${(props) => (props.width ? `${props.width}px` : "340px")};
+  width: ${props => (props.width ? `${props.width}px` : "340px")};
   border: 2px solid
-    ${(props) =>
+    ${props =>
       props.error ? color.error : props.valid ? color.blue : color.primary};
   padding: ${spacing.padding.medium}px ${spacing.padding.small}px;
   transition: all 150ms ease-out;
@@ -42,7 +42,7 @@ const StyledInput = styled.input.attrs({ type: "text" })`
 `;
 
 const StyledText = styled.span`
-  color: ${(props) => (props.error ? color.error : color.mediumGrey)};
+  color: ${props => (props.error ? color.error : color.mediumGrey)};
 `;
 
 const InputWrapper = styled.div`
@@ -95,7 +95,7 @@ const TextInput = ({
         </IconWrapper>
       )}
     </InputWrapper>
-    {hintText && <StyledText id={`${id}-hint`}>Hint: {hintText}</StyledText>}
+    {hintText && <StyledText id={`${id}-hint`}>{hintText}</StyledText>}
     {errorText && (
       <StyledText id={`${id}-error`} error>
         Error: {errorText}
