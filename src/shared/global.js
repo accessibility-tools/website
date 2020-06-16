@@ -124,6 +124,11 @@ export const bodyStyles = css`
     margin: -1px;
     padding: 0;
   }
+
+  .key-press{
+    background-color: ${color.lightPurple};
+  }
+  
 `;
 
 export const GlobalStyle = createGlobalStyle`

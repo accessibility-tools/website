@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { color } from "../../shared/style";
 import MenuLabel from "../menu/MenuLabel";
@@ -18,6 +18,21 @@ const Nav = () => {
   const toggleExpanded = () => {
     setExpanded(!expanded);
   };
+
+  useEffect(() => {
+    document.onkeydown = e => {
+      e.keyCode === 13 && e.target.classList.add("key-press");
+    };
+
+    document.onkeyup = e => {
+      e.keyCode === 13 && e.target.classList.remove("key-press");
+    };
+
+    return () => {
+      document.onkeydown = null;
+      document.onkeyup = null;
+    };
+  }, []);
 
   return (
     <NavContainer aria-label="main navigation" space="0">
