@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { color } from "../shared/style";
 import Button from "../components/button/Button";
 import Badge from "../components/badge/Badge";
-import ToolDetails from "../components/tool-details/ToolDetails";
+import ToolOverview from "../components/tool-overview/ToolOverview";
 import Switcher from "../components/layout-components/Switcher";
 import Stack from "../components/layout-components/Stack";
 import Center from "../components/layout-components/Center";
@@ -113,7 +113,7 @@ const LandingPage = () => {
                     create prodcuts with accessibility in mind.
                   </p>
                 </Center>
-                <ToolDetails
+                <ToolOverview
                   title="Command Line Accessibility Checker"
                   toolName="ciTool"
                   hasBadge={false}
@@ -127,7 +127,7 @@ const LandingPage = () => {
         <Section>
           <Center>
             <Switcher threshold="40rem" space="3.5rem" width="100%">
-              <ToolDetails
+              <ToolOverview
                 title="Accessibility Web Checker"
                 toolName="webChecker"
                 hasBadge={true}

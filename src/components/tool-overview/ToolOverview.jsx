@@ -16,17 +16,18 @@ const toolImages = {
 const InfoWrapper = styled(Stack)`
   max-width: 25rem;
   text-align: left;
+  margin: 0 1rem;
 `;
 
 const Img = styled.img`
-  width: 100%;
+  width: 70%;
 `;
 
 const StyledBadge = styled(Badge)`
   width: 50%;
 `;
 
-const ToolDetails = ({ title, toolName, hasBadge, hasLink }) => (
+const ToolOverview = ({ title, toolName, hasBadge, hasLink }) => (
   <Switcher>
     <div>
       <Center>
@@ -52,11 +53,11 @@ const ToolDetails = ({ title, toolName, hasBadge, hasLink }) => (
   </Switcher>
 );
 
-ToolDetails.propTypes = {
+ToolOverview.propTypes = {
   title: PropTypes.string.isRequired,
   toolName: PropTypes.string,
   hasBadge: PropTypes.bool.isRequired,
   hasLink: PropTypes.bool.isRequired,
 };
 
-export default ToolDetails;
+export default ToolOverview;
