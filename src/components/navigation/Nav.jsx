@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { color } from "../../shared/style";
 import MenuLabel from "../menu/MenuLabel";
 import MenuList from "../menu/MenuList";
-import Switcher from "../layout-components/Switcher";
 
-const NavContainer = styled(Switcher)`
-  & > * > * {
+const NavContainer = styled.nav`
+  & > * {
     background-color: ${color.white};
     z-index: 999;
     align-items: center;
+  }
+
+  @media (min-width: 48rem) {
+    padding: 0 1.5rem;
   }
 `;
 
@@ -36,10 +39,8 @@ const Nav = () => {
 
   return (
     <NavContainer aria-label="main navigation" space="0">
-      <div>
-        <MenuLabel expanded={expanded} toggleExpanded={toggleExpanded} />
-        <MenuList expanded={expanded} />
-      </div>
+      <MenuLabel expanded={expanded} toggleExpanded={toggleExpanded} />
+      <MenuList expanded={expanded} />
     </NavContainer>
   );
 };

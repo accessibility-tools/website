@@ -12,6 +12,7 @@ const MenuButton = styled.button`
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: none;
     position: fixed;
     &:hover {
       background-color: ${background.lightPurple};
