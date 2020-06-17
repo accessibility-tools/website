@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Switcher = styled.div`
   --threshold: ${({ threshold }) => (threshold ? threshold : "25rem")};
   --switcher-space: ${({ space }) => (space ? space : "2rem")};
-  width: ${({ width }) => width && width};
+  width: ${({ width }) => (width ? width : "100%")};
 
   & > * {
     display: flex;

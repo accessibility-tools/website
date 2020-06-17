@@ -88,7 +88,7 @@ const LandingPage = () => {
       <Index space="extraLarge">
         <Section>
           <Center>
-            <Switcher threshold="35rem" space="1rem" width="100%">
+            <Switcher threshold="35rem" space="1rem">
               <div>
                 <Center>
                   <Tagline>
@@ -108,7 +108,7 @@ const LandingPage = () => {
 
         <Section>
           <Center>
-            <Stack space="large" width="100%">
+            <Stack space="large">
               <Center>
                 <h1>The tools</h1>
                 <p>
@@ -140,17 +140,17 @@ const LandingPage = () => {
 
         <Section>
           <Center>
-            <Switcher threshold="40rem" space="3.5rem" width="100%">
+            <Switcher threshold="40rem" space="3.5rem">
               <div>
                 <Center>
-                  <Stack>
+                  <Stack width="auto">
                     <Badge level="serious" />
                     <img src="/illustrations/product-ios.svg" alt="" />
                     <h3>iOS Checker</h3>
                   </Stack>
                 </Center>
                 <Center>
-                  <Stack>
+                  <Stack width="auto">
                     <Badge level="serious" />
                     <img src="/illustrations/product-android.svg" alt="" />
                     <h3>Android Checker</h3>
@@ -169,7 +169,7 @@ const LandingPage = () => {
 
         <Section>
           <Center>
-            <Stack width="100%">
+            <Stack>
               <h2>How can the tools help you?</h2>
               <Switcher threshold="35rem" space="3.5rem">
                 <div>
@@ -211,7 +211,7 @@ const LandingPage = () => {
 
         <Section id="learnMore">
           <Center>
-            <Stack width="100%">
+            <Stack>
               <Center>
                 <h2>Learn more</h2>
                 <p>
@@ -231,7 +231,7 @@ const LandingPage = () => {
 
         <Section>
           <Center>
-            <Stack>
+            <Stack width="auto">
               <h2>About & Contact</h2>
               <p>
                 We are a group of developers and designers, who are passionate
