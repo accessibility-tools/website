@@ -28,7 +28,7 @@ const StyledBadge = styled(Badge)`
 `;
 
 const ToolOverview = ({ title, toolName, hasBadge, hasLink }) => (
-  <Switcher>
+  <Switcher threshold="40rem" space="3.5rem" width="100%">
     <div>
       <Center>
         <Img src={toolImages[toolName]} alt="" />

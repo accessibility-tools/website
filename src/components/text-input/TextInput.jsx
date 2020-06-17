@@ -9,6 +9,7 @@ const TextInputWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: left;
+  text-align: left;
 `;
 
 const StyledInput = styled.input.attrs({ type: "text" })`
