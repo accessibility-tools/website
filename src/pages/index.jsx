@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { color } from "../shared/style";
-import Button from "../components/button/Button";
 import Badge from "../components/badge/Badge";
 import ToolOverview from "../components/tool-overview/ToolOverview";
 import Switcher from "../components/layout-components/Switcher";
@@ -10,7 +9,7 @@ import Center from "../components/layout-components/Center";
 import SEO from "../components/SEO/SEO";
 import FAQ from "../components/learn-more-questions/LearnMoreQuestions";
 import Link from "../components/links/Link";
-import TextInput from "../components/text-input/TextInput";
+import SignUp from "../components/sign-up/SignUp";
 
 const Index = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -164,17 +163,7 @@ const LandingPage = () => {
 
         <Section>
           <Center>
-            <Stack space="large">
-              <h2>Sign up to be notified for the release</h2>
-              <Center>
-                <TextInput
-                  id="email"
-                  label="email"
-                  hintText="Your e-mail will not be used for any other purposes. No spam. We promise."
-                />
-              </Center>
-              <Button text="Sign Up" />
-            </Stack>
+            <SignUp />
           </Center>
         </Section>
 
