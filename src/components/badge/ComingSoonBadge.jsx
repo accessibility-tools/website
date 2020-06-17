@@ -11,7 +11,7 @@ const StyledBadge = styled(Badge)`
 const ComingSoonBadge = () => {
   return (
     <StyledBadge
-      label="COMING SOON"
+      label="Coming Soon"
       iconName="manicule"
       iconColor={color.blue}
     />
