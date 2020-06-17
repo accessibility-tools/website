@@ -48,7 +48,7 @@ const Section = styled.section`
   }
 
   p {
-    max-width: 36rem;
+    max-width: 30rem;
   }
 `;
 
@@ -109,37 +109,33 @@ const LandingPage = () => {
 
         <Section>
           <Center>
-            <Switcher threshold="40rem" space="3.5rem" width="100%">
-              <Stack space="large">
-                <Center>
-                  <h1>The tools</h1>
-                  <p>
-                    Everybody should be able to use digital products regardless
-                    of ability, context, or situation. Our tools can help you
-                    create prodcuts with accessibility in mind.
-                  </p>
-                </Center>
-                <ToolOverview
-                  title="Command Line Accessibility Checker"
-                  toolName="ciTool"
-                  hasBadge={false}
-                  hasLink={true}
-                />
-              </Stack>
-            </Switcher>
+            <Stack space="large" width="100%">
+              <Center>
+                <h1>The tools</h1>
+                <p>
+                  Everybody should be able to use digital products regardless of
+                  ability, context, or situation. Our tools can help you create
+                  prodcuts with accessibility in mind.
+                </p>
+              </Center>
+              <ToolOverview
+                title="Command Line Accessibility Checker"
+                toolName="ciTool"
+                hasBadge={false}
+                hasLink={true}
+              />
+            </Stack>
           </Center>
         </Section>
 
         <Section>
           <Center>
-            <Switcher threshold="40rem" space="3.5rem" width="100%">
-              <ToolOverview
-                title="Accessibility Web Checker"
-                toolName="webChecker"
-                hasBadge={true}
-                hasLink={false}
-              />
-            </Switcher>
+            <ToolOverview
+              title="Accessibility Web Checker"
+              toolName="webChecker"
+              hasBadge={true}
+              hasLink={false}
+            />
           </Center>
         </Section>
 
@@ -184,67 +180,63 @@ const LandingPage = () => {
 
         <Section>
           <Center>
-            <Switcher threshold="40rem" space="3.5rem">
-              <Stack>
-                <h2>How can the tools help you?</h2>
-                <Switcher threshold="35rem" space="3.5rem">
-                  <div>
-                    <Stack>
-                      <img
-                        src="/illustrations/persona-a.svg"
-                        alt="illustration of a developer"
-                      />
-                      <Center>
-                        <h3>As a developer</h3>
-                        <p>
-                          Detect accessibility issue like the non-use of labels
-                          in form elements, missing descriptive alternative text
-                          for images, links and other non-text content – and
-                          learn how to solve them.
-                        </p>
-                      </Center>
-                    </Stack>
-                    <Stack>
-                      <img
-                        src="/illustrations/persona-b.svg"
-                        alt="illustration of a designer"
-                      />
-                      <Center>
-                        <h3>As a designer</h3>
-                        <p>
-                          Make sure everybody can use your interface and get
-                          pointed to issues like insufficient font sizing, lack
-                          of color contrast and more and learn how to easily fix
-                          the problems.
-                        </p>
-                      </Center>
-                    </Stack>
-                  </div>
-                </Switcher>
-              </Stack>
-            </Switcher>
+            <Stack width="100%">
+              <h2>How can the tools help you?</h2>
+              <Switcher threshold="35rem" space="3.5rem">
+                <div>
+                  <Stack>
+                    <img
+                      src="/illustrations/persona-a.svg"
+                      alt="illustration of a developer"
+                    />
+                    <Center>
+                      <h3>As a developer</h3>
+                      <p>
+                        Detect accessibility issue like the non-use of labels in
+                        form elements, missing descriptive alternative text for
+                        images, links and other non-text content – and learn how
+                        to solve them.
+                      </p>
+                    </Center>
+                  </Stack>
+                  <Stack>
+                    <img
+                      src="/illustrations/persona-b.svg"
+                      alt="illustration of a designer"
+                    />
+                    <Center>
+                      <h3>As a designer</h3>
+                      <p>
+                        Make sure everybody can use your interface and get
+                        pointed to issues like insufficient font sizing, lack of
+                        color contrast and more and learn how to easily fix the
+                        problems.
+                      </p>
+                    </Center>
+                  </Stack>
+                </div>
+              </Switcher>
+            </Stack>
           </Center>
         </Section>
 
         <Section id="learnMore">
           <Center>
-            <Switcher threshold="40rem" space="3.5rem" width="100%">
-              <Stack>
-                <Center>
-                  <h2>Learn more</h2>
-                  <p>
-                    Why should designers and developers care about accessibility
-                    and how to get started?
-                  </p>
-                </Center>
-                <Switcher threshold="35rem" space="5rem">
-                  <div>
-                    <LearnMoreImg src="/illustrations/learn-more.svg" alt="" />
-                    <FAQ />
-                  </div>
-                </Switcher>
-              </Stack>
-            </Switcher>
+            <Stack width="100%">
+              <Center>
+                <h2>Learn more</h2>
+                <p>
+                  Why should designers and developers care about accessibility
+                  and how to get started?
+                </p>
+              </Center>
+              <Switcher threshold="35rem" space="5rem">
+                <div>
+                  <LearnMoreImg src="/illustrations/learn-more.svg" alt="" />
+                  <FAQ />
+                </div>
+              </Switcher>
+            </Stack>
           </Center>
         </Section>
 
