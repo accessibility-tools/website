@@ -12,9 +12,16 @@ const TextInputWrapper = styled.div`
   text-align: left;
 `;
 
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
 const StyledInput = styled.input.attrs({ type: "text" })`
   height: 48px;
-  width: ${props => (props.width ? `${props.width}px` : "340px")};
+  width: ${props =>
+    props.width ? `${props.width}px` : "-webkit-fill-available"};
   border: 2px solid
     ${props =>
       props.error ? color.error : props.valid ? color.blue : color.primary};
@@ -42,19 +49,18 @@ const StyledInput = styled.input.attrs({ type: "text" })`
   }
 `;
 
-const StyledText = styled.span`
-  color: ${props => (props.error ? color.error : color.mediumGrey)};
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
 const IconWrapper = styled.span`
   position: relative;
   right: 34px;
+`;
+
+const StyledText = styled.div`
+  color: ${props => (props.error ? color.error : color.mediumGrey)};
+  max-width: ${({ width }) => width && `${width * 0.75}px`};
+
+  & > *:first-child {
+    margin-right: 0.5rem;
+  }
 `;
 
 const TextInput = ({
@@ -68,6 +74,8 @@ const TextInput = ({
   placeholder,
   onChange,
   width,
+  hintIcon,
+  iconColor,
 }) => (
   <TextInputWrapper>
     <label htmlFor={id} id={`${id}-label`}>
@@ -96,7 +104,12 @@ const TextInput = ({
         </IconWrapper>
       )}
     </InputWrapper>
-    {hintText && <StyledText id={`${id}-hint`}>{hintText}</StyledText>}
+    {hintText && (
+      <StyledText id={`${id}-hint`} width={width}>
+        {hintIcon && <Icon icon={hintIcon} iconColor={iconColor} />}
+        <span>{hintText}</span>
+      </StyledText>
+    )}
     {errorText && (
       <StyledText id={`${id}-error`} error>
         Error: {errorText}
@@ -116,6 +129,8 @@ TextInput.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   width: PropTypes.number,
+  hintIcon: PropTypes.string,
+  iconColor: PropTypes.string,
 };
 
 export default TextInput;
