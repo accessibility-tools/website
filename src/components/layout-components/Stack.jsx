@@ -9,7 +9,7 @@ const spacing = {
 };
 
 const Stack = styled.div`
-  --stack-space: ${(props) => (props.space ? spacing[props.space] : "2rem")};
+  --stack-space: ${props => (props.space ? spacing[props.space] : "2rem")};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
