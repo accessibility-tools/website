@@ -4,14 +4,14 @@ import styled from "styled-components";
 import { icons } from "../../shared/icons";
 
 export const Svg = styled.svg`
-  display: ${(props) => (props.block ? "block" : "inline-block")};
+  display: ${props => (props.block ? "block" : "inline-block")};
   vertical-align: middle;
   shape-rendering: inherit;
   transform: translate3d(0, 0, 0);
 `;
 
 const Path = styled.path`
-  fill: ${(props) => props.color || "currentColor"};
+  fill: ${props => props.color || "currentColor"};
 `;
 
 /**

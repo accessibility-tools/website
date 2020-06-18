@@ -38,7 +38,7 @@ const StyledLink = styled.a`
     }
   }
 
-  ${(props) =>
+  ${props =>
     props.icon === true &&
     `      
       svg {
@@ -46,7 +46,7 @@ const StyledLink = styled.a`
       }
     `}
 
-  ${(props) =>
+  ${props =>
     props.isSecondary === true &&
     `
       color: ${color.primary};

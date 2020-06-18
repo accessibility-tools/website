@@ -30,7 +30,7 @@ const Nav = () => {
   return (
     <StyledNav>
       <StyledList>
-        {Object.values(VALUES).map((item) => (
+        {Object.values(VALUES).map(item => (
           <MenuItem
             key={item}
             value={item}

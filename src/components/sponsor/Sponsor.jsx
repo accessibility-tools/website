@@ -5,7 +5,7 @@ import { icons } from "../../shared/icons";
 import { spacing } from "../../shared/style";
 
 const Logo = styled.svg`
-  display: ${(props) => (props.block ? "block" : "inline-block")};
+  display: ${props => (props.block ? "block" : "inline-block")};
   vertical-align: middle;
   height: 1em;
   max-width: 100%;
@@ -17,7 +17,7 @@ const Logo = styled.svg`
 `;
 
 const Path = styled.path`
-  fill: ${(props) => props.color || "currentColor"};
+  fill: ${props => props.color || "currentColor"};
 `;
 
 const ShoutOut = styled.div`

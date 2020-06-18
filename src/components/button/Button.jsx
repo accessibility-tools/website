@@ -36,7 +36,7 @@ const StyledButton = styled.button`
     cursor: not-allowed !important;
   }
 
-  ${(props) =>
+  ${props =>
     props.isSecondary &&
     `
       background-color: ${color.white};
@@ -62,7 +62,7 @@ const StyledButton = styled.button`
       }
     `}
 
-  ${(props) =>
+  ${props =>
     !!props.icon &&
     `
     display: flex;
