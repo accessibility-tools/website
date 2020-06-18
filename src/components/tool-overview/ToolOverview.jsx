@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Button from "../button/Button";
-import Badge from "../badge/Badge";
 import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Center from "../layout-components/Center";
+import ComingSoon from "../badge/ComingSoonBadge";
 
 // TODO: This is just an initial implementation, and needs maybe some rethinking when we actually have every detail for every tool that uses this component
 const toolImages = {
@@ -23,10 +23,6 @@ const Img = styled.img`
   width: 70%;
 `;
 
-const StyledBadge = styled(Badge)`
-  width: 50%;
-`;
-
 const ToolOverview = ({ title, toolName, hasBadge, hasLink }) => (
   <Switcher threshold="40rem" space="3.5rem" width="100%">
     <div>
@@ -35,7 +31,7 @@ const ToolOverview = ({ title, toolName, hasBadge, hasLink }) => (
       </Center>
       <Center>
         <InfoWrapper>
-          {hasBadge && <StyledBadge level="critical" />}
+          {hasBadge && <ComingSoon />}
           <h2>{title}</h2>
           <p>
             With our tool for web you can run a check for any website to detect

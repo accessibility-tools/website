@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { color } from "../shared/style";
-import Badge from "../components/badge/Badge";
 import ToolOverview from "../components/tool-overview/ToolOverview";
 import Switcher from "../components/layout-components/Switcher";
 import Stack from "../components/layout-components/Stack";
@@ -10,6 +9,7 @@ import SEO from "../components/SEO/SEO";
 import FAQ from "../components/learn-more-questions/LearnMoreQuestions";
 import Link from "../components/links/Link";
 import SignUp from "../components/sign-up/SignUp";
+import ComingSoon from "../components/badge/ComingSoonBadge";
 
 const Index = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -144,14 +144,14 @@ const LandingPage = () => {
               <div>
                 <Center>
                   <Stack width="auto">
-                    <Badge level="serious" />
+                    <ComingSoon />
                     <img src="/illustrations/product-ios.svg" alt="" />
                     <h3>iOS Checker</h3>
                   </Stack>
                 </Center>
                 <Center>
                   <Stack width="auto">
-                    <Badge level="serious" />
+                    <ComingSoon />
                     <img src="/illustrations/product-android.svg" alt="" />
                     <h3>Android Checker</h3>
                   </Stack>
