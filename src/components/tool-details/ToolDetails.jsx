@@ -14,6 +14,7 @@ const toolImages = {
 
 const InfoWrapper = styled(Stack)`
   max-width: 25rem;
+  text-align: left;
 `;
 
 const Img = styled.img`
