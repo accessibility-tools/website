@@ -109,6 +109,14 @@ export const bodyStyles = css`
     max-width: 100%;
     max-height: 100%;
   }
+
+  .key-press {
+    background-color: ${color.lightPurple};
+  }
+
+  .key-press-alt {
+    background-color: ${color.darkBlue};
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`
