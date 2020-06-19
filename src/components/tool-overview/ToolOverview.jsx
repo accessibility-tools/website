@@ -24,9 +24,9 @@ const toolData = {
 };
 
 const InfoWrapper = styled(Stack)`
-  max-width: 25rem;
+  max-width: 30rem;
   text-align: left;
-  margin: 0 1rem;
+  padding: 0 1.5rem;
 `;
 
 const ToolImg = styled.img`
