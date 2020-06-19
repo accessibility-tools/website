@@ -20,7 +20,6 @@ const Section = styled.section`
 
   &:nth-child(even) {
     background-color: ${color.lightPurple};
-    padding: 10rem 2rem;
     clip-path: polygon(0% 4rem, 100% 0%, 100% calc(100% - 4rem), 0% 100%);
     -webkit-clip-path: polygon(
       0% 4rem,
@@ -39,11 +38,6 @@ const Section = styled.section`
 
   & > * {
     max-width: 100rem;
-  }
-
-  h2 {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   p {
@@ -88,7 +82,7 @@ const LandingPage = () => {
       <Index space="extraLarge">
         <Section>
           <Center>
-            <Switcher threshold="35rem" space="1rem">
+            <Switcher threshold="35rem" space="1rem" width="90%">
               <div>
                 <Center>
                   <Tagline>
@@ -107,151 +101,141 @@ const LandingPage = () => {
         </Section>
 
         <Section>
-          <Center>
-            <Stack space="large">
-              <Center>
-                <h1>The tools</h1>
-                <p>
-                  Everybody should be able to use digital products regardless of
-                  ability, context, or situation. This includes elderly people
-                  or users with visual, motor, auditory, speech, or cognitive
-                  disabilities. Our tools help you create products with
-                  accessibility in mind. tools can help you create prodcuts with
-                  accessibility in mind.
-                </p>
-              </Center>
-              <ToolOverview
-                title="Accessibility Web Checker for Terminal"
-                toolName="ciTool"
-                hasBadge={false}
-                hasLink={true}
-              />
-            </Stack>
-          </Center>
-        </Section>
-
-        <Section>
-          <Center>
+          <Stack space="large">
+            <Center>
+              <h1>The tools</h1>
+              <p>
+                Everybody should be able to use digital products regardless of
+                ability, context, or situation. This includes elderly people or
+                users with visual, motor, auditory, speech, or cognitive
+                disabilities. Our tools help you create products with
+                accessibility in mind. tools can help you create prodcuts with
+                accessibility in mind.
+              </p>
+            </Center>
             <ToolOverview
-              title="Accessibility Web Checker"
-              toolName="webChecker"
-              hasBadge={true}
-              hasLink={false}
+              title="Accessibility Web Checker for Terminal"
+              toolName="ciTool"
+              hasBadge={false}
+              hasLink={true}
             />
-          </Center>
+          </Stack>
         </Section>
 
         <Section>
-          <Center>
-            <Switcher threshold="40rem" space="3.5rem">
+          <ToolOverview
+            title="Accessibility Web Checker"
+            toolName="webChecker"
+            hasBadge={true}
+            hasLink={false}
+          />
+        </Section>
+
+        <Section>
+          <Switcher threshold="40rem" space="3.5rem">
+            <div>
+              <Center>
+                <Stack width="auto">
+                  <ComingSoon />
+                  <img src="/illustrations/product-ios.svg" alt="" />
+                  <h3>iOS Checker</h3>
+                </Stack>
+              </Center>
+              <Center>
+                <Stack width="auto">
+                  <ComingSoon />
+                  <img src="/illustrations/product-android.svg" alt="" />
+                  <h3>Android Checker</h3>
+                </Stack>
+              </Center>
+            </div>
+          </Switcher>
+        </Section>
+
+        <Section>
+          <SignUp />
+        </Section>
+
+        <Section>
+          <Stack>
+            <Center>
+              <h2>How can the tools help you?</h2>
+            </Center>
+            <Switcher threshold="35rem" space="3.5rem">
               <div>
-                <Center>
-                  <Stack width="auto">
-                    <ComingSoon />
-                    <img src="/illustrations/product-ios.svg" alt="" />
-                    <h3>iOS Checker</h3>
-                  </Stack>
-                </Center>
-                <Center>
-                  <Stack width="auto">
-                    <ComingSoon />
-                    <img src="/illustrations/product-android.svg" alt="" />
-                    <h3>Android Checker</h3>
-                  </Stack>
-                </Center>
+                <Stack>
+                  <img
+                    src="/illustrations/persona-a.svg"
+                    alt="illustration of a developer"
+                  />
+                  <Center>
+                    <h3>As a developer</h3>
+                    <p>
+                      Detect accessibility issue like the non-use of labels in
+                      form elements, missing descriptive alternative text for
+                      images, links and other non-text content – and learn how
+                      to solve them.
+                    </p>
+                  </Center>
+                </Stack>
+                <Stack>
+                  <img
+                    src="/illustrations/persona-b.svg"
+                    alt="illustration of a designer"
+                  />
+                  <Center>
+                    <h3>As a designer</h3>
+                    <p>
+                      Make sure everybody can use your interface and get pointed
+                      to issues like insufficient font sizing, lack of color
+                      contrast and more and learn how to easily fix the
+                      problems.
+                    </p>
+                  </Center>
+                </Stack>
               </div>
             </Switcher>
-          </Center>
-        </Section>
-
-        <Section>
-          <Center>
-            <SignUp />
-          </Center>
-        </Section>
-
-        <Section>
-          <Center>
-            <Stack>
-              <h2>How can the tools help you?</h2>
-              <Switcher threshold="35rem" space="3.5rem">
-                <div>
-                  <Stack>
-                    <img
-                      src="/illustrations/persona-a.svg"
-                      alt="illustration of a developer"
-                    />
-                    <Center>
-                      <h3>As a developer</h3>
-                      <p>
-                        Detect accessibility issue like the non-use of labels in
-                        form elements, missing descriptive alternative text for
-                        images, links and other non-text content – and learn how
-                        to solve them.
-                      </p>
-                    </Center>
-                  </Stack>
-                  <Stack>
-                    <img
-                      src="/illustrations/persona-b.svg"
-                      alt="illustration of a designer"
-                    />
-                    <Center>
-                      <h3>As a designer</h3>
-                      <p>
-                        Make sure everybody can use your interface and get
-                        pointed to issues like insufficient font sizing, lack of
-                        color contrast and more and learn how to easily fix the
-                        problems.
-                      </p>
-                    </Center>
-                  </Stack>
-                </div>
-              </Switcher>
-            </Stack>
-          </Center>
+          </Stack>
         </Section>
 
         <Section id="learnMore">
-          <Center>
-            <Stack>
-              <Center>
-                <h2>Learn more</h2>
-                <p>
-                  Why should designers and developers care about accessibility
-                  and how to get started?
-                </p>
-              </Center>
-              <Switcher threshold="35rem" space="5rem">
-                <div>
-                  <LearnMoreImg src="/illustrations/learn-more.svg" alt="" />
-                  <FAQ />
-                </div>
-              </Switcher>
-            </Stack>
-          </Center>
+          <Stack>
+            <Center>
+              <h2>Learn more</h2>
+              <p>
+                Why should designers and developers care about accessibility and
+                how to get started?
+              </p>
+            </Center>
+            <Switcher threshold="35rem" space="5rem">
+              <div>
+                <LearnMoreImg src="/illustrations/learn-more.svg" alt="" />
+                <FAQ />
+              </div>
+            </Switcher>
+          </Stack>
         </Section>
 
         <Section>
-          <Center>
-            <Stack width="auto">
+          <Stack width="auto">
+            <Center>
               <h2>About & Contact</h2>
               <p>
                 We are a group of developers and designers, who are passionate
                 about accessibility. If you want to be part of this open source
                 project, have questions or feedback feel free to reach out.
               </p>
-              <Center>
-                <Link
-                  href="mailto:accessibility@futurice.com"
-                  isSecondary={true}
-                  icon="mailto"
-                >
-                  accessibility@futurice.com
-                </Link>
-              </Center>
-            </Stack>
-          </Center>
+            </Center>
+            <Center>
+              <Link
+                href="mailto:accessibility@futurice.com"
+                isSecondary={true}
+                icon="mailto"
+              >
+                accessibility@futurice.com
+              </Link>
+            </Center>
+          </Stack>
         </Section>
       </Index>
     </>
