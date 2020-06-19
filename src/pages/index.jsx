@@ -47,7 +47,7 @@ const Section = styled.section`
   }
 
   p {
-    max-width: 30rem;
+    max-width: 36rem;
   }
 `;
 
@@ -121,7 +121,7 @@ const LandingPage = () => {
                 </p>
               </Center>
               <ToolOverview
-                title="Command Line Accessibility Checker"
+                title="Accessibility Web Checker for Terminal"
                 toolName="ciTool"
                 hasBadge={false}
                 hasLink={true}

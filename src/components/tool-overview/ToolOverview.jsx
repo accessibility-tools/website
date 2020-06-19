@@ -7,10 +7,20 @@ import Stack from "../layout-components/Stack";
 import Center from "../layout-components/Center";
 import ComingSoon from "../badge/ComingSoonBadge";
 
-// TODO: This is just an initial implementation, and needs maybe some rethinking when we actually have every detail for every tool that uses this component
-const toolImages = {
-  webChecker: "/illustrations/webchecker-placeholder.png",
-  ciTool: "/illustrations/citool-placeholder.png",
+const toolData = {
+  ciTool: {
+    img: "/illustrations/citool-placeholder.png",
+    desc: `With our tool for web you can run a check for any website to detect
+  and fix With our Command Line Tool you can run a check for any
+  website to detect and fix accessibility issues. In addition you get
+  introduced to best practices and guidlines. issues. In addition you
+  get introduced to best practices and guidelines.`,
+  },
+  webChecker: {
+    img: "/illustrations/webchecker-placeholder.png",
+    desc: `With our free, open source tool for web you can run a check for any website to detect and fix accessibility issues. In addition you get introduced to best practices and guidlines.
+  `,
+  },
 };
 
 const InfoWrapper = styled(Stack)`
@@ -19,27 +29,21 @@ const InfoWrapper = styled(Stack)`
   margin: 0 1rem;
 `;
 
-const Img = styled.img`
-  width: 70%;
+const ToolImg = styled.img`
+  width: 60%;
 `;
 
 const ToolOverview = ({ title, toolName, hasBadge, hasLink }) => (
   <Switcher threshold="40rem" space="3.5rem" width="100%">
     <div>
       <Center>
-        <Img src={toolImages[toolName]} alt="" />
+        <ToolImg src={toolData[toolName].img} alt="image of the tool" />
       </Center>
       <Center>
         <InfoWrapper>
           {hasBadge && <ComingSoon />}
           <h2>{title}</h2>
-          <p>
-            With our tool for web you can run a check for any website to detect
-            and fix With our Command Line Tool you can run a check for any
-            website to detect and fix accessibility issues. In addition you get
-            introduced to best practices and guidlines. issues. In addition you
-            get introduced to best practices and guidelines.
-          </p>
+          <p>{toolData[toolName].desc}</p>
           {hasLink && <Button text="View on Github" icon="extLink" />}
         </InfoWrapper>
       </Center>
