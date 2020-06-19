@@ -40,9 +40,7 @@ const ToolOverview = ({ title, toolName, hasBadge, hasLink }) => (
             introduced to best practices and guidlines. issues. In addition you
             get introduced to best practices and guidelines.
           </p>
-          {hasLink && (
-            <Button text="View on Github" isSecondary icon="github" />
-          )}
+          {hasLink && <Button text="View on Github" icon="extLink" />}
         </InfoWrapper>
       </Center>
     </div>

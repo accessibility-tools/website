@@ -113,8 +113,11 @@ const LandingPage = () => {
                 <h1>The tools</h1>
                 <p>
                   Everybody should be able to use digital products regardless of
-                  ability, context, or situation. Our tools can help you create
-                  prodcuts with accessibility in mind.
+                  ability, context, or situation. This includes elderly people
+                  or users with visual, motor, auditory, speech, or cognitive
+                  disabilities. Our tools help you create products with
+                  accessibility in mind. tools can help you create prodcuts with
+                  accessibility in mind.
                 </p>
               </Center>
               <ToolOverview
