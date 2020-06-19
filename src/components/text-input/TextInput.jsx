@@ -20,8 +20,7 @@ const InputWrapper = styled.div`
 
 const StyledInput = styled.input.attrs({ type: "text" })`
   height: 48px;
-  width: ${props =>
-    props.width ? `${props.width}px` : "-webkit-fill-available"};
+  width: -webkit-fill-available;
   border: 2px solid
     ${props =>
       props.error ? color.error : props.valid ? color.blue : color.primary};
@@ -46,6 +45,7 @@ const StyledInput = styled.input.attrs({ type: "text" })`
 
   @media (min-width: 1440px) {
     height: 56px;
+    width: 576px;
   }
 `;
 
@@ -54,9 +54,9 @@ const IconWrapper = styled.span`
   right: 34px;
 `;
 
-const StyledText = styled.div`
+const StyledSubtext = styled.div`
+  padding: 1rem 0;
   color: ${props => (props.error ? color.error : color.mediumGrey)};
-  max-width: ${({ width }) => width && `${width * 0.75}px`};
 
   & > *:first-child {
     margin-right: 0.5rem;
@@ -105,15 +105,15 @@ const TextInput = ({
       )}
     </InputWrapper>
     {hintText && (
-      <StyledText id={`${id}-hint`} width={width}>
-        {hintIcon && <Icon icon={hintIcon} iconColor={iconColor} />}
+      <StyledSubtext id={`${id}-hint`}>
+        {hintIcon && <Icon icon={hintIcon} color={iconColor} />}
         <span>{hintText}</span>
-      </StyledText>
+      </StyledSubtext>
     )}
     {errorText && (
-      <StyledText id={`${id}-error`} error>
+      <StyledSubtext id={`${id}-error`} error>
         Error: {errorText}
-      </StyledText>
+      </StyledSubtext>
     )}
   </TextInputWrapper>
 );
