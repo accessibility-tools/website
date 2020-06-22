@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Button from "../button/Button";
 import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Center from "../layout-components/Center";
 import ComingSoon from "../badge/ComingSoonBadge";
+import CTA from "../CTA/CTA";
 
 const toolData = {
   ciTool: {
@@ -44,7 +44,7 @@ const ToolOverview = ({ title, toolName, hasBadge, hasLink }) => (
           {hasBadge && <ComingSoon />}
           <h2>{title}</h2>
           <p>{toolData[toolName].desc}</p>
-          {hasLink && <Button text="View on Github" icon="extLink" />}
+          {hasLink && <CTA text="View on Github" icon="extLink" />}
         </InfoWrapper>
       </Center>
     </div>

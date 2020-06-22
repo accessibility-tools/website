@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import StyledButton from "../button/Button";
+import Button from "../button/Button";
 
 const CTA = ({ text, icon, href, isExternal, isSecondary, ...otherProps }) => {
   const externalConfig = {
@@ -31,7 +31,8 @@ const CTA = ({ text, icon, href, isExternal, isSecondary, ...otherProps }) => {
   }, [isSecondary]);
 
   return (
-    <StyledButton
+    <Button
+      tabIndex="0"
       as="a"
       href={href}
       text={text}
