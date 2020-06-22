@@ -45,7 +45,7 @@ const StyledInput = styled.input.attrs({ type: "text" })`
 
   @media (min-width: 1440px) {
     height: 56px;
-    width: 576px;
+    width: 640px;
   }
 `;
 

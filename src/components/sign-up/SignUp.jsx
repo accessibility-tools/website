@@ -16,7 +16,7 @@ const SignUpBtn = styled(Button)`
 `;
 
 const SignUp = () => (
-  <Stack space="large" width="100%">
+  <Stack space="large">
     <Center>
       <h2>Sign up to be notified for the release</h2>
     </Center>
