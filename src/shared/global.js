@@ -88,12 +88,10 @@ export const bodyStyles = css`
   }
 
   a {
+    border: 4px solid transparent;
     border-radius: 3px;
 
-    &:focus {
-      border: 4px solid ${color.darkBlue};
-      transition: border 0.6s ease-in-out;
-    }
+    
   }
 
   sub,
@@ -117,14 +115,6 @@ export const bodyStyles = css`
     max-height: 100%;
   }
 
-  .key-press {
-    background-color: ${color.lightPurple};
-  }
-
-  .key-press-alt {
-    background-color: ${color.darkBlue};
-  }
-
   summary {
     font-weight: ${typography.weight.bold};
   }
@@ -139,8 +129,12 @@ export const bodyStyles = css`
     padding: 0;
   }
 
-  .key-press{
+  .key-press {
     background-color: ${color.lightPurple};
+  }
+
+  .key-press-alt {
+    background-color: ${color.darkBlue};
   }
   
 `;

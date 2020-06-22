@@ -25,6 +25,10 @@ const StyledButton = styled.button`
     background-color: ${color.lightBlue};
   }
 
+  &:focus {
+    box-shadow: 0 0 0 3px ${color.white}, 0 0 0 7px ${color.darkBlue};
+  }
+
   &:active {
     background-color: ${color.darkBlue};
     box-shadow: inset 0 0 0 2px ${color.blue};
@@ -49,10 +53,7 @@ const StyledButton = styled.button`
       &:active {
         background-color: ${color.purple};
       }
-      &:focus {
-        box-shadow:  0 0 0 3px ${color.white},
-                    0 0 0 7px ${color.darkBlue};
-      }
+      
       &:disabled {
         background-color: ${color.white};
         border: 2px solid ${color.disabled};

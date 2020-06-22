@@ -11,6 +11,13 @@ const NavContainer = styled.nav`
     align-items: center;
   }
 
+  a {
+    &:focus {
+      border: 4px solid ${color.darkBlue};
+      transition: border 0.3s ease-in-out;
+    }
+  }
+
   @media (min-width: 48rem) {
     padding: 0 1.5rem;
   }
