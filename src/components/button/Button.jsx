@@ -36,7 +36,7 @@ const StyledButton = styled.button`
     cursor: not-allowed !important;
   }
 
-  ${(props) =>
+  ${props =>
     props.isSecondary &&
     `
       background-color: ${color.white};
@@ -62,7 +62,7 @@ const StyledButton = styled.button`
       }
     `}
 
-  ${(props) =>
+  ${props =>
     !!props.icon &&
     `
     display: flex;
@@ -75,9 +75,9 @@ const StyledButton = styled.button`
   `}
 `;
 
-const Button = ({ text, icon, ...props }) => {
+const Button = ({ text, icon, ...otherProps }) => {
   return (
-    <StyledButton icon={!!icon} {...props}>
+    <StyledButton icon={!!icon} {...otherProps}>
       {text}
       {icon && <Icon icon={icon} />}
     </StyledButton>

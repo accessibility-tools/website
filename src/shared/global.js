@@ -89,12 +89,7 @@ export const bodyStyles = css`
   }
 
   a {
-    border: 4px solid transparent;
     border-radius: 3px;
-
-    &:focus {
-      box-shadow: 0 0 0 4px ${color.darkBlue};
-    }
   }
 
   sub,
@@ -116,6 +111,14 @@ export const bodyStyles = css`
     height: 1em;
     max-width: 100%;
     max-height: 100%;
+  }
+
+  .key-press {
+    background-color: ${color.lightPurple};
+  }
+
+  .key-press-alt {
+    background-color: ${color.darkBlue};
   }
 
   summary {

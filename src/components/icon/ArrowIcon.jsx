@@ -5,7 +5,7 @@ import { icons } from "../../shared/icons";
 import { Svg } from "./Icon";
 
 const ArrowSvg = styled(Svg)`
-  transform: ${(props) =>
+  transform: ${props =>
     props.direction === "left" ? "rotate(90deg)" : "rotate(-90deg)"};
 `;
 

@@ -14,7 +14,7 @@ const HiddenRadioButton = styled.input.attrs({ type: "radio" })`
 `;
 
 const StyledRadioButton = styled.div`
-  border: 3px solid ${(props) => (props.checked ? color.blue : color.primary)};
+  border: 3px solid ${props => (props.checked ? color.blue : color.primary)};
   border-radius: 50%;
   display: inline-block;
   height: 20px;
@@ -31,7 +31,7 @@ const StyledRadioButton = styled.div`
     left: 3px;
     top: 3px;
     position: absolute;
-    visibility: ${(props) => (props.checked ? "visible" : "hidden")};
+    visibility: ${props => (props.checked ? "visible" : "hidden")};
     width: 8px;
   }
 
@@ -67,10 +67,10 @@ const RadioButtonContainer = styled.label`
   }
 `;
 
-const RadioButton = ({ checked, label, ...props }) => {
-  const [isChecked, setChecked] = React.useState(props.checked);
+const RadioButton = ({ checked, label, ...otherProps }) => {
+  const [isChecked, setChecked] = React.useState(checked);
 
-  const handleKeyPress = (event) => {
+  const handleKeyPress = event => {
     if (event.key === " ") {
       setChecked(!isChecked);
     }
@@ -83,12 +83,12 @@ const RadioButton = ({ checked, label, ...props }) => {
       <HiddenRadioButton
         onKeyPress={handleKeyPress}
         checked={checked}
-        {...props}
+        {...otherProps}
       />
       <StyledRadioButton
         checked={isChecked}
         onClick={handleCheckedChange}
-        {...props}
+        {...otherProps}
       ></StyledRadioButton>
       <span>{label}</span>
     </RadioButtonContainer>
