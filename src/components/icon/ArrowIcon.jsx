@@ -1,26 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { icons } from "../../shared/icons";
-import { Svg } from "./Icon";
+import Icon from "./Icon";
 
-const ArrowSvg = styled(Svg)`
-  transform: ${props =>
-    props.direction === "left" ? "rotate(90deg)" : "rotate(-90deg)"};
+const handleArrowDirection = direction => {
+  switch (direction) {
+    case "left":
+      return "rotate(90deg)";
+    case "right":
+      return "rotate(-90deg)";
+    case "up":
+      return "rotate(180deg)";
+    default:
+      return;
+  }
+};
+const StyledArrowIcon = styled(Icon)`
+  transform: ${({ expanded, direction }) =>
+    expanded ? handleArrowDirection : handleArrowDirection(direction)};
 `;
 
-const ArrowIcon = ({ icon, direction }) => {
-  return (
-    <ArrowSvg viewBox="0 0 16 16" className="icon" direction={direction}>
-      <path d={icons[icon]} />
-    </ArrowSvg>
-  );
-};
+const ArrowIcon = ({ icon, color, direction, expanded }) => (
+  <StyledArrowIcon
+    icon={icon}
+    color={color}
+    direction={direction}
+    expanded={expanded}
+  />
+);
 
 ArrowIcon.propTypes = {
   icon: PropTypes.string.isRequired,
+  color: PropTypes.string,
   direction: PropTypes.string,
-  disabled: PropTypes.bool,
+  expanded: PropTypes.bool,
 };
 
 export default ArrowIcon;

@@ -17,7 +17,6 @@ export const bodyStyles = css`
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 3px ${color.white}, 0 0 0 7px ${color.darkBlue};
     }
   }
   h1,
@@ -90,6 +89,11 @@ export const bodyStyles = css`
 
   a {
     border-radius: 3px;
+
+    &:focus {
+      border: 4px solid ${color.darkBlue};
+      transition: border 0.6s ease-in-out;
+    }
   }
 
   sub,
@@ -124,6 +128,21 @@ export const bodyStyles = css`
   summary {
     font-weight: ${typography.weight.bold};
   }
+
+  .visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px));
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+  }
+
+  .key-press{
+    background-color: ${color.lightPurple};
+  }
+  
 `;
 
 export const GlobalStyle = createGlobalStyle`

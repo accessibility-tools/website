@@ -11,7 +11,7 @@ const totalPages = 10;
 const urlParams = new URLSearchParams(document.location.search);
 const page = parseInt(urlParams.get("page") || 1);
 urlParams.delete("page");
-const href = window.location.pathname + "?" + urlParams.toString() + "&page=";
+const href = `${window.location.pathname}?${urlParams.toString()}&page=`;
 
 export const paginationActive = () => (
   <StoryWrapper>

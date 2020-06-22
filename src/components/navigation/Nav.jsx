@@ -1,48 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { spacing } from "../../shared/style";
-import MenuItem from "../menu-item/MenuItem";
-import Sponsor from "../sponsor/Sponsor";
+import { color } from "../../shared/style";
+import MenuLabel from "../menu/MenuLabel";
+import MenuList from "../menu/MenuList";
 
-const VALUES = {
-  TOOLS: "the tools",
-  LEARN: "learn more",
-  ABOUT: "about & contact",
-};
+const NavContainer = styled.nav`
+  & > * {
+    background-color: ${color.white};
+    z-index: 999;
+    align-items: center;
+  }
 
-const StyledNav = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 ${spacing.padding.medium}px;
-`;
-
-const StyledList = styled.ul`
-  margin: 0;
-  padding: 0;
-  & > li {
-    display: inline-flex;
+  @media (min-width: 48rem) {
+    padding: 0 1.5rem;
   }
 `;
 
 const Nav = () => {
-  const [selected, setSelected] = useState(VALUES.TOOLS);
+  const [expanded, setExpanded] = useState(false);
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+
+  useEffect(() => {
+    document.onkeydown = e => {
+      e.keyCode === 13 && e.target.classList.add("key-press");
+    };
+
+    document.onkeyup = e => {
+      e.keyCode === 13 && e.target.classList.remove("key-press");
+    };
+
+    return () => {
+      document.onkeydown = null;
+      document.onkeyup = null;
+    };
+  }, []);
+
   return (
-    <StyledNav>
-      <StyledList>
-        {Object.values(VALUES).map((item) => (
-          <MenuItem
-            key={item}
-            value={item}
-            onSelect={() => setSelected(item)}
-            isSelected={item === selected}
-            text={item}
-          />
-        ))}
-      </StyledList>
-      <Sponsor />
-    </StyledNav>
+    <NavContainer aria-label="main navigation" space="0">
+      <MenuLabel expanded={expanded} toggleExpanded={toggleExpanded} />
+      <MenuList expanded={expanded} />
+    </NavContainer>
   );
 };
-
 export default Nav;

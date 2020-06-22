@@ -1,45 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { icons } from "../../shared/icons";
-import { spacing } from "../../shared/style";
+import { spacing, color } from "../../shared/style";
+import Icon from "../icon/Icon";
 
-const Logo = styled.svg`
-  display: ${(props) => (props.block ? "block" : "inline-block")};
-  vertical-align: middle;
-  height: 1em;
+const Logo = styled(Icon)`
   max-width: 100%;
   max-height: 100%;
   margin-left: ${spacing.padding.small}px;
-
-  shape-rendering: inherit;
-  transform: translate3d(0, 0, 0);
 `;
 
-const Path = styled.path`
-  fill: ${(props) => props.color || "currentColor"};
-`;
-
-const ShoutOut = styled.div`
+const LogoWrapper = styled.div`
   display: inline-flex;
   align-items: baseline;
   justify-content: flex-start;
-  margin: 0 ${spacing.padding.large}px;
 `;
 
-const Sponsor = ({ block }) => {
-  return (
-    <ShoutOut>
-      <p>Sponsored by</p>
-      <Logo viewBox="0 0 100 21" className="Logo" block={block}>
-        <Path d={icons["FutuLogo"]} />
-      </Logo>
-    </ShoutOut>
-  );
-};
+const Sponsor = ({ block }) => (
+  <LogoWrapper>
+    <p>Sponsored by</p>
+    <a href="https://futurice.com/">
+      <span className="visually-hidden">Futurice.com</span>
+      <Logo
+        viewBox="0 0 100 21"
+        className="Logo"
+        alt="corporate logo of sponsor"
+        aria-hidden="true"
+        block={block}
+        icon="FutuLogo"
+        color={color.primary}
+      ></Logo>
+    </a>
+  </LogoWrapper>
+);
 
 Sponsor.propTypes = {
   block: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Sponsor;

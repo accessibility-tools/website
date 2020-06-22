@@ -4,7 +4,7 @@ import PropType from "prop-types";
 import { background, color, spacing } from "../../shared/style";
 import Icon from "../icon/Icon";
 
-const StyledList = styled.li`
+const ListItem = styled.li`
   box-sizing: border-box;
   position: relative;
 
@@ -23,15 +23,12 @@ const StyledList = styled.li`
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
   }
-
   &:hover {
     background-color: ${background.lightPurple};
   }
-
   &:active {
-    background-color: ${color.purple};
+    background-color: ${color.lightPurple};
   }
-
   ${props =>
     props.isSelected === true &&
     `
@@ -51,7 +48,7 @@ const StyledList = styled.li`
     `}
 `;
 
-const StyledMenuItem = styled.a`
+const ListItemLink = styled.a`
   color: ${color.primary};
   cursor: pointer;
   display: block;
@@ -64,12 +61,13 @@ const StyledMenuItem = styled.a`
   vertical-align: top;
   user-select: none;
   white-space: nowrap;
+  max-width: none;
 `;
 
 const MenuItem = ({ text, icon, onSelect, ...otherProps }) => {
   return (
-    <StyledList {...otherProps}>
-      <StyledMenuItem
+    <ListItem {...otherProps}>
+      <ListItemLink
         href="#"
         onClick={onSelect}
         icon={icon ? true : false}
@@ -77,8 +75,8 @@ const MenuItem = ({ text, icon, onSelect, ...otherProps }) => {
       >
         {text}
         {icon && <Icon icon={icon} />}
-      </StyledMenuItem>
-    </StyledList>
+      </ListItemLink>
+    </ListItem>
   );
 };
 
