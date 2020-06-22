@@ -9,11 +9,18 @@ const TextInputWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: left;
+  text-align: left;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 const StyledInput = styled.input.attrs({ type: "text" })`
   height: 48px;
-  width: ${props => (props.width ? `${props.width}px` : "340px")};
+  width: -webkit-fill-available;
   border: 2px solid
     ${props =>
       props.error ? color.error : props.valid ? color.blue : color.primary};
@@ -38,22 +45,22 @@ const StyledInput = styled.input.attrs({ type: "text" })`
 
   @media (min-width: 1440px) {
     height: 56px;
+    width: 640px;
   }
-`;
-
-const StyledText = styled.span`
-  color: ${props => (props.error ? color.error : color.mediumGrey)};
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 `;
 
 const IconWrapper = styled.span`
   position: relative;
   right: 34px;
+`;
+
+const StyledSubtext = styled.div`
+  padding: 1rem 0;
+  color: ${props => (props.error ? color.error : color.mediumGrey)};
+
+  & > *:first-child {
+    margin-right: 0.5rem;
+  }
 `;
 
 const TextInput = ({
@@ -67,6 +74,8 @@ const TextInput = ({
   placeholder,
   onChange,
   width,
+  hintIcon,
+  iconColor,
 }) => (
   <TextInputWrapper>
     <label htmlFor={id} id={`${id}-label`}>
@@ -95,11 +104,16 @@ const TextInput = ({
         </IconWrapper>
       )}
     </InputWrapper>
-    {hintText && <StyledText id={`${id}-hint`}>Hint: {hintText}</StyledText>}
+    {hintText && (
+      <StyledSubtext id={`${id}-hint`}>
+        {hintIcon && <Icon icon={hintIcon} color={iconColor} />}
+        <span>{hintText}</span>
+      </StyledSubtext>
+    )}
     {errorText && (
-      <StyledText id={`${id}-error`} error>
+      <StyledSubtext id={`${id}-error`} error>
         Error: {errorText}
-      </StyledText>
+      </StyledSubtext>
     )}
   </TextInputWrapper>
 );
@@ -115,6 +129,8 @@ TextInput.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   width: PropTypes.number,
+  hintIcon: PropTypes.string,
+  iconColor: PropTypes.string,
 };
 
 export default TextInput;

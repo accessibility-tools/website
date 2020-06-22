@@ -1,12 +1,12 @@
 import React from "react";
-import ToolDetails from "./ToolDetails";
+import ToolOverview from "./ToolOverview";
 import StoryWrapper from "../story-wrapper/StoryWrapper";
 import Center from "../layout-components/Center";
 import { text, select } from "@storybook/addon-knobs";
 
 export default {
-  title: "Design System|ToolDetails",
-  component: ToolDetails,
+  title: "Design System|ToolOverview",
+  component: ToolOverview,
 };
 
 const tools = {
@@ -17,7 +17,7 @@ const tools = {
 export const webCheckerInfo = () => (
   <StoryWrapper>
     <Center>
-      <ToolDetails
+      <ToolOverview
         title={text("title", "Accessibility checker")}
         tool={select("tool", tools, "webChecker")}
       />

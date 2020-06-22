@@ -1,17 +1,14 @@
 import React from "react";
 import Details from "../details/Details";
 import styled from "styled-components";
+import Stack from "../layout-components/Stack";
 
 const Paragraph = styled.p`
   padding-left: 1rem;
 `;
 
-const StyledLearnMoreQuestions = styled.div`
-  text-align: left;
-`;
-
 const LearnMoreQuestions = () => (
-  <StyledLearnMoreQuestions>
+  <Stack space="small">
     <Details title="What is accessibility?">
       <Paragraph>
         &quot;It’s not just about disabled users being able to access your
@@ -54,7 +51,7 @@ const LearnMoreQuestions = () => (
         testing with real users.
       </Paragraph>
     </Details>
-  </StyledLearnMoreQuestions>
+  </Stack>
 );
 
 export default LearnMoreQuestions;
