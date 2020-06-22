@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Button from "../button/Button";
 
@@ -9,29 +9,9 @@ const CTA = ({ text, icon, href, isExternal, isSecondary, ...otherProps }) => {
   };
   if (isExternal) otherProps = { ...otherProps, ...externalConfig };
 
-  useEffect(() => {
-    document.onkeydown = e => {
-      e.keyCode === 13 &&
-        (!isSecondary
-          ? e.target.classList.add("key-press-alt")
-          : e.target.classList.add("key-press"));
-    };
-
-    document.onkeyup = e => {
-      e.keyCode === 13 &&
-        (!isSecondary
-          ? e.target.classList.remove("key-press-alt")
-          : e.target.classList.remove("key-press"));
-    };
-
-    return () => {
-      document.onkeydown = null;
-      document.onkeyup = null;
-    };
-  }, [isSecondary]);
-
   return (
     <Button
+      data-type="cta-btn"
       tabIndex="0"
       as="a"
       href={href}

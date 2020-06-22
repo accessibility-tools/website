@@ -90,8 +90,6 @@ export const bodyStyles = css`
   a {
     border: 4px solid transparent;
     border-radius: 3px;
-
-    
   }
 
   sub,
@@ -133,8 +131,8 @@ export const bodyStyles = css`
     background-color: ${color.lightPurple};
   }
 
-  .key-press-alt {
-    background-color: ${color.darkBlue};
+  .key-press-prim {
+    background-color:  ${color.darkBlue};
   }
   
 `;

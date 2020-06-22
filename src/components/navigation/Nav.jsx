@@ -28,14 +28,22 @@ const Nav = () => {
   const toggleExpanded = () => {
     setExpanded(!expanded);
   };
-
   useEffect(() => {
     document.onkeydown = e => {
-      e.keyCode === 13 && e.target.classList.add("key-press");
+      if (e.keyCode === 13) {
+        e.target.classList.add(
+          event.target.getAttribute("data-type") === "cta-btn"
+            ? "key-press-prim"
+            : "key-press"
+        );
+      }
     };
 
     document.onkeyup = e => {
-      e.keyCode === 13 && e.target.classList.remove("key-press");
+      if (e.keyCode === 13) {
+        e.target.classList.remove("key-press");
+        e.target.classList.remove("key-press-prim");
+      }
     };
 
     return () => {
@@ -51,4 +59,5 @@ const Nav = () => {
     </NavContainer>
   );
 };
+
 export default Nav;

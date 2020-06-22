@@ -30,7 +30,7 @@ const SignUp = () => (
           hintText="Your e-mail will not be used for any other purposes. No spam. We promise."
           iconColor={color.blue}
         />
-        <SignUpBtn text="Sign Up" />
+        <SignUpBtn text="Sign Up" data-type="cta-btn" />
       </Stack>
     </Center>
   </Stack>
