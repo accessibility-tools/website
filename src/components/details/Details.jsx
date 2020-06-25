@@ -18,6 +18,9 @@ const StyledSummary = styled.summary`
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  max-width: 90%;
+  margin: auto;
 
   &::-webkit-details-marker {
     display: none;
@@ -37,6 +40,10 @@ const StyledSummary = styled.summary`
     left: 0;
     position: absolute;
   }
+
+  @media (min-width: 48rem) {
+    max-width: 80%;
+  }
 `;
 
 const Details = ({ children, title }) => {
@@ -48,7 +55,9 @@ const Details = ({ children, title }) => {
     <DetailsContainer onToggle={handleOpen}>
       <StyledSummary>
         {title}
-        <Icon icon={isOpened ? "minus" : "plus"} />
+        <div>
+          <Icon icon={isOpened ? "minus" : "plus"} />
+        </div>
       </StyledSummary>
       {children}
     </DetailsContainer>
