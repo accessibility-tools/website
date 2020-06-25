@@ -14,6 +14,8 @@ export const DetailsContainer = styled.details`
 
   & > * {
     margin: auto;
+    max-width: 80%;
+    padding: 1rem;
   }
 `;
 
