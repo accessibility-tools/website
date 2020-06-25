@@ -61,6 +61,10 @@ const StyledSubtext = styled.div`
   & > *:first-child {
     margin-right: 0.5rem;
   }
+
+  @media (min-width: 48rem) {
+    width: 35rem;
+  }
 `;
 
 const TextInput = ({
