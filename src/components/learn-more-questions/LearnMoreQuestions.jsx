@@ -33,11 +33,11 @@ const LearnMoreQuestions = () => (
         communities. People use a interface in different situations - make sure
         it delivers a valuable experience to all people regardless of their
         circumstances, ability, context or situation.
-        <Paragraph>
-          Accessibility affects all of us. A broken arm, a loud enviorment, a
-          disability and many more factors can influence how we interact with a
-          product.
-        </Paragraph>
+      </Paragraph>
+      <Paragraph>
+        Accessibility affects all of us. A broken arm, a loud enviorment, a
+        disability and many more factors can influence how we interact with a
+        product.
       </Paragraph>
     </Details>
     <Details title="What are common issues for developers and how to solve them?">

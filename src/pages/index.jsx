@@ -147,7 +147,7 @@ const LandingPage = () => {
                   <ComingSoon />
                   <img src="/illustrations/product-ios.svg" alt="" />
                   <h3>
-                    Accessibiliy checker <br />
+                    Accessibility checker <br />
                     for iOS
                   </h3>
                 </Stack>
@@ -157,7 +157,7 @@ const LandingPage = () => {
                   <ComingSoon />
                   <img src="/illustrations/product-android.svg" alt="" />
                   <h3>
-                    Accessibiliy checker <br />
+                    Accessibility checker <br />
                     for Android
                   </h3>
                 </Stack>
