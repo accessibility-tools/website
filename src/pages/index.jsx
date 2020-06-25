@@ -124,6 +124,7 @@ const LandingPage = () => {
               title="Accessibility checker for websites"
               toolName="ciTool"
               hasBadge={false}
+              hasList={true}
               hasLink={true}
             />
           </Stack>
@@ -142,17 +143,23 @@ const LandingPage = () => {
           <Switcher threshold="40rem" space="3.5rem">
             <div>
               <Center>
-                <Stack width="auto">
+                <Stack width="auto" center="center">
                   <ComingSoon />
                   <img src="/illustrations/product-ios.svg" alt="" />
-                  <h3>Accessibiliy checker for iOS</h3>
+                  <h3>
+                    Accessibiliy checker <br />
+                    for iOS
+                  </h3>
                 </Stack>
               </Center>
               <Center>
-                <Stack width="auto">
+                <Stack width="auto" center="center">
                   <ComingSoon />
                   <img src="/illustrations/product-android.svg" alt="" />
-                  <h3>Accessibiliy checker for Android</h3>
+                  <h3>
+                    Accessibiliy checker <br />
+                    for Android
+                  </h3>
                 </Stack>
               </Center>
             </div>
