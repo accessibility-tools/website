@@ -94,7 +94,7 @@ const LandingPage = () => {
               <div>
                 <Center>
                   <Tagline>
-                    <h1>Accessibility checking tools</h1>
+                    <h1>Tools for digital accessibility</h1>
                     <h5>
                       Helping designers and developers build accessible products
                     </h5>
@@ -113,16 +113,15 @@ const LandingPage = () => {
             <Center>
               <h1>The tools</h1>
               <Subtitle>
-                Everybody should be able to use digital products regardless of
-                ability, context, or situation. This includes elderly people or
-                users with visual, motor, auditory, speech, or cognitive
-                disabilities. Our tools help you create products with
-                accessibility in mind. tools can help you create prodcuts with
+                We believe digital products should be equally accessible for
+                everybody. This includes elderly people or users with visual,
+                motor, auditory, speech, or cognitive disabilities. Our free,
+                open source tools make it easy to create products with
                 accessibility in mind.
               </Subtitle>
             </Center>
             <ToolOverview
-              title="Accessibility Web Checker for Terminal"
+              title="Accessibility checker for websites"
               toolName="ciTool"
               hasBadge={false}
               hasLink={true}
@@ -132,7 +131,7 @@ const LandingPage = () => {
 
         <Section>
           <ToolOverview
-            title="Accessibility Web Checker"
+            title="Online accessibility checker for websites"
             toolName="webChecker"
             hasBadge={true}
             hasLink={false}
@@ -146,14 +145,14 @@ const LandingPage = () => {
                 <Stack width="auto">
                   <ComingSoon />
                   <img src="/illustrations/product-ios.svg" alt="" />
-                  <h3>iOS Checker</h3>
+                  <h3>Accessibiliy checker for iOS</h3>
                 </Stack>
               </Center>
               <Center>
                 <Stack width="auto">
                   <ComingSoon />
                   <img src="/illustrations/product-android.svg" alt="" />
-                  <h3>Android Checker</h3>
+                  <h3>Accessibiliy checker for Android</h3>
                 </Stack>
               </Center>
             </div>
@@ -179,10 +178,10 @@ const LandingPage = () => {
                   <Center>
                     <h3>As a developer</h3>
                     <p>
-                      Detect accessibility issue like the non-use of labels in
-                      form elements, missing descriptive alternative text for
-                      images, links and other non-text content – and learn how
-                      to solve them.
+                      Easily detect and correct accessibility issue in your
+                      code. Did you forget to use labels in form elements? Are
+                      there any missing text alternatives for images? There is
+                      so much to keep in mind. Our tools will help you out.
                     </p>
                   </Center>
                 </Stack>
@@ -194,10 +193,10 @@ const LandingPage = () => {
                   <Center>
                     <h3>As a designer</h3>
                     <p>
-                      Make sure everybody can use your interface and get pointed
-                      to issues like insufficient font sizing, lack of color
-                      contrast and more and learn how to easily fix the
-                      problems.
+                      Make sure your designs can be used by everybody. Our tool
+                      will point you to issues like insufficient font sizing,
+                      lack of color contrast and more. We will explain how to
+                      solve these issues to make your workflow easier.
                     </p>
                   </Center>
                 </Stack>
@@ -211,8 +210,8 @@ const LandingPage = () => {
             <Center>
               <h2>Learn more</h2>
               <Subtitle>
-                Why should designers and developers care about accessibility and
-                how to get started?
+                Why should we as designers and developers care about
+                accessibility. How to get started?
               </Subtitle>
             </Center>
             <Switcher threshold="35rem" space="5rem">
@@ -229,9 +228,10 @@ const LandingPage = () => {
             <Center>
               <h2>About & Contact</h2>
               <Subtitle>
-                We are a group of developers and designers, who are passionate
-                about accessibility. If you want to be part of this open source
-                project, have questions or feedback feel free to reach out.
+                We are a group of developers and designers. We are passionate
+                about accessible digital products. If you want to be part of
+                this open source project, have questions or feedback feel free
+                to drop us a message.
               </Subtitle>
             </Center>
             <Center>
