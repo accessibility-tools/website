@@ -79,6 +79,10 @@ const LearnMoreImg = styled.img`
   }
 `;
 
+const ContactLink = styled(Link)`
+  display: inline;
+`;
+
 const LandingPage = () => {
   return (
     <>
@@ -231,13 +235,13 @@ const LandingPage = () => {
               </p>
             </Center>
             <Center>
-              <Link
+              <ContactLink
                 href="mailto:accessibility@futurice.com"
                 isSecondary={true}
                 icon="mailto"
               >
                 accessibility@futurice.com
-              </Link>
+              </ContactLink>
             </Center>
           </Stack>
         </Section>
