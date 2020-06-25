@@ -9,6 +9,12 @@ export const DetailsContainer = styled.details`
   &:active {
     background-color: ${color.purple};
   }
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: auto;
+  }
 `;
 
 const StyledSummary = styled.summary`
@@ -19,8 +25,6 @@ const StyledSummary = styled.summary`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 90%;
-  margin: auto;
 
   &::-webkit-details-marker {
     display: none;

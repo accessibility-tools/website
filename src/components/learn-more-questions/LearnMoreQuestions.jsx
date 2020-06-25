@@ -3,12 +3,17 @@ import Details from "../details/Details";
 import styled from "styled-components";
 import Stack from "../layout-components/Stack";
 
+const LearnMoreWrapper = styled(Stack)`
+  flex: 2;
+`;
+
 const Paragraph = styled.p`
-  padding-left: 1rem;
+  padding: 1rem;
+  max-width: 80%;
 `;
 
 const LearnMoreQuestions = () => (
-  <Stack space="small">
+  <LearnMoreWrapper>
     <Details title="What is accessibility?">
       <Paragraph>
         &quot;It’s not just about disabled users being able to access your
@@ -51,7 +56,7 @@ const LearnMoreQuestions = () => (
         testing with real users.
       </Paragraph>
     </Details>
-  </Stack>
+  </LearnMoreWrapper>
 );
 
 export default LearnMoreQuestions;

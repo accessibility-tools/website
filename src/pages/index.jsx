@@ -11,7 +11,7 @@ import Link from "../components/links/Link";
 import SignUp from "../components/sign-up/SignUp";
 import ComingSoon from "../components/badge/ComingSoonBadge";
 
-const Index = styled(Stack)`
+const MainContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};
 `;
 
@@ -42,10 +42,6 @@ const Section = styled.section`
 
   & > * {
     max-width: 100rem;
-  }
-
-  p {
-    max-width: 36rem;
   }
 `;
 
@@ -87,7 +83,7 @@ const LandingPage = () => {
   return (
     <>
       <SEO siteTitle="Accessibility checking tools" />
-      <Index space="extraLarge">
+      <MainContainer>
         <Section>
           <Center>
             <Switcher threshold="35rem" space="1rem" width="90%">
@@ -165,7 +161,7 @@ const LandingPage = () => {
         </Section>
 
         <Section>
-          <Stack>
+          <Stack space="large">
             <Center>
               <h2>How can the tools help you?</h2>
             </Center>
@@ -207,7 +203,7 @@ const LandingPage = () => {
         </Section>
 
         <Section id="learnMore">
-          <Stack>
+          <Stack space="large">
             <Center>
               <h2>Learn more</h2>
               <p>
@@ -245,7 +241,7 @@ const LandingPage = () => {
             </Center>
           </Stack>
         </Section>
-      </Index>
+      </MainContainer>
     </>
   );
 };

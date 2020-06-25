@@ -5,7 +5,7 @@ import styled from "styled-components";
 const spacing = {
   small: "1rem",
   medium: "2rem",
-  large: "3.5rem",
+  large: "5rem",
 };
 
 const Stack = styled.div`
