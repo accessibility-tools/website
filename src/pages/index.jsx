@@ -75,6 +75,10 @@ const LearnMoreImg = styled.img`
   }
 `;
 
+const Subtitle = styled.p`
+  max-width: 576px;
+`;
+
 const ContactLink = styled(Link)`
   display: inline;
 `;
@@ -108,14 +112,14 @@ const LandingPage = () => {
           <Stack space="large">
             <Center>
               <h1>The tools</h1>
-              <p>
+              <Subtitle>
                 Everybody should be able to use digital products regardless of
                 ability, context, or situation. This includes elderly people or
                 users with visual, motor, auditory, speech, or cognitive
                 disabilities. Our tools help you create products with
                 accessibility in mind. tools can help you create prodcuts with
                 accessibility in mind.
-              </p>
+              </Subtitle>
             </Center>
             <ToolOverview
               title="Accessibility Web Checker for Terminal"
@@ -206,10 +210,10 @@ const LandingPage = () => {
           <Stack space="large">
             <Center>
               <h2>Learn more</h2>
-              <p>
+              <Subtitle>
                 Why should designers and developers care about accessibility and
                 how to get started?
-              </p>
+              </Subtitle>
             </Center>
             <Switcher threshold="35rem" space="5rem">
               <div>
@@ -224,11 +228,11 @@ const LandingPage = () => {
           <Stack width="auto">
             <Center>
               <h2>About & Contact</h2>
-              <p>
+              <Subtitle>
                 We are a group of developers and designers, who are passionate
                 about accessibility. If you want to be part of this open source
                 project, have questions or feedback feel free to reach out.
-              </p>
+              </Subtitle>
             </Center>
             <Center>
               <ContactLink
