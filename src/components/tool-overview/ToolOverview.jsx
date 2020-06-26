@@ -23,6 +23,16 @@ const InfoWrapper = styled(Stack)`
   max-width: 30rem;
   text-align: left;
   padding: 0 1.5rem;
+
+  li {
+    list-style: disc;
+    padding-bottom: 1rem;
+    text-align: left;
+  }
+
+  a {
+    width: max-content;
+  }
 `;
 
 const ToolImg = styled.img`
@@ -41,7 +51,7 @@ const ToolOverview = ({ title, toolName, hasBadge, hasList, hasLink }) => (
           <h2>{title}</h2>
           <p>{toolData[toolName].desc}</p>
           {hasList && (
-            <ol>
+            <ul>
               <li>
                 Detect and fix accessibility issues like missing labels, lack of
                 color contrast many more.
@@ -53,7 +63,7 @@ const ToolOverview = ({ title, toolName, hasBadge, hasList, hasLink }) => (
                 Learn if your website is complying to important standards in the
                 industry and how to improve.
               </li>
-            </ol>
+            </ul>
           )}
           {hasLink && <CTA text="View on Github" icon="extLink" />}
         </InfoWrapper>
