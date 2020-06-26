@@ -18,7 +18,7 @@ const SignUpBtn = styled(Button)`
 const SignUp = () => (
   <Stack space="large">
     <Center>
-      <h2>Sign up to be notified for the release</h2>
+      <h2>Get notified when new tools are released</h2>
     </Center>
     <Center>
       <Stack>
@@ -27,7 +27,7 @@ const SignUp = () => (
           label="email"
           placeholder="email@futurice.com"
           hintIcon="manicule"
-          hintText="Your e-mail will not be used for any other purposes. No spam. We promise."
+          hintText="We will not contact you for any other purpose than newly released tools. No spam. We promise."
           iconColor={color.blue}
         />
         <SignUpBtn text="Sign Up" data-type="cta-btn" />

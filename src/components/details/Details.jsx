@@ -14,6 +14,8 @@ export const DetailsContainer = styled.details`
 
   & > * {
     margin: auto;
+    max-width: 80%;
+    padding: 1rem;
   }
 `;
 
@@ -25,6 +27,8 @@ const StyledSummary = styled.summary`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
+  max-width: none;
 
   &::-webkit-details-marker {
     display: none;
@@ -50,6 +54,16 @@ const StyledSummary = styled.summary`
   }
 `;
 
+const IconWrapper = styled.div`
+  background-color: ${color.white};
+  border-radius: 3px;
+  padding: 3px;
+
+  svg {
+    display: block;
+  }
+`;
+
 const Details = ({ children, title }) => {
   const [isOpened, setOpened] = useState(false);
   const handleOpen = event => {
@@ -59,9 +73,9 @@ const Details = ({ children, title }) => {
     <DetailsContainer onToggle={handleOpen}>
       <StyledSummary>
         {title}
-        <div>
+        <IconWrapper>
           <Icon icon={isOpened ? "minus" : "plus"} />
-        </div>
+        </IconWrapper>
       </StyledSummary>
       {children}
     </DetailsContainer>

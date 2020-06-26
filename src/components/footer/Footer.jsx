@@ -9,7 +9,19 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
   padding: ${spacing.padding.medium}px;
 `;
-const StyledLink = styled(Link)`
+
+const LicenseWrapper = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+`;
+
+const LicenseLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   & > :first-child {
@@ -20,14 +32,31 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const FullText = styled.span`
+  display: none;
+  @media (min-width: 48rem) {
+    display: inline-flex;
+  }
+`;
+
+const ShortText = styled.span`
+  display: inline-flex;
+  @media (min-width: 48rem) {
+    display: none;
+  }
+`;
+
 const Footer = () => {
   return (
     <StyledFooter>
-      <StyledLink isSecondary={true} href="/">
-        <Icon className="icon" icon="creativeCommon1" />
-        <Icon className="icon" icon="creativeCommon2" />
-        Licence name
-      </StyledLink>
+      <LicenseWrapper>
+        <LicenseLink isSecondary={true} href="/">
+          <Icon className="icon" icon="creativeCommon1" />
+          <Icon className="icon" icon="creativeCommon2" />
+        </LicenseLink>
+        <FullText>The tool is licensed under Creative Commons CC-BY.</FullText>
+        <ShortText>CC-BY.</ShortText>
+      </LicenseWrapper>
       <Link isSecondary={true} href="/">
         imprint
       </Link>
