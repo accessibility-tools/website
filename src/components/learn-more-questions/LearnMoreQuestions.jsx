@@ -8,6 +8,7 @@ const LearnMoreWrapper = styled(Stack)`
 `;
 
 const LinkText = styled.p`
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 2px;
 `;

@@ -27,6 +27,8 @@ const StyledSummary = styled.summary`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
+  max-width: none;
 
   &::-webkit-details-marker {
     display: none;
