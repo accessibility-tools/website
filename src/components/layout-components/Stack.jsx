@@ -29,7 +29,7 @@ const Stack = styled.div`
     align-items: center;
     text-align: center;
 
-    p {
+    & > p {
       text-align: left;
     }
   }
