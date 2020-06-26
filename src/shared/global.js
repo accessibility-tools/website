@@ -109,8 +109,6 @@ export const bodyStyles = css`
   .icon {
     width: 1em;
     height: 1em;
-    max-width: 100%;
-    max-height: 100%;
   }
 
   summary {

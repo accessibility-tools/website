@@ -11,7 +11,7 @@ import Link from "../components/links/Link";
 import SignUp from "../components/sign-up/SignUp";
 import ComingSoon from "../components/badge/ComingSoonBadge";
 
-const Index = styled(Stack)`
+const MainContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};
 `;
 
@@ -42,10 +42,6 @@ const Section = styled.section`
 
   & > * {
     max-width: 100rem;
-  }
-
-  p {
-    max-width: 36rem;
   }
 `;
 
@@ -79,11 +75,19 @@ const LearnMoreImg = styled.img`
   }
 `;
 
+const Subtitle = styled.p`
+  max-width: 576px;
+`;
+
+const ContactLink = styled(Link)`
+  display: inline;
+`;
+
 const LandingPage = () => {
   return (
     <>
       <SEO siteTitle="Accessibility checking tools" />
-      <Index space="extraLarge">
+      <MainContainer>
         <Section>
           <Center>
             <Switcher threshold="35rem" space="1rem" width="90%">
@@ -108,14 +112,14 @@ const LandingPage = () => {
           <Stack space="large">
             <Center>
               <h1>The tools</h1>
-              <p>
+              <Subtitle>
                 Everybody should be able to use digital products regardless of
                 ability, context, or situation. This includes elderly people or
                 users with visual, motor, auditory, speech, or cognitive
                 disabilities. Our tools help you create products with
                 accessibility in mind. tools can help you create prodcuts with
                 accessibility in mind.
-              </p>
+              </Subtitle>
             </Center>
             <ToolOverview
               title="Accessibility Web Checker for Terminal"
@@ -161,7 +165,7 @@ const LandingPage = () => {
         </Section>
 
         <Section>
-          <Stack>
+          <Stack space="large">
             <Center>
               <h2>How can the tools help you?</h2>
             </Center>
@@ -203,13 +207,13 @@ const LandingPage = () => {
         </Section>
 
         <Section id="learnMore">
-          <Stack>
+          <Stack space="large">
             <Center>
               <h2>Learn more</h2>
-              <p>
+              <Subtitle>
                 Why should designers and developers care about accessibility and
                 how to get started?
-              </p>
+              </Subtitle>
             </Center>
             <Switcher threshold="35rem" space="5rem">
               <div>
@@ -224,24 +228,24 @@ const LandingPage = () => {
           <Stack width="auto">
             <Center>
               <h2>About & Contact</h2>
-              <p>
+              <Subtitle>
                 We are a group of developers and designers, who are passionate
                 about accessibility. If you want to be part of this open source
                 project, have questions or feedback feel free to reach out.
-              </p>
+              </Subtitle>
             </Center>
             <Center>
-              <Link
+              <ContactLink
                 href="mailto:accessibility@futurice.com"
                 isSecondary={true}
                 icon="mailto"
               >
                 accessibility@futurice.com
-              </Link>
+              </ContactLink>
             </Center>
           </Stack>
         </Section>
-      </Index>
+      </MainContainer>
     </>
   );
 };
