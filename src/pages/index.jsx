@@ -143,7 +143,7 @@ const LandingPage = () => {
           <Switcher threshold="40rem" space="3.5rem">
             <div>
               <Center>
-                <Stack width="auto" center="center">
+                <Stack width="auto" center>
                   <ComingSoon />
                   <img src="/illustrations/product-ios.svg" alt="" />
                   <h3>
@@ -153,7 +153,7 @@ const LandingPage = () => {
                 </Stack>
               </Center>
               <Center>
-                <Stack width="auto" center="center">
+                <Stack width="auto" center>
                   <ComingSoon />
                   <img src="/illustrations/product-android.svg" alt="" />
                   <h3>

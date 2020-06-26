@@ -24,6 +24,15 @@ const Stack = styled.div`
   & > * + * {
     margin-top: var(--stack-space);
   }
+
+  @media (max-width: 48rem) {
+    align-items: center;
+    text-align: center;
+
+    p {
+      text-align: left;
+    }
+  }
 `;
 
 export default Stack;
