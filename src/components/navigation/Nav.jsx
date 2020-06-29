@@ -32,7 +32,7 @@ const Nav = () => {
     document.onkeydown = e => {
       if (e.keyCode === 13) {
         e.target.classList.add(
-          event.target.getAttribute("data-type") === "cta-btn"
+          e.target.getAttribute("data-type") === "cta-btn"
             ? "key-press-prim"
             : "key-press"
         );
