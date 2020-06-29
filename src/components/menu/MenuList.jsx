@@ -54,8 +54,13 @@ const StyledList = styled.ul`
   }
 `;
 
-const MenuList = ({ expanded }) => {
+const MenuList = ({ expanded, toggleExpanded }) => {
   const [selected, setSelected] = useState(menuData.TOOLS.title);
+
+  const handleSelectMenuItem = value => {
+    setSelected(value);
+    toggleExpanded();
+  };
 
   return (
     <StyledList aria-label="menu list" id="menu-list" expanded={expanded}>
@@ -63,9 +68,9 @@ const MenuList = ({ expanded }) => {
         <MenuItem
           key={"menu-" + item.title}
           href={item.href}
-          onClick={() => setSelected(item.title)}
-          isSelected={item.title === selected}
           text={item.title}
+          isSelected={item.title === selected}
+          onClick={() => handleSelectMenuItem(item.title)}
         />
       ))}
       <li>
@@ -77,6 +82,7 @@ const MenuList = ({ expanded }) => {
 
 MenuList.propTypes = {
   expanded: PropTypes.bool.isRequired,
+  toggleExpanded: PropTypes.func.isRequired,
 };
 
 export default MenuList;
