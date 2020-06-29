@@ -5,9 +5,13 @@ import MenuLabel from "../menu/MenuLabel";
 import MenuList from "../menu/MenuList";
 
 const NavContainer = styled.nav`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
   & > * {
     background-color: ${color.white};
-    z-index: 999;
     align-items: center;
   }
 
@@ -16,10 +20,6 @@ const NavContainer = styled.nav`
       border: 4px solid ${color.darkBlue};
       transition: border 0.3s ease-in-out;
     }
-  }
-
-  @media (min-width: 48rem) {
-    padding: 0 1.5rem;
   }
 `;
 

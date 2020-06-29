@@ -14,7 +14,7 @@ const VALUES = {
 const StyledList = styled.ul`
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 1.5rem;
   display: flex;
   & > :last-child {
     margin-left: auto;
@@ -26,6 +26,7 @@ const StyledList = styled.ul`
     position: fixed;
     top: 4.5rem;
     bottom: 0;
+    padding: 0;
 
     ${({ expanded }) =>
       expanded
