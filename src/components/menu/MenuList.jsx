@@ -5,10 +5,10 @@ import { color } from "../../shared/style";
 import MenuItem from "./MenuItem";
 import Sponsor from "../sponsor/Sponsor";
 
-const VALUES = {
-  TOOLS: "the tools",
-  LEARN: "learn more",
-  ABOUT: "about & contact",
+const menuData = {
+  TOOLS: { title: "the tools", href: "#tools" },
+  LEARN: { title: "learn more", href: "#learn-more" },
+  ABOUT: { title: "about & contact", href: "#about" },
 };
 
 const StyledList = styled.ul`
@@ -55,16 +55,17 @@ const StyledList = styled.ul`
 `;
 
 const MenuList = ({ expanded }) => {
-  const [selected, setSelected] = useState(VALUES.TOOLS);
+  const [selected, setSelected] = useState(menuData.TOOLS.title);
+
   return (
     <StyledList aria-label="menu list" id="menu-list" expanded={expanded}>
-      {Object.values(VALUES).map(item => (
+      {Object.values(menuData).map(item => (
         <MenuItem
-          key={item}
-          value={item}
-          onSelect={() => setSelected(item)}
-          isSelected={item === selected}
-          text={item}
+          key={"menu-" + item.title}
+          href={item.href}
+          onClick={() => setSelected(item.title)}
+          isSelected={item.title === selected}
+          text={item.title}
         />
       ))}
       <li>
