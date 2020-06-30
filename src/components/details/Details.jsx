@@ -5,17 +5,24 @@ import { color } from "../../shared/style";
 import Icon from "../icon/Icon";
 
 export const DetailsContainer = styled.details`
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   &:active {
     background-color: ${color.purple};
   }
-  display: flex;
-  flex-direction: column;
-
   & > * {
     margin: auto;
     max-width: 80%;
     padding: 1rem;
+  }
+
+  @media (max-width: 48rem) {
+    & > * {
+      text-align: left;
+      max-width: 100%;
+    }
   }
 `;
 
@@ -28,7 +35,6 @@ const StyledSummary = styled.summary`
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  max-width: none;
 
   &::-webkit-details-marker {
     display: none;
@@ -47,10 +53,6 @@ const StyledSummary = styled.summary`
     right: 0;
     left: 0;
     position: absolute;
-  }
-
-  @media (min-width: 48rem) {
-    max-width: 80%;
   }
 `;
 

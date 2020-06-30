@@ -19,7 +19,7 @@ export const webCheckerInfo = () => (
     <Center>
       <ToolOverview
         title={text("title", "Accessibility checker")}
-        tool={select("tool", tools, "webChecker")}
+        toolName={select("tool", tools, "webChecker")}
       />
     </Center>
   </StoryWrapper>
