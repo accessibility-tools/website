@@ -14,11 +14,7 @@ const PageContainer = styled(Stack)`
 `;
 
 const Section = styled.section`
-  padding: 8rem;
-
-  & > * {
-    max-width: 100rem;
-  }
+  padding: 6rem 3rem;
 
   &:first-child {
     background-color: ${color.extraLightPurple};
@@ -29,16 +25,17 @@ const Section = styled.section`
   h5 {
     letter-spacing: 0.07rem;
     font-weight: 500;
+    margin-bottom: 0.5rem;
   }
 
-  @media (max-width: 48rem) {
-    padding: 6rem 3rem;
+  @media (min-width: 43rem) {
+    padding: 8rem;
   }
 `;
 
 const IntroWrapper = styled(Switcher)`
   & > * {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
   }
 
   & > * > * :first-child {
@@ -47,8 +44,15 @@ const IntroWrapper = styled(Switcher)`
 
   h1,
   p {
-    text-align: left;
-    margin-right: auto;
+    text-align: center;
+  }
+
+  @media (min-width: 43rem) {
+    h1,
+    p {
+      text-align: left;
+      margin-right: auto;
+    }
   }
 `;
 
@@ -58,9 +62,11 @@ const IntroImg = styled.img`
 
 const RadioBtn = styled(RadioButton)`
   text-transform: none;
+  font-weight: normal;
+  text-align: left;
+  margin-right: auto;
   margin-top: 0.5rem;
   margin-bottom: 0;
-  font-weight: normal;
 `;
 
 const WebCheckerPage = () => {
