@@ -1,19 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { color, spacing } from "../../shared/style";
 
-const HiddenRadioButton = styled.input.attrs({ type: "radio" })`
-  clip: rect(0 0 0 0);
-  clip-path: inset(100%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-`;
-
-const StyledRadioButton = styled.div`
+const StyledRadioButton = styled.span`
   border: 3px solid ${props => (props.checked ? color.blue : color.primary)};
   border-radius: 50%;
   display: inline-block;
@@ -57,7 +47,7 @@ const RadioButtonContainer = styled.label`
   border: 4px solid transparent;
   border-radius: 3px;
   display: inline-flex;
-  margin: ${spacing.padding.medium}px;
+
   vertical-align: middle;
   transition: all 150ms ease-out;
   transform: translate3d(0, 0, 0);
@@ -65,32 +55,41 @@ const RadioButtonContainer = styled.label`
   &:focus-within {
     box-shadow: 0 0 0 4px ${color.darkBlue};
   }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
 `;
 
 const RadioButton = ({ checked, label, className, ...otherProps }) => {
-  const [isChecked, setChecked] = React.useState(checked);
-
-  const handleKeyPress = event => {
-    if (event.key === " ") {
-      setChecked(!isChecked);
-    }
-  };
-
+  const [isChecked, setChecked] = useState(checked);
   const handleCheckedChange = () => setChecked(!isChecked);
+
+  useEffect(() => {
+    document.onkeydown = e => {
+      if (e.keyCode === 32) {
+        setChecked(!isChecked);
+      }
+    };
+
+    return () => {
+      document.onkeydown = null;
+    };
+  });
 
   return (
     <RadioButtonContainer className={className}>
-      <HiddenRadioButton
-        onKeyPress={handleKeyPress}
-        checked={checked}
-        {...otherProps}
-      />
+      <input type="radio" checked={checked}></input>
       <StyledRadioButton
         checked={isChecked}
         onClick={handleCheckedChange}
         {...otherProps}
       ></StyledRadioButton>
-      <span>{label}</span>
+      {label}
     </RadioButtonContainer>
   );
 };

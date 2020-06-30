@@ -26,6 +26,7 @@ const Section = styled.section`
     letter-spacing: 0.07rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
+    margin-right: auto;
   }
 
   @media (min-width: 43rem) {
