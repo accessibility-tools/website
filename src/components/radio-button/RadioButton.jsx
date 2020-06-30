@@ -67,7 +67,7 @@ const RadioButtonContainer = styled.label`
   }
 `;
 
-const RadioButton = ({ checked, label, ...otherProps }) => {
+const RadioButton = ({ checked, label, className, ...otherProps }) => {
   const [isChecked, setChecked] = React.useState(checked);
 
   const handleKeyPress = event => {
@@ -79,7 +79,7 @@ const RadioButton = ({ checked, label, ...otherProps }) => {
   const handleCheckedChange = () => setChecked(!isChecked);
 
   return (
-    <RadioButtonContainer>
+    <RadioButtonContainer className={className}>
       <HiddenRadioButton
         onKeyPress={handleKeyPress}
         checked={checked}
@@ -98,6 +98,7 @@ const RadioButton = ({ checked, label, ...otherProps }) => {
 RadioButton.propTypes = {
   label: PropTypes.string.isRequired,
   checked: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 RadioButton.defaultProps = {

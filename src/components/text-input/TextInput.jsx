@@ -20,7 +20,7 @@ const InputWrapper = styled.div`
 
 const StyledInput = styled.input.attrs({ type: "text" })`
   height: 48px;
-  width: -webkit-fill-available;
+  width: ${({ width }) => (width ? width : "-webkit-fill-available")};
   border: 2px solid
     ${props =>
       props.error ? color.error : props.valid ? color.blue : color.primary};
@@ -43,9 +43,9 @@ const StyledInput = styled.input.attrs({ type: "text" })`
     border-color: ${color.disabled};
   }
 
-  @media (min-width: 1440px) {
-    height: 56px;
-    width: 640px;
+  @media (min-width: 62rem) {
+    height: 3.5rem;
+    width: 43rem;
   }
 `;
 
