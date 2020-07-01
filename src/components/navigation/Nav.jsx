@@ -55,7 +55,7 @@ const Nav = () => {
   return (
     <NavContainer aria-label="main navigation" space="0">
       <MenuLabel expanded={expanded} toggleExpanded={toggleExpanded} />
-      <MenuList expanded={expanded} />
+      <MenuList expanded={expanded} toggleExpanded={toggleExpanded} />
     </NavContainer>
   );
 };
