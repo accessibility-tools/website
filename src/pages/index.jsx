@@ -19,6 +19,7 @@ const Section = styled.section`
   --paddingX: 2rem;
   --paddingY: 8rem;
   padding: var(--paddingY) var(--paddingX);
+  width: 100%;
 
   & > * {
     max-width: 100rem;

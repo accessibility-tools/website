@@ -6,9 +6,9 @@ import MenuItem from "./MenuItem";
 import Sponsor from "../sponsor/Sponsor";
 
 const menuData = {
-  TOOLS: { title: "the tools", href: "#tools" },
-  LEARN: { title: "learn more", href: "#learn-more" },
-  ABOUT: { title: "about & contact", href: "#about" },
+  TOOLS: { title: "the tools", href: "/#tools" },
+  LEARN: { title: "learn more", href: "/#learn-more" },
+  ABOUT: { title: "about & contact", href: "/#about" },
 };
 
 const StyledList = styled.ul`
