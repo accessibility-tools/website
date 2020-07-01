@@ -21,7 +21,7 @@ const SignUp = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const { pathname } = Router;
-    if (pathname == "/") {
+    if (pathname === "/") {
       Router.push("/signup");
     }
   };
