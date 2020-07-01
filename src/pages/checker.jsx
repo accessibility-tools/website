@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { color } from "../shared/style";
 import Switcher from "../components/layout-components/Switcher";
@@ -71,6 +71,13 @@ const RadioBtn = styled(RadioButton)`
 `;
 
 const WebCheckerPage = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleCheckedChange = e => {
+    setSelectedOption(e.target.value);
+    console.log(e.target.value, selectedOption);
+  };
+
   return (
     <PageContainer>
       <Section>
@@ -99,8 +106,18 @@ const WebCheckerPage = () => {
             />
             <Stack space="medium">
               <h5>WHAT TO CHECK</h5>
-              <RadioBtn label="Check all subpages" />
-              <RadioBtn label="Check the given page only" />
+              <RadioBtn
+                label="Check all subpages"
+                value="all"
+                checked={selectedOption === "all"}
+                handleCheckedChange={handleCheckedChange}
+              />
+              <RadioBtn
+                label="Check the given page only"
+                value="single"
+                checked={selectedOption === "single"}
+                handleCheckedChange={handleCheckedChange}
+              />
             </Stack>
             <TextInput
               id="user-email"

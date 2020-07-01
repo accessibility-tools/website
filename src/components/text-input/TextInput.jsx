@@ -132,7 +132,7 @@ TextInput.propTypes = {
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
-  width: PropTypes.number,
+  width: PropTypes.string,
   hintIcon: PropTypes.string,
   iconColor: PropTypes.string,
 };

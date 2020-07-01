@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { color, spacing } from "../../shared/style";
 
 const StyledRadioButton = styled.span`
-  border: 3px solid ${props => (props.checked ? color.blue : color.primary)};
+  border: 3px solid
+    ${({ isChecked }) => (isChecked ? color.blue : color.primary)};
   border-radius: 50%;
   display: inline-block;
   height: 20px;
@@ -21,7 +22,7 @@ const StyledRadioButton = styled.span`
     left: 3px;
     top: 3px;
     position: absolute;
-    visibility: ${props => (props.checked ? "visible" : "hidden")};
+    visibility: ${({ isChecked }) => (isChecked ? "visible" : "hidden")};
     width: 8px;
   }
 
@@ -65,38 +66,30 @@ const RadioButtonContainer = styled.label`
   }
 `;
 
-const RadioButton = ({ checked, label, className, ...otherProps }) => {
-  const [isChecked, setChecked] = useState(checked);
-  const handleCheckedChange = () => setChecked(!isChecked);
-
-  useEffect(() => {
-    document.onkeydown = e => {
-      if (e.keyCode === 32) {
-        setChecked(!isChecked);
-      }
-    };
-
-    return () => {
-      document.onkeydown = null;
-    };
-  });
-
-  return (
-    <RadioButtonContainer className={className}>
-      <input type="radio" checked={checked}></input>
-      <StyledRadioButton
-        checked={isChecked}
-        onClick={handleCheckedChange}
-        {...otherProps}
-      ></StyledRadioButton>
-      {label}
-    </RadioButtonContainer>
-  );
-};
+const RadioButton = ({
+  label,
+  value,
+  checked,
+  handleCheckedChange,
+  className,
+}) => (
+  <RadioButtonContainer className={className}>
+    <input
+      type="radio"
+      value={value}
+      checked={checked}
+      onChange={handleCheckedChange}
+    ></input>
+    <StyledRadioButton isChecked={checked}></StyledRadioButton>
+    {label}
+  </RadioButtonContainer>
+);
 
 RadioButton.propTypes = {
   label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   checked: PropTypes.bool,
+  handleCheckedChange: PropTypes.func,
   className: PropTypes.string,
 };
 
