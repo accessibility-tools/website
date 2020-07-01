@@ -39,7 +39,15 @@ const ToolImg = styled.img`
   width: 60%;
 `;
 
-const ToolOverview = ({ title, toolName, hasBadge, hasList, hasLink }) => (
+const ToolOverview = ({
+  title,
+  toolName,
+  hasBadge,
+  hasList,
+  hasLink,
+  linkText,
+  linkUrl,
+}) => (
   <Switcher threshold="40rem" space="3.5rem" width="100%">
     <div>
       <Center>
@@ -65,7 +73,7 @@ const ToolOverview = ({ title, toolName, hasBadge, hasList, hasLink }) => (
               </li>
             </ul>
           )}
-          {hasLink && <CTA text="View on Github" icon="extLink" />}
+          {hasLink && <CTA text={linkText} href={linkUrl} icon="extLink" />}
         </InfoWrapper>
       </Center>
     </div>
@@ -78,6 +86,8 @@ ToolOverview.propTypes = {
   hasBadge: PropTypes.bool,
   hasLink: PropTypes.bool,
   hasList: PropTypes.bool,
+  linkText: PropTypes.string,
+  linkUrl: PropTypes.string,
 };
 
 export default ToolOverview;
