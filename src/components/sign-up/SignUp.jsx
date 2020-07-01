@@ -10,6 +10,7 @@ import Button from "../button/Button";
 const SignUpBtn = styled(Button)`
   margin-left: auto;
   width: -webkit-fill-available;
+  width: -moz-available;
 
   @media (min-width: 48rem) {
     width: 19rem;

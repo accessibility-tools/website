@@ -21,6 +21,7 @@ const InputWrapper = styled.div`
 const StyledInput = styled.input`
   height: 48px;
   width: -webkit-fill-available;
+  width: -moz-available;
   border: 2px solid
     ${props =>
       props.error ? color.error : props.valid ? color.blue : color.primary};
