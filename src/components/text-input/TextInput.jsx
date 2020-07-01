@@ -92,7 +92,7 @@ const TextInput = ({
         type={type}
         id={id}
         name={id}
-        aria-invalid={valid !== undefined ? !valid : false}
+        aria-invalid={valid !== undefined}
         aria-describedby={(hintText || errorText) && `${id}-hint ${id}-error`}
         placeholder={placeholder}
         error={errorText}
