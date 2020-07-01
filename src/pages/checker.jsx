@@ -71,7 +71,7 @@ const RadioBtn = styled(RadioButton)`
 `;
 
 const WebCheckerPage = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("all");
 
   const handleCheckedChange = e => {
     setSelectedOption(e.target.value);
@@ -99,6 +99,7 @@ const WebCheckerPage = () => {
 
           <Stack space="medium">
             <TextInput
+              type="text"
               id="url"
               label="website-url"
               placeholder="www.futurice.com"
@@ -120,7 +121,8 @@ const WebCheckerPage = () => {
               />
             </Stack>
             <TextInput
-              id="user-email"
+              type="email"
+              id="email"
               label="email (optional)"
               placeholder="www.futurice.com"
               width="70vw"
@@ -138,6 +140,8 @@ const WebCheckerPage = () => {
           title="About the tool"
           toolName="webChecker"
           hasLink={true}
+          linkText="be a contributor"
+          linkUrl="https://github.com/accessibility-tools/website"
         />
       </Section>
     </PageContainer>
