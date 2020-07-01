@@ -9,11 +9,11 @@ const PageContainer = styled(Switcher)`
   background-color: ${color.extraLightPurple};
   height: 100vh;
 
-  & > * {
+  & > div {
     padding: 6rem 10rem;
   }
 
-  & > * > * {
+  & > div > div {
     text-align: left;
   }
 `;

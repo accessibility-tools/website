@@ -23,8 +23,8 @@ const StyledInput = styled.input`
   width: -webkit-fill-available;
   width: -moz-available;
   border: 2px solid
-    ${props =>
-      props.error ? color.error : props.valid ? color.blue : color.primary};
+    ${({ error, valid }) =>
+      error ? color.error : valid ? color.blue : color.primary};
   padding: ${spacing.padding.medium}px ${spacing.padding.small}px;
   transition: all 150ms ease-out;
   margin-top: ${spacing.padding.small}px;
@@ -57,7 +57,7 @@ const IconWrapper = styled.span`
 
 const StyledSubtext = styled.div`
   padding: 1rem 0;
-  color: ${props => (props.error ? color.error : color.mediumGrey)};
+  color: ${({ error }) => (error ? color.error : color.mediumGrey)};
 
   & > *:first-child {
     margin-right: 0.5rem;
