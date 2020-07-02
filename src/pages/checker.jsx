@@ -139,9 +139,14 @@ const WebCheckerPage = () => {
         <ToolOverview
           title="About the tool"
           toolName="webChecker"
+          hasCta={true}
+          ctaText="learn more"
+          ctaUrl="/"
           hasLink={true}
-          linkText="be a contributor"
+          linkText="view on github"
           linkUrl="https://github.com/accessibility-tools/website"
+          linkIcon="github"
+          isExternal={true}
         />
       </Section>
     </PageContainer>

@@ -4,18 +4,24 @@ import styled from "styled-components";
 import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Center from "../layout-components/Center";
-import ComingSoon from "../badge/ComingSoonBadge";
 import CTA from "../CTA/CTA";
+import Link from "../links/Link";
 
 const toolData = {
   ciTool: {
     img: "/illustrations/citool-placeholder.png",
     desc: "Run our tool in the terminal to create a report for any website:",
+    details: [
+      "Detect and fix accessibility issues like missing labels, lack of color contrast many more.",
+      "Check huge websites with multiple pages in just one session.",
+      "Learn if your website is complying to important standards in the industry and how to improve.",
+    ],
   },
   webChecker: {
     img: "/illustrations/webchecker-placeholder.png",
     desc:
       "Check any website for accessibiliy issues by simply entering a URL into our online tool. Optionally you can recieve the detailed report via e-mail or share it with other people to tackle accessibility issues together.",
+    details: [],
   },
 };
 
@@ -39,14 +45,25 @@ const ToolImg = styled.img`
   width: 60%;
 `;
 
+const ToolLink = styled(Link)`
+  font-size: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+`;
+
 const ToolOverview = ({
   title,
   toolName,
-  hasBadge,
   hasList,
+  hasCta,
+  ctaText,
+  ctaUrl,
+  ctaIcon,
   hasLink,
   linkText,
   linkUrl,
+  linkIcon,
+  isExternal,
 }) => (
   <Switcher threshold="40rem" space="3.5rem" width="100%">
     <div>
@@ -55,25 +72,22 @@ const ToolOverview = ({
       </Center>
       <Center>
         <InfoWrapper>
-          {hasBadge && <ComingSoon />}
           <h2>{title}</h2>
           <p>{toolData[toolName].desc}</p>
           {hasList && (
             <ul>
-              <li>
-                Detect and fix accessibility issues like missing labels, lack of
-                color contrast many more.
-              </li>
-              <li>
-                Check huge websites with multiple pages in just one session.
-              </li>
-              <li>
-                Learn if your website is complying to important standards in the
-                industry and how to improve.
-              </li>
+              {toolData[toolName].details.map((detail, index) => (
+                <li key={`${toolName} detail ${index}`}>{detail}</li>
+              ))}
             </ul>
           )}
-          {hasLink && <CTA text={linkText} href={linkUrl} icon="extLink" />}
+
+          {hasCta && <CTA text={ctaText} href={ctaUrl} icon={ctaIcon} />}
+          {hasLink && (
+            <ToolLink href={linkUrl} isExternal={isExternal} icon={linkIcon}>
+              {linkText}
+            </ToolLink>
+          )}
         </InfoWrapper>
       </Center>
     </div>
@@ -83,11 +97,16 @@ const ToolOverview = ({
 ToolOverview.propTypes = {
   title: PropTypes.string.isRequired,
   toolName: PropTypes.string.isRequired,
-  hasBadge: PropTypes.bool,
+  hasCta: PropTypes.bool,
   hasLink: PropTypes.bool,
   hasList: PropTypes.bool,
+  isExternal: PropTypes.bool,
+  ctaText: PropTypes.string,
+  ctaUrl: PropTypes.string,
+  ctaIcon: PropTypes.string,
   linkText: PropTypes.string,
   linkUrl: PropTypes.string,
+  linkIcon: PropTypes.string,
 };
 
 export default ToolOverview;

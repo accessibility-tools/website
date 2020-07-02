@@ -139,10 +139,11 @@ const LandingPage = () => {
             <ToolOverview
               title="Accessibility checker for websites"
               toolName="ciTool"
-              linkText="view on github"
-              linkUrl="https://github.com/accessibility-tools/ci"
               hasList={true}
-              hasLink={true}
+              hasCta={true}
+              ctaText="view on github"
+              ctaUrl="https://github.com/accessibility-tools/ci"
+              ctaIcon="extLink"
             />
           </Stack>
         </Section>
@@ -151,7 +152,9 @@ const LandingPage = () => {
           <ToolOverview
             title="Online accessibility checker for websites"
             toolName="webChecker"
-            hasBadge={true}
+            hasCta={true}
+            ctaText="check out the tool"
+            ctaUrl="/checker"
           />
         </Section>
 
