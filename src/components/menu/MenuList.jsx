@@ -5,16 +5,16 @@ import { color } from "../../shared/style";
 import MenuItem from "./MenuItem";
 import Sponsor from "../sponsor/Sponsor";
 
-const VALUES = {
-  TOOLS: "the tools",
-  LEARN: "learn more",
-  ABOUT: "about & contact",
+const menuData = {
+  TOOLS: { title: "the tools", href: "/#tools" },
+  LEARN: { title: "learn more", href: "/#learn-more" },
+  ABOUT: { title: "about & contact", href: "/#about" },
 };
 
 const StyledList = styled.ul`
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 1.5rem;
   display: flex;
   & > :last-child {
     margin-left: auto;
@@ -26,6 +26,7 @@ const StyledList = styled.ul`
     position: fixed;
     top: 4.5rem;
     bottom: 0;
+    padding: 0;
 
     ${({ expanded }) =>
       expanded
@@ -53,17 +54,23 @@ const StyledList = styled.ul`
   }
 `;
 
-const MenuList = ({ expanded }) => {
-  const [selected, setSelected] = useState(VALUES.TOOLS);
+const MenuList = ({ expanded, toggleExpanded }) => {
+  const [selected, setSelected] = useState(menuData.TOOLS.title);
+
+  const handleSelectMenuItem = value => {
+    setSelected(value);
+    toggleExpanded();
+  };
+
   return (
     <StyledList aria-label="menu list" id="menu-list" expanded={expanded}>
-      {Object.values(VALUES).map(item => (
+      {Object.values(menuData).map(item => (
         <MenuItem
-          key={item}
-          value={item}
-          onSelect={() => setSelected(item)}
-          isSelected={item === selected}
-          text={item}
+          key={"menu-" + item.title}
+          href={item.href}
+          text={item.title}
+          isSelected={item.title === selected}
+          onClick={() => handleSelectMenuItem(item.title)}
         />
       ))}
       <li>
@@ -75,6 +82,7 @@ const MenuList = ({ expanded }) => {
 
 MenuList.propTypes = {
   expanded: PropTypes.bool.isRequired,
+  toggleExpanded: PropTypes.func.isRequired,
 };
 
 export default MenuList;

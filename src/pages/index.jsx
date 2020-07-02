@@ -19,6 +19,7 @@ const Section = styled.section`
   --paddingX: 2rem;
   --paddingY: 8rem;
   padding: var(--paddingY) var(--paddingX);
+  width: 100%;
 
   & > * {
     max-width: 100rem;
@@ -124,7 +125,7 @@ const LandingPage = () => {
           </Center>
         </Section>
 
-        <Section>
+        <Section id="tools">
           <Stack space="large">
             <Center>
               <h1>The tools</h1>
@@ -225,7 +226,7 @@ const LandingPage = () => {
           </Stack>
         </Section>
 
-        <Section id="learnMore">
+        <Section id="learn-more">
           <Stack space="large">
             <Center>
               <h2>Learn more</h2>
@@ -243,7 +244,7 @@ const LandingPage = () => {
           </Stack>
         </Section>
 
-        <Section>
+        <Section id="about">
           <Stack width="auto">
             <Center>
               <h2>About & Contact</h2>

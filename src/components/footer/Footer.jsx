@@ -51,7 +51,11 @@ const Footer = () => {
   return (
     <StyledFooter>
       <LicenseWrapper>
-        <LicenseLink isSecondary={true} href="/">
+        <LicenseLink
+          isSecondary={true}
+          href="/"
+          aria-label="license information about the tool"
+        >
           <Icon className="icon" icon="creativeCommon1" />
           <Icon className="icon" icon="creativeCommon2" />
         </LicenseLink>
