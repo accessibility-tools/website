@@ -18,12 +18,13 @@ const InputWrapper = styled.div`
   align-items: center;
 `;
 
-const StyledInput = styled.input.attrs({ type: "text" })`
+const StyledInput = styled.input`
   height: 48px;
   width: -webkit-fill-available;
+  width: -moz-available;
   border: 2px solid
-    ${props =>
-      props.error ? color.error : props.valid ? color.blue : color.primary};
+    ${({ error, valid }) =>
+      error ? color.error : valid ? color.blue : color.primary};
   padding: ${spacing.padding.medium}px ${spacing.padding.small}px;
   transition: all 150ms ease-out;
   margin-top: ${spacing.padding.small}px;
@@ -56,7 +57,7 @@ const IconWrapper = styled.span`
 
 const StyledSubtext = styled.div`
   padding: 1rem 0;
-  color: ${props => (props.error ? color.error : color.mediumGrey)};
+  color: ${({ error }) => (error ? color.error : color.mediumGrey)};
 
   & > *:first-child {
     margin-right: 0.5rem;
@@ -69,17 +70,17 @@ const StyledSubtext = styled.div`
 
 const TextInput = ({
   label,
-  hintText,
-  errorText,
-  valid,
+  type,
   id,
-  required,
+  valid,
   disabled,
   placeholder,
-  onChange,
-  width,
+  errorText,
+  hintText,
   hintIcon,
   iconColor,
+  width,
+  onChange,
 }) => (
   <TextInputWrapper>
     <label htmlFor={id} id={`${id}-label`}>
@@ -87,17 +88,18 @@ const TextInput = ({
     </label>
     <InputWrapper>
       <StyledInput
+        required
+        type={type}
         id={id}
         name={id}
-        error={!!errorText}
-        valid={valid}
-        aria-invalid={valid !== undefined ? !valid : false}
+        aria-invalid={valid !== undefined}
         aria-describedby={(hintText || errorText) && `${id}-hint ${id}-error`}
-        required={!!required}
-        disabled={disabled}
         placeholder={placeholder}
-        onChange={onChange}
+        error={errorText}
+        valid={valid}
+        disabled={disabled}
         width={width}
+        onChange={onChange}
       />
       {(valid || errorText) && (
         <IconWrapper>
@@ -123,18 +125,18 @@ const TextInput = ({
 );
 
 TextInput.propTypes = {
+  type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  errorText: PropTypes.string,
-  hintText: PropTypes.string,
   valid: PropTypes.bool,
-  required: PropTypes.bool,
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func,
-  width: PropTypes.number,
+  errorText: PropTypes.string,
+  hintText: PropTypes.string,
   hintIcon: PropTypes.string,
   iconColor: PropTypes.string,
+  width: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default TextInput;
