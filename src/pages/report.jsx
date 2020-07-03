@@ -4,6 +4,7 @@ import { background, color } from "../shared/style";
 import Stack from "../components/layout-components/Stack";
 import ReportIntro from "../components/report/ReportIntro";
 import ReportOverview from "../components/report/ReportOverview";
+import ReportDetails from "../components/report/ReportDetails";
 
 const PageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
@@ -31,10 +32,13 @@ const Section = styled.section`
 const ReportPage = () => (
   <PageContainer space="large">
     <Section>
-      <ReportIntro />
+      <ReportIntro isLoaded={true} />
     </Section>
     <Section>
-      <ReportOverview />
+      <ReportOverview isLoaded={true} />
+    </Section>
+    <Section>
+      <ReportDetails />
     </Section>
   </PageContainer>
 );
