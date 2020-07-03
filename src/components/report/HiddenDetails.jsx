@@ -15,31 +15,29 @@ const FailedWrapper = styled.div`
   }
 `;
 
-const HiddenDetails = () => {
-  return (
-    <Stack space="medium">
-      <Stack space="small">
-        <SubTitle>Failed accessibility standards</SubTitle>
-        <FailedWrapper>
-          <Icon icon="extLink" />
-          <span>WCAG 2 AA</span>
-        </FailedWrapper>
-        <FailedWrapper>
-          <Icon icon="extLink" />
-          <span>WCAG 1.4.3</span>
-        </FailedWrapper>
-        <Link icon="manicule" isExternal={true}>
-          WHAT ARE ACCESSIBILITY STANDARDS?
-        </Link>
-      </Stack>
-      <div>
-        <SubTitle>Required fixes</SubTitle>
-        <FixElement />
-        <FixElement />
-        <FixElement />
-      </div>
+const HiddenDetails = () => (
+  <Stack space="medium">
+    <Stack space="small">
+      <SubTitle>Failed accessibility standards</SubTitle>
+      <FailedWrapper>
+        <Icon icon="extLink" />
+        <span>WCAG 2 AA</span>
+      </FailedWrapper>
+      <FailedWrapper>
+        <Icon icon="extLink" />
+        <span>WCAG 1.4.3</span>
+      </FailedWrapper>
+      <Link icon="manicule" isExternal={true}>
+        WHAT ARE ACCESSIBILITY STANDARDS?
+      </Link>
     </Stack>
-  );
-};
+    <div>
+      <SubTitle>Required fixes</SubTitle>
+      <FixElement />
+      <FixElement />
+      <FixElement />
+    </div>
+  </Stack>
+);
 
 export default HiddenDetails;

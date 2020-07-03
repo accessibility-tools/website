@@ -32,10 +32,10 @@ const Section = styled.section`
 const ReportPage = () => (
   <PageContainer space="large">
     <Section>
-      <ReportIntro isLoaded={true} />
+      <ReportIntro />
     </Section>
     <Section>
-      <ReportOverview isLoaded={true} />
+      <ReportOverview />
     </Section>
     <Section>
       <ReportDetails />

@@ -88,10 +88,6 @@ const ReportDetailsCard = () => {
 };
 
 ReportDetailsCard.propTypes = {
-  title: PropTypes.string,
-  subtext: PropTypes.string,
-  isIssue: PropTypes.bool,
-  isGuideline: PropTypes.bool,
   reportData: PropTypes.object,
 };
 

@@ -65,7 +65,7 @@ const ToolOverview = ({ title, toolName, hasBadge, hasList, hasLink }) => (
               </li>
             </ul>
           )}
-          {hasLink && <CTA text="View on Github" icon="extLink" />}
+          {hasLink && <CTA href="/" text="View on Github" icon="extLink" />}
         </InfoWrapper>
       </Center>
     </div>
