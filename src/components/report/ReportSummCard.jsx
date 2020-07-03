@@ -44,6 +44,11 @@ const IssueContainer = styled(Stack)`
 const GuidelineContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+
+  a {
+    padding: 0.5rem;
+  }
 `;
 
 const ReportSummCard = ({
