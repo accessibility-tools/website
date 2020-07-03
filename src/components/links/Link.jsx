@@ -86,7 +86,7 @@ const Link = ({ children, icon, isExternal, ...otherProps }) => {
 };
 
 Link.propTypes = {
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
   children: PropTypes.any,
   icon: PropTypes.string,
   isExternal: PropTypes.bool,

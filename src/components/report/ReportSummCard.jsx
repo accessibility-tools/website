@@ -1,37 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { color } from "../../shared/style";
 import Stack from "../layout-components/Stack";
 import Icon from "../icon/Icon";
 import Badge from "../badge/Badge";
-
-const reportData = {
-  CRITICAL: {
-    iconName: "circle",
-    iconColor: color.error,
-    issueCount: 3,
-  },
-  SERIOUS: {
-    iconName: "issue",
-    iconColor: color.error,
-    issueCount: 7,
-  },
-  MODERATE: {
-    iconName: "issue",
-    iconColor: color.darkPurple,
-    issueCount: 10,
-  },
-  MINOR: {
-    iconName: "issue",
-    iconColor: color.primary,
-    issueCount: 1,
-  },
-};
+import Link from "../links/Link";
 
 const CardContainer = styled(Stack)`
   background-color: ${color.white};
   width: 100%;
   padding: 2rem;
+  p {
+    max-width: none;
+  }
 
   @media (min-width: 48rem) {
     width: 40vw;
@@ -59,31 +41,76 @@ const IssueContainer = styled(Stack)`
   }
 `;
 
-const ReportSummCard = () => (
+const GuidelineContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const ReportSummCard = ({
+  title,
+  subtext,
+  isIssue,
+  isGuideline,
+  reportData,
+}) => (
   <CardContainer>
     <Title>
-      <Icon icon="error" color={color.error} />
-      <h4>21 Detected issues</h4>
+      {isIssue ? (
+        <Icon icon="error" color={color.error} />
+      ) : (
+        <Icon icon="success" color={color.blue} />
+      )}
+      <h4>{title}</h4>
     </Title>
-    <p>
-      Seems like there are some accesssibility issues on this website, that can
-      be improved:
-    </p>
-    <IssueContainer>
-      {Object.keys(reportData).map((level, index) => {
-        const details = Object.keys(reportData).map(key => reportData[key]);
-        return (
-          <Badge
-            key={`issue level: ${level}`}
-            label={level}
-            issueCount={details[index].issueCount}
-            iconName={details[index].iconName}
-            iconColor={details[index].iconColor}
-          />
-        );
-      })}
-    </IssueContainer>
+    <p>{subtext}</p>
+    {!!isIssue && (
+      <IssueContainer>
+        {Object.keys(reportData).map((level, index) => {
+          const details = Object.keys(reportData).map(key => reportData[key]);
+          return (
+            <Badge
+              key={`issue level: ${level}`}
+              label={level}
+              issueCount={details[index].issueCount}
+              iconName={details[index].iconName}
+              iconColor={details[index].iconColor}
+            />
+          );
+        })}
+      </IssueContainer>
+    )}
+
+    {!!isGuideline && (
+      <GuidelineContainer>
+        <Link icon="extLink" isExternal={true}>
+          example link
+        </Link>
+        <Link icon="extLink" isExternal={true}>
+          example link
+        </Link>
+        <Link icon="extLink" isExternal={true}>
+          example link
+        </Link>
+        <Link icon="extLink" isExternal={true}>
+          example link
+        </Link>
+        <Link icon="extLink" isExternal={true}>
+          example link
+        </Link>
+        <Link icon="extLink" isExternal={true}>
+          example link
+        </Link>
+      </GuidelineContainer>
+    )}
   </CardContainer>
 );
+
+ReportSummCard.propTypes = {
+  title: PropTypes.string,
+  subtext: PropTypes.string,
+  isIssue: PropTypes.bool,
+  isGuideline: PropTypes.bool,
+  reportData: PropTypes.object,
+};
 
 export default ReportSummCard;

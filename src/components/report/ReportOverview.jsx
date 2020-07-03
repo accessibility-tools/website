@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { color } from "../../shared/style";
 import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Button from "../button/Button";
@@ -35,6 +36,29 @@ const BtnWrapper = styled(Switcher)`
   }
 `;
 
+const reportData = {
+  CRITICAL: {
+    iconName: "circle",
+    iconColor: color.error,
+    issueCount: 3,
+  },
+  SERIOUS: {
+    iconName: "issue",
+    iconColor: color.error,
+    issueCount: 7,
+  },
+  MODERATE: {
+    iconName: "issue",
+    iconColor: color.darkPurple,
+    issueCount: 10,
+  },
+  MINOR: {
+    iconName: "issue",
+    iconColor: color.primary,
+    issueCount: 1,
+  },
+};
+
 const ReportOverview = () => (
   <OverviewContainer>
     <Switcher threshold="35rem">
@@ -53,8 +77,17 @@ const ReportOverview = () => (
     </Switcher>
     <Switcher threshold="35rem">
       <div>
-        <ReportSummCard />
-        <ReportSummCard />
+        <ReportSummCard
+          title="21 Detected issues"
+          subtext="Seems like there are some accesssibility issues on this website, that can be improved:"
+          isIssue={true}
+          reportData={reportData}
+        />
+        <ReportSummCard
+          title="08 Fulfilled guidlines"
+          subtext="Great, seems like your website is compliant with the following accessibility guidelines, that are in place:"
+          isGuideline={true}
+        />
       </div>
     </Switcher>
   </OverviewContainer>
