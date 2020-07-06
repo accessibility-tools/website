@@ -68,7 +68,7 @@ const ReportSummCard = ({
       <h4>{title}</h4>
     </Title>
     <p>{subtext}</p>
-    {!!isIssue && (
+    {isIssue && (
       <IssueContainer>
         {Object.keys(reportData).map((level, index) => {
           const details = Object.keys(reportData).map(key => reportData[key]);
@@ -85,7 +85,7 @@ const ReportSummCard = ({
       </IssueContainer>
     )}
 
-    {!!isGuideline && (
+    {isGuideline && (
       <GuidelineContainer>
         <Link icon="extLink" isExternal={true}>
           example link

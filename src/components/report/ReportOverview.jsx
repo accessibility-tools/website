@@ -86,13 +86,13 @@ const ReportOverview = () => (
         <ReportSummCard
           title="21 Detected issues"
           subtext="Seems like there are some accesssibility issues on this website, that can be improved:"
-          isIssue={true}
+          isIssue
           reportData={reportData}
         />
         <ReportSummCard
           title="08 Fulfilled guidlines"
           subtext="Great, seems like your website is compliant with the following accessibility guidelines, that are in place:"
-          isGuideline={true}
+          isGuideline
         />
       </div>
     </Switcher>

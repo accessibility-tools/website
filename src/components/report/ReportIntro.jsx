@@ -14,6 +14,7 @@ const Title = styled.div`
   p {
     max-width: none;
     text-transform: uppercase;
+    letter-spacing: 2.25px;
   }
 `;
 
