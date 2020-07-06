@@ -75,7 +75,6 @@ const WebCheckerPage = () => {
 
   const handleCheckedChange = e => {
     setSelectedOption(e.target.value);
-    console.log(e.target.value, selectedOption);
   };
 
   return (
@@ -103,7 +102,6 @@ const WebCheckerPage = () => {
               id="url"
               label="website-url"
               placeholder="www.futurice.com"
-              width="70vw"
             />
             <Stack space="medium">
               <h5>WHAT TO CHECK</h5>
@@ -125,7 +123,6 @@ const WebCheckerPage = () => {
               id="email"
               label="email (optional)"
               placeholder="www.futurice.com"
-              width="70vw"
               hintIcon="manicule"
               hintText="Reports of big websites can take a long time to be created. Enter your e-mail address to recieve the finished report after the check."
               iconColor={color.blue}
@@ -140,13 +137,13 @@ const WebCheckerPage = () => {
           title="About the tool"
           toolName="webChecker"
           hasCta={true}
+          hasLink={true}
+          isExternal={true}
           ctaText="learn more"
           ctaUrl="/"
-          hasLink={true}
           linkText="view on github"
           linkUrl="https://github.com/accessibility-tools/website"
           linkIcon="github"
-          isExternal={true}
         />
       </Section>
     </PageContainer>

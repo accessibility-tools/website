@@ -10,6 +10,7 @@ const TextInputWrapper = styled.div`
   justify-content: flex-start;
   align-items: left;
   text-align: left;
+  align-self: flex-start;
 `;
 
 const InputWrapper = styled.div`
@@ -22,6 +23,7 @@ const StyledInput = styled.input`
   height: 48px;
   width: -webkit-fill-available;
   width: -moz-available;
+  min-width: 18rem;
   border: 2px solid
     ${({ error, valid }) =>
       error ? color.error : valid ? color.blue : color.primary};
@@ -79,7 +81,7 @@ const TextInput = ({
   hintText,
   hintIcon,
   iconColor,
-  width,
+
   onChange,
 }) => (
   <TextInputWrapper>
@@ -98,7 +100,6 @@ const TextInput = ({
         error={errorText}
         valid={valid}
         disabled={disabled}
-        width={width}
         onChange={onChange}
       />
       {(valid || errorText) && (
@@ -135,7 +136,6 @@ TextInput.propTypes = {
   hintText: PropTypes.string,
   hintIcon: PropTypes.string,
   iconColor: PropTypes.string,
-  width: PropTypes.string,
   onChange: PropTypes.func,
 };
 
