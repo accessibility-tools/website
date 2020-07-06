@@ -5,6 +5,7 @@ import Stack from "../components/layout-components/Stack";
 import ReportIntro from "../components/report/ReportIntro";
 import ReportOverview from "../components/report/ReportOverview";
 import ReportDetails from "../components/report/ReportDetails";
+import Pagination from "../components/pagination/Pagination";
 
 const PageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
@@ -22,11 +23,15 @@ const Section = styled.section`
     padding-top: 8rem;
   }
 
-  &:nth-child(even) {
+  &:last-child {
+    padding-top: 0;
+  }
+
+  &:nth-child(2) {
     background-color: ${color.extraLightPurple};
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem));
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem);
-  }
+  } 
 `;
 
 const ReportPage = () => (
@@ -39,6 +44,9 @@ const ReportPage = () => (
     </Section>
     <Section>
       <ReportDetails />
+    </Section>
+    <Section>
+      <Pagination currentPage={1} totalPages={10} />
     </Section>
   </PageContainer>
 );
