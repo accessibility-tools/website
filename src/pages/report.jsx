@@ -6,6 +6,7 @@ import ReportIntro from "../components/report/ReportIntro";
 import ReportOverview from "../components/report/ReportOverview";
 import ReportDetails from "../components/report/ReportDetails";
 import Pagination from "../components/pagination/Pagination";
+import ReportLoading from "../components/report/ReportLoading";
 
 const PageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
@@ -35,20 +36,23 @@ const Section = styled.section`
 `;
 
 const ReportPage = () => (
-  <PageContainer space="large">
-    <Section>
-      <ReportIntro />
-    </Section>
-    <Section>
-      <ReportOverview />
-    </Section>
-    <Section>
-      <ReportDetails />
-    </Section>
-    <Section>
-      <Pagination currentPage={1} totalPages={10} />
-    </Section>
-  </PageContainer>
+  <>
+    <ReportLoading />
+    <PageContainer space="large">
+      <Section>
+        <ReportIntro isLoaded={true} />
+      </Section>
+      <Section>
+        <ReportOverview />
+      </Section>
+      <Section>
+        <ReportDetails />
+      </Section>
+      <Section>
+        <Pagination currentPage={1} totalPages={10} />
+      </Section>
+    </PageContainer>
+  </>
 );
 
 export default ReportPage;

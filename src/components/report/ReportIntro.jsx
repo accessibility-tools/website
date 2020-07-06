@@ -13,12 +13,13 @@ const Title = styled.div`
   align-self: center;
   p {
     max-width: none;
+    text-transform: uppercase;
   }
 `;
 
 const ReportIntro = ({ isLoaded }) => (
   <Switcher>
-    {!isLoaded ? (
+    {isLoaded ? (
       <div>
         <ReportImg
           src="/illustrations/web-checker.svg"
