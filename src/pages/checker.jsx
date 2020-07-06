@@ -80,55 +80,52 @@ const WebCheckerPage = () => {
   return (
     <PageContainer>
       <Section>
-        <Stack>
-          <IntroWrapper threshold="40rem">
-            <div>
-              <Center>
-                <p>ACCESSIBILITY WEB CHECKER</p>
-                <h1>Check your website for accessibility issues</h1>
-              </Center>
-              <Center>
-                <IntroImg
-                  src="/illustrations/webchecker.svg"
-                  alt="web checker illustration"
-                />
-              </Center>
-            </div>
-          </IntroWrapper>
-
+        <IntroWrapper threshold="40rem">
+          <div>
+            <Center>
+              <p>ACCESSIBILITY WEB CHECKER</p>
+              <h1>Check your website for accessibility issues</h1>
+            </Center>
+            <Center>
+              <IntroImg
+                src="/illustrations/webchecker.svg"
+                alt="web checker illustration"
+              />
+            </Center>
+          </div>
+        </IntroWrapper>
+        <Stack space="medium">
+          <TextInput
+            type="text"
+            id="url"
+            label="website-url"
+            placeholder="www.futurice.com"
+          />
           <Stack space="medium">
-            <TextInput
-              type="text"
-              id="url"
-              label="website-url"
-              placeholder="www.futurice.com"
+            <h5>WHAT TO CHECK</h5>
+            <RadioBtn
+              label="Check all subpages"
+              value="all"
+              checked={selectedOption === "all"}
+              handleCheckedChange={handleCheckedChange}
             />
-            <Stack space="medium">
-              <h5>WHAT TO CHECK</h5>
-              <RadioBtn
-                label="Check all subpages"
-                value="all"
-                checked={selectedOption === "all"}
-                handleCheckedChange={handleCheckedChange}
-              />
-              <RadioBtn
-                label="Check the given page only"
-                value="single"
-                checked={selectedOption === "single"}
-                handleCheckedChange={handleCheckedChange}
-              />
-            </Stack>
-            <TextInput
-              type="email"
-              id="email"
-              label="email (optional)"
-              placeholder="www.futurice.com"
-              hintIcon="manicule"
-              hintText="Reports of big websites can take a long time to be created. Enter your e-mail address to recieve the finished report after the check."
-              iconColor={color.blue}
+            <RadioBtn
+              label="Check the given page only"
+              value="single"
+              checked={selectedOption === "single"}
+              handleCheckedChange={handleCheckedChange}
             />
-            <Button text="check url" />
           </Stack>
+          <TextInput
+            type="email"
+            id="email"
+            label="email (optional)"
+            placeholder="www.futurice.com"
+            hintIcon="manicule"
+            hintText="Reports of big websites can take a long time to be created. Enter your e-mail address to recieve the finished report after the check."
+            iconColor={color.blue}
+          />
+          <Button text="check url" />
         </Stack>
       </Section>
 
