@@ -89,7 +89,7 @@ const WebCheckerPage = () => {
               </Center>
               <Center>
                 <IntroImg
-                  src="/illustrations/start.svg"
+                  src="/illustrations/webchecker.svg"
                   alt="web checker illustration"
                 />
               </Center>
