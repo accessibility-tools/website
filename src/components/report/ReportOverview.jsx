@@ -10,6 +10,10 @@ const OverviewContainer = styled(Stack)`
   padding: 0;
   width: 80vw;
 
+  span {
+    color: ${color.blue};
+  }
+
   @media (min-width: 48rem) {
     width: 100%;
   }
@@ -64,7 +68,9 @@ const ReportOverview = () => (
     <Switcher threshold="35rem">
       <div>
         <Stack space="small">
-          <h2>Report for wwww.com </h2>
+          <h2>
+            Report for <span>xxx.com</span>{" "}
+          </h2>
           <p>xx pages scanned </p>
         </Stack>
         <BtnWrapper>

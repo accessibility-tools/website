@@ -16,13 +16,13 @@ const CardContainer = styled(Stack)`
 
 const Details = styled.details`
   background-color: ${color.white};
+  border-radius: 6px;
+  border: solid 1px ${color.lightGrey1};
+  box-shadow: 0 2px 10px 0 ${color.lightGrey2};
   display: flex;
   flex-direction: column;
-
   width: 100%;
-  &:active {
-    background-color: ${color.purple};
-  }
+
   & > * {
     max-width: 100%;
     padding: 2rem;

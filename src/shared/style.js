@@ -29,6 +29,10 @@ export const color = {
   yellow: "#FFF361",
   pink: "#FF7FB1",
   red: "#F94B4B",
+
+  // border & box shadow
+  lightGrey1: "#d1d1d1",
+  lightGrey2: "#d2d2d2",
 };
 
 export const spacing = {
