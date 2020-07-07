@@ -7,24 +7,6 @@ import Center from "../layout-components/Center";
 import CTA from "../CTA/CTA";
 import Link from "../links/Link";
 
-const toolData = {
-  ciTool: {
-    img: "/illustrations/citool-placeholder.png",
-    desc: "Run our tool in the terminal to create a report for any website:",
-    details: [
-      "Detect and fix accessibility issues like missing labels, lack of color contrast many more.",
-      "Check huge websites with multiple pages in just one session.",
-      "Learn if your website is complying to important standards in the industry and how to improve.",
-    ],
-  },
-  webChecker: {
-    img: "/illustrations/webchecker-placeholder.png",
-    desc:
-      "Check any website for accessibiliy issues by simply entering a URL into our online tool. Optionally you can recieve the detailed report via e-mail or share it with other people to tackle accessibility issues together.",
-    details: [],
-  },
-};
-
 const InfoWrapper = styled(Stack)`
   max-width: 30rem;
   text-align: left;
@@ -51,62 +33,55 @@ const ToolLink = styled(Link)`
   align-items: center;
 `;
 
-const ToolOverview = ({
-  title,
-  toolName,
-  hasList,
-  hasCta,
-  ctaText,
-  ctaUrl,
-  ctaIcon,
-  hasLink,
-  linkText,
-  linkUrl,
-  linkIcon,
-  isExternal,
-}) => (
-  <Switcher threshold="40rem" space="3.5rem" width="100%">
-    <div>
-      <Center>
-        <ToolImg src={toolData[toolName].img} alt="image of the tool" />
-      </Center>
-      <Center>
-        <InfoWrapper>
-          <h2>{title}</h2>
-          <p>{toolData[toolName].desc}</p>
-          {hasList && (
-            <ul>
-              {toolData[toolName].details.map((detail, index) => (
-                <li key={`${toolName} detail ${index}`}>{detail}</li>
-              ))}
-            </ul>
-          )}
+const ToolOverview = ({ toolData }) => {
+  const { id, title, img, desc, details, ctaData, linkData } = toolData;
+  const { ctaText, ctaUrl, ctaIcon, isExternal } = ctaData;
+  const { linkText, linkUrl, linkIcon, isExternalLink } = linkData;
 
-          {hasCta && <CTA text={ctaText} href={ctaUrl} icon={ctaIcon} />}
-          {hasLink && (
-            <ToolLink href={linkUrl} isExternal={isExternal} icon={linkIcon}>
-              {linkText}
-            </ToolLink>
-          )}
-        </InfoWrapper>
-      </Center>
-    </div>
-  </Switcher>
-);
+  return (
+    <Switcher threshold="40rem" space="3.5rem" width="100%">
+      <div>
+        <Center>
+          <ToolImg src={img} alt="image of the tool" />
+        </Center>
+        <Center>
+          <InfoWrapper>
+            <h2>{title}</h2>
+            <p>{desc}</p>
+            {details && (
+              <ul>
+                {details.map((detail, index) => (
+                  <li key={`${id} detail ${index}`}>{detail}</li>
+                ))}
+              </ul>
+            )}
+
+            {Object.keys(ctaData).length !== 0 && (
+              <CTA
+                text={ctaText}
+                href={ctaUrl}
+                icon={ctaIcon}
+                isExternal={isExternal}
+              />
+            )}
+            {Object.keys(linkData).length !== 0 && (
+              <ToolLink
+                href={linkUrl}
+                icon={linkIcon}
+                isExternal={isExternalLink}
+              >
+                {linkText}
+              </ToolLink>
+            )}
+          </InfoWrapper>
+        </Center>
+      </div>
+    </Switcher>
+  );
+};
 
 ToolOverview.propTypes = {
-  title: PropTypes.string.isRequired,
-  toolName: PropTypes.string.isRequired,
-  hasCta: PropTypes.bool,
-  hasLink: PropTypes.bool,
-  hasList: PropTypes.bool,
-  isExternal: PropTypes.bool,
-  ctaText: PropTypes.string,
-  ctaUrl: PropTypes.string,
-  ctaIcon: PropTypes.string,
-  linkText: PropTypes.string,
-  linkUrl: PropTypes.string,
-  linkIcon: PropTypes.string,
+  toolData: PropTypes.object,
 };
 
 export default ToolOverview;

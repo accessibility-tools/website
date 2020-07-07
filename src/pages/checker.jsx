@@ -8,6 +8,7 @@ import TextInput from "../components/text-input/TextInput";
 import RadioButton from "../components/radio-button/RadioButton";
 import Button from "../components/button/Button";
 import ToolOverview from "../components/tool-overview/ToolOverview";
+import { webCheckerAlt } from "../constants/toolData";
 
 const PageContainer = styled(Stack)`
   background-color: ${color.white};
@@ -130,18 +131,7 @@ const WebCheckerPage = () => {
       </Section>
 
       <Section>
-        <ToolOverview
-          title="About the tool"
-          toolName="webChecker"
-          hasCta={true}
-          hasLink={true}
-          isExternal={true}
-          ctaText="learn more"
-          ctaUrl="/"
-          linkText="view on github"
-          linkUrl="https://github.com/accessibility-tools/website"
-          linkIcon="github"
-        />
+        <ToolOverview toolData={webCheckerAlt} />
       </Section>
     </PageContainer>
   );

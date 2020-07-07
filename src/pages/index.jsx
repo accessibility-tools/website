@@ -10,6 +10,7 @@ import Link from "../components/links/Link";
 import ToolOverview from "../components/tool-overview/ToolOverview";
 import SignUp from "../components/sign-up/SignUp";
 import ComingSoon from "../components/badge/ComingSoonBadge";
+import { ciTool, webChecker } from "../constants/toolData";
 
 const MainContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -137,26 +138,12 @@ const LandingPage = () => {
                 accessibility in mind.
               </Subtext>
             </Center>
-            <ToolOverview
-              title="Accessibility checker for websites"
-              toolName="ciTool"
-              hasList={true}
-              hasCta={true}
-              ctaText="view on github"
-              ctaUrl="https://github.com/accessibility-tools/ci"
-              ctaIcon="extLink"
-            />
+            <ToolOverview toolData={ciTool} />
           </Stack>
         </Section>
 
         <Section>
-          <ToolOverview
-            title="Online accessibility checker for websites"
-            toolName="webChecker"
-            hasCta={true}
-            ctaText="check out the tool"
-            ctaUrl="/checker"
-          />
+          <ToolOverview toolData={webChecker} />
         </Section>
 
         <Section>
