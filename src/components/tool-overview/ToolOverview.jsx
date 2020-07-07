@@ -35,7 +35,6 @@ const ToolLink = styled(Link)`
 
 const ToolOverview = ({ toolData }) => {
   const { id, title, img, desc, details, ctaData, linkData } = toolData;
-  const { ctaText, ctaUrl, ctaIcon, isExternal } = ctaData;
   const { linkText, linkUrl, linkIcon, isExternalLink } = linkData;
 
   return (
@@ -56,14 +55,7 @@ const ToolOverview = ({ toolData }) => {
               </ul>
             )}
 
-            {Object.keys(ctaData).length !== 0 && (
-              <CTA
-                text={ctaText}
-                href={ctaUrl}
-                icon={ctaIcon}
-                isExternal={isExternal}
-              />
-            )}
+            {Object.keys(ctaData).length !== 0 && <CTA ctaData={ctaData} />}
             {Object.keys(linkData).length !== 0 && (
               <ToolLink
                 href={linkUrl}

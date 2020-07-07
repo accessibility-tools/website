@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "../button/Button";
 
-const CTA = ({ text, icon, href, isExternal, isSecondary, ...otherProps }) => {
+const CTA = ({ ctaData, ...otherProps }) => {
+  const { ctaText, ctaIcon, ctaUrl, isExternal, isSecondary } = ctaData;
   const externalConfig = {
     target: "_blank",
     rel: "noopener noreferrer",
@@ -14,9 +15,9 @@ const CTA = ({ text, icon, href, isExternal, isSecondary, ...otherProps }) => {
       data-type="cta-btn"
       tabIndex="0"
       as="a"
-      href={href}
-      text={text}
-      icon={icon}
+      href={ctaUrl}
+      text={ctaText}
+      icon={ctaIcon}
       isSecondary={isSecondary}
       {...otherProps}
     />
@@ -24,11 +25,7 @@ const CTA = ({ text, icon, href, isExternal, isSecondary, ...otherProps }) => {
 };
 
 CTA.propTypes = {
-  href: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  icon: PropTypes.string,
-  isSecondary: PropTypes.bool,
-  isExternal: PropTypes.bool,
+  ctaData: PropTypes.object,
 };
 
 CTA.defaultProps = {
