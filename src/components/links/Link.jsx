@@ -71,14 +71,19 @@ const StyledLink = styled.a`
     `}
 `;
 
-const Link = ({ children, icon, isExternal, ...otherProps }) => {
+const Link = ({ text, href, icon, isExternal, children, ...otherProps }) => {
   const externalConfig = {
     target: "_blank",
     rel: "noopener noreferrer",
   };
   if (isExternal) otherProps = { ...otherProps, ...externalConfig };
   return (
-    <StyledLink icon={icon ? true : false} {...otherProps}>
+    <StyledLink
+      href={href}
+      icon={icon ? true : false}
+      text={text}
+      {...otherProps}
+    >
       {icon && <Icon icon={icon} />}
       <span>{children}</span>
     </StyledLink>
@@ -86,10 +91,11 @@ const Link = ({ children, icon, isExternal, ...otherProps }) => {
 };
 
 Link.propTypes = {
+  text: PropTypes.string,
   href: PropTypes.string.isRequired,
-  children: PropTypes.any,
   icon: PropTypes.string,
   isExternal: PropTypes.bool,
+  children: PropTypes.any,
 };
 
 Link.defaultProps = {

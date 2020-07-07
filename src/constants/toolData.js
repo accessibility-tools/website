@@ -28,7 +28,6 @@ export const webChecker = {
     ctaText: "check out the tool",
     ctaUrl: "/checker",
     ctaIcon: "",
-    isExternal: false,
   },
   linkData: {},
 };
@@ -44,7 +43,6 @@ export const webCheckerAlt = {
     ctaText: "learn more",
     ctaUrl: "/",
     ctaIcon: "",
-    isExternal: false,
   },
   linkData: {
     linkText: "view on github",
