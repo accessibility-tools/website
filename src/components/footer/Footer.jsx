@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import styled from "styled-components";
 import { spacing } from "../../shared/style";
 import Icon from "../icon/Icon";
@@ -62,9 +61,9 @@ const Footer = () => {
         <FullText>The tool is licensed under Creative Commons CC-BY.</FullText>
         <ShortText>CC-BY.</ShortText>
       </LicenseWrapper>
-      <Link href="/imprint">
-        <StyledLink isSecondary={true}>imprint</StyledLink>
-      </Link>
+      <StyledLink href="/imprint" isSecondary={true}>
+        imprint
+      </StyledLink>
     </StyledFooter>
   );
 };
