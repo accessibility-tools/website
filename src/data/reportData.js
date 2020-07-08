@@ -1,7 +1,7 @@
 export const mockReportData = {
   critical: [
     {
-      title: "Color contrast",
+      title: "color contrast",
       summary:
         "Ensure the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds.",
       resource: "/",
@@ -14,7 +14,7 @@ export const mockReportData = {
         {
           summary:
             "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
-          details: [
+          tips: [
             "foreground color: #0ab587",
             "background color: #f2f2f2",
             "font size: 45pt",
@@ -25,7 +25,7 @@ export const mockReportData = {
         {
           summary:
             "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
-          details: [
+          tips: [
             "foreground color: #0ab587",
             "background color: #f2f2f2",
             "font size: 45pt",
@@ -36,7 +36,7 @@ export const mockReportData = {
         {
           summary:
             "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
-          details: [
+          tips: [
             "foreground color: #0ab587",
             "background color: #f2f2f2",
             "font size: 45pt",
@@ -59,7 +59,7 @@ export const mockReportData = {
         {
           summary:
             "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
-          details: [
+          tips: [
             "Element does not have an alt attribute",
             "aria-label attribute does not exist or is empty",
             "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
@@ -72,7 +72,7 @@ export const mockReportData = {
         {
           summary:
             "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
-          details: [
+          tips: [
             "Element does not have an alt attribute",
             "aria-label attribute does not exist or is empty",
             "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
@@ -87,7 +87,7 @@ export const mockReportData = {
   ],
   serious: [
     {
-      title: "Svg image alt",
+      title: "svg image alt",
       summary: "Ensure every image has an alt text.",
       resource: "/",
       failedStandards: [
@@ -98,7 +98,7 @@ export const mockReportData = {
         {
           summary:
             "1 element has its view restricted to portrait orientation only.",
-          details: [
+          tips: [
             "element has no child that is a title",
             "aria-label attribute does not exist or is empty",
             "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
@@ -108,7 +108,7 @@ export const mockReportData = {
         {
           summary:
             "1 element has its view restricted to portrait orientation only.",
-          details: [
+          tips: [
             "element has no child that is a title",
             "aria-label attribute does not exist or is empty",
             "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
@@ -120,7 +120,7 @@ export const mockReportData = {
   ],
   moderate: [
     {
-      title: "Lankmarks",
+      title: "lankmarks",
       summary: "Ensure all page content is contained by landmarks.",
       resource: "/",
       failedStandards: [
@@ -130,7 +130,7 @@ export const mockReportData = {
       fixes: [
         {
           summary: "1 element is not contained by landmarks.",
-          details: ["Some page content is not contained by landmarks"],
+          tips: ["Some page content is not contained by landmarks"],
           link: "/",
         },
       ],

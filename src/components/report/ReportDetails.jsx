@@ -1,7 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Stack from "../layout-components/Stack";
-import ReportDetailsCard from "./ReportDetailsCard";
+import DetailsCategory from "./DetailsCategory";
+import { mockReportData } from "../../data/reportData";
 
 const ReportDetails = () => (
   <Stack space="medium">
@@ -9,14 +9,14 @@ const ReportDetails = () => (
       <h2>Detailed issues</h2>
       <p>What exactly can be improved?</p>
     </div>
-    <ReportDetailsCard />
-    <ReportDetailsCard />
-    <ReportDetailsCard />
+    {Object.keys(mockReportData).map(category => (
+      <DetailsCategory
+        key={category}
+        category={category}
+        issues={mockReportData[category]}
+      />
+    ))}
   </Stack>
 );
-
-ReportDetails.propTypes = {
-  reportData: PropTypes.object,
-};
 
 export default ReportDetails;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { color } from "../../shared/style";
 import Stack from "../layout-components/Stack";
@@ -20,6 +21,7 @@ const SubTitle = styled.h5`
 const ElementList = styled.ul`
   li {
     list-style: disc;
+    padding: 0.5rem;
   }
 `;
 
@@ -28,21 +30,23 @@ const ElementLink = styled(Link)`
   align-self: flex-end;
 `;
 
-const FixElement = () => (
+const FixElement = ({ fixDetails }) => (
   <ElementContainer>
-    <SubTitle>
-      1 element has insufficient color contrast of 2.35:1. The expected contrast
-      ratio is 3:1.
-    </SubTitle>
+    <SubTitle>{fixDetails.summary}</SubTitle>
     <p>Fix any of the following:</p>
     <ElementList>
-      <li>foreground color: #0ab587</li>
-      <li>background color: #f2f2f2</li>
-      <li>font size: 45pt</li>
-      <li>font weight: bold</li>
+      {fixDetails.tips.map((detail, index) => (
+        <li key={`fix detail ${index}`}>{detail}</li>
+      ))}
     </ElementList>
-    <ElementLink isExternal={true}>view element</ElementLink>
+    <ElementLink href={fixDetails.link} isExternal={true}>
+      view element
+    </ElementLink>
   </ElementContainer>
 );
+
+FixElement.propTypes = {
+  fixDetails: PropTypes.string,
+};
 
 export default FixElement;
