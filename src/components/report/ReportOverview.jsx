@@ -4,7 +4,7 @@ import { color } from "../../shared/style";
 import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Button from "../button/Button";
-import ReportSummCard from "./ReportSummCard";
+import OverviewCard from "./OverviewCard";
 import { mockReportData } from "../../data/reportData";
 
 const OverviewContainer = styled(Stack)`
@@ -66,15 +66,17 @@ const ReportOverview = () => {
       </Switcher>
       <Switcher threshold="35rem">
         <div>
-          <ReportSummCard
+          <OverviewCard
             title={`${totalIssueCount} Detected issues`}
             subtext="Seems like there are some accesssibility issues on this website, that can be improved:"
             isIssue
+            reportData={mockReportData}
           />
-          <ReportSummCard
-            title="08 Fulfilled guidlines"
+          <OverviewCard
+            title="8 Fulfilled guidlines"
             subtext="Great, seems like your website is compliant with the following accessibility guidelines, that are in place:"
             isGuideline
+            reportData={mockReportData}
           />
         </div>
       </Switcher>

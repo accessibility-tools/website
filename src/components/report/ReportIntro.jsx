@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Switcher from "../layout-components/Switcher";
-import { mockReportData } from "../../data/reportData";
 
 const ReportImg = styled.img`
   width: 19rem;
@@ -18,9 +18,9 @@ const Title = styled.div`
   }
 `;
 
-const ReportIntro = () => (
+const ReportIntro = ({ isLoaded }) => (
   <Switcher>
-    {mockReportData ? (
+    {isLoaded ? (
       <div>
         <ReportImg
           src="/illustrations/web-checker.svg"
@@ -45,5 +45,9 @@ const ReportIntro = () => (
     )}
   </Switcher>
 );
+
+ReportIntro.propTypes = {
+  isLoaded: PropTypes.bool,
+};
 
 export default ReportIntro;

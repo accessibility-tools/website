@@ -7,7 +7,6 @@ import Icon from "../icon/Icon";
 import Badge from "../badge/Badge";
 import Link from "../links/Link";
 import { reportIcons } from "../constants/reportIcons";
-import { mockReportData } from "../../data/reportData";
 
 const CardContainer = styled(Stack)`
   background-color: ${color.white};
@@ -53,7 +52,7 @@ const GuidelineContainer = styled.div`
   }
 `;
 
-const ReportSummCard = ({ title, subtext, isIssue, isGuideline }) => (
+const OverviewCard = ({ title, subtext, isIssue, isGuideline, reportData }) => (
   <CardContainer>
     <Title>
       {isIssue ? (
@@ -66,13 +65,13 @@ const ReportSummCard = ({ title, subtext, isIssue, isGuideline }) => (
     <p>{subtext}</p>
     {isIssue && (
       <IssueContainer>
-        {Object.keys(mockReportData).map(category => {
+        {Object.keys(reportData).map(category => {
           const iconData = reportIcons[category];
           return (
             <Badge
               key={`issue category: ${category}`}
               label={category}
-              issueCount={mockReportData[category].length}
+              issueCount={reportData[category].length}
               iconName={iconData.iconName}
               iconColor={iconData.iconColor}
             />
@@ -106,11 +105,12 @@ const ReportSummCard = ({ title, subtext, isIssue, isGuideline }) => (
   </CardContainer>
 );
 
-ReportSummCard.propTypes = {
+OverviewCard.propTypes = {
   title: PropTypes.string,
   subtext: PropTypes.string,
   isIssue: PropTypes.bool,
   isGuideline: PropTypes.bool,
+  reportData: PropTypes.object,
 };
 
-export default ReportSummCard;
+export default OverviewCard;

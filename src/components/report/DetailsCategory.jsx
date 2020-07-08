@@ -18,15 +18,18 @@ const CategoryBadge = styled(Badge)`
 
 const DetailsCategory = ({ category, issues }) => (
   <CategoryContainer space="medium">
-    <CategoryBadge
-      label={category}
-      iconName={reportIcons[category].iconName}
-      iconColor={reportIcons[category].iconColor}
-    />
-
-    {issues.map((issue, index) => (
-      <DetailsCard key={`${category} issue ${index}`} issueDetails={issue} />
-    ))}
+    {issues.length > 0 && (
+      <>
+        <CategoryBadge
+          label={category}
+          iconName={reportIcons[category].iconName}
+          iconColor={reportIcons[category].iconColor}
+        />
+        {issues.map((issue, index) => (
+          <DetailsCard key={`${category} issue ${index}`} issueData={issue} />
+        ))}
+      </>
+    )}
   </CategoryContainer>
 );
 

@@ -53,18 +53,19 @@ const FailedWrapper = styled.div`
   }
 `;
 
-const DetailsCard = ({ issueDetails }) => {
+const DetailsCard = ({ issueData }) => {
   const [isOpened, setOpened] = useState(false);
   const handleOpen = event => {
     setOpened(event.currentTarget.open);
   };
+  const { title, summary, resource, failedStandards, fixes } = issueData;
   return (
     <Details onToggle={handleOpen}>
       <Summary>
         <div>
-          <h3>{issueDetails.title}</h3>
-          <p>{issueDetails.summary}</p>
-          <Link href={issueDetails.resource} icon="extLink" isExternal={true}>
+          <h3>{title}</h3>
+          <p>{summary}</p>
+          <Link href={resource} icon="extLink" isExternal={true}>
             Resource to solve this issue
           </Link>
         </div>
@@ -76,8 +77,8 @@ const DetailsCard = ({ issueDetails }) => {
       <Stack space="medium">
         <Stack space="small">
           <SubTitle>Failed accessibility standards</SubTitle>
-          {issueDetails.failedStandards.map((failedStandard, index) => (
-            <FailedWrapper key={`failed standard ${index}`}>
+          {failedStandards.map((failedStandard, index) => (
+            <FailedWrapper key={`${title} failed standard ${index}`}>
               <Icon icon="extLink" />
               <span>{failedStandard.name}</span>
             </FailedWrapper>
@@ -88,8 +89,8 @@ const DetailsCard = ({ issueDetails }) => {
         </Stack>
         <div>
           <SubTitle>Required fixes</SubTitle>
-          {issueDetails.fixes.map((fix, index) => (
-            <FixElement key={`required fix ${index}`} fixDetails={fix} />
+          {fixes.map((fix, index) => (
+            <FixElement key={`${title} required fix ${index}`} fixData={fix} />
           ))}
         </div>
       </Stack>
@@ -98,7 +99,7 @@ const DetailsCard = ({ issueDetails }) => {
 };
 
 DetailsCard.propTypes = {
-  issueDetails: PropTypes.object,
+  issueData: PropTypes.object,
 };
 
 export default DetailsCard;

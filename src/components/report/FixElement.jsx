@@ -30,23 +30,26 @@ const ElementLink = styled(Link)`
   align-self: flex-end;
 `;
 
-const FixElement = ({ fixDetails }) => (
-  <ElementContainer>
-    <SubTitle>{fixDetails.summary}</SubTitle>
-    <p>Fix any of the following:</p>
-    <ElementList>
-      {fixDetails.tips.map((detail, index) => (
-        <li key={`fix detail ${index}`}>{detail}</li>
-      ))}
-    </ElementList>
-    <ElementLink href={fixDetails.link} isExternal={true}>
-      view element
-    </ElementLink>
-  </ElementContainer>
-);
+const FixElement = ({ fixData }) => {
+  const { summary, tips, link } = fixData;
+  return (
+    <ElementContainer>
+      <SubTitle>{summary}</SubTitle>
+      <p>Fix any of the following:</p>
+      <ElementList>
+        {tips.map((tip, index) => (
+          <li key={`fix tip ${index}`}>{tip}</li>
+        ))}
+      </ElementList>
+      <ElementLink href={link} isExternal={true}>
+        view element
+      </ElementLink>
+    </ElementContainer>
+  );
+};
 
 FixElement.propTypes = {
-  fixDetails: PropTypes.string,
+  fixData: PropTypes.object,
 };
 
 export default FixElement;

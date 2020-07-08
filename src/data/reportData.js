@@ -57,8 +57,7 @@ export const mockReportData = {
       ],
       fixes: [
         {
-          summary:
-            "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
+          summary: "1 <img> element has no alternate text.",
           tips: [
             "Element does not have an alt attribute",
             "aria-label attribute does not exist or is empty",
@@ -70,8 +69,7 @@ export const mockReportData = {
           link: "/",
         },
         {
-          summary:
-            "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
+          summary: "1 <img> element has no alternate text.",
           tips: [
             "Element does not have an alt attribute",
             "aria-label attribute does not exist or is empty",
@@ -96,8 +94,7 @@ export const mockReportData = {
       ],
       fixes: [
         {
-          summary:
-            "1 element has its view restricted to portrait orientation only.",
+          summary: "1 svg element has no alternate text.",
           tips: [
             "element has no child that is a title",
             "aria-label attribute does not exist or is empty",
@@ -106,8 +103,7 @@ export const mockReportData = {
           link: "/",
         },
         {
-          summary:
-            "1 element has its view restricted to portrait orientation only.",
+          summary: "1 svg element has no alternate text.",
           tips: [
             "element has no child that is a title",
             "aria-label attribute does not exist or is empty",
@@ -120,7 +116,7 @@ export const mockReportData = {
   ],
   moderate: [
     {
-      title: "lankmarks",
+      title: "landmarks",
       summary: "Ensure all page content is contained by landmarks.",
       resource: "/",
       failedStandards: [
