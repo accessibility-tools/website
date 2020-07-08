@@ -1,13 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import ReportLoading from "../components/report/ReportLoading";
 import ReportLoaded from "../components/report/ReportLoaded";
+import { mockReportData } from "../data/reportData";
 
-const ReportPage = reportData =>
-  reportData ? <ReportLoaded /> : <ReportLoading />;
-
-ReportPage.defaultProp = {
-  reportData: PropTypes.object,
-};
+const ReportPage = () =>
+  mockReportData ? <ReportLoaded /> : <ReportLoading />;
 
 export default ReportPage;

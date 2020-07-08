@@ -5,6 +5,7 @@ import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Button from "../button/Button";
 import ReportSummCard from "./ReportSummCard";
+import { mockReportData } from "../../data/reportData";
 
 const OverviewContainer = styled(Stack)`
   padding: 0;
@@ -40,63 +41,45 @@ const BtnWrapper = styled(Switcher)`
   }
 `;
 
-const reportData = {
-  CRITICAL: {
-    iconName: "circle",
-    iconColor: color.error,
-    issueCount: 3,
-  },
-  SERIOUS: {
-    iconName: "issue",
-    iconColor: color.error,
-    issueCount: 7,
-  },
-  MODERATE: {
-    iconName: "issue",
-    iconColor: color.darkPurple,
-    issueCount: 10,
-  },
-  MINOR: {
-    iconName: "issue",
-    iconColor: color.primary,
-    issueCount: 1,
-  },
+const ReportOverview = () => {
+  const issueCountArr = Object.keys(mockReportData).map(
+    category => mockReportData[category].length
+  );
+  const totalIssueCount = issueCountArr.reduce((a, b) => a + b, 0);
+  return (
+    <OverviewContainer>
+      <Switcher threshold="35rem">
+        <div>
+          <Stack space="small">
+            <h2>
+              Report for <span>xxx.com</span>
+            </h2>
+            <p>xx pages scanned </p>
+          </Stack>
+          <BtnWrapper>
+            <div>
+              <Button text="Export as pdf" isSecondary={true} />
+              <Button text="Copy URL" />
+            </div>
+          </BtnWrapper>
+        </div>
+      </Switcher>
+      <Switcher threshold="35rem">
+        <div>
+          <ReportSummCard
+            title={`${totalIssueCount} Detected issues`}
+            subtext="Seems like there are some accesssibility issues on this website, that can be improved:"
+            isIssue
+          />
+          <ReportSummCard
+            title="08 Fulfilled guidlines"
+            subtext="Great, seems like your website is compliant with the following accessibility guidelines, that are in place:"
+            isGuideline
+          />
+        </div>
+      </Switcher>
+    </OverviewContainer>
+  );
 };
-
-const ReportOverview = () => (
-  <OverviewContainer>
-    <Switcher threshold="35rem">
-      <div>
-        <Stack space="small">
-          <h2>
-            Report for <span>xxx.com</span>{" "}
-          </h2>
-          <p>xx pages scanned </p>
-        </Stack>
-        <BtnWrapper>
-          <div>
-            <Button text="Export as pdf" isSecondary={true} />
-            <Button text="Copy URL" />
-          </div>
-        </BtnWrapper>
-      </div>
-    </Switcher>
-    <Switcher threshold="35rem">
-      <div>
-        <ReportSummCard
-          title="21 Detected issues"
-          subtext="Seems like there are some accesssibility issues on this website, that can be improved:"
-          isIssue
-          reportData={reportData}
-        />
-        <ReportSummCard
-          title="08 Fulfilled guidlines"
-          subtext="Great, seems like your website is compliant with the following accessibility guidelines, that are in place:"
-          isGuideline
-        />
-      </div>
-    </Switcher>
-  </OverviewContainer>
-);
 
 export default ReportOverview;

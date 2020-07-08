@@ -37,7 +37,7 @@ const Section = styled.section`
 const ReportLoaded = () => (
   <PageContainer space="large">
     <Section>
-      <ReportIntro isLoaded={true} />
+      <ReportIntro />
     </Section>
     <Section>
       <ReportOverview />

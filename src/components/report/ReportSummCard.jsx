@@ -6,6 +6,8 @@ import Stack from "../layout-components/Stack";
 import Icon from "../icon/Icon";
 import Badge from "../badge/Badge";
 import Link from "../links/Link";
+import { reportIcons } from "../constants/reportIcons";
+import { mockReportData } from "../../data/reportData";
 
 const CardContainer = styled(Stack)`
   background-color: ${color.white};
@@ -44,20 +46,14 @@ const IssueContainer = styled(Stack)`
 const GuidelineContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 
   a {
+    flex: 1 0 40%;
     padding: 0.5rem;
   }
 `;
 
-const ReportSummCard = ({
-  title,
-  subtext,
-  isIssue,
-  isGuideline,
-  reportData,
-}) => (
+const ReportSummCard = ({ title, subtext, isIssue, isGuideline }) => (
   <CardContainer>
     <Title>
       {isIssue ? (
@@ -70,15 +66,15 @@ const ReportSummCard = ({
     <p>{subtext}</p>
     {isIssue && (
       <IssueContainer>
-        {Object.keys(reportData).map((level, index) => {
-          const details = Object.keys(reportData).map(key => reportData[key]);
+        {Object.keys(mockReportData).map(category => {
+          const iconData = reportIcons[category];
           return (
             <Badge
-              key={`issue level: ${level}`}
-              label={level}
-              issueCount={details[index].issueCount}
-              iconName={details[index].iconName}
-              iconColor={details[index].iconColor}
+              key={`issue category: ${category}`}
+              label={category}
+              issueCount={mockReportData[category].length}
+              iconName={iconData.iconName}
+              iconColor={iconData.iconColor}
             />
           );
         })}
@@ -115,7 +111,6 @@ ReportSummCard.propTypes = {
   subtext: PropTypes.string,
   isIssue: PropTypes.bool,
   isGuideline: PropTypes.bool,
-  reportData: PropTypes.object,
 };
 
 export default ReportSummCard;
