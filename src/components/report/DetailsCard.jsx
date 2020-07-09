@@ -63,7 +63,7 @@ const DetailsCard = ({ issueData }) => {
     <Details onToggle={handleOpen}>
       <Summary>
         <div>
-          <h3>{title}</h3>
+          <h3>{`${title} (${fixes.length})`}</h3>
           <p>{summary}</p>
           <Link href={resource} icon="extLink" isExternal={true}>
             Resource to solve this issue
