@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 import styled from "styled-components";
 import { color } from "../shared/style";
 import Switcher from "../components/layout-components/Switcher";
@@ -61,42 +62,52 @@ const IntroImg = styled.img`
   width: 80%;
 `;
 
-const WebCheckerPage = () => (
-  <PageContainer>
-    <Section>
-      <IntroWrapper threshold="40rem">
-        <div>
-          <Center>
-            <p>LEAVE NO USERS BEHIND</p>
-            <h1>Check your website for accessibility issues</h1>
-          </Center>
-          <Center>
-            <IntroImg
-              src="/illustrations/webchecker.svg"
-              alt="web checker illustration"
+const WebCheckerPage = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    const { pathname } = Router;
+    if (pathname === "/checker") {
+      Router.push("/report");
+    }
+  };
+  return (
+    <PageContainer>
+      <Section>
+        <IntroWrapper threshold="40rem">
+          <div>
+            <Center>
+              <p>LEAVE NO USERS BEHIND</p>
+              <h1>Check your website for accessibility issues</h1>
+            </Center>
+            <Center>
+              <IntroImg
+                src="/illustrations/webchecker.svg"
+                alt="web checker illustration"
+              />
+            </Center>
+          </div>
+        </IntroWrapper>
+        <form onSubmit={handleSubmit}>
+          <Stack space="medium">
+            <TextInput
+              type="text"
+              id="url"
+              label="Enter a Website-URL"
+              placeholder="www.futurice.com"
+              hintIcon="manicule"
+              hintText="Reports of bigger websites can take a some time to be created."
+              iconColor={color.blue}
             />
-          </Center>
-        </div>
-      </IntroWrapper>
-      <Stack space="medium">
-        <TextInput
-          type="text"
-          id="url"
-          label="Enter a Website-URL"
-          placeholder="www.futurice.com"
-          hintIcon="manicule"
-          hintText="Reports of bigger websites can take a some time to be created."
-          iconColor={color.blue}
-        />
 
-        <Button text="check url" />
-      </Stack>
-    </Section>
+            <Button type="submit" text="check url" data-type="cta-btn" />
+          </Stack>
+        </form>
+      </Section>
 
-    <Section>
-      <ToolOverview toolData={webCheckerAlt} />
-    </Section>
-  </PageContainer>
-);
-
+      <Section>
+        <ToolOverview toolData={webCheckerAlt} />
+      </Section>
+    </PageContainer>
+  );
+};
 export default WebCheckerPage;
