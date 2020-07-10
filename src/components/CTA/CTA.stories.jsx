@@ -39,13 +39,13 @@ export const secondary = () => {
 };
 
 export const primaryWithIcon = () => {
-  const ciTool2 = {
+  const ciTool = {
     ctaText: "view on github",
     ctaUrl: "https://github.com/accessibility-tools/ci",
     ctaIcon: "extLink",
     isExternal: true,
   };
-  const data = object(label, ciTool2);
+  const data = object(label, ciTool);
   return (
     <StoryWrapper>
       <CTA {...data} />
@@ -53,14 +53,14 @@ export const primaryWithIcon = () => {
   );
 };
 export const secondaryWithIcon = () => {
-  const webChecker2 = {
+  const webChecker = {
     ctaText: "check out the tool",
     ctaUrl: "https://github.com/accessibility-tools/website",
     ctaIcon: "extLink",
     isExternal: true,
     isSecondary: true,
   };
-  const data = object(label, webChecker2);
+  const data = object(label, webChecker);
   return (
     <StoryWrapper>
       <CTA {...data} />

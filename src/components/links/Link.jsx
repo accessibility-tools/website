@@ -13,7 +13,6 @@ const StyledLink = styled.a`
   &:focus {
     box-shadow: 0 0 0 4px ${color.darkBlue};
   }
-
   &:visited {
     color: ${color.darkPurple};
   }
@@ -42,16 +41,16 @@ const StyledLink = styled.a`
     }
   }
 
-  ${props =>
-    props.icon === true &&
+  ${({ withIcon }) =>
+    withIcon === true &&
     `      
       svg {
         margin-right: 0.5em;
       }
     `}
 
-  ${props =>
-    props.isSecondary === true &&
+  ${({ isSecondary }) =>
+    isSecondary === true &&
     `
       color: ${color.primary};
 
@@ -71,7 +70,14 @@ const StyledLink = styled.a`
     `}
 `;
 
-const Link = ({ text, href, icon, isExternal, children, ...otherProps }) => {
+const Link = ({
+  linkText,
+  linkUrl,
+  linkIcon,
+  isExternal,
+  isSecondary,
+  ...otherProps
+}) => {
   const externalConfig = {
     target: "_blank",
     rel: "noopener noreferrer",
@@ -79,23 +85,23 @@ const Link = ({ text, href, icon, isExternal, children, ...otherProps }) => {
   if (isExternal) otherProps = { ...otherProps, ...externalConfig };
   return (
     <StyledLink
-      href={href}
-      icon={icon ? true : false}
-      text={text}
+      href={linkUrl}
+      isSecondary={isSecondary}
+      withIcon={linkIcon && true}
       {...otherProps}
     >
-      {icon && <Icon icon={icon} />}
-      <span>{children}</span>
+      {linkIcon && <Icon icon={linkIcon} />}
+      <span>{linkText}</span>
     </StyledLink>
   );
 };
 
 Link.propTypes = {
-  text: PropTypes.string,
-  href: PropTypes.string.isRequired,
-  icon: PropTypes.string,
+  linkText: PropTypes.string,
+  linkUrl: PropTypes.string,
+  linkIcon: PropTypes.string,
   isExternal: PropTypes.bool,
-  children: PropTypes.any,
+  isSecondary: PropTypes.bool,
 };
 
 Link.defaultProps = {

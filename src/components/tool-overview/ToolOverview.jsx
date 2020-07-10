@@ -35,7 +35,6 @@ const ToolLink = styled(Link)`
 
 const ToolOverview = ({ toolData }) => {
   const { id, title, img, desc, details, ctaData, linkData } = toolData;
-  const { linkText, linkUrl, linkIcon, isExternalLink } = linkData;
 
   return (
     <Switcher threshold="40rem" space="3.5rem" width="100%">
@@ -56,15 +55,7 @@ const ToolOverview = ({ toolData }) => {
             )}
 
             {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
-            {Object.keys(linkData).length !== 0 && (
-              <ToolLink
-                href={linkUrl}
-                icon={linkIcon}
-                isExternal={isExternalLink}
-              >
-                {linkText}
-              </ToolLink>
-            )}
+            {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
           </InfoWrapper>
         </Center>
       </div>
