@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { color } from "../shared/style";
 import Switcher from "../components/layout-components/Switcher";
 import Stack from "../components/layout-components/Stack";
 import Center from "../components/layout-components/Center";
 import TextInput from "../components/text-input/TextInput";
-import RadioButton from "../components/radio-button/RadioButton";
 import Button from "../components/button/Button";
 import ToolOverview from "../components/tool-overview/ToolOverview";
 import { webCheckerAlt } from "../constants/toolData";
@@ -59,82 +58,45 @@ const IntroWrapper = styled(Switcher)`
 `;
 
 const IntroImg = styled.img`
-  width: 100%;
+  width: 80%;
 `;
 
-const RadioBtn = styled(RadioButton)`
-  text-transform: none;
-  font-weight: normal;
-  text-align: left;
-  margin-right: auto;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-`;
-
-const WebCheckerPage = () => {
-  const [selectedOption, setSelectedOption] = useState("all");
-
-  const handleCheckedChange = e => {
-    setSelectedOption(e.target.value);
-  };
-
-  return (
-    <PageContainer>
-      <Section>
-        <IntroWrapper threshold="40rem">
-          <div>
-            <Center>
-              <p>ACCESSIBILITY WEB CHECKER</p>
-              <h1>Check your website for accessibility issues</h1>
-            </Center>
-            <Center>
-              <IntroImg
-                src="/illustrations/webchecker.svg"
-                alt="web checker illustration"
-              />
-            </Center>
-          </div>
-        </IntroWrapper>
-        <Stack space="medium">
-          <TextInput
-            type="text"
-            id="url"
-            label="website-url"
-            placeholder="www.futurice.com"
-          />
-          <Stack space="medium">
-            <h5>WHAT TO CHECK</h5>
-            <RadioBtn
-              label="Check all subpages"
-              value="all"
-              checked={selectedOption === "all"}
-              handleCheckedChange={handleCheckedChange}
+const WebCheckerPage = () => (
+  <PageContainer>
+    <Section>
+      <IntroWrapper threshold="40rem">
+        <div>
+          <Center>
+            <p>LEAVE NO USERS BEHIND</p>
+            <h1>Check your website for accessibility issues</h1>
+          </Center>
+          <Center>
+            <IntroImg
+              src="/illustrations/webchecker.svg"
+              alt="web checker illustration"
             />
-            <RadioBtn
-              label="Check the given page only"
-              value="single"
-              checked={selectedOption === "single"}
-              handleCheckedChange={handleCheckedChange}
-            />
-          </Stack>
-          <TextInput
-            type="email"
-            id="email"
-            label="email (optional)"
-            placeholder="www.futurice.com"
-            hintIcon="manicule"
-            hintText="Reports of big websites can take a long time to be created. Enter your e-mail address to recieve the finished report after the check."
-            iconColor={color.blue}
-          />
-          <Button text="check url" />
-        </Stack>
-      </Section>
+          </Center>
+        </div>
+      </IntroWrapper>
+      <Stack space="medium">
+        <TextInput
+          type="text"
+          id="url"
+          label="Enter a Website-URL"
+          placeholder="www.futurice.com"
+          hintIcon="manicule"
+          hintText="Reports of bigger websites can take a some time to be created."
+          iconColor={color.blue}
+        />
 
-      <Section>
-        <ToolOverview toolData={webCheckerAlt} />
-      </Section>
-    </PageContainer>
-  );
-};
+        <Button text="check url" />
+      </Stack>
+    </Section>
+
+    <Section>
+      <ToolOverview toolData={webCheckerAlt} />
+    </Section>
+  </PageContainer>
+);
 
 export default WebCheckerPage;

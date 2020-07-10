@@ -37,15 +37,19 @@ export const webCheckerAlt = {
   title: "About the tool",
   img: "/illustrations/webchecker-placeholder.png",
   desc:
-    "With our tool for web you can run a check for any website to detect and fix accessibility issues. In addition you get introduced to best practices and guidelines.",
-  details: [],
+    "Check any website for accessibility issues by simply entering a URL into our online tool.",
+  details: [
+    "Detect and fix accessibility issues like missing labels, lack of color contrast many more.",
+    "Check huge websites with multiple pages in just one session.",
+    "Learn if your website is complying to important standards in the industry and how to improve.",
+  ],
   ctaData: {
-    ctaText: "learn more",
+    ctaText: "Learn more about this project",
     ctaUrl: "/",
     ctaIcon: "",
   },
   linkData: {
-    linkText: "view on github",
+    linkText: "Contribute on github",
     linkUrl: "https://github.com/accessibility-tools/website",
     linkIcon: "github",
     isExternalLink: true,
