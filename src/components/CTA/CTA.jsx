@@ -2,8 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "../button/Button";
 
-const CTA = ({ ctaData, ...otherProps }) => {
-  const { ctaText, ctaIcon, ctaUrl, isExternal, isSecondary } = ctaData;
+const CTA = ({
+  ctaText,
+  ctaIcon,
+  ctaUrl,
+  isExternal,
+  isSecondary,
+  ...otherProps
+}) => {
   const externalConfig = {
     target: "_blank",
     rel: "noopener noreferrer",
@@ -25,7 +31,11 @@ const CTA = ({ ctaData, ...otherProps }) => {
 };
 
 CTA.propTypes = {
-  ctaData: PropTypes.object,
+  ctaText: PropTypes.string,
+  ctaIcon: PropTypes.string,
+  ctaUrl: PropTypes.string,
+  isExternal: PropTypes.bool,
+  isSecondary: PropTypes.bool,
 };
 
 CTA.defaultProps = {

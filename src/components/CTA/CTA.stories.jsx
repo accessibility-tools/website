@@ -19,7 +19,7 @@ export const primary = () => {
   const data = object(label, ciTool);
   return (
     <StoryWrapper>
-      <CTA ctaData={data} />
+      <CTA {...data} />
     </StoryWrapper>
   );
 };
@@ -33,7 +33,7 @@ export const secondary = () => {
   const data = object(label, webChecker);
   return (
     <StoryWrapper>
-      <CTA ctaData={data} />
+      <CTA {...data} />
     </StoryWrapper>
   );
 };
@@ -48,7 +48,7 @@ export const primaryWithIcon = () => {
   const data = object(label, ciTool2);
   return (
     <StoryWrapper>
-      <CTA ctaData={data} />
+      <CTA {...data} />
     </StoryWrapper>
   );
 };
@@ -63,7 +63,7 @@ export const secondaryWithIcon = () => {
   const data = object(label, webChecker2);
   return (
     <StoryWrapper>
-      <CTA ctaData={data} />
+      <CTA {...data} />
     </StoryWrapper>
   );
 };

@@ -55,7 +55,7 @@ const ToolOverview = ({ toolData }) => {
               </ul>
             )}
 
-            {Object.keys(ctaData).length !== 0 && <CTA ctaData={ctaData} />}
+            {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
             {Object.keys(linkData).length !== 0 && (
               <ToolLink
                 href={linkUrl}
