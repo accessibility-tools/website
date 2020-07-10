@@ -12,7 +12,7 @@ import SignUp from "../components/sign-up/SignUp";
 import ComingSoon from "../components/badge/ComingSoonBadge";
 import { ciTool, webChecker } from "../constants/toolData";
 
-const MainContainer = styled(Stack)`
+const PageContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};
 `;
 
@@ -105,7 +105,7 @@ const LandingPage = () => {
   return (
     <>
       <SEO siteTitle="Accessibility checking tools" />
-      <MainContainer>
+      <PageContainer>
         <Section>
           <Center>
             <Switcher threshold="35rem" space="5rem" width="90%">
@@ -253,7 +253,7 @@ const LandingPage = () => {
             </Center>
           </Stack>
         </Section>
-      </MainContainer>
+      </PageContainer>
     </>
   );
 };
