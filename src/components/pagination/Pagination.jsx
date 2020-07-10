@@ -7,6 +7,7 @@ import ArrowIcon from "../icon/ArrowIcon";
 const PaginationWrapper = styled.nav`
   display: flex;
   align-items: center;
+  justify-content: center;
   span {
     padding: 0 1.5em;
   }
@@ -65,7 +66,7 @@ const Pagination = ({ currentPage, totalPages, href }) => {
 Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
 };
 
 export default Pagination;

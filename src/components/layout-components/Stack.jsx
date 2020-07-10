@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const spacing = {
   small: "1rem",
-  medium: "2rem",
+  medium: "3rem",
   large: "5rem",
 };
 
