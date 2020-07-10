@@ -76,6 +76,7 @@ const Link = ({
   linkIcon,
   isExternal,
   isSecondary,
+  children,
   ...otherProps
 }) => {
   const externalConfig = {
@@ -91,7 +92,8 @@ const Link = ({
       {...otherProps}
     >
       {linkIcon && <Icon icon={linkIcon} />}
-      <span>{linkText}</span>
+      {linkText && <span>{linkText}</span>}
+      {children && <span>{children}</span>}
     </StyledLink>
   );
 };
@@ -102,6 +104,7 @@ Link.propTypes = {
   linkIcon: PropTypes.string,
   isExternal: PropTypes.bool,
   isSecondary: PropTypes.bool,
+  children: PropTypes.any,
 };
 
 Link.defaultProps = {

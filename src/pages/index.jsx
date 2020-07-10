@@ -244,12 +244,11 @@ const LandingPage = () => {
             </Center>
             <Center>
               <ContactLink
-                href="mailto:accessibility@futurice.com"
+                linkText="accessibility@futurice.com"
+                linkUrl="mailto:accessibility@futurice.com"
+                linkIcon="mailto"
                 isSecondary={true}
-                icon="mailto"
-              >
-                accessibility@futurice.com
-              </ContactLink>
+              />
             </Center>
           </Stack>
         </Section>

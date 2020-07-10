@@ -1,4 +1,4 @@
-import { color } from "../../shared/style";
+import { color } from "../shared/style";
 
 export const reportIcons = {
   critical: {

@@ -21,6 +21,10 @@ const InfoWrapper = styled(Stack)`
   a {
     width: max-content;
   }
+
+  @media (max-width: 48rem) {
+    width: 80%;
+  }
 `;
 
 const ToolImg = styled.img`
