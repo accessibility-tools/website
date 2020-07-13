@@ -138,7 +138,7 @@ const LandingPage = () => {
         </Section>
 
         <Section id="tools">
-          <Stack space="large">
+          <Stack space="extraLarge">
             <Center>
               <h1>Discover our tools</h1>
               <Subtext>
@@ -150,8 +150,8 @@ const LandingPage = () => {
                 digital products for everyone.
               </Subtext>
             </Center>
-            <ToolOverview toolData={webChecker} />
-            <ToolOverview toolData={ciTool} />
+            <ToolOverview data={webChecker} type="web" />
+            <ToolOverview data={ciTool} type="ci" />
           </Stack>
         </Section>
 

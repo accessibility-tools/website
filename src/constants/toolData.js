@@ -39,7 +39,11 @@ export const webCheckerAlt = {
   img: "/illustrations/webchecker-placeholder.png",
   desc:
     "Check any website for accessibility issues by simply entering a URL into our online tool.",
-  details: [],
+  details: [
+    "Detect and fix accessibility issues like missing labels, lack of color contrast many more.",
+    "Check huge websites with multiple pages in just one session.",
+    "Learn if your website is complying to important standards in the industry and how to improve.",
+  ],
   ctaData: {
     ctaText: "Learn more about this project",
     ctaUrl: "/",

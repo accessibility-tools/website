@@ -37,38 +37,63 @@ const ToolLink = styled(Link)`
   align-items: center;
 `;
 
-const ToolOverview = ({ toolData }) => {
-  const { id, title, img, desc, details, ctaData, linkData } = toolData;
+const ToolOverview = ({ data, type }) => {
+  const { id, title, img, desc, details, ctaData, linkData } = data;
 
   return (
     <Switcher threshold="40rem" space="3.5rem" width="100%">
-      <div>
-        <Center>
-          <ToolImg src={img} alt="image of the tool" />
-        </Center>
-        <Center>
-          <InfoWrapper>
-            <h2>{title}</h2>
-            <p>{desc}</p>
-            {details && (
-              <ul>
-                {details.map((detail, index) => (
-                  <li key={`${id} detail ${index}`}>{detail}</li>
-                ))}
-              </ul>
-            )}
+      {type === "web" ? (
+        <div>
+          <Center>
+            <ToolImg src={img} alt="image of the tool" />
+          </Center>
+          <Center>
+            <InfoWrapper>
+              <h2>{title}</h2>
+              <p>{desc}</p>
+              {details && (
+                <ul>
+                  {details.map((detail, index) => (
+                    <li key={`${id} detail ${index}`}>{detail}</li>
+                  ))}
+                </ul>
+              )}
 
-            {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
-            {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
-          </InfoWrapper>
-        </Center>
-      </div>
+              {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
+              {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
+            </InfoWrapper>
+          </Center>
+        </div>
+      ) : (
+        <div>
+          <Center>
+            <InfoWrapper>
+              <h2>{title}</h2>
+              <p>{desc}</p>
+              {details && (
+                <ul>
+                  {details.map((detail, index) => (
+                    <li key={`${id} detail ${index}`}>{detail}</li>
+                  ))}
+                </ul>
+              )}
+
+              {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
+              {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
+            </InfoWrapper>
+          </Center>
+          <Center>
+            <ToolImg src={img} alt="image of the tool" />
+          </Center>
+        </div>
+      )}
     </Switcher>
   );
 };
 
 ToolOverview.propTypes = {
-  toolData: PropTypes.object,
+  data: PropTypes.object,
+  type: PropTypes.string,
 };
 
 export default ToolOverview;

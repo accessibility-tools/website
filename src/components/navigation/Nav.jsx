@@ -53,7 +53,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <NavContainer aria-label="main navigation" space="0">
+    <NavContainer aria-label="main navigation">
       <MenuLabel expanded={expanded} toggleExpanded={toggleExpanded} />
       <MenuList expanded={expanded} toggleExpanded={toggleExpanded} />
     </NavContainer>
