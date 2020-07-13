@@ -37,7 +37,7 @@ const Section = styled.section`
 
 const IntroWrapper = styled(Switcher)`
   & > * {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 
   & > * > * :first-child {
@@ -47,6 +47,7 @@ const IntroWrapper = styled(Switcher)`
   h1,
   p {
     text-align: center;
+    font-weight: 500;
   }
 
   @media (min-width: 43rem) {
@@ -60,6 +61,7 @@ const IntroWrapper = styled(Switcher)`
 
 const IntroImg = styled.img`
   width: 80%;
+  transform: scaleX(-1);
 `;
 
 const WebCheckerPage = () => {

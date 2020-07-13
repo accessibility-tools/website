@@ -48,7 +48,7 @@ const StyledInput = styled.input`
 
   @media (min-width: 62rem) {
     height: 3.5rem;
-    width: 43rem;
+    width: 36rem;
   }
 `;
 
