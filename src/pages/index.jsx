@@ -8,8 +8,6 @@ import SEO from "../components/SEO/SEO";
 import FAQ from "../components/learn-more-questions/LearnMoreQuestions";
 import Link from "../components/links/Link";
 import ToolOverview from "../components/tool-overview/ToolOverview";
-import SignUp from "../components/sign-up/SignUp";
-import ComingSoon from "../components/badge/ComingSoonBadge";
 import { ciTool, webChecker } from "../constants/toolData";
 
 const PageContainer = styled(Stack)`
@@ -17,13 +15,17 @@ const PageContainer = styled(Stack)`
 `;
 
 const Section = styled.section`
-  --paddingX: 2rem;
-  --paddingY: 8rem;
+  --paddingX: 2.5rem;
+  --paddingY: 10rem;
   padding: var(--paddingY) var(--paddingX);
   width: 100%;
 
   & > * {
     max-width: 100rem;
+  }
+
+  &:first-child {
+    padding: var(--paddingY) calc(var(--paddingX) * 3);
   }
 
   &:nth-child(even) {
@@ -44,7 +46,7 @@ const Section = styled.section`
 
   @media (max-width: 48rem) {
     &:nth-child(odd) {
-      padding: 4rem var(--paddingX);
+      padding: calc(var(--paddingY) / 2) var(--paddingX);
     }
 
     &:first-child {
@@ -55,7 +57,12 @@ const Section = styled.section`
 
 const Tagline = styled(Stack)`
   & > * {
-    max-width: 30rem;
+    max-width: 36rem;
+  }
+
+  h1,
+  h5 {
+    text-align: left;
   }
 
   h5 {
@@ -69,7 +76,6 @@ const Tagline = styled(Stack)`
 const LandingImg = styled.img`
   width: 80%;
   height: 100%;
-  z-index: 100;
   top: calc(11rem + (15 - 11) * ((100vw - 300px) / (1600 - 300)));
 `;
 
@@ -95,121 +101,48 @@ const ContactLink = styled(Link)`
   display: inline;
 `;
 
-const MobileTool = styled.h3`
-  font-size: 28px;
-  font-family: Lora;
-  max-width: 18rem;
-`;
-
 const LandingPage = () => {
   return (
     <>
       <SEO siteTitle="Accessibility checking tools" />
       <PageContainer>
         <Section>
-          <Center>
-            <Switcher threshold="35rem" space="5rem" width="90%">
-              <div>
-                <Center>
-                  <Tagline>
-                    <h1>Tools for digital accessibility</h1>
-                    <h5>
-                      Helping designers and developers build accessible products
-                    </h5>
-                  </Tagline>
-                </Center>
-                <Center>
-                  <LandingImg src="/illustrations/start.svg" alt="" />
-                </Center>
-              </div>
-            </Switcher>
-          </Center>
-        </Section>
-
-        <Section id="tools">
-          <Stack space="large">
-            <Center>
-              <h1>The tools</h1>
-              <Subtext>
-                We believe digital products should be equally accessible for
-                everybody. This includes elderly people or users with visual,
-                motor, auditory, speech, or cognitive disabilities. Our free,
-                open source tools make it easy to create products with
-                accessibility in mind.
-              </Subtext>
-            </Center>
-            <ToolOverview toolData={ciTool} />
-          </Stack>
-        </Section>
-
-        <Section>
-          <ToolOverview toolData={webChecker} />
-        </Section>
-
-        <Section>
-          <Switcher threshold="40rem" space="3.5rem">
+          <Switcher threshold="35rem" space="0rem">
             <div>
               <Center>
-                <Stack width="auto" center>
-                  <ComingSoon />
-                  <img src="/illustrations/product-ios.svg" alt="" />
-                  <MobileTool>Accessibility checker for iOS</MobileTool>
-                </Stack>
+                <Tagline>
+                  <h1>
+                    Every user counts: accessibility tools for inclusive digital
+                    products
+                  </h1>
+                  <h5>
+                    Free, open-source and for everyone who designs and builds
+                    digital products
+                  </h5>
+                </Tagline>
               </Center>
               <Center>
-                <Stack width="auto" center>
-                  <ComingSoon />
-                  <img src="/illustrations/product-android.svg" alt="" />
-                  <MobileTool>Accessibility checker for Android</MobileTool>
-                </Stack>
+                <LandingImg src="/illustrations/intro.svg" alt="" />
               </Center>
             </div>
           </Switcher>
         </Section>
 
-        <Section>
-          <SignUp />
-        </Section>
-
-        <Section>
+        <Section id="tools">
           <Stack space="large">
             <Center>
-              <h2>How can the tools help you?</h2>
+              <h1>Discover our tools</h1>
+              <Subtext>
+                An estimated 15% of the world population is recognized as living
+                with a disability. But beyond that, disability affects us all. A
+                broken arm, a loud environment, a health condition and many more
+                factors can influence how we interact with a product. With our
+                free, open-source tools, you will learn how to build accessible
+                digital products for everyone.
+              </Subtext>
             </Center>
-            <Switcher threshold="35rem" space="3.5rem">
-              <div>
-                <Stack>
-                  <img
-                    src="/illustrations/persona-a.svg"
-                    alt="illustration of a developer"
-                  />
-                  <Center>
-                    <h3>As a developer</h3>
-                    <Subtext width="24rem">
-                      Easily detect and correct accessibility issue in your
-                      code. Did you forget to use labels in form elements? Are
-                      there any missing text alternatives for images? There is
-                      so much to keep in mind. Our tools will help you out.
-                    </Subtext>
-                  </Center>
-                </Stack>
-                <Stack>
-                  <img
-                    src="/illustrations/persona-b.svg"
-                    alt="illustration of a designer"
-                  />
-                  <Center>
-                    <h3>As a designer</h3>
-                    <Subtext width="24rem">
-                      Make sure your designs can be used by everybody. Our tool
-                      will point you to issues like insufficient font sizing,
-                      lack of color contrast and more. We will explain how to
-                      solve these issues to make your workflow easier.
-                    </Subtext>
-                  </Center>
-                </Stack>
-              </div>
-            </Switcher>
+            <ToolOverview toolData={webChecker} />
+            <ToolOverview toolData={ciTool} />
           </Stack>
         </Section>
 
@@ -218,8 +151,7 @@ const LandingPage = () => {
             <Center>
               <h2>Learn more</h2>
               <Subtext width="34rem">
-                Why should we as designers and developers care about
-                accessibility. How to get started?
+                Why should we care about accessibility and how to get started?
               </Subtext>
             </Center>
             <Switcher threshold="35rem" space="5rem">

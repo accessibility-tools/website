@@ -1,15 +1,12 @@
 export const ciTool = {
   id: "ciTool",
-  title: "Accessibility checker for websites",
+  title: "Check your website with your terminal before going live",
   img: "/illustrations/citool-placeholder.png",
-  desc: "Run our tool in the terminal to create a report for any website:",
-  details: [
-    "Detect and fix accessibility issues like missing labels, lack of color contrast many more.",
-    "Check huge websites with multiple pages in just one session.",
-    "Learn if your website is complying to important standards in the industry and how to improve.",
-  ],
+  desc:
+    "You can install our continuous integration tool (CI) on your terminal by running:",
+  details: [],
   ctaData: {
-    ctaText: "view on github",
+    ctaText: "find out more on github",
     ctaUrl: "https://github.com/accessibility-tools/ci",
     ctaIcon: "extLink",
     isExternal: true,
@@ -19,11 +16,15 @@ export const ciTool = {
 
 export const webChecker = {
   id: "webChecker",
-  title: "Online accessibility checker for websites",
+  title: "Accessibility checker for websites",
   img: "/illustrations/webchecker-placeholder.png",
   desc:
-    "Check any website for accessibiliy issues by simply entering a URL into our online tool. Optionally you can recieve the detailed report via e-mail or share it with other people to tackle accessibility issues together.",
-  details: [],
+    "Check any website for accessibility issues by simply entering a URL into our online tool.",
+  details: [
+    "Detect and fix accessibility issues like missing labels, lack of color contrast many more.",
+    "Check huge websites with multiple pages in just one session.",
+    "Learn if your website is complying to important standards in the industry and how to improve.",
+  ],
   ctaData: {
     ctaText: "check out the tool",
     ctaUrl: "/checker",
@@ -38,11 +39,7 @@ export const webCheckerAlt = {
   img: "/illustrations/webchecker-placeholder.png",
   desc:
     "Check any website for accessibility issues by simply entering a URL into our online tool.",
-  details: [
-    "Detect and fix accessibility issues like missing labels, lack of color contrast many more.",
-    "Check huge websites with multiple pages in just one session.",
-    "Learn if your website is complying to important standards in the industry and how to improve.",
-  ],
+  details: [],
   ctaData: {
     ctaText: "Learn more about this project",
     ctaUrl: "/",

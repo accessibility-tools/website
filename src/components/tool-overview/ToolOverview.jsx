@@ -23,7 +23,7 @@ const InfoWrapper = styled(Stack)`
   }
 
   @media (max-width: 48rem) {
-    width: 80%;
+    width: 90%;
   }
 `;
 
