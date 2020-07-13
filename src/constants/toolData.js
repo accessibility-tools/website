@@ -4,7 +4,11 @@ export const ciTool = {
   img: "/illustrations/citool-placeholder.png",
   desc:
     "You can install our continuous integration tool (CI) on your terminal by running:",
-  details: [],
+  details: [
+    "npm install @accessibility-tools/ci -g",
+    "Then, you can perform a check by typing:",
+    "aci https://example.com",
+  ],
   ctaData: {
     ctaText: "find out more on github",
     ctaUrl: "https://github.com/accessibility-tools/ci",

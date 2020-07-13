@@ -6,11 +6,16 @@ import Stack from "../layout-components/Stack";
 import Center from "../layout-components/Center";
 import CTA from "../CTA/CTA";
 import Link from "../links/Link";
+import Banner from "../banner/Banner";
 
 const InfoWrapper = styled(Stack)`
-  max-width: 30rem;
+  max-width: 34rem;
   text-align: left;
   padding: 0 1.5rem;
+
+  p {
+    max-width: none;
+  }
 
   li {
     list-style: disc;
@@ -29,12 +34,19 @@ const InfoWrapper = styled(Stack)`
 
 const ToolImg = styled.img`
   width: 60%;
+  transform: ${({ transform }) => transform && "scaleX(-1)"};
 `;
 
 const ToolLink = styled(Link)`
   font-size: 1rem;
   margin-top: 1rem;
   align-items: center;
+`;
+
+const ScriptWrapper = styled(Stack)`
+  & > * + * {
+    margin-top: 1rem;
+  }
 `;
 
 const ToolOverview = ({ data, type }) => {
@@ -45,7 +57,7 @@ const ToolOverview = ({ data, type }) => {
       {type === "web" ? (
         <div>
           <Center>
-            <ToolImg src={img} alt="image of the tool" />
+            <ToolImg src={img} alt="image of web tool" />
           </Center>
           <Center>
             <InfoWrapper>
@@ -58,7 +70,6 @@ const ToolOverview = ({ data, type }) => {
                   ))}
                 </ul>
               )}
-
               {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
               {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
             </InfoWrapper>
@@ -69,21 +80,17 @@ const ToolOverview = ({ data, type }) => {
           <Center>
             <InfoWrapper>
               <h2>{title}</h2>
-              <p>{desc}</p>
-              {details && (
-                <ul>
-                  {details.map((detail, index) => (
-                    <li key={`${id} detail ${index}`}>{detail}</li>
-                  ))}
-                </ul>
-              )}
-
+              <ScriptWrapper>
+                <p>{desc}</p>
+                <Banner text={details[0]} />
+                <p>{details[1]}</p>
+                <Banner text={details[2]} />
+              </ScriptWrapper>
               {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
-              {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
             </InfoWrapper>
           </Center>
           <Center>
-            <ToolImg src={img} alt="image of the tool" />
+            <ToolImg src={img} alt="image of ci tool" transform />
           </Center>
         </div>
       )}
