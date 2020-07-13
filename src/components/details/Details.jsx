@@ -56,16 +56,6 @@ const StyledSummary = styled.summary`
   }
 `;
 
-const IconWrapper = styled.div`
-  background-color: ${color.white};
-  border-radius: 3px;
-  padding: 3px;
-
-  svg {
-    display: block;
-  }
-`;
-
 const Details = ({ children, title }) => {
   const [isOpened, setOpened] = useState(false);
   const handleOpen = event => {
@@ -75,9 +65,9 @@ const Details = ({ children, title }) => {
     <DetailsContainer onToggle={handleOpen}>
       <StyledSummary>
         {title}
-        <IconWrapper>
+        <div>
           <Icon icon={isOpened ? "minus" : "plus"} />
-        </IconWrapper>
+        </div>
       </StyledSummary>
       {children}
     </DetailsContainer>
