@@ -90,7 +90,16 @@ const LearnMoreImg = styled.img`
 `;
 
 const Subtext = styled.p`
-  max-width: ${({ width }) => (width ? width : "36rem")};
+  max-width: 36rem;
+  ${({ transform }) =>
+    transform &&
+    ` & {
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 2.25px;
+      line-height: 1.56;
+    }
+  `};
 
   @media (max-width: 48rem) {
     text-align: center;
@@ -150,7 +159,7 @@ const LandingPage = () => {
           <Stack space="large">
             <Center>
               <h2>Learn more</h2>
-              <Subtext width="34rem">
+              <Subtext transform>
                 Why should we care about accessibility and how to get started?
               </Subtext>
             </Center>
@@ -164,24 +173,20 @@ const LandingPage = () => {
         </Section>
 
         <Section id="about">
-          <Stack width="auto">
-            <Center>
-              <h2>About & Contact</h2>
-              <Subtext>
-                We are a group of developers and designers. We are passionate
-                about accessible digital products. If you want to be part of
-                this open source project, have questions or feedback feel free
-                to drop us a message.
-              </Subtext>
-            </Center>
-            <Center>
-              <ContactLink
-                linkText="accessibility@futurice.com"
-                linkUrl="mailto:accessibility@futurice.com"
-                linkIcon="mailto"
-                isSecondary={true}
-              />
-            </Center>
+          <Stack space="medium" center>
+            <h2>About & Contact</h2>
+            <Subtext>
+              We are a group of developers and designers. We are passionate
+              about accessible digital products. If you want to be part of this
+              open source project, have questions or feedback feel free to drop
+              us a message.
+            </Subtext>
+            <ContactLink
+              linkText="accessibility@futurice.com"
+              linkUrl="mailto:accessibility@futurice.com"
+              linkIcon="mailto"
+              isSecondary={true}
+            />
           </Stack>
         </Section>
       </PageContainer>
