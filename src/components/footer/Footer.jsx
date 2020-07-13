@@ -51,7 +51,7 @@ const Footer = () => {
     <StyledFooter>
       <LicenseWrapper>
         <LicenseLink
-          linkUrl="/"
+          url="/"
           isSecondary={true}
           aria-label="license information about the tool"
         >
@@ -61,7 +61,7 @@ const Footer = () => {
         <FullText>The tool is licensed under Creative Commons CC-BY.</FullText>
         <ShortText>CC-BY.</ShortText>
       </LicenseWrapper>
-      <StyledLink linkUrl="/imprint" linkText="imprint" isSecondary={true} />
+      <StyledLink url="/imprint" text="imprint" isSecondary={true} />
     </StyledFooter>
   );
 };
