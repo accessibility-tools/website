@@ -20,6 +20,7 @@ const PageContainer = styled(Switcher)`
 
 const SignupImg = styled.img`
   width: 50%;
+  transform: scaleX(-1);
 
   @media (max-width: 48rem) {
     width: 100%;
