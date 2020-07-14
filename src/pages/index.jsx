@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { color } from "../shared/style";
-import ToolOverview from "../components/tool-overview/ToolOverview";
 import Switcher from "../components/layout-components/Switcher";
 import Stack from "../components/layout-components/Stack";
 import Center from "../components/layout-components/Center";
 import SEO from "../components/SEO/SEO";
 import FAQ from "../components/learn-more-questions/LearnMoreQuestions";
 import Link from "../components/links/Link";
+import ToolOverview from "../components/tool-overview/ToolOverview";
 import SignUp from "../components/sign-up/SignUp";
 import ComingSoon from "../components/badge/ComingSoonBadge";
+import { ciTool, webChecker } from "../constants/toolData";
 
 const PageContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -137,23 +138,12 @@ const LandingPage = () => {
                 accessibility in mind.
               </Subtext>
             </Center>
-            <ToolOverview
-              title="Accessibility checker for websites"
-              toolName="ciTool"
-              hasBadge={false}
-              hasList={true}
-              hasLink={true}
-            />
+            <ToolOverview toolData={ciTool} />
           </Stack>
         </Section>
 
         <Section>
-          <ToolOverview
-            title="Online accessibility checker for websites"
-            toolName="webChecker"
-            hasBadge={true}
-            hasLink={false}
-          />
+          <ToolOverview toolData={webChecker} />
         </Section>
 
         <Section>
@@ -254,12 +244,11 @@ const LandingPage = () => {
             </Center>
             <Center>
               <ContactLink
-                href="mailto:accessibility@futurice.com"
-                isSecondary={true}
+                text="accessibility@futurice.com"
+                url="mailto:accessibility@futurice.com"
                 icon="mailto"
-              >
-                accessibility@futurice.com
-              </ContactLink>
+                isSecondary={true}
+              />
             </Center>
           </Stack>
         </Section>

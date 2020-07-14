@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Stack from "../layout-components/Stack";
 import Badge from "../badge/Badge";
 import DetailsCard from "./DetailsCard";
-import { reportIcons } from "../constants/reportIcons";
+import { reportIcons } from "../../constants/reportIcons";
 
 const CategoryContainer = styled(Stack)`
   @media (max-width: 48rem) {

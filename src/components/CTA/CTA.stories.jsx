@@ -1,5 +1,5 @@
 import React from "react";
-import { text } from "@storybook/addon-knobs";
+import { object } from "@storybook/addon-knobs";
 import CTA from "./CTA";
 import StoryWrapper from "../story-wrapper/StoryWrapper";
 
@@ -8,46 +8,62 @@ export default {
   component: CTA,
 };
 
-const texts = {
-  tool: "CHECK OUT THE TOOL",
-  github: "VIEW ON GITHUB",
+const label = "CTA-props";
+
+export const primary = () => {
+  const ciTool = {
+    text: "view on github",
+    url: "https://github.com/accessibility-tools/ci",
+    isExternal: true,
+  };
+  const data = object(label, ciTool);
+  return (
+    <StoryWrapper>
+      <CTA {...data} />
+    </StoryWrapper>
+  );
 };
 
-const tempHref = "#";
+export const secondary = () => {
+  const webChecker = {
+    text: "check out the tool",
+    url: "/",
+    isSecondary: true,
+  };
+  const data = object(label, webChecker);
+  return (
+    <StoryWrapper>
+      <CTA {...data} />
+    </StoryWrapper>
+  );
+};
 
-export const primary = () => (
-  <StoryWrapper>
-    <CTA href={tempHref} text={text("placeholder text", texts.tool)} />
-  </StoryWrapper>
-);
-
-export const secondary = () => (
-  <StoryWrapper>
-    <CTA
-      href={tempHref}
-      text={text("placeholder text", texts.tool)}
-      isSecondary={true}
-    />
-  </StoryWrapper>
-);
-
-export const primaryWithIcon = () => (
-  <StoryWrapper>
-    <CTA
-      href={tempHref}
-      icon="github"
-      text={text("placeholder text", texts.github)}
-    />
-  </StoryWrapper>
-);
-
-export const secondaryWithIcon = () => (
-  <StoryWrapper>
-    <CTA
-      href={tempHref}
-      icon="github"
-      text={text("placeholder text", texts.github)}
-      isSecondary={true}
-    />
-  </StoryWrapper>
-);
+export const primaryWithIcon = () => {
+  const ciTool = {
+    text: "view on github",
+    url: "https://github.com/accessibility-tools/ci",
+    icon: "extLink",
+    isExternal: true,
+  };
+  const data = object(label, ciTool);
+  return (
+    <StoryWrapper>
+      <CTA {...data} />
+    </StoryWrapper>
+  );
+};
+export const secondaryWithIcon = () => {
+  const webChecker = {
+    text: "check out the tool",
+    url: "https://github.com/accessibility-tools/website",
+    icon: "extLink",
+    isExternal: true,
+    isSecondary: true,
+  };
+  const data = object(label, webChecker);
+  return (
+    <StoryWrapper>
+      <CTA {...data} />
+    </StoryWrapper>
+  );
+};

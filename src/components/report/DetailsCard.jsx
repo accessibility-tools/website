@@ -65,9 +65,12 @@ const DetailsCard = ({ issueData }) => {
         <div>
           <h3>{`${title} (${fixes.length})`}</h3>
           <p>{summary}</p>
-          <Link href={resource} icon="extLink" isExternal={true}>
-            Resource to solve this issue
-          </Link>
+          <Link
+            url={resource}
+            text="Resource to solve this issue"
+            icon="extLink"
+            isExternal={true}
+          />
         </div>
         <div>
           <ArrowIcon icon="bArrow" direction={!isOpened && "up"} />
@@ -83,9 +86,12 @@ const DetailsCard = ({ issueData }) => {
               <span>{failedStandard.name}</span>
             </FailedWrapper>
           ))}
-          <Link href="/" icon="manicule" isExternal={true}>
-            WHAT ARE ACCESSIBILITY STANDARDS?
-          </Link>
+          <Link
+            url="/"
+            text="WHAT ARE ACCESSIBILITY STANDARDS?"
+            icon="manicule"
+            isExternal={true}
+          />
         </Stack>
         <div>
           <SubTitle>Required fixes</SubTitle>

@@ -41,9 +41,7 @@ const FixElement = ({ fixData }) => {
           <li key={`fix tip ${index}`}>{tip}</li>
         ))}
       </ElementList>
-      <ElementLink href={link} isExternal={true}>
-        view element
-      </ElementLink>
+      <ElementLink url={link} text=" view element" isExternal={true} />
     </ElementContainer>
   );
 };

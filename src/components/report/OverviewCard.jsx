@@ -6,7 +6,7 @@ import Stack from "../layout-components/Stack";
 import Icon from "../icon/Icon";
 import Badge from "../badge/Badge";
 import Link from "../links/Link";
-import { reportIcons } from "../constants/reportIcons";
+import { reportIcons } from "../../constants/reportIcons";
 
 const CardContainer = styled(Stack)`
   background-color: ${color.white};
@@ -82,24 +82,12 @@ const OverviewCard = ({ title, subtext, isIssue, isGuideline, reportData }) => (
 
     {isGuideline && (
       <GuidelineContainer>
-        <Link icon="extLink" isExternal={true}>
-          example link
-        </Link>
-        <Link icon="extLink" isExternal={true}>
-          example link
-        </Link>
-        <Link icon="extLink" isExternal={true}>
-          example link
-        </Link>
-        <Link icon="extLink" isExternal={true}>
-          example link
-        </Link>
-        <Link icon="extLink" isExternal={true}>
-          example link
-        </Link>
-        <Link icon="extLink" isExternal={true}>
-          example link
-        </Link>
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
       </GuidelineContainer>
     )}
   </CardContainer>

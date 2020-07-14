@@ -3,18 +3,9 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { color, spacing } from "../../shared/style";
 
-const HiddenRadioButton = styled.input.attrs({ type: "radio" })`
-  clip: rect(0 0 0 0);
-  clip-path: inset(100%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-`;
-
-const StyledRadioButton = styled.div`
-  border: 3px solid ${props => (props.checked ? color.blue : color.primary)};
+const StyledRadioButton = styled.span`
+  border: 3px solid
+    ${({ isChecked }) => (isChecked ? color.blue : color.primary)};
   border-radius: 50%;
   display: inline-block;
   height: 20px;
@@ -31,7 +22,7 @@ const StyledRadioButton = styled.div`
     left: 3px;
     top: 3px;
     position: absolute;
-    visibility: ${props => (props.checked ? "visible" : "hidden")};
+    visibility: ${({ isChecked }) => (isChecked ? "visible" : "hidden")};
     width: 8px;
   }
 
@@ -57,7 +48,7 @@ const RadioButtonContainer = styled.label`
   border: 4px solid transparent;
   border-radius: 3px;
   display: inline-flex;
-  margin: ${spacing.padding.medium}px;
+
   vertical-align: middle;
   transition: all 150ms ease-out;
   transform: translate3d(0, 0, 0);
@@ -65,39 +56,41 @@ const RadioButtonContainer = styled.label`
   &:focus-within {
     box-shadow: 0 0 0 4px ${color.darkBlue};
   }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
 `;
 
-const RadioButton = ({ checked, label, ...otherProps }) => {
-  const [isChecked, setChecked] = React.useState(checked);
-
-  const handleKeyPress = event => {
-    if (event.key === " ") {
-      setChecked(!isChecked);
-    }
-  };
-
-  const handleCheckedChange = () => setChecked(!isChecked);
-
-  return (
-    <RadioButtonContainer>
-      <HiddenRadioButton
-        onKeyPress={handleKeyPress}
-        checked={checked}
-        {...otherProps}
-      />
-      <StyledRadioButton
-        checked={isChecked}
-        onClick={handleCheckedChange}
-        {...otherProps}
-      ></StyledRadioButton>
-      <span>{label}</span>
-    </RadioButtonContainer>
-  );
-};
+const RadioButton = ({
+  label,
+  value,
+  checked,
+  handleCheckedChange,
+  className,
+}) => (
+  <RadioButtonContainer className={className}>
+    <input
+      type="radio"
+      value={value}
+      checked={checked}
+      onChange={handleCheckedChange}
+    ></input>
+    <StyledRadioButton isChecked={checked}></StyledRadioButton>
+    {label}
+  </RadioButtonContainer>
+);
 
 RadioButton.propTypes = {
   label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   checked: PropTypes.bool,
+  handleCheckedChange: PropTypes.func,
+  className: PropTypes.string,
 };
 
 RadioButton.defaultProps = {

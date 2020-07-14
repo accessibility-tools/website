@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import styled from "styled-components";
 import { spacing } from "../../shared/style";
 import Icon from "../icon/Icon";
@@ -52,8 +51,8 @@ const Footer = () => {
     <StyledFooter>
       <LicenseWrapper>
         <LicenseLink
+          url="/"
           isSecondary={true}
-          href="/"
           aria-label="license information about the tool"
         >
           <Icon className="icon" icon="creativeCommon1" />
@@ -62,9 +61,7 @@ const Footer = () => {
         <FullText>The tool is licensed under Creative Commons CC-BY.</FullText>
         <ShortText>CC-BY.</ShortText>
       </LicenseWrapper>
-      <Link href="/imprint">
-        <StyledLink isSecondary={true}>imprint</StyledLink>
-      </Link>
+      <StyledLink url="/imprint" text="imprint" isSecondary={true} />
     </StyledFooter>
   );
 };
