@@ -6,10 +6,12 @@ import Link from "../links/Link";
 
 const LearnMoreWrapper = styled(Stack)`
   flex: 2;
-`;
 
-const List = styled.ul`
-  & > li {
+  p {
+    line-height: 1.33;
+  }
+
+  li {
     list-style: disc;
     list-style-position: inside;
   }
@@ -34,9 +36,9 @@ const LearnMoreQuestions = () => (
         it can be perceived by everybody.
       </p>
       <Link
-        linkText="more about web accessibility"
-        linkIcon="extLink"
-        linkUrl="/"
+        text="more about web accessibility"
+        icon="extLink"
+        url="/"
         isSecondary={true}
       />
     </Details>
@@ -48,9 +50,9 @@ const LearnMoreQuestions = () => (
         valuable experience out of the products we build.
       </p>
       <Link
-        linkText="more about why accessibility matters"
-        linkIcon="extLink"
-        linkUrl="/"
+        text="more about why accessibility matters"
+        icon="extLink"
+        url="/"
         isSecondary={true}
       />
     </Details>
@@ -61,7 +63,7 @@ const LearnMoreQuestions = () => (
         step is to learn more about the most common accessibility issues.
         According to the WebAIM, those are:
       </p>
-      <List>
+      <ul>
         <li>Low text contrast</li>
         <li>Missing alternative text for images</li>
         <li>Empty links</li>
@@ -73,11 +75,11 @@ const LearnMoreQuestions = () => (
           already make them much more accessible. Our tools can help you detect
           if those issues are present or not.
         </p>
-      </List>
+      </ul>
       <Link
-        linkText="read the webaim survey summary"
-        linkIcon="extLink"
-        linkUrl="/"
+        text="read the webaim survey summary"
+        icon="extLink"
+        url="/"
         isSecondary={true}
       />
     </Details>
@@ -95,9 +97,9 @@ const LearnMoreQuestions = () => (
         product.
       </p>
       <Link
-        linkText="browse WCAG 2.1 guidelines"
-        linkIcon="extLink"
-        linkUrl="/"
+        text="browse WCAG 2.1 guidelines"
+        icon="extLink"
+        url="/"
         isSecondary={true}
       />
     </Details>
