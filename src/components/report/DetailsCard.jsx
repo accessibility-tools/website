@@ -66,9 +66,9 @@ const DetailsCard = ({ issueData }) => {
           <h3>{`${title} (${fixes.length})`}</h3>
           <p>{summary}</p>
           <Link
-            linkUrl={resource}
-            linkText="Resource to solve this issue"
-            linkIcon="extLink"
+            url={resource}
+            text="Resource to solve this issue"
+            icon="extLink"
             isExternal={true}
           />
         </div>
@@ -87,9 +87,9 @@ const DetailsCard = ({ issueData }) => {
             </FailedWrapper>
           ))}
           <Link
-            linkUrl="/"
-            linkText="WHAT ARE ACCESSIBILITY STANDARDS?"
-            linkIcon="manicule"
+            url="/"
+            text="WHAT ARE ACCESSIBILITY STANDARDS?"
+            icon="manicule"
             isExternal={true}
           />
         </Stack>

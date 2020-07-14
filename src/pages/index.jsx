@@ -182,9 +182,9 @@ const LandingPage = () => {
               us a message.
             </Subtext>
             <ContactLink
-              linkText="accessibility@futurice.com"
-              linkUrl="mailto:accessibility@futurice.com"
-              linkIcon="mailto"
+              text="accessibility@futurice.com"
+              url="mailto:accessibility@futurice.com"
+              icon="mailto"
               isSecondary={true}
             />
           </Stack>

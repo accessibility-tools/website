@@ -44,10 +44,10 @@ const IntroWrapper = styled(Switcher)`
     flex-grow: 2;
   }
 
-  h1,
   p {
     text-align: center;
     font-weight: 500;
+    letter-spacing: 2.25px;
   }
 
   @media (min-width: 43rem) {

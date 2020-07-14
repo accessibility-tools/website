@@ -10,9 +10,9 @@ export const ciTool = {
     "aci https://example.com",
   ],
   ctaData: {
-    ctaText: "find out more on github",
-    ctaUrl: "https://github.com/accessibility-tools/ci",
-    ctaIcon: "extLink",
+    text: "view on github",
+    url: "https://github.com/accessibility-tools/ci",
+    icon: "extLink",
     isExternal: true,
   },
   linkData: {},
@@ -30,9 +30,9 @@ export const webChecker = {
     "Learn if your website is complying to important standards in the industry and how to improve.",
   ],
   ctaData: {
-    ctaText: "check out the tool",
-    ctaUrl: "/checker",
-    ctaIcon: "",
+    text: "check out the tool",
+    url: "/checker",
+    icon: "",
   },
   linkData: {},
 };
@@ -49,14 +49,14 @@ export const webCheckerAlt = {
     "Learn if your website is complying to important standards in the industry and how to improve.",
   ],
   ctaData: {
-    ctaText: "Learn more about this project",
-    ctaUrl: "/",
-    ctaIcon: "",
+    text: "Learn more about this project",
+    url: "/",
+    icon: "",
   },
   linkData: {
-    linkText: "Contribute on github",
-    linkUrl: "https://github.com/accessibility-tools/website",
-    linkIcon: "github",
+    text: "Contribute on github",
+    url: "https://github.com/accessibility-tools/website",
+    icon: "github",
     isExternal: true,
   },
 };

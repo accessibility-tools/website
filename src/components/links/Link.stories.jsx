@@ -10,15 +10,15 @@ export default {
 
 export const primary = () => (
   <StoryWrapper>
-    <Link linkUrl={text("url", "#")} linkText={text("text", "Hello Link")} />
+    <Link url={text("url", "#")} text={text("text", "Hello Link")} />
   </StoryWrapper>
 );
 
 export const secondary = () => (
   <StoryWrapper>
     <Link
-      linkUrl={text("url", "#")}
-      linkText={text("text", "Hello Link")}
+      url={text("url", "#")}
+      text={text("text", "Hello Link")}
       isSecondary={boolean("secondary", true)}
     />
   </StoryWrapper>
@@ -27,9 +27,9 @@ export const secondary = () => (
 export const secondaryWithIcon = () => (
   <StoryWrapper>
     <Link
-      linkUrl={text("url", "#")}
-      linkText={text("text", "Hello Link")}
-      linkIcon={text("icon", "extLink")}
+      url={text("url", "#")}
+      text={text("text", "Hello Link")}
+      icon={text("icon", "extLink")}
       isSecondary={boolean("secondary", true)}
     />
   </StoryWrapper>
@@ -38,9 +38,9 @@ export const secondaryWithIcon = () => (
 export const externalWithIcon = () => (
   <StoryWrapper>
     <Link
-      linkUrl={text("url", "#")}
-      linkText={text("text", "Hello Link")}
-      linkIcon={text("icon", "extLink")}
+      url={text("url", "#")}
+      text={text("text", "Hello Link")}
+      icon={text("icon", "extLink")}
       isExternal={boolean("external", true)}
     />
   </StoryWrapper>

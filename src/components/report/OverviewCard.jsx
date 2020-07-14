@@ -82,12 +82,12 @@ const OverviewCard = ({ title, subtext, isIssue, isGuideline, reportData }) => (
 
     {isGuideline && (
       <GuidelineContainer>
-        <Link linkIcon="extLink" linkText="example link" isExternal={true} />
-        <Link linkIcon="extLink" linkText="example link" isExternal={true} />
-        <Link linkIcon="extLink" linkText="example link" isExternal={true} />
-        <Link linkIcon="extLink" linkText="example link" isExternal={true} />
-        <Link linkIcon="extLink" linkText="example link" isExternal={true} />
-        <Link linkIcon="extLink" linkText="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
+        <Link icon="extLink" text="example link" isExternal={true} />
       </GuidelineContainer>
     )}
   </CardContainer>

@@ -71,9 +71,9 @@ const StyledLink = styled.a`
 `;
 
 const Link = ({
-  linkText,
-  linkUrl,
-  linkIcon,
+  text,
+  url,
+  icon,
   isExternal,
   isSecondary,
   children,
@@ -86,22 +86,22 @@ const Link = ({
   if (isExternal) otherProps = { ...otherProps, ...externalConfig };
   return (
     <StyledLink
-      href={linkUrl}
+      href={url}
       isSecondary={isSecondary}
-      withIcon={linkIcon && true}
+      withIcon={icon && true}
       {...otherProps}
     >
-      {linkIcon && <Icon icon={linkIcon} />}
-      {linkText && <span>{linkText}</span>}
+      {icon && <Icon icon={icon} />}
+      {text && <span>{text}</span>}
       {children && <span>{children}</span>}
     </StyledLink>
   );
 };
 
 Link.propTypes = {
-  linkText: PropTypes.string,
-  linkUrl: PropTypes.string,
-  linkIcon: PropTypes.string,
+  text: PropTypes.string,
+  url: PropTypes.string,
+  icon: PropTypes.string,
   isExternal: PropTypes.bool,
   isSecondary: PropTypes.bool,
   children: PropTypes.any,

@@ -12,8 +12,8 @@ const label = "CTA-props";
 
 export const primary = () => {
   const ciTool = {
-    ctaText: "view on github",
-    ctaUrl: "https://github.com/accessibility-tools/ci",
+    text: "view on github",
+    url: "https://github.com/accessibility-tools/ci",
     isExternal: true,
   };
   const data = object(label, ciTool);
@@ -26,8 +26,8 @@ export const primary = () => {
 
 export const secondary = () => {
   const webChecker = {
-    ctaText: "check out the tool",
-    ctaUrl: "/",
+    text: "check out the tool",
+    url: "/",
     isSecondary: true,
   };
   const data = object(label, webChecker);
@@ -40,9 +40,9 @@ export const secondary = () => {
 
 export const primaryWithIcon = () => {
   const ciTool = {
-    ctaText: "view on github",
-    ctaUrl: "https://github.com/accessibility-tools/ci",
-    ctaIcon: "extLink",
+    text: "view on github",
+    url: "https://github.com/accessibility-tools/ci",
+    icon: "extLink",
     isExternal: true,
   };
   const data = object(label, ciTool);
@@ -54,9 +54,9 @@ export const primaryWithIcon = () => {
 };
 export const secondaryWithIcon = () => {
   const webChecker = {
-    ctaText: "check out the tool",
-    ctaUrl: "https://github.com/accessibility-tools/website",
-    ctaIcon: "extLink",
+    text: "check out the tool",
+    url: "https://github.com/accessibility-tools/website",
+    icon: "extLink",
     isExternal: true,
     isSecondary: true,
   };
