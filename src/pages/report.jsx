@@ -80,7 +80,7 @@ const ReportPage = () =>
   mockReportData ? (
     <LoadedPageContainer space="large">
       <Section>
-        <ReportIntro isLoaded={mockReportData} />
+        <ReportIntro isLoaded={!!mockReportData} />
       </Section>
       <Section>
         <ReportOverview />
@@ -94,7 +94,7 @@ const ReportPage = () =>
     </LoadedPageContainer>
   ) : (
     <LoadingPageContainer>
-      <ReportIntro isLoaded={mockReportData} />
+      <ReportIntro isLoaded={!!mockReportData} />
       <Stack>
         <Switcher threshold="35rem">
           <div>
