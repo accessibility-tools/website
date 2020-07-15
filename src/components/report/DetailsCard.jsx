@@ -81,11 +81,7 @@ const DetailsCard = ({ issueData }) => {
       <Stack space="medium">
         <Subtitle>Which elements should be fixed?</Subtitle>
         {fixes.map((fix, index) => (
-          <FixElement
-            key={`${title} required fix ${index}`}
-            fixData={fix}
-            eleIndex={index}
-          />
+          <FixElement key={`${title} required fix ${index}`} fixData={fix} />
         ))}
       </Stack>
     </Details>

@@ -12,7 +12,7 @@ const CardContainer = styled(Stack)`
   width: 100%;
   padding: 2rem;
   p {
-    max-width: none;
+    max-width: 40rem;
   }
 
   @media (min-width: 48rem) {

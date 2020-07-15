@@ -70,7 +70,7 @@ const ReportOverview = () => {
         <div>
           <OverviewCard
             title={`${totalIssueCount} Detected issues`}
-            subtext="Seems like there are some accesssibility issues on this website that can be improved:"
+            subtext="Seems like there are some accessibility issues on this website to improve. Some are more critical than others to enable access for all users."
             isIssue
             reportData={mockReportData}
           />
@@ -80,8 +80,8 @@ const ReportOverview = () => {
         <Icon icon="manicule" color={color.blue} />
         <p>
           Automated tests like this one can assess up to <strong>30%</strong> of
-          accessibilities issues. We recommand performing a manual test in
-          addition and test with real users.
+          accessibility issues. In addition, we recommend performing a manual
+          test and testing with real users.
         </p>
       </NoteContainer>
     </OverviewContainer>

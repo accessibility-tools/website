@@ -39,7 +39,7 @@ const ReportIntro = ({ isLoaded }) => (
           alt="illustration of report page"
         />
         <Title>
-          <p>creating reports for big pages can take up to X minutes</p>
+          <p>creating reports for big pages can take a long time</p>
           <h1>Please give us a minute...</h1>
         </Title>
       </div>
