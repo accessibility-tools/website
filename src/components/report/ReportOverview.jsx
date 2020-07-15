@@ -4,6 +4,7 @@ import { color } from "../../shared/style";
 import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Button from "../button/Button";
+import Icon from "../icon/Icon";
 import OverviewCard from "./OverviewCard";
 import { mockReportData } from "../../data/reportData";
 
@@ -15,29 +16,29 @@ const OverviewContainer = styled(Stack)`
     color: ${color.blue};
   }
 
+  button {
+    max-width: initial;
+  }
+
   @media (min-width: 48rem) {
     width: 100%;
+
+    button {
+      max-width: max-content;
+      align-self: flex-start;
+    }
   }
 `;
 
-const BtnWrapper = styled(Switcher)`
-  & > * {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+const NoteContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0 2rem;
 
-    justify-content: center;
-  }
-
-  & > * > * {
-    margin-left: 1rem;
-    max-width: fit-content;
-  }
-
-  @media (min-width: 48rem) {
-    & > * {
-      justify-content: flex-end;
-    }
+  p {
+    max-width: 36rem;
+    margin: 0 1rem;
   }
 `;
 
@@ -56,30 +57,27 @@ const ReportOverview = () => {
             </h2>
             <p>xx pages scanned </p>
           </Stack>
-          <BtnWrapper>
-            <div>
-              <Button text="Export as pdf" isSecondary={true} />
-              <Button text="Copy URL" />
-            </div>
-          </BtnWrapper>
+          <Button text="Copy URL" />
         </div>
       </Switcher>
       <Switcher threshold="35rem">
         <div>
           <OverviewCard
             title={`${totalIssueCount} Detected issues`}
-            subtext="Seems like there are some accesssibility issues on this website, that can be improved:"
+            subtext="Seems like there are some accesssibility issues on this website that can be improved:"
             isIssue
-            reportData={mockReportData}
-          />
-          <OverviewCard
-            title="8 Fulfilled guidlines"
-            subtext="Great, seems like your website is compliant with the following accessibility guidelines, that are in place:"
-            isGuideline
             reportData={mockReportData}
           />
         </div>
       </Switcher>
+      <NoteContainer>
+        <Icon icon="manicule" color={color.blue} />
+        <p>
+          Automated tests like this one can assess up to 30% of accessibilities
+          issues. We recommand performing a manual test in addition and test
+          with real users.
+        </p>
+      </NoteContainer>
     </OverviewContainer>
   );
 };
