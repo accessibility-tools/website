@@ -54,17 +54,12 @@ const DetailsCard = ({ issueData }) => {
     setOpened(event.currentTarget.open);
   };
   const { title, summary, resource, failedStandard, fixes } = issueData;
-  const issueCount = fixes.forEach(fix => {
-    let count = 0;
-    count += fix.affectedElements.length;
-    return count;
-  });
 
   return (
     <Details onToggle={handleOpen}>
       <Summary>
         <div>
-          <h3>{`${title} (${issueCount})`}</h3>
+          <h3>{`${title} (${fixes.length})`}</h3>
           <p>{summary}</p>
           <p>{`Failed accessibility standard: ${failedStandard}`}</p>
           <Link

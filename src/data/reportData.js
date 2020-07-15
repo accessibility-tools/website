@@ -9,7 +9,7 @@ export const mockReportData = {
       fixes: [
         {
           summary:
-            "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
+            "15 element have insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
           tips: [
             "foreground color: #0ab587",
             "background color: #f2f2f2",
@@ -51,7 +51,7 @@ export const mockReportData = {
         },
         {
           summary:
-            "1 element has insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
+            "9 elements have insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.",
           tips: [
             "foreground color: #0ab587",
             "background color: #f2f2f2",
@@ -68,15 +68,12 @@ export const mockReportData = {
                 ".egb6tqc3",
                 ".css-1bk73as",
                 ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5",
-                ".css-1o9uz9i.ezjn55m7[href$='mobility'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
               ],
             },
             {
               page: "https://futurice.com/careers/lead-developer-helsinki",
               selectors: [
                 ".css-1e95rm6.eh1sm5o1:nth-child(1) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3",
-                ".egb6tqc3",
                 ".css-1bk73as",
                 ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
               ],
@@ -93,7 +90,7 @@ export const mockReportData = {
       resource: "/",
       fixes: [
         {
-          summary: "1 <img> element has no alternate text.",
+          summary: "8 <img> elements have no alternate text.",
           tips: [
             "Element does not have an alt attribute",
             "aria-label attribute does not exist or is empty",
@@ -118,6 +115,33 @@ export const mockReportData = {
             },
           ],
         },
+        {
+          summary: "3 <img> elements have no alternate text.",
+          tips: [
+            "Element does not have an alt attribute",
+            "aria-label attribute does not exist or is empty",
+          ],
+          affectedElements: [
+            {
+              page: "https://futurice.com/careers/lead-developer-helsinki",
+              selectors: [
+                ".egb6tqc3",
+                ".css-1bk73as",
+                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
+              ],
+            },
+          ],
+        },
+        {
+          summary: "1 <img> element has no alternate text.",
+          tips: ["Element does not have an alt attribute"],
+          affectedElements: [
+            {
+              page: "https://futurice.com/careers/lead-developer-helsinki",
+              selectors: [".egb6tqc3"],
+            },
+          ],
+        },
       ],
     },
   ],
@@ -129,7 +153,7 @@ export const mockReportData = {
       resource: "/",
       fixes: [
         {
-          summary: "1 svg element has no alternate text.",
+          summary: "5 svg elements have no alternate text.",
           tips: [
             "element has no child that is a title",
             "aria-label attribute does not exist or is empty",
@@ -144,9 +168,6 @@ export const mockReportData = {
                 ".css-1e95rm6.eh1sm5o1:nth-child(3) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3",
                 ".egb6tqc3",
                 ".css-1bk73as",
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5",
-                ".css-1o9uz9i.ezjn55m7[href$='mobility'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
               ],
             },
           ],
@@ -162,7 +183,7 @@ export const mockReportData = {
       resource: "/",
       fixes: [
         {
-          summary: "1 element is not contained by landmarks.",
+          summary: "3 elements are not contained by landmarks.",
           tips: ["Some page content is not contained by landmarks"],
           affectedElements: [
             {
@@ -178,5 +199,30 @@ export const mockReportData = {
       ],
     },
   ],
-  minor: [],
+  minor: [
+    {
+      title: "display orientation",
+      summary:
+        "Ensure content is not locked to any specific display orientation, and the content is operable in all display orientations.",
+      failedStandard: "WCAG 2 AA",
+      resource: "/",
+      fixes: [
+        {
+          summary: "2 elements are not operable in all display orientations.",
+          tips: [
+            "Some page content are not operable in all display orientations",
+          ],
+          affectedElements: [
+            {
+              page: "https://futurice.com/careers/lead-developer-helsinki",
+              selectors: [
+                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
+                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5",
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
