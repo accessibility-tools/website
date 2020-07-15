@@ -30,6 +30,12 @@ const OverviewContainer = styled(Stack)`
   }
 `;
 
+const Subtitle = styled.p`
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+`;
+
 const NoteContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -55,7 +61,7 @@ const ReportOverview = () => {
             <h2>
               Report for <span>xxx.com</span>
             </h2>
-            <p>xx pages scanned </p>
+            <Subtitle>xx pages scanned</Subtitle>
           </Stack>
           <Button text="Copy URL" />
         </div>
@@ -73,9 +79,9 @@ const ReportOverview = () => {
       <NoteContainer>
         <Icon icon="manicule" color={color.blue} />
         <p>
-          Automated tests like this one can assess up to 30% of accessibilities
-          issues. We recommand performing a manual test in addition and test
-          with real users.
+          Automated tests like this one can assess up to <strong>30%</strong> of
+          accessibilities issues. We recommand performing a manual test in
+          addition and test with real users.
         </p>
       </NoteContainer>
     </OverviewContainer>

@@ -15,6 +15,7 @@ const Title = styled.div`
     max-width: none;
     text-transform: uppercase;
     letter-spacing: 2.25px;
+    font-weight: 500;
   }
 `;
 
@@ -27,8 +28,8 @@ const ReportIntro = ({ isLoaded }) => (
           alt="illustration of report page"
         />
         <Title>
-          <p>Thanks for Making the web accessible for everybody</p>
-          <h1>Accessibility Report</h1>
+          <p>web accessibility report</p>
+          <h1>Thanks for Making the web accessible for everybody</h1>
         </Title>
       </div>
     ) : (
@@ -38,7 +39,7 @@ const ReportIntro = ({ isLoaded }) => (
           alt="illustration of report page"
         />
         <Title>
-          <p>Creating reports for big pages can take up to X minutes</p>
+          <p>creating reports for big pages can take up to X minutes</p>
           <h1>Please give us a minute...</h1>
         </Title>
       </div>
