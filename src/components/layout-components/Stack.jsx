@@ -28,11 +28,6 @@ const Stack = styled.div`
 
   @media (max-width: 48rem) {
     align-items: center;
-    text-align: center;
-
-    & > p {
-      text-align: left;
-    }
   }
 `;
 

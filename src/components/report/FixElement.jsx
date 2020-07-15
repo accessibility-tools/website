@@ -64,7 +64,11 @@ const FixElement = ({ fixData, eleIndex }) => {
           </NoteContainer>
         )}
         {affectedElements.map((element, index) => (
-          <Banner key={`affected element ${index}`} text={element} />
+          <Banner
+            key={`affected element ${index}`}
+            text={element}
+            width="40rem"
+          />
         ))}
       </Stack>
     </IssueContainer>
