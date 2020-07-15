@@ -24,7 +24,7 @@ const InfoWrapper = styled(Stack)`
   }
 
   a {
-    width: max-content;
+    width: 20rem;
   }
 
   @media (max-width: 48rem) {

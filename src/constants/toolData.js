@@ -49,7 +49,7 @@ export const webCheckerAlt = {
     "Learn if your website is complying to important standards in the industry and how to improve.",
   ],
   ctaData: {
-    text: "Learn more about this project",
+    text: "More about this project",
     url: "/",
     icon: "",
   },
