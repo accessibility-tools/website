@@ -17,17 +17,16 @@ const OverviewContainer = styled(Stack)`
   }
 
   button {
-    max-width: initial;
+    height: 3rem;
   }
 
   @media (min-width: 48rem) {
     width: 100%;
-
-    button {
-      max-width: max-content;
-      align-self: flex-start;
-    }
   }
+`;
+
+const TitleContainer = styled(Stack)`
+  flex: 5;
 `;
 
 const Subtitle = styled.p`
@@ -57,12 +56,12 @@ const ReportOverview = () => {
     <OverviewContainer>
       <Switcher threshold="35rem">
         <div>
-          <Stack space="small">
+          <TitleContainer space="small">
             <h2>
               Report for <span>xxx.com</span>
             </h2>
             <Subtitle>xx pages scanned</Subtitle>
-          </Stack>
+          </TitleContainer>
           <Button text="Copy URL" />
         </div>
       </Switcher>
