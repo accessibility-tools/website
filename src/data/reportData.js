@@ -5,11 +5,7 @@ export const mockReportData = {
       summary:
         "Ensure the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds.",
       resource: "/",
-      failedStandards: [
-        { name: "WCAG 2 AA", link: "/" },
-        { name: "WCAG 1.4.3", link: "/" },
-        { name: "CAT.COLOR", link: "/" },
-      ],
+      failedStandard: "WCAG 2 AA",
       fixes: [
         {
           summary:
@@ -51,10 +47,7 @@ export const mockReportData = {
       summary:
         "Ensure <img> elements have alternate text or a role of none or presentation.",
       resource: "/",
-      failedStandards: [
-        { name: "WCAG 2 A", link: "/" },
-        { name: "WCAG 1.1.1", link: "/" },
-      ],
+      failedStandard: "WCAG 2 AA",
       fixes: [
         {
           summary: "1 <img> element has no alternate text.",
@@ -88,10 +81,7 @@ export const mockReportData = {
       title: "svg image alt",
       summary: "Ensure every image has an alt text.",
       resource: "/",
-      failedStandards: [
-        { name: "WCAG 2 A", link: "/" },
-        { name: "WCAG 1.1.1", link: "/" },
-      ],
+      failedStandard: "WCAG 2 AA",
       fixes: [
         {
           summary: "1 svg element has no alternate text.",
@@ -119,10 +109,7 @@ export const mockReportData = {
       title: "landmarks",
       summary: "Ensure all page content is contained by landmarks.",
       resource: "/",
-      failedStandards: [
-        { name: "WCAG 2 AA", link: "/" },
-        { name: "CAT.KEYBOARD", link: "/" },
-      ],
+      failedStandard: "WCAG 2 AA",
       fixes: [
         {
           summary: "1 element is not contained by landmarks.",
