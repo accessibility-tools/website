@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import { color } from "../../shared/style";
 
 const BannerWrapper = styled.div`
-  height: 40px;
-  width: max-content;
+  display: flex;
+  height: auto;
+  width: 40rem;
   padding: 0.5rem;
   border-radius: 4px;
   border: solid 1px ${color.primary};

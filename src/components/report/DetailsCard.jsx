@@ -53,13 +53,19 @@ const DetailsCard = ({ issueData }) => {
     setOpened(event.currentTarget.open);
   };
   const { title, summary, resource, failedStandard, fixes } = issueData;
+  const issueCount = fixes.forEach(fix => {
+    let count = 0;
+    count += fix.affectedElements.length;
+    return count;
+  });
+
   return (
     <Details onToggle={handleOpen}>
       <Summary>
         <div>
-          <h3>{`${title} (${fixes.length})`}</h3>
+          <h3>{`${title} (${issueCount})`}</h3>
           <p>{summary}</p>
-          <Subtitle>{`Failed accessibility standard: ${failedStandard}`}</Subtitle>
+          <p>{`Failed accessibility standard: ${failedStandard}`}</p>
           <Link
             url={resource}
             text="Resource to solve this issue"
@@ -75,7 +81,11 @@ const DetailsCard = ({ issueData }) => {
       <Stack space="medium">
         <Subtitle>Which elements should be fixed?</Subtitle>
         {fixes.map((fix, index) => (
-          <FixElement key={`${title} required fix ${index}`} fixData={fix} />
+          <FixElement
+            key={`${title} required fix ${index}`}
+            fixData={fix}
+            eleIndex={index}
+          />
         ))}
       </Stack>
     </Details>
