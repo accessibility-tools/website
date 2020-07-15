@@ -9,9 +9,8 @@ import Link from "../links/Link";
 import Banner from "../banner/Banner";
 
 const InfoWrapper = styled(Stack)`
-  max-width: 34rem;
+  max-width: 32rem;
   text-align: left;
-  padding: 0 1.5rem;
 
   p {
     max-width: none;
@@ -41,12 +40,6 @@ const ToolLink = styled(Link)`
   font-size: 1rem;
   margin-top: 1rem;
   align-items: center;
-`;
-
-const ScriptWrapper = styled(Stack)`
-  & > * + * {
-    margin-top: 1rem;
-  }
 `;
 
 const ToolOverview = ({ data, type }) => {
@@ -80,12 +73,12 @@ const ToolOverview = ({ data, type }) => {
           <Center>
             <InfoWrapper>
               <h2>{title}</h2>
-              <ScriptWrapper>
+              <Stack space="small">
                 <p>{desc}</p>
                 <Banner text={details[0]} />
                 <p>{details[1]}</p>
                 <Banner text={details[2]} />
-              </ScriptWrapper>
+              </Stack>
               {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
             </InfoWrapper>
           </Center>
