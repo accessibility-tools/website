@@ -18,7 +18,6 @@ const Details = styled.details`
 
   & > * {
     max-width: 100%;
-    padding: 2rem;
   }
 `;
 
@@ -27,6 +26,7 @@ const Summary = styled.summary`
   justify-content: space-between;
   align-items: flex-start;
   border-radius: 3px;
+  padding: 2rem;
 
   &::-webkit-details-marker {
     display: none;
@@ -45,6 +45,7 @@ const Summary = styled.summary`
 const Subtitle = styled.p`
   font-weight: bold;
   font-size: 1.25rem;
+  padding-left: 2rem;
 `;
 
 const DetailsCard = ({ issueData }) => {

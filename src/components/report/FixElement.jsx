@@ -9,10 +9,6 @@ import Banner from "../banner/Banner";
 const IssueContainer = styled(Stack)`
   padding: 2rem;
 
-  & > * {
-    margin-bottom: 2rem;
-  }
-
   &:nth-child(even) {
     background-color: ${color.lightPurple};
   }
@@ -27,22 +23,24 @@ const SubTitle = styled.h5`
 `;
 
 const NoteContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  background-color: ${({ background }) => background && color.extraLightPurple};
+  margin: ${({ margin }) => margin && "1rem -2rem"};
+  padding: ${({ padding }) => padding && "1rem"};
+  display: grid;
+  grid-template-columns: 3% auto;
+  align-items: baseline;
 
   p {
     max-width: 36rem;
-    margin: 0 1rem;
   }
 `;
 
-const FixElement = ({ fixData, eleIndex }) => {
+const FixElement = ({ fixData }) => {
   const { summary, tips, affectedElements } = fixData;
   return (
     <IssueContainer>
-      <SubTitle>{summary}</SubTitle>
       <Stack space="small">
+        <SubTitle>{summary}</SubTitle>
         <p>Fix any of the following:</p>
         <ul>
           {tips.map((tip, index) => (
@@ -50,25 +48,40 @@ const FixElement = ({ fixData, eleIndex }) => {
           ))}
         </ul>
       </Stack>
-      <Stack space="small">
+      <Stack space="medium">
         <SubTitle>Affected elements:</SubTitle>
-        {eleIndex === 0 && (
-          <NoteContainer>
-            <Icon icon="manicule" color={color.blue} />
+        <NoteContainer background padding margin>
+          <Icon icon="manicule" color={color.blue} />
+          <Stack space="small">
             <p>
-              Each of these boxes contain the name of an element on your
-              website. To find the corresponding element in the codebase, you
-              can copy and paste the content of a box into your code editor’s
-              search feature.
+              <strong>Find in browser:</strong>
+              <br />
+              Open the page with the affected element. Open the inspector with a
+              right-click and choose “Inspect”. Copy the selector into the
+              inspector search.
             </p>
-          </NoteContainer>
-        )}
-        {affectedElements.map((element, index) => (
-          <Banner
-            key={`affected element ${index}`}
-            text={element}
-            width="40rem"
-          />
+            <p>
+              <strong>Find in codebase:</strong>
+              <br />
+              Copy the selector into the code editor search.
+            </p>
+          </Stack>
+        </NoteContainer>
+
+        {affectedElements.map(({ page, selectors }, index) => (
+          <Stack space="small" key={`${page} affected element ${index}`}>
+            <NoteContainer>
+              <Icon icon="tip" />
+              <p>{`On page: ${page}`}</p>
+            </NoteContainer>
+            {selectors.map(selector => (
+              <Banner
+                key={`${page} affected selector ${index}`}
+                text={selector}
+                width="40rem"
+              />
+            ))}
+          </Stack>
         ))}
       </Stack>
     </IssueContainer>
@@ -77,7 +90,6 @@ const FixElement = ({ fixData, eleIndex }) => {
 
 FixElement.propTypes = {
   fixData: PropTypes.object,
-  eleIndex: PropTypes.number,
 };
 
 export default FixElement;
