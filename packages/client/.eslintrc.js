@@ -29,7 +29,7 @@ module.exports = {
       2,
       { ignoredNodes: ["ConditionalExpression"], SwitchCase: 1 },
     ],
-    quotes: ["error", "double"],
+    quotes: [1, "single"],
     semi: ["error", "always"],
     "prettier/prettier": [
       "error",
