@@ -6,6 +6,7 @@ const spacing = {
   small: "1rem",
   medium: "3rem",
   large: "5rem",
+  extraLarge: "8rem",
 };
 
 const Stack = styled.div`

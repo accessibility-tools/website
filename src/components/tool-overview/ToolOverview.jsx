@@ -6,11 +6,15 @@ import Stack from "../layout-components/Stack";
 import Center from "../layout-components/Center";
 import CTA from "../CTA/CTA";
 import Link from "../links/Link";
+import Banner from "../banner/Banner";
 
 const InfoWrapper = styled(Stack)`
-  max-width: 30rem;
+  max-width: 32rem;
   text-align: left;
-  padding: 0 1.5rem;
+
+  p {
+    max-width: none;
+  }
 
   li {
     list-style: disc;
@@ -19,16 +23,17 @@ const InfoWrapper = styled(Stack)`
   }
 
   a {
-    width: max-content;
+    width: 20rem;
   }
 
   @media (max-width: 48rem) {
-    width: 80%;
+    width: 90%;
   }
 `;
 
 const ToolImg = styled.img`
   width: 60%;
+  transform: ${({ transform }) => transform && "scaleX(-1)"};
 `;
 
 const ToolLink = styled(Link)`
@@ -37,38 +42,58 @@ const ToolLink = styled(Link)`
   align-items: center;
 `;
 
-const ToolOverview = ({ toolData }) => {
-  const { id, title, img, desc, details, ctaData, linkData } = toolData;
+const ToolOverview = ({ data, type }) => {
+  const { id, title, img, desc, details, ctaData, linkData } = data;
 
   return (
     <Switcher threshold="40rem" space="3.5rem" width="100%">
-      <div>
-        <Center>
-          <ToolImg src={img} alt="image of the tool" />
-        </Center>
-        <Center>
-          <InfoWrapper>
-            <h2>{title}</h2>
-            <p>{desc}</p>
-            {details && (
-              <ul>
-                {details.map((detail, index) => (
-                  <li key={`${id} detail ${index}`}>{detail}</li>
-                ))}
-              </ul>
-            )}
-
-            {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
-            {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
-          </InfoWrapper>
-        </Center>
-      </div>
+      {type === "web" ? (
+        <div>
+          <Center>
+            <ToolImg src={img} alt="image of web tool" />
+          </Center>
+          <Center>
+            <InfoWrapper>
+              <h2>{title}</h2>
+              <p>{desc}</p>
+              {details && (
+                <ul>
+                  {details.map((detail, index) => (
+                    <li key={`${id} detail ${index}`}>{detail}</li>
+                  ))}
+                </ul>
+              )}
+              {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
+              {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
+            </InfoWrapper>
+          </Center>
+        </div>
+      ) : (
+        <div>
+          <Center>
+            <InfoWrapper>
+              <h2>{title}</h2>
+              <Stack space="small">
+                <p>{desc}</p>
+                <Banner text={details[0]} />
+                <p>{details[1]}</p>
+                <Banner text={details[2]} />
+              </Stack>
+              {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
+            </InfoWrapper>
+          </Center>
+          <Center>
+            <ToolImg src={img} alt="image of ci tool" transform />
+          </Center>
+        </div>
+      )}
     </Switcher>
   );
 };
 
 ToolOverview.propTypes = {
-  toolData: PropTypes.object,
+  data: PropTypes.object,
+  type: PropTypes.string,
 };
 
 export default ToolOverview;

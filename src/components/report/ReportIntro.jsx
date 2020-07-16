@@ -34,7 +34,7 @@ const ReportIntro = ({ isLoaded }) => (
     ) : (
       <div>
         <ReportImg
-          src="/illustrations/start.svg"
+          src="/illustrations/web-checker.svg"
           alt="illustration of report page"
         />
         <Title>

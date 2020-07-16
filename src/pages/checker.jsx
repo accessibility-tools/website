@@ -107,7 +107,7 @@ const WebCheckerPage = () => {
       </Section>
 
       <Section>
-        <ToolOverview toolData={webCheckerAlt} />
+        <ToolOverview data={webCheckerAlt} type="web" />
       </Section>
     </PageContainer>
   );
