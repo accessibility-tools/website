@@ -25,7 +25,7 @@ const Title = styled.div`
   flex-direction: row;
   align-items: center;
 
-  & > * {
+  svg {
     margin-right: 1rem;
   }
 `;
@@ -33,7 +33,7 @@ const Title = styled.div`
 const IssueContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  & > * {
+  & > div {
     margin: 0.5rem;
   }
 `;

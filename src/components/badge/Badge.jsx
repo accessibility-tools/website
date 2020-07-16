@@ -21,15 +21,13 @@ const BadgeWrapper = styled.div`
   }
 `;
 
-const Badge = ({ label, issueCount, iconName, iconColor, ...props }) => {
-  return (
-    <BadgeWrapper {...props}>
-      {iconName && <Icon icon={iconName} color={iconColor} />}
-      {issueCount && issueCount} {label}
-      {(issueCount || issueCount === 0) && " issues"}
-    </BadgeWrapper>
-  );
-};
+const Badge = ({ label, issueCount, iconName, iconColor, ...props }) => (
+  <BadgeWrapper {...props}>
+    {iconName && <Icon icon={iconName} color={iconColor} />}
+    {issueCount && issueCount} {label}
+    {(issueCount || issueCount === 0) && " issues"}
+  </BadgeWrapper>
+);
 
 Badge.propTypes = {
   label: PropTypes.string.isRequired,
