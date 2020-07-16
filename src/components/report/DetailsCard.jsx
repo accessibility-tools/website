@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { color } from "../../shared/style";
 import Stack from "../layout-components/Stack";
 import Link from "../links/Link";
-import Icon from "../icon/Icon";
 import ArrowIcon from "../icon/ArrowIcon";
 import FixElement from "./FixElement";
 
@@ -19,7 +18,6 @@ const Details = styled.details`
 
   & > * {
     max-width: 100%;
-    padding: 2rem;
   }
 `;
 
@@ -28,6 +26,7 @@ const Summary = styled.summary`
   justify-content: space-between;
   align-items: flex-start;
   border-radius: 3px;
+  padding: 2rem;
 
   &::-webkit-details-marker {
     display: none;
@@ -43,14 +42,10 @@ const Summary = styled.summary`
   }
 `;
 
-const SubTitle = styled.p`
+const Subtitle = styled.p`
   font-weight: bold;
-`;
-
-const FailedWrapper = styled.div`
-  svg {
-    margin-right: 0.5rem;
-  }
+  font-size: 1.25rem;
+  padding-left: 2rem;
 `;
 
 const DetailsCard = ({ issueData }) => {
@@ -58,13 +53,15 @@ const DetailsCard = ({ issueData }) => {
   const handleOpen = event => {
     setOpened(event.currentTarget.open);
   };
-  const { title, summary, resource, failedStandards, fixes } = issueData;
+  const { title, summary, resource, failedStandard, fixes } = issueData;
+
   return (
     <Details onToggle={handleOpen}>
       <Summary>
         <div>
           <h3>{`${title} (${fixes.length})`}</h3>
           <p>{summary}</p>
+          <p>{`Failed accessibility standard: ${failedStandard}`}</p>
           <Link
             url={resource}
             text="Resource to solve this issue"
@@ -78,27 +75,10 @@ const DetailsCard = ({ issueData }) => {
       </Summary>
 
       <Stack space="medium">
-        <Stack space="small">
-          <SubTitle>Failed accessibility standards</SubTitle>
-          {failedStandards.map((failedStandard, index) => (
-            <FailedWrapper key={`${title} failed standard ${index}`}>
-              <Icon icon="extLink" />
-              <span>{failedStandard.name}</span>
-            </FailedWrapper>
-          ))}
-          <Link
-            url="/"
-            text="WHAT ARE ACCESSIBILITY STANDARDS?"
-            icon="manicule"
-            isExternal={true}
-          />
-        </Stack>
-        <div>
-          <SubTitle>Required fixes</SubTitle>
-          {fixes.map((fix, index) => (
-            <FixElement key={`${title} required fix ${index}`} fixData={fix} />
-          ))}
-        </div>
+        <Subtitle>Which elements should be fixed?</Subtitle>
+        {fixes.map((fix, index) => (
+          <FixElement key={`${title} required fix ${index}`} fixData={fix} />
+        ))}
       </Stack>
     </Details>
   );

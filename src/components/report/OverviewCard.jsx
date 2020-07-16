@@ -5,7 +5,6 @@ import { color } from "../../shared/style";
 import Stack from "../layout-components/Stack";
 import Icon from "../icon/Icon";
 import Badge from "../badge/Badge";
-import Link from "../links/Link";
 import { reportIcons } from "../../constants/reportIcons";
 
 const CardContainer = styled(Stack)`
@@ -13,7 +12,7 @@ const CardContainer = styled(Stack)`
   width: 100%;
   padding: 2rem;
   p {
-    max-width: none;
+    max-width: 40rem;
   }
 
   @media (min-width: 48rem) {
@@ -26,33 +25,20 @@ const Title = styled.div`
   flex-direction: row;
   align-items: center;
 
-  & > * {
+  svg {
     margin-right: 1rem;
   }
 `;
 
-const IssueContainer = styled(Stack)`
-  & > * {
-    width: fit-content;
-    justify-content: flex-start;
-  }
-
-  & > * + * {
-    margin-top: 1rem;
-  }
-`;
-
-const GuidelineContainer = styled.div`
+const IssueContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-
-  a {
-    flex: 1 0 40%;
-    padding: 0.5rem;
+  & > div {
+    margin: 0.5rem;
   }
 `;
 
-const OverviewCard = ({ title, subtext, isIssue, isGuideline, reportData }) => (
+const OverviewCard = ({ title, subtext, isIssue, reportData }) => (
   <CardContainer>
     <Title>
       {isIssue ? (
@@ -79,17 +65,6 @@ const OverviewCard = ({ title, subtext, isIssue, isGuideline, reportData }) => (
         })}
       </IssueContainer>
     )}
-
-    {isGuideline && (
-      <GuidelineContainer>
-        <Link icon="extLink" text="example link" isExternal={true} />
-        <Link icon="extLink" text="example link" isExternal={true} />
-        <Link icon="extLink" text="example link" isExternal={true} />
-        <Link icon="extLink" text="example link" isExternal={true} />
-        <Link icon="extLink" text="example link" isExternal={true} />
-        <Link icon="extLink" text="example link" isExternal={true} />
-      </GuidelineContainer>
-    )}
   </CardContainer>
 );
 
@@ -97,7 +72,6 @@ OverviewCard.propTypes = {
   title: PropTypes.string,
   subtext: PropTypes.string,
   isIssue: PropTypes.bool,
-  isGuideline: PropTypes.bool,
   reportData: PropTypes.object,
 };
 

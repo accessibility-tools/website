@@ -4,6 +4,7 @@ import { color } from "../../shared/style";
 import Switcher from "../layout-components/Switcher";
 import Stack from "../layout-components/Stack";
 import Button from "../button/Button";
+import Icon from "../icon/Icon";
 import OverviewCard from "./OverviewCard";
 import { mockReportData } from "../../data/reportData";
 
@@ -15,29 +16,34 @@ const OverviewContainer = styled(Stack)`
     color: ${color.blue};
   }
 
+  button {
+    height: 3rem;
+  }
+
   @media (min-width: 48rem) {
     width: 100%;
   }
 `;
 
-const BtnWrapper = styled(Switcher)`
-  & > * {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+const TitleContainer = styled(Stack)`
+  flex: 5;
+`;
 
-    justify-content: center;
-  }
+const Subtitle = styled.p`
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+`;
 
-  & > * > * {
-    margin-left: 1rem;
-    max-width: fit-content;
-  }
+const NoteContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0 2rem;
 
-  @media (min-width: 48rem) {
-    & > * {
-      justify-content: flex-end;
-    }
+  p {
+    max-width: 36rem;
+    margin: 0 1rem;
   }
 `;
 
@@ -50,36 +56,33 @@ const ReportOverview = () => {
     <OverviewContainer>
       <Switcher threshold="35rem">
         <div>
-          <Stack space="small">
+          <TitleContainer space="small">
             <h2>
               Report for <span>xxx.com</span>
             </h2>
-            <p>xx pages scanned </p>
-          </Stack>
-          <BtnWrapper>
-            <div>
-              <Button text="Export as pdf" isSecondary={true} />
-              <Button text="Copy URL" />
-            </div>
-          </BtnWrapper>
+            <Subtitle>xx pages scanned</Subtitle>
+          </TitleContainer>
+          <Button text="Copy URL" />
         </div>
       </Switcher>
       <Switcher threshold="35rem">
         <div>
           <OverviewCard
             title={`${totalIssueCount} Detected issues`}
-            subtext="Seems like there are some accesssibility issues on this website, that can be improved:"
+            subtext="Seems like there are some accessibility issues on this website to improve. Some are more critical than others to enable access for all users."
             isIssue
-            reportData={mockReportData}
-          />
-          <OverviewCard
-            title="8 Fulfilled guidlines"
-            subtext="Great, seems like your website is compliant with the following accessibility guidelines, that are in place:"
-            isGuideline
             reportData={mockReportData}
           />
         </div>
       </Switcher>
+      <NoteContainer>
+        <Icon icon="manicule" color={color.blue} />
+        <p>
+          Automated tests like this one can assess up to <strong>30%</strong> of
+          accessibility issues. In addition, we recommend performing a manual
+          test and testing with real users.
+        </p>
+      </NoteContainer>
     </OverviewContainer>
   );
 };
