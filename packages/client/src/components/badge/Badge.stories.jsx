@@ -35,7 +35,7 @@ const reportData = {
 
 const reportLabel = 'level';
 const levels = Object.keys(reportData);
-const details = Object.keys(reportData).map(key => reportData[key]);
+const details = Object.keys(reportData).map((key) => reportData[key]);
 
 export const criticalBadge = () => {
   return (

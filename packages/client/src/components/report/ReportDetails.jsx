@@ -16,7 +16,7 @@ const ReportDetails = () => (
       <h2>Detailed issues</h2>
       <Subtitle>What exactly can be improved?</Subtitle>
     </div>
-    {Object.keys(mockReportData).map(category => (
+    {Object.keys(mockReportData).map((category) => (
       <DetailsCategory
         key={category}
         category={category}

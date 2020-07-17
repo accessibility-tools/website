@@ -15,6 +15,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -57,14 +58,6 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'react/jsx-one-expression-per-line': 0,
     'jsx-a11y/no-static-element-interactions': 0,
-    'react/jsx-tag-spacing': [
-      1,
-      {
-        closingSlash: 'never',
-        beforeSelfClosing: 'never',
-        afterOpening: 'never'
-      }
-    ],
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/member-delimiter-style': 'off'
   },

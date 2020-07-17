@@ -57,14 +57,14 @@ const StyledList = styled.ul`
 const MenuList = ({ expanded, toggleExpanded }) => {
   const [selected, setSelected] = useState(menuData.TOOLS.title);
 
-  const handleSelectMenuItem = value => {
+  const handleSelectMenuItem = (value) => {
     setSelected(value);
     toggleExpanded();
   };
 
   return (
     <StyledList aria-label="menu list" id="menu-list" expanded={expanded}>
-      {Object.values(menuData).map(item => (
+      {Object.values(menuData).map((item) => (
         <MenuItem
           key={'menu-' + item.title}
           href={item.href}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-const handleArrowDirection = direction => {
+const handleArrowDirection = (direction) => {
   switch (direction) {
     case 'left':
       return 'rotate(90deg)';

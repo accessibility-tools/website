@@ -21,13 +21,13 @@ export const mockReportData = {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
               selectors: [
                 '.css-1e95rm6.eh1sm5o1:nth-child(1) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
-                "a[href$='from-office-to-space'] > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3",
+                'a[href$="from-office-to-space"] > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.css-1e95rm6.eh1sm5o1:nth-child(3) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.egb6tqc3',
                 '.css-1bk73as',
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5",
-                ".css-1o9uz9i.ezjn55m7[href$='mobility'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij"
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij',
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5',
+                '.css-1o9uz9i.ezjn55m7[href$="mobility"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij'
               ]
             },
             {
@@ -36,7 +36,7 @@ export const mockReportData = {
                 '.css-1e95rm6.eh1sm5o1:nth-child(1) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.egb6tqc3',
                 '.css-1bk73as',
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij"
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij'
               ]
             },
             {
@@ -63,11 +63,11 @@ export const mockReportData = {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
               selectors: [
                 '.css-1e95rm6.eh1sm5o1:nth-child(1) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
-                "a[href$='from-office-to-space'] > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3",
+                'a[href$="from-office-to-space"] > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.css-1e95rm6.eh1sm5o1:nth-child(3) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.egb6tqc3',
                 '.css-1bk73as',
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij"
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij'
               ]
             },
             {
@@ -75,7 +75,7 @@ export const mockReportData = {
               selectors: [
                 '.css-1e95rm6.eh1sm5o1:nth-child(1) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.css-1bk73as',
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij"
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij'
               ]
             }
           ]
@@ -96,21 +96,21 @@ export const mockReportData = {
             'aria-label attribute does not exist or is empty',
             'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
             'Element has no title attribute or the title attribute is empty',
-            "Element's default semantics were not overridden with role='presentation'",
-            "Element's default semantics were not overridden with role='none'"
+            'Element\'s default semantics were not overridden with role="presentation"',
+            'Element\'s default semantics were not overridden with role="none"'
           ],
           affectedElements: [
             {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
               selectors: [
                 '.css-1e95rm6.eh1sm5o1:nth-child(1) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
-                "a[href$='from-office-to-space'] > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3",
+                'a[href$="from-office-to-space"] > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.css-1e95rm6.eh1sm5o1:nth-child(3) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.egb6tqc3',
                 '.css-1bk73as',
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5",
-                ".css-1o9uz9i.ezjn55m7[href$='mobility'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij"
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij',
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5',
+                '.css-1o9uz9i.ezjn55m7[href$="mobility"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij'
               ]
             }
           ]
@@ -127,7 +127,7 @@ export const mockReportData = {
               selectors: [
                 '.egb6tqc3',
                 '.css-1bk73as',
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij"
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij'
               ]
             }
           ]
@@ -164,7 +164,7 @@ export const mockReportData = {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
               selectors: [
                 '.css-1e95rm6.eh1sm5o1:nth-child(1) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
-                "a[href$='from-office-to-space'] > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3",
+                'a[href$="from-office-to-space"] > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.css-1e95rm6.eh1sm5o1:nth-child(3) > a > .css-1favn2n.eh1sm5o2 > .css-t5irqm.eh1sm5o3',
                 '.egb6tqc3',
                 '.css-1bk73as'
@@ -189,9 +189,9 @@ export const mockReportData = {
             {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
               selectors: [
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5",
-                ".css-1o9uz9i.ezjn55m7[href$='mobility'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij"
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij',
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5',
+                '.css-1o9uz9i.ezjn55m7[href$="mobility"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij'
               ]
             }
           ]
@@ -216,8 +216,8 @@ export const mockReportData = {
             {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
               selectors: [
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-f7dlij",
-                ".css-1o9uz9i.ezjn55m7[href$='bets-for-the-future'] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5"
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-f7dlij',
+                '.css-1o9uz9i.ezjn55m7[href$="bets-for-the-future"] > .css-1s82cjv.ezjn55m4 > .css-2vm36c.ezjn55m5'
               ]
             }
           ]

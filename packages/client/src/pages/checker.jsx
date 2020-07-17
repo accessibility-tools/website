@@ -65,7 +65,7 @@ const IntroImg = styled.img`
 `;
 
 const WebCheckerPage = () => {
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const { pathname } = Router;
     if (pathname === '/checker') {

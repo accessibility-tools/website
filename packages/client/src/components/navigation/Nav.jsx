@@ -29,7 +29,7 @@ const Nav = () => {
     setExpanded(!expanded);
   };
   useEffect(() => {
-    document.onkeydown = e => {
+    document.onkeydown = (e) => {
       if (e.keyCode === 13) {
         e.target.classList.add(
           e.target.getAttribute('data-type') === 'cta-btn'
@@ -39,7 +39,7 @@ const Nav = () => {
       }
     };
 
-    document.onkeyup = e => {
+    document.onkeyup = (e) => {
       if (e.keyCode === 13) {
         e.target.classList.remove('key-press');
         e.target.classList.remove('key-press-prim');

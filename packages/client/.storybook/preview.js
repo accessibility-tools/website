@@ -8,7 +8,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 addDecorator(withA11y);
 addDecorator(withKnobs);
 
-addDecorator(story => (
+addDecorator((story) => (
   <>
     <GlobalStyle />
     {story()}

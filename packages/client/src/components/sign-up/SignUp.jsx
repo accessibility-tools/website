@@ -18,7 +18,7 @@ const SignUpBtn = styled(Button)`
 `;
 
 const SignUp = () => {
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const { pathname } = Router;
     if (pathname === '/') {

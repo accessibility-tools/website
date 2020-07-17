@@ -58,7 +58,7 @@ const StyledSummary = styled.summary`
 
 const Details = ({ children, title }) => {
   const [isOpened, setOpened] = useState(false);
-  const handleOpen = event => {
+  const handleOpen = (event) => {
     setOpened(event.currentTarget.open);
   };
   return (

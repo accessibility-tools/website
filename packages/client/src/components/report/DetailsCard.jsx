@@ -50,7 +50,7 @@ const Subtitle = styled.p`
 
 const DetailsCard = ({ issueData }) => {
   const [isOpened, setOpened] = useState(false);
-  const handleOpen = event => {
+  const handleOpen = (event) => {
     setOpened(event.currentTarget.open);
   };
   const { title, summary, resource, failedStandard, fixes } = issueData;

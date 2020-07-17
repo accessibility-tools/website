@@ -74,7 +74,7 @@ const FixElement = ({ fixData }) => {
               <Icon icon="tip" />
               <p>{`On page: ${page}`}</p>
             </NoteContainer>
-            {selectors.map(selector => (
+            {selectors.map((selector) => (
               <Banner
                 key={`${page} affected selector ${index}`}
                 text={selector}

@@ -49,7 +49,7 @@ const NoteContainer = styled.div`
 
 const ReportOverview = () => {
   const issueCountArr = Object.keys(mockReportData).map(
-    category => mockReportData[category].length
+    (category) => mockReportData[category].length
   );
   const totalIssueCount = issueCountArr.reduce((a, b) => a + b, 0);
   return (
@@ -69,7 +69,8 @@ const ReportOverview = () => {
         <div>
           <OverviewCard
             title={`${totalIssueCount} Detected issues`}
-            subtext="Seems like there are some accessibility issues on this website to improve. Some are more critical than others to enable access for all users."
+            subtext="Seems like there are some accessibility issues on this website to improve.
+            Some are more critical than others to enable access for all users."
             isIssue
             reportData={mockReportData}
           />

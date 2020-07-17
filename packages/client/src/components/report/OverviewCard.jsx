@@ -51,7 +51,7 @@ const OverviewCard = ({ title, subtext, isIssue, reportData }) => (
     <p>{subtext}</p>
     {isIssue && (
       <IssueContainer>
-        {Object.keys(reportData).map(category => {
+        {Object.keys(reportData).map((category) => {
           const iconData = reportIcons[category];
           return (
             <Badge
