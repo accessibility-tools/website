@@ -1,5 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# packages
+/packages/client/node_modules
+/packages/client/.next
+/packages/server/node_modules
+/packages/graphql/node_modules
+
 # dependencies
 /node_modules
 /.pnp
@@ -10,7 +16,6 @@
 
 # production
 /build
-.next
 
 # misc
 .DS_Store
