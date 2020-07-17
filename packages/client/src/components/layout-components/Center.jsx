@@ -1,6 +1,6 @@
 // The Center-pattern from https://every-layout.dev/
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Center = styled.div`
   box-sizing: content-box;

@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Stack from "../layout-components/Stack";
-import Badge from "../badge/Badge";
-import DetailsCard from "./DetailsCard";
-import { reportIcons } from "../../constants/reportIcons";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Stack from '../layout-components/Stack';
+import Badge from '../badge/Badge';
+import DetailsCard from './DetailsCard';
+import { reportIcons } from '../../constants/reportIcons';
 
 const CategoryContainer = styled(Stack)`
   @media (max-width: 48rem) {
@@ -35,7 +35,7 @@ const DetailsCategory = ({ category, issues }) => (
 
 DetailsCategory.propTypes = {
   category: PropTypes.string,
-  issues: PropTypes.array,
+  issues: PropTypes.array
 };
 
 export default DetailsCategory;

@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { typography, color, spacing } from "../../shared/style";
-import Icon from "../icon/Icon";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { typography, color, spacing } from '../../shared/style';
+import Icon from '../icon/Icon';
 
 const BadgeWrapper = styled.div`
   align-items: center;
@@ -25,7 +25,7 @@ const Badge = ({ label, issueCount, iconName, iconColor, ...props }) => (
   <BadgeWrapper {...props}>
     {iconName && <Icon icon={iconName} color={iconColor} />}
     {issueCount && issueCount} {label}
-    {(issueCount || issueCount === 0) && " issues"}
+    {(issueCount || issueCount === 0) && ' issues'}
   </BadgeWrapper>
 );
 
@@ -33,7 +33,7 @@ Badge.propTypes = {
   label: PropTypes.string.isRequired,
   issueCount: PropTypes.number,
   iconName: PropTypes.string,
-  iconColor: PropTypes.string,
+  iconColor: PropTypes.string
 };
 
 export default Badge;

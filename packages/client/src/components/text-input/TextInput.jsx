@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { spacing, color } from "../../shared/style";
-import Icon from "../icon/Icon";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { spacing, color } from '../../shared/style';
+import Icon from '../icon/Icon';
 
 const TextInputWrapper = styled.div`
   display: flex;
@@ -82,7 +82,7 @@ const TextInput = ({
   hintIcon,
   iconColor,
 
-  onChange,
+  onChange
 }) => (
   <TextInputWrapper>
     <label htmlFor={id} id={`${id}-label`}>
@@ -105,7 +105,7 @@ const TextInput = ({
       {(valid || errorText) && (
         <IconWrapper>
           <Icon
-            icon={valid ? "success" : "error"}
+            icon={valid ? 'success' : 'error'}
             color={valid ? color.darkBlue : color.error}
           />
         </IconWrapper>
@@ -136,7 +136,7 @@ TextInput.propTypes = {
   hintText: PropTypes.string,
   hintIcon: PropTypes.string,
   iconColor: PropTypes.string,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 export default TextInput;

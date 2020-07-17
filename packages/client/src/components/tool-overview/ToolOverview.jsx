@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Switcher from "../layout-components/Switcher";
-import Stack from "../layout-components/Stack";
-import Center from "../layout-components/Center";
-import CTA from "../CTA/CTA";
-import Link from "../links/Link";
-import Banner from "../banner/Banner";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Switcher from '../layout-components/Switcher';
+import Stack from '../layout-components/Stack';
+import Center from '../layout-components/Center';
+import CTA from '../CTA/CTA';
+import Link from '../links/Link';
+import Banner from '../banner/Banner';
 
 const InfoWrapper = styled(Stack)`
   max-width: 32rem;
@@ -33,7 +33,7 @@ const InfoWrapper = styled(Stack)`
 
 const ToolImg = styled.img`
   width: 60%;
-  transform: ${({ transform }) => transform && "scaleX(-1)"};
+  transform: ${({ isTransform }) => isTransform && 'scaleX(-1)'};
 `;
 
 const ToolLink = styled(Link)`
@@ -47,7 +47,7 @@ const ToolOverview = ({ data, type }) => {
 
   return (
     <Switcher threshold="40rem" space="3.5rem" width="100%">
-      {type === "web" ? (
+      {type === 'web' ? (
         <div>
           <Center>
             <ToolImg src={img} alt="image of web tool" />
@@ -83,7 +83,7 @@ const ToolOverview = ({ data, type }) => {
             </InfoWrapper>
           </Center>
           <Center>
-            <ToolImg src={img} alt="image of ci tool" transform />
+            <ToolImg src={img} alt="image of ci tool" isTransform />
           </Center>
         </div>
       )}
@@ -93,7 +93,7 @@ const ToolOverview = ({ data, type }) => {
 
 ToolOverview.propTypes = {
   data: PropTypes.object,
-  type: PropTypes.string,
+  type: PropTypes.string
 };
 
 export default ToolOverview;

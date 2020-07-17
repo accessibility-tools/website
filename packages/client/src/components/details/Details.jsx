@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { color } from "../../shared/style";
-import Icon from "../icon/Icon";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { color } from '../../shared/style';
+import Icon from '../icon/Icon';
 
 export const DetailsContainer = styled.details`
   display: flex;
@@ -45,7 +45,7 @@ const StyledSummary = styled.summary`
   }
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     border-radius: 5px;
     border: 2px solid ${color.primary};
@@ -66,7 +66,7 @@ const Details = ({ children, title }) => {
       <StyledSummary>
         {title}
         <div>
-          <Icon icon={isOpened ? "minus" : "plus"} />
+          <Icon icon={isOpened ? 'minus' : 'plus'} />
         </div>
       </StyledSummary>
       {children}
@@ -76,7 +76,7 @@ const Details = ({ children, title }) => {
 
 Details.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.any,
+  children: PropTypes.any
 };
 
 export default Details;

@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { icons } from "../../shared/icons";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { icons } from '../../shared/icons';
 
 const Svg = styled.svg`
-  display: ${props => (props.block ? "block" : "inline-block")};
+  display: ${props => (props.block ? 'block' : 'inline-block')};
   height: 1em;
   shape-rendering: inherit;
   transform: translate3d(0, 0, 0);
 `;
 
 const Path = styled.path`
-  fill: ${props => props.color || "currentColor"};
+  fill: ${props => props.color || 'currentColor'};
 `;
 
 /**
@@ -30,11 +30,11 @@ const Icon = ({ block, icon, color, ...props }) => (
 Icon.propTypes = {
   block: PropTypes.bool,
   icon: PropTypes.string.isRequired,
-  color: PropTypes.string,
+  color: PropTypes.string
 };
 
 Icon.defaultProps = {
-  block: false,
+  block: false
 };
 
 export default Icon;

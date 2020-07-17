@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Switcher from "../layout-components/Switcher";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Switcher from '../layout-components/Switcher';
 
 const ReportImg = styled.img`
   width: 19rem;
@@ -48,7 +48,7 @@ const ReportIntro = ({ isLoaded }) => (
 );
 
 ReportIntro.propTypes = {
-  isLoaded: PropTypes.bool,
+  isLoaded: PropTypes.bool
 };
 
 export default ReportIntro;

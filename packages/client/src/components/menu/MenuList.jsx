@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { color } from "../../shared/style";
-import MenuItem from "./MenuItem";
-import Sponsor from "../sponsor/Sponsor";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { color } from '../../shared/style';
+import MenuItem from './MenuItem';
+import Sponsor from '../sponsor/Sponsor';
 
 const menuData = {
-  TOOLS: { title: "the tools", href: "/#tools" },
-  LEARN: { title: "learn more", href: "/#learn-more" },
-  ABOUT: { title: "about & contact", href: "/#about" },
+  TOOLS: { title: 'the tools', href: '/#tools' },
+  LEARN: { title: 'learn more', href: '/#learn-more' },
+  ABOUT: { title: 'about & contact', href: '/#about' }
 };
 
 const StyledList = styled.ul`
@@ -66,7 +66,7 @@ const MenuList = ({ expanded, toggleExpanded }) => {
     <StyledList aria-label="menu list" id="menu-list" expanded={expanded}>
       {Object.values(menuData).map(item => (
         <MenuItem
-          key={"menu-" + item.title}
+          key={'menu-' + item.title}
           href={item.href}
           text={item.title}
           isSelected={item.title === selected}
@@ -82,7 +82,7 @@ const MenuList = ({ expanded, toggleExpanded }) => {
 
 MenuList.propTypes = {
   expanded: PropTypes.bool.isRequired,
-  toggleExpanded: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func.isRequired
 };
 
 export default MenuList;

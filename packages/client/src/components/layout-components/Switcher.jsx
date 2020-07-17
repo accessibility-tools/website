@@ -1,11 +1,11 @@
 // The Switcher-pattern from https://every-layout.dev/
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Switcher = styled.div`
-  --threshold: ${({ threshold }) => (threshold ? threshold : "25rem")};
-  --switcher-space: ${({ space }) => (space ? space : "2rem")};
-  width: ${({ width }) => (width ? width : "100%")};
+  --threshold: ${({ threshold }) => (threshold ? threshold : '25rem')};
+  --switcher-space: ${({ space }) => (space ? space : '2rem')};
+  width: ${({ width }) => (width ? width : '100%')};
 
   & > * {
     display: flex;

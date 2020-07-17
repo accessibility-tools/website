@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { background, color, spacing } from "../../shared/style";
-import Icon from "../icon/Icon";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { background, color, spacing } from '../../shared/style';
+import Icon from '../icon/Icon';
 
 const StyledButton = styled.button`
   background-color: ${color.blue};
@@ -88,7 +88,7 @@ const Button = ({ text, icon, ...otherProps }) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  isSecondary: PropTypes.bool,
+  isSecondary: PropTypes.bool
 };
 
 export default Button;

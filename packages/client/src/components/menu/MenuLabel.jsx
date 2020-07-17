@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { spacing, typography, background, color } from "../../shared/style";
-import ArrowIcon from "../icon/ArrowIcon";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { spacing, typography, background, color } from '../../shared/style';
+import ArrowIcon from '../icon/ArrowIcon';
 
 const MenuButton = styled.button`
   display: none;
@@ -44,7 +44,7 @@ const MenuLabel = ({ expanded, toggleExpanded }) => (
 
 MenuLabel.propTypes = {
   expanded: PropTypes.bool.isRequired,
-  toggleExpanded: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func.isRequired
 };
 
 export default MenuLabel;

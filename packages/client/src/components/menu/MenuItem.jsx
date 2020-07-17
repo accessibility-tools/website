@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import PropType from "prop-types";
-import { background, color, spacing } from "../../shared/style";
+import React from 'react';
+import styled from 'styled-components';
+import PropType from 'prop-types';
+import { background, color, spacing } from '../../shared/style';
 
 const ListItem = styled.li`
   box-sizing: border-box;
@@ -11,7 +11,7 @@ const ListItem = styled.li`
     bottom: -2px;
     border-radius: 5px;
     border: 2px solid ${color.primary};
-    content: "";
+    content: '';
     display: block;
     left: 50%;
     opacity: 0;
@@ -74,7 +74,7 @@ const MenuItem = ({ href, text, isSelected, ...otherProps }) => (
 MenuItem.propTypes = {
   text: PropType.string.isRequired,
   href: PropType.string,
-  isSelected: PropType.bool,
+  isSelected: PropType.bool
 };
 
 export default MenuItem;

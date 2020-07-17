@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { color, spacing } from "../../shared/style";
-import Icon from "../icon/Icon";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { color, spacing } from '../../shared/style';
+import Icon from '../icon/Icon';
 
-const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
   height: 1px;
@@ -25,7 +25,7 @@ const StyledCheckbox = styled.div`
   width: 20px;
 
   svg {
-    visibility: ${props => (props.checked ? "visible" : "hidden")};
+    visibility: ${props => (props.checked ? 'visible' : 'hidden')};
     color: ${color.blue};
     position: absolute;
 
@@ -73,7 +73,7 @@ const CheckboxContainer = styled.label`
 const Checkbox = ({ checked, label, ...otherProps }) => {
   const [isChecked, setIsChecked] = useState(checked);
   const handleKeyPress = event => {
-    if (event.key === " ") {
+    if (event.key === ' ') {
       setIsChecked(!isChecked);
     }
   };
@@ -101,11 +101,11 @@ const Checkbox = ({ checked, label, ...otherProps }) => {
 
 Checkbox.propTypes = {
   label: PropTypes.string.isRequired,
-  checked: PropTypes.bool,
+  checked: PropTypes.bool
 };
 
 Checkbox.defaultProps = {
-  checked: false,
+  checked: false
 };
 
 export default Checkbox;

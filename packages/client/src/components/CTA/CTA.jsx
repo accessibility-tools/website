@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Button from "../button/Button";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from '../button/Button';
 
 const CTA = ({ text, icon, url, isExternal, isSecondary, ...otherProps }) => {
   const externalConfig = {
-    target: "_blank",
-    rel: "noopener noreferrer",
+    target: '_blank',
+    rel: 'noopener noreferrer'
   };
   if (isExternal) otherProps = { ...otherProps, ...externalConfig };
 
@@ -28,11 +28,11 @@ CTA.propTypes = {
   icon: PropTypes.string,
   url: PropTypes.string,
   isExternal: PropTypes.bool,
-  isSecondary: PropTypes.bool,
+  isSecondary: PropTypes.bool
 };
 
 CTA.defaultProps = {
-  isExternal: false,
+  isExternal: false
 };
 
 export default CTA;

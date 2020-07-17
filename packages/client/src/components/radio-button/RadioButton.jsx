@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { color, spacing } from "../../shared/style";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { color, spacing } from '../../shared/style';
 
 const StyledRadioButton = styled.span`
   border: 3px solid
@@ -17,12 +17,12 @@ const StyledRadioButton = styled.span`
   &::after {
     border-radius: 50%;
     background-color: ${color.blue};
-    content: "";
+    content: '';
     height: 8px;
     left: 3px;
     top: 3px;
     position: absolute;
-    visibility: ${({ isChecked }) => (isChecked ? "visible" : "hidden")};
+    visibility: ${({ isChecked }) => (isChecked ? 'visible' : 'hidden')};
     width: 8px;
   }
 
@@ -71,7 +71,7 @@ const RadioButton = ({
   value,
   checked,
   handleCheckedChange,
-  className,
+  className
 }) => (
   <RadioButtonContainer className={className}>
     <input
@@ -90,11 +90,11 @@ RadioButton.propTypes = {
   value: PropTypes.string.isRequired,
   checked: PropTypes.bool,
   handleCheckedChange: PropTypes.func,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 RadioButton.defaultProps = {
-  checked: false,
+  checked: false
 };
 
 export default RadioButton;

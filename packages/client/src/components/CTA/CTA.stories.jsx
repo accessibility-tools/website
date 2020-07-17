@@ -1,20 +1,20 @@
-import React from "react";
-import { object } from "@storybook/addon-knobs";
-import CTA from "./CTA";
-import StoryWrapper from "../story-wrapper/StoryWrapper";
+import React from 'react';
+import { object } from '@storybook/addon-knobs';
+import CTA from './CTA';
+import StoryWrapper from '../story-wrapper/StoryWrapper';
 
 export default {
-  title: "Design System|CTA",
-  component: CTA,
+  title: 'Design System|CTA',
+  component: CTA
 };
 
-const label = "CTA-props";
+const label = 'CTA-props';
 
 export const primary = () => {
   const ciTool = {
-    text: "view on github",
-    url: "https://github.com/accessibility-tools/ci",
-    isExternal: true,
+    text: 'view on github',
+    url: 'https://github.com/accessibility-tools/ci',
+    isExternal: true
   };
   const data = object(label, ciTool);
   return (
@@ -26,9 +26,9 @@ export const primary = () => {
 
 export const secondary = () => {
   const webChecker = {
-    text: "check out the tool",
-    url: "/",
-    isSecondary: true,
+    text: 'check out the tool',
+    url: '/',
+    isSecondary: true
   };
   const data = object(label, webChecker);
   return (
@@ -40,10 +40,10 @@ export const secondary = () => {
 
 export const primaryWithIcon = () => {
   const ciTool = {
-    text: "view on github",
-    url: "https://github.com/accessibility-tools/ci",
-    icon: "extLink",
-    isExternal: true,
+    text: 'view on github',
+    url: 'https://github.com/accessibility-tools/ci',
+    icon: 'extLink',
+    isExternal: true
   };
   const data = object(label, ciTool);
   return (
@@ -54,11 +54,11 @@ export const primaryWithIcon = () => {
 };
 export const secondaryWithIcon = () => {
   const webChecker = {
-    text: "check out the tool",
-    url: "https://github.com/accessibility-tools/website",
-    icon: "extLink",
+    text: 'check out the tool',
+    url: 'https://github.com/accessibility-tools/website',
+    icon: 'extLink',
     isExternal: true,
-    isSecondary: true,
+    isSecondary: true
   };
   const data = object(label, webChecker);
   return (

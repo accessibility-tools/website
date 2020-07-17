@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Layout = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const StoryWrapper = ({ children }) => {
 };
 
 StoryWrapper.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any
 };
 
 export default StoryWrapper;

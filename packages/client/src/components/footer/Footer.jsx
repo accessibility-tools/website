@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { spacing } from "../../shared/style";
-import Icon from "../icon/Icon";
-import StyledLink from "../links/Link";
+import React from 'react';
+import styled from 'styled-components';
+import { spacing } from '../../shared/style';
+import Icon from '../icon/Icon';
+import StyledLink from '../links/Link';
 
 const StyledFooter = styled.footer`
   display: flex;

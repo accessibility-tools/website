@@ -1,5 +1,5 @@
-import { createGlobalStyle, css } from "styled-components";
-import { color, typography } from "./style";
+import { createGlobalStyle, css } from 'styled-components';
+import { color, typography } from './style';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};

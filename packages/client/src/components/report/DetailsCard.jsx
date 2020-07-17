@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { color } from "../../shared/style";
-import Stack from "../layout-components/Stack";
-import Link from "../links/Link";
-import ArrowIcon from "../icon/ArrowIcon";
-import FixElement from "./FixElement";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { color } from '../../shared/style';
+import Stack from '../layout-components/Stack';
+import Link from '../links/Link';
+import ArrowIcon from '../icon/ArrowIcon';
+import FixElement from './FixElement';
 
 const Details = styled.details`
   background-color: ${color.white};
@@ -70,7 +70,7 @@ const DetailsCard = ({ issueData }) => {
           />
         </div>
         <div>
-          <ArrowIcon icon="bArrow" direction={!isOpened && "up"} />
+          <ArrowIcon icon="bArrow" direction={!isOpened && 'up'} />
         </div>
       </Summary>
 
@@ -85,7 +85,7 @@ const DetailsCard = ({ issueData }) => {
 };
 
 DetailsCard.propTypes = {
-  issueData: PropTypes.object,
+  issueData: PropTypes.object
 };
 
 export default DetailsCard;

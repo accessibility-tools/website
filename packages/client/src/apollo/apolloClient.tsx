@@ -9,8 +9,8 @@ export default function createApolloClient(initialState, ctx) {
     link: new HttpLink({
       uri: process.env.GRAPHQL_URI, // must be absolute
       credentials: 'same-origin',
-      fetch,
+      fetch
     }),
-    cache: new InMemoryCache().restore(initialState),
+    cache: new InMemoryCache().restore(initialState)
   });
 }

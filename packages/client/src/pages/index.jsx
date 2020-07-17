@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import { color } from "../shared/style";
-import Switcher from "../components/layout-components/Switcher";
-import Stack from "../components/layout-components/Stack";
-import Center from "../components/layout-components/Center";
-import SEO from "../components/SEO/SEO";
-import FAQ from "../components/learn-more-questions/LearnMoreQuestions";
-import Link from "../components/links/Link";
-import ToolOverview from "../components/tool-overview/ToolOverview";
-import { ciTool, webChecker } from "../constants/toolData";
+import React from 'react';
+import styled from 'styled-components';
+import { color } from '../shared/style';
+import Switcher from '../components/layout-components/Switcher';
+import Stack from '../components/layout-components/Stack';
+import Center from '../components/layout-components/Center';
+import SEO from '../components/SEO/SEO';
+import FAQ from '../components/learn-more-questions/LearnMoreQuestions';
+import Link from '../components/links/Link';
+import ToolOverview from '../components/tool-overview/ToolOverview';
+import { ciTool, webChecker } from '../constants/toolData';
 
 const PageContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -91,8 +91,8 @@ const LearnMoreImg = styled.img`
 
 const Subtext = styled.p`
   max-width: 36rem;
-  ${({ transform }) =>
-    transform &&
+  ${({ isTransform }) =>
+    isTransform &&
     ` & {
       text-transform: uppercase;
       font-weight: 500;
@@ -159,7 +159,7 @@ const LandingPage = () => {
           <Stack space="large">
             <Center>
               <h2>Learn more</h2>
-              <Subtext transform>
+              <Subtext isTransform>
                 Why should we care about accessibility and how to get started?
               </Subtext>
             </Center>

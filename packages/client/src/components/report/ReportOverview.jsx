@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import { color } from "../../shared/style";
-import Switcher from "../layout-components/Switcher";
-import Stack from "../layout-components/Stack";
-import Button from "../button/Button";
-import Icon from "../icon/Icon";
-import OverviewCard from "./OverviewCard";
-import { mockReportData } from "../../data/reportData";
+import React from 'react';
+import styled from 'styled-components';
+import { color } from '../../shared/style';
+import Switcher from '../layout-components/Switcher';
+import Stack from '../layout-components/Stack';
+import Button from '../button/Button';
+import Icon from '../icon/Icon';
+import OverviewCard from './OverviewCard';
+import { mockReportData } from '../../data/reportData';
 
 const OverviewContainer = styled(Stack)`
   padding: 0;

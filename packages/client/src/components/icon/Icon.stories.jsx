@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { icons } from "../../shared/icons";
-import Icon from "./Icon";
+import React from 'react';
+import styled from 'styled-components';
+import { icons } from '../../shared/icons';
+import Icon from './Icon';
 
 const Meta = styled.div`
   color: #666;
@@ -31,8 +31,8 @@ const List = styled.ul`
 `;
 
 export default {
-  title: "Design System|Icon",
-  component: Icon,
+  title: 'Design System|Icon',
+  component: Icon
 };
 
 export const labels = () => (

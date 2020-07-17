@@ -1,20 +1,20 @@
-import { color } from "../shared/style";
+import { color } from '../shared/style';
 
 export const reportIcons = {
   critical: {
-    iconName: "circle",
-    iconColor: color.error,
+    iconName: 'circle',
+    iconColor: color.error
   },
   serious: {
-    iconName: "issue",
-    iconColor: color.error,
+    iconName: 'issue',
+    iconColor: color.error
   },
   moderate: {
-    iconName: "issue",
-    iconColor: color.darkPurple,
+    iconName: 'issue',
+    iconColor: color.darkPurple
   },
   minor: {
-    iconName: "issue",
-    iconColor: color.primary,
-  },
+    iconName: 'issue',
+    iconColor: color.primary
+  }
 };

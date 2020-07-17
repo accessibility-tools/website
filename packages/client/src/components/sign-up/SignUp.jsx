@@ -1,11 +1,11 @@
-import React from "react";
-import Router from "next/router";
-import styled from "styled-components";
-import { color } from "../../shared/style";
-import Stack from "../layout-components/Stack";
-import Center from "../layout-components/Center";
-import TextInput from "../text-input/TextInput";
-import Button from "../button/Button";
+import React from 'react';
+import Router from 'next/router';
+import styled from 'styled-components';
+import { color } from '../../shared/style';
+import Stack from '../layout-components/Stack';
+import Center from '../layout-components/Center';
+import TextInput from '../text-input/TextInput';
+import Button from '../button/Button';
 
 const SignUpBtn = styled(Button)`
   margin-left: auto;
@@ -21,8 +21,8 @@ const SignUp = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const { pathname } = Router;
-    if (pathname === "/") {
-      Router.push("/signup");
+    if (pathname === '/') {
+      Router.push('/signup');
     }
   };
   return (

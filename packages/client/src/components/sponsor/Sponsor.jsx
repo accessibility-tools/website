@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { spacing, color } from "../../shared/style";
-import Icon from "../icon/Icon";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { spacing, color } from '../../shared/style';
+import Icon from '../icon/Icon';
 
 const Logo = styled(Icon)`
   max-width: 100%;
@@ -36,7 +36,7 @@ const Sponsor = ({ block }) => (
 
 Sponsor.propTypes = {
   block: PropTypes.bool,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default Sponsor;

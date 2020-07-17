@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Stack from "../layout-components/Stack";
-import DetailsCategory from "./DetailsCategory";
-import { mockReportData } from "../../data/reportData";
+import React from 'react';
+import styled from 'styled-components';
+import Stack from '../layout-components/Stack';
+import DetailsCategory from './DetailsCategory';
+import { mockReportData } from '../../data/reportData';
 
 const Subtitle = styled.p`
   text-transform: uppercase;

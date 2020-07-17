@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { color } from "../../shared/style";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { color } from '../../shared/style';
 
 const BannerWrapper = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const BannerWrapper = styled.div`
   align-self: flex-start;
 
   @media (min-width: 60rem) {
-    width: ${({ width }) => (width ? width : "auto")};
+    width: ${({ width }) => (width ? width : 'auto')};
   }
 `;
 
@@ -25,7 +25,7 @@ const Banner = ({ text, width }) => {
 
 Banner.propTypes = {
   text: PropTypes.string,
-  width: PropTypes.string,
+  width: PropTypes.string
 };
 
 export default Banner;

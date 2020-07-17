@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { color } from "../../shared/style";
-import Icon from "../icon/Icon";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { color } from '../../shared/style';
+import Icon from '../icon/Icon';
 
 const StyledLink = styled.a`
   color: ${color.blue};
@@ -28,7 +28,7 @@ const StyledLink = styled.a`
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       width: 100%;
       height: 0px;
       background-color: currentColor;
@@ -80,8 +80,8 @@ const Link = ({
   ...otherProps
 }) => {
   const externalConfig = {
-    target: "_blank",
-    rel: "noopener noreferrer",
+    target: '_blank',
+    rel: 'noopener noreferrer'
   };
   if (isExternal) otherProps = { ...otherProps, ...externalConfig };
   return (
@@ -104,11 +104,11 @@ Link.propTypes = {
   icon: PropTypes.string,
   isExternal: PropTypes.bool,
   isSecondary: PropTypes.bool,
-  children: PropTypes.any,
+  children: PropTypes.any
 };
 
 Link.defaultProps = {
-  isExternal: false,
+  isExternal: false
 };
 
 export default Link;

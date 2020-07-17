@@ -1,10 +1,10 @@
-import React from "react";
-import Button from "./Button";
-import StoryWrapper from "../story-wrapper/StoryWrapper";
+import React from 'react';
+import Button from './Button';
+import StoryWrapper from '../story-wrapper/StoryWrapper';
 
 export default {
-  title: "Design System|Button",
-  component: Button,
+  title: 'Design System|Button',
+  component: Button
 };
 
 export const allButtons = () => (

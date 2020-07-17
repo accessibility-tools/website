@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { color } from "../../shared/style";
-import Stack from "../layout-components/Stack";
-import Icon from "../icon/Icon";
-import Banner from "../banner/Banner";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { color } from '../../shared/style';
+import Stack from '../layout-components/Stack';
+import Icon from '../icon/Icon';
+import Banner from '../banner/Banner';
 
 const IssueContainer = styled(Stack)`
   padding: 2rem;
@@ -24,8 +24,8 @@ const SubTitle = styled.h5`
 
 const NoteContainer = styled.div`
   background-color: ${({ background }) => background && color.extraLightPurple};
-  margin: ${({ margin }) => margin && "1rem -2rem"};
-  padding: ${({ padding }) => padding && "1rem"};
+  margin: ${({ margin }) => margin && '1rem -2rem'};
+  padding: ${({ padding }) => padding && '1rem'};
   display: grid;
   grid-template-columns: 3% auto;
   align-items: baseline;
@@ -89,7 +89,7 @@ const FixElement = ({ fixData }) => {
 };
 
 FixElement.propTypes = {
-  fixData: PropTypes.object,
+  fixData: PropTypes.object
 };
 
 export default FixElement;

@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { color } from "../../shared/style";
-import ArrowIcon from "../icon/ArrowIcon";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { color } from '../../shared/style';
+import ArrowIcon from '../icon/ArrowIcon';
 
 const PaginationWrapper = styled.nav`
   display: flex;
@@ -18,10 +18,10 @@ const PageLink = styled.a`
   &:active {
     background-color: ${color.purple};
   }
-  &[aria-disabled="true"] {
+  &[aria-disabled='true'] {
     pointer-events: none;
   }
-  &[aria-disabled="true"] > * > * {
+  &[aria-disabled='true'] > * > * {
     fill: ${color.disabled};
   }
 `;
@@ -66,7 +66,7 @@ const Pagination = ({ currentPage, totalPages, href }) => {
 Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
-  href: PropTypes.string,
+  href: PropTypes.string
 };
 
 export default Pagination;

@@ -1,8 +1,8 @@
-import React from "react";
-import Details from "../details/Details";
-import styled from "styled-components";
-import Stack from "../layout-components/Stack";
-import Link from "../links/Link";
+import React from 'react';
+import Details from '../details/Details';
+import styled from 'styled-components';
+import Stack from '../layout-components/Stack';
+import Link from '../links/Link';
 
 const LearnMoreWrapper = styled(Stack)`
   flex: 2;

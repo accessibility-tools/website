@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import { color } from "../../shared/style";
-import MenuLabel from "../menu/MenuLabel";
-import MenuList from "../menu/MenuList";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { color } from '../../shared/style';
+import MenuLabel from '../menu/MenuLabel';
+import MenuList from '../menu/MenuList';
 
 const NavContainer = styled.nav`
   position: fixed;
@@ -32,17 +32,17 @@ const Nav = () => {
     document.onkeydown = e => {
       if (e.keyCode === 13) {
         e.target.classList.add(
-          e.target.getAttribute("data-type") === "cta-btn"
-            ? "key-press-prim"
-            : "key-press"
+          e.target.getAttribute('data-type') === 'cta-btn'
+            ? 'key-press-prim'
+            : 'key-press'
         );
       }
     };
 
     document.onkeyup = e => {
       if (e.keyCode === 13) {
-        e.target.classList.remove("key-press");
-        e.target.classList.remove("key-press-prim");
+        e.target.classList.remove('key-press');
+        e.target.classList.remove('key-press-prim');
       }
     };
 
