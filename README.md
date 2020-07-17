@@ -65,3 +65,9 @@ yarn run storybook
 ```
 
 ## Contributing
+Before commiting any changes make sure you ran
+```
+yarn lint
+```
+and didn't get any errors
+
