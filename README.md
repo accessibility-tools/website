@@ -25,28 +25,27 @@ To install and run the project locally, you will need the following on your comp
 ### Installing
 
 Clone the project
-
 ```
 git clone git@github.com:accessibility-tools/website.git
 ```
 
-and install dependencies with 
+and install dependencies with
 ```
 yarn install
 ```
 
-To run the app locally:
+To run the app locally
 ```
 yarn run dev
 ```
 
-To build the app:
+To build the app
 
 ```
 yarn run build
 ```
 
-To start the app server:
+To start the app server
 ```
 yarn start
 ```
@@ -59,7 +58,7 @@ yarn start
 
 ### Storybook
 
-To start Storybook, run
+To start Storybook run
 ```
 yarn run storybook
 ```
@@ -69,5 +68,5 @@ Before commiting any changes make sure you ran
 ```
 yarn lint
 ```
-and didn't get any errors
+and didn't get any errors.
 
