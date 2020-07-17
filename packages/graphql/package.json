@@ -1,13 +1,12 @@
 {
     "name": "@webchecker/graphql",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "",
     "license": "MIT",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-
     "dependencies": {
         "apollo-server-express": "^2.15.1"
     }

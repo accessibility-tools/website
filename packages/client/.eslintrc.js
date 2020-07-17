@@ -47,8 +47,8 @@ module.exports = {
         asyncArrow: 'always'
       }
     ],
-    'arrow-parens': ['error', 'always'],
     'max-len': [2, 140, 4, { ignoreComments: true, ignoreUrls: true }],
+
     'react/jsx-curly-spacing': ['error', 'never'],
     'react/prop-types': 0,
     'react/jsx-indent': ['error', 2],
@@ -57,9 +57,25 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'react/destructuring-assignment': 0,
     'react/jsx-one-expression-per-line': 0,
+    'react/forbid-prop-types': 0,
+    'react/no-unescaped-entities': 0,
+    'react/no-children-prop': 0,
+
     'jsx-a11y/no-static-element-interactions': 0,
-    '@typescript-eslint/no-use-before-define': 'off',
-    '@typescript-eslint/member-delimiter-style': 'off'
+
+    'arrow-parens': ['error', 'always'],
+    'prefer-rest-params': 0,
+    'padded-blocks': 0,
+    'no-underscore-dangle': 0,
+    'no-use-before-define': 0,
+
+    // Overriding the restricted syntax list, because we want to allow for-of statements.
+    'no-restricted-syntax': [
+      'error',
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement'
+    ]
   },
   settings: {
     react: {
