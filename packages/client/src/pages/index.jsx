@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from '../shared/style';
+import { color } from '../shared/style.ts';
 import Switcher from '../components/layout-components/Switcher';
 import Stack from '../components/layout-components/Stack';
 import Center from '../components/layout-components/Center';
@@ -8,7 +8,7 @@ import SEO from '../components/SEO/SEO';
 import FAQ from '../components/learn-more-questions/LearnMoreQuestions';
 import Link from '../components/links/Link';
 import ToolOverview from '../components/tool-overview/ToolOverview';
-import { ciTool, webChecker } from '../constants/toolData';
+import { ciTool, webChecker } from '../constants/toolData.ts';
 
 const PageContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};

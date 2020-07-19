@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { color } from '../../shared/style';
+import { color } from '../../shared/style.ts';
 import Stack from '../layout-components/Stack';
 import Icon from '../icon/Icon';
 import Badge from '../badge/Badge';
-import { reportIcons } from '../../constants/reportIcons';
+import { reportIcons } from '../../constants/reportIcons.ts';
 
 const CardContainer = styled(Stack)`
   background-color: ${color.white};

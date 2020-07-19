@@ -1,14 +1,14 @@
 import React from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
-import { color } from '../shared/style';
+import { color } from '../shared/style.ts';
 import Switcher from '../components/layout-components/Switcher';
 import Stack from '../components/layout-components/Stack';
 import Center from '../components/layout-components/Center';
 import TextInput from '../components/text-input/TextInput';
 import Button from '../components/button/Button';
 import ToolOverview from '../components/tool-overview/ToolOverview';
-import { webCheckerAlt } from '../constants/toolData';
+import { webCheckerAlt } from '../constants/toolData.ts';
 
 const PageContainer = styled(Stack)`
   background-color: ${color.white};

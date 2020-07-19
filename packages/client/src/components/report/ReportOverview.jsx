@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from '../../shared/style';
+import { color } from '../../shared/style.ts';
 import Switcher from '../layout-components/Switcher';
 import Stack from '../layout-components/Stack';
 import Button from '../button/Button';
 import Icon from '../icon/Icon';
 import OverviewCard from './OverviewCard';
-import { mockReportData } from '../../data/reportData';
+import { mockReportData } from '../../data/reportData.ts';
 
 const OverviewContainer = styled(Stack)`
   padding: 0;

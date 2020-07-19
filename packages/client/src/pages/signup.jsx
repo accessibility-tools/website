@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from '../shared/style';
+import { color } from '../shared/style.ts';
 import Switcher from '../components/layout-components/Switcher';
 import Stack from '../components/layout-components/Stack';
 import Center from '../components/layout-components/Center';

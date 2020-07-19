@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { color, spacing } from '../../shared/style';
+import { color, spacing } from '../../shared/style.ts';
 import Icon from '../icon/Icon';
 
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`

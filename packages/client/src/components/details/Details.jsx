@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { color } from '../../shared/style';
+import { color } from '../../shared/style.ts';
 import Icon from '../icon/Icon';
 
 export const DetailsContainer = styled.details`

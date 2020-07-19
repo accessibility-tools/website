@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GlobalStyle } from '../shared/global';
+import { GlobalStyle } from '../shared/global.ts';
 import Layout from '../components/layout-components/Layout';
 import { withApollo } from '../apollo/apollo';
 

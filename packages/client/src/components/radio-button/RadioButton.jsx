@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { color, spacing } from '../../shared/style';
+import { color, spacing } from '../../shared/style.ts';
 
 const StyledRadioButton = styled.span`
   border: 3px solid

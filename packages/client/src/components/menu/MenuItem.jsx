@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropType from 'prop-types';
-import { background, color, spacing } from '../../shared/style';
+import { background, color, spacing } from '../../shared/style.ts';
 
 const ListItem = styled.li`
   box-sizing: border-box;

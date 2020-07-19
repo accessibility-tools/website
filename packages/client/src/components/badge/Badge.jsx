@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { typography, color, spacing } from '../../shared/style';
+import { typography, color, spacing } from '../../shared/style.ts';
 import Icon from '../icon/Icon';
 
 const BadgeWrapper = styled.div`

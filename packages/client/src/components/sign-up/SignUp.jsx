@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
-import { color } from '../../shared/style';
+import { color } from '../../shared/style.ts';
 import Stack from '../layout-components/Stack';
 import Center from '../layout-components/Center';
 import TextInput from '../text-input/TextInput';

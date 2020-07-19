@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { color } from '../../shared/style';
+import { color } from '../../shared/style.ts';
 import MenuLabel from '../menu/MenuLabel';
 import MenuList from '../menu/MenuList';
 

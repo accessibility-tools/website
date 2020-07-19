@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { spacing, typography, background, color } from '../../shared/style';
+import { spacing, typography, background, color } from '../../shared/style.ts';
 import ArrowIcon from '../icon/ArrowIcon';
 
 const MenuButton = styled.button`

@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { background, color } from '../shared/style';
+import { background, color } from '../shared/style.ts';
 import Switcher from '../components/layout-components/Switcher';
 import Stack from '../components/layout-components/Stack';
 import ReportIntro from '../components/report/ReportIntro';
 import ReportOverview from '../components/report/ReportOverview';
 import ReportDetails from '../components/report/ReportDetails';
 import Pagination from '../components/pagination/Pagination';
-import { mockReportData } from '../data/reportData';
+import { mockReportData } from '../data/reportData.ts';
 
 const LoadedPageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};

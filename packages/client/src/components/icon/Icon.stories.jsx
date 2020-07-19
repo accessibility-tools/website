@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { icons } from '../../shared/icons';
+import { icons } from '../../shared/icons.ts';
 import Icon from './Icon';
 
 const Meta = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { color } from '../../shared/style';
+import { color } from '../../shared/style.ts';
 import ArrowIcon from '../icon/ArrowIcon';
 
 const PaginationWrapper = styled.nav`

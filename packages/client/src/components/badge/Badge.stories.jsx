@@ -1,7 +1,7 @@
 import React from 'react';
 import { select, number } from '@storybook/addon-knobs';
 import Badge from './Badge';
-import { color } from '../../shared/style';
+import { color } from '../../shared/style.ts';
 import StoryWrapper from '../story-wrapper/StoryWrapper';
 import ComingSoonBadge from './ComingSoonBadge';
 

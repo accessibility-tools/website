@@ -1,39 +1,39 @@
 // Global style variables
-export const background = {
-  pureWhite: '#FFFFFF',
-  mixedWhite: '#FAFAFA',
-  extraLightPurple: '#F5F6FF',
-  lightPurple: '#F2F3FF'
-};
+export enum background {
+  pureWhite = '#FFFFFF',
+  mixedWhite = '#FAFAFA',
+  extraLightPurple = '#F5F6FF',
+  lightPurple = '#F2F3FF'
+}
 
-export const color = {
+export enum color {
   // text
-  black: '#292929', // only on pressed state
-  primary: '#464646', // darkGrey
-  mediumGrey: '#636363', // only on hover state
-  white: '#FFFFFF',
-  blue: '#001CFF',
+  black = '#292929', // only on pressed state
+  primary = '#464646', // darkGrey
+  mediumGrey = '#636363', // only on hover state
+  white = '#FFFFFF',
+  blue = '#001CFF',
 
-  lightBlue: '#4B5FFF',
-  darkBlue: '#00119E',
-  purple: '#D4D7FF',
-  darkPurple: '#6642D1',
-  lightPurple: '#E7E9FF',
-  extraLightPurple: '#F5F6FF',
+  lightBlue = '#4B5FFF',
+  darkBlue = '#00119E',
+  purple = '#D4D7FF',
+  darkPurple = '#6642D1',
+  lightPurple = '#E7E9FF',
+  extraLightPurple = '#F5F6FF',
 
   // state
-  error: '#CC1818',
-  disabled: '#979797',
+  error = '#CC1818',
+  disabled = '#979797',
 
   // only for illustration
-  yellow: '#FFF361',
-  pink: '#FF7FB1',
-  red: '#F94B4B',
+  yellow = '#FFF361',
+  pink = '#FF7FB1',
+  red = '#F94B4B',
 
   // border & box shadow
-  lightGrey1: '#d1d1d1',
-  lightGrey2: '#d2d2d2'
-};
+  lightGrey1 = '#d1d1d1',
+  lightGrey2 = '#d2d2d2'
+}
 
 export const spacing = {
   padding: {

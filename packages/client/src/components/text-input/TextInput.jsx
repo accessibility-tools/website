@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { spacing, color } from '../../shared/style';
+import { spacing, color } from '../../shared/style.ts';
 import Icon from '../icon/Icon';
 
 const TextInputWrapper = styled.div`

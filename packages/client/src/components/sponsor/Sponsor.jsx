@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { spacing, color } from '../../shared/style';
+import { spacing, color } from '../../shared/style.ts';
 import Icon from '../icon/Icon';
 
 const Logo = styled(Icon)`
