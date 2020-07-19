@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { spacing, typography, background, color } from '../../shared/style.ts';
-import ArrowIcon from '../icon/ArrowIcon';
+import ArrowIcon from '../icon/ArrowIcon.tsx';
 
 const MenuButton = styled.button`
   display: none;

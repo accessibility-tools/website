@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { color } from '../../shared/style.ts';
 import Stack from '../layout-components/Stack';
-import Icon from '../icon/Icon';
+import Icon from '../icon/Icon.tsx';
 import Banner from '../banner/Banner';
 
 const IssueContainer = styled(Stack)`

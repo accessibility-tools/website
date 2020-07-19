@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { spacing, color } from '../../shared/style.ts';
-import Icon from '../icon/Icon';
+import Icon from '../icon/Icon.tsx';
 
 const TextInputWrapper = styled.div`
   display: flex;

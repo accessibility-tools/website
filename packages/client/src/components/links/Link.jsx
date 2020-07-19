@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { color } from '../../shared/style.ts';
-import Icon from '../icon/Icon';
+import Icon from '../icon/Icon.tsx';
 
 const StyledLink = styled.a`
   color: ${color.blue};

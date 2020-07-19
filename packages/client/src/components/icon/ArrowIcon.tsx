@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-const handleArrowDirection = (direction) => {
+interface IStyledArrowIcon {
+  icon: string;
+  color?: string;
+  direction?: string;
+  expanded?: boolean;
+}
+
+const handleArrowDirection = (direction: string) => {
   switch (direction) {
     case 'left':
       return 'rotate(90deg)';
@@ -15,12 +21,17 @@ const handleArrowDirection = (direction) => {
       return;
   }
 };
-const StyledArrowIcon = styled(Icon)`
+const StyledArrowIcon = styled(Icon)<IStyledArrowIcon>`
   transform: ${({ expanded, direction }) =>
     expanded ? handleArrowDirection : handleArrowDirection(direction)};
 `;
 
-const ArrowIcon = ({ icon, color, direction, expanded }) => (
+const ArrowIcon: React.FC<IStyledArrowIcon> = ({
+  icon,
+  color,
+  direction,
+  expanded
+}) => (
   <StyledArrowIcon
     icon={icon}
     color={color}
@@ -28,12 +39,5 @@ const ArrowIcon = ({ icon, color, direction, expanded }) => (
     expanded={expanded}
   />
 );
-
-ArrowIcon.propTypes = {
-  icon: PropTypes.string.isRequired,
-  color: PropTypes.string,
-  direction: PropTypes.string,
-  expanded: PropTypes.bool
-};
 
 export default ArrowIcon;

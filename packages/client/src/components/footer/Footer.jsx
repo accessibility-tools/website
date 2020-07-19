@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { spacing } from '../../shared/style.ts';
-import Icon from '../icon/Icon';
+import Icon from '../icon/Icon.tsx';
 import StyledLink from '../links/Link';
 
 const StyledFooter = styled.footer`

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { spacing, color } from '../../shared/style.ts';
-import Icon from '../icon/Icon';
+import Icon from '../icon/Icon.tsx';
 
 const Logo = styled(Icon)`
   max-width: 100%;

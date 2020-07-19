@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { icons } from '../../shared/icons.ts';
-import Icon from './Icon';
+import Icon from './Icon.tsx';
 
 const Meta = styled.div`
   color: #666;

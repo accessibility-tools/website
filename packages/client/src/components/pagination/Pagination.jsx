@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { color } from '../../shared/style.ts';
-import ArrowIcon from '../icon/ArrowIcon';
+import ArrowIcon from '../icon/ArrowIcon.tsx';
 
 const PaginationWrapper = styled.nav`
   display: flex;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { color } from '../../shared/style.ts';
 import Stack from '../layout-components/Stack';
 import Link from '../links/Link';
-import ArrowIcon from '../icon/ArrowIcon';
+import ArrowIcon from '../icon/ArrowIcon.tsx';
 import FixElement from './FixElement';
 
 const Details = styled.details`

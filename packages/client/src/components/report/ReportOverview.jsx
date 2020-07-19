@@ -4,7 +4,7 @@ import { color } from '../../shared/style.ts';
 import Switcher from '../layout-components/Switcher';
 import Stack from '../layout-components/Stack';
 import Button from '../button/Button';
-import Icon from '../icon/Icon';
+import Icon from '../icon/Icon.tsx';
 import OverviewCard from './OverviewCard';
 import { mockReportData } from '../../data/reportData.ts';
 
