@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { background, color, spacing } from '../../shared/style.ts';
-import Icon from '../icon/Icon.tsx';
 
-const StyledButton = styled.button`
+import { background, color, spacing } from '../../shared/style';
+import Icon from '../icon/Icon';
+import { IButton, IStyledButton } from './types';
+
+const StyledButton = styled.button<IStyledButton>`
   background-color: ${color.blue};
   color: ${color.white};
   cursor: pointer;
@@ -41,8 +42,8 @@ const StyledButton = styled.button`
   }
 
   ${(props) =>
-    props.isSecondary &&
-    `
+  props.isSecondary &&
+  `
       background-color: ${color.white};
       border: 2px solid ${color.primary};
       color: ${color.primary};
@@ -76,19 +77,11 @@ const StyledButton = styled.button`
   `}
 `;
 
-const Button = ({ text, icon, ...otherProps }) => {
-  return (
-    <StyledButton icon={!!icon} {...otherProps}>
-      {text}
-      {icon && <Icon icon={icon} />}
-    </StyledButton>
-  );
-};
-
-Button.propTypes = {
-  text: PropTypes.string.isRequired,
-  icon: PropTypes.string,
-  isSecondary: PropTypes.bool
-};
+const Button: React.FC<IButton> = ({ text, icon, ...otherProps }) => (
+  <StyledButton icon={!!icon} {...otherProps}>
+    {text}
+    {icon && <Icon icon={icon} />}
+  </StyledButton>
+);
 
 export default Button;

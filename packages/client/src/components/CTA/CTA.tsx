@@ -1,8 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Button from '../button/Button';
 
-const CTA = ({ text, icon, url, isExternal, isSecondary, ...otherProps }) => {
+import Button from '../button/Button';
+import { ICTA } from './types';
+
+const CTA: React.FC<ICTA> = ({
+  text,
+  icon,
+  url,
+  isExternal,
+  isSecondary,
+  ...otherProps
+}) => {
   const externalConfig = {
     target: '_blank',
     rel: 'noopener noreferrer'
@@ -12,7 +20,7 @@ const CTA = ({ text, icon, url, isExternal, isSecondary, ...otherProps }) => {
   return (
     <Button
       data-type="cta-btn"
-      tabIndex="0"
+      tabIndex={0}
       as="a"
       href={url}
       text={text}
@@ -21,18 +29,6 @@ const CTA = ({ text, icon, url, isExternal, isSecondary, ...otherProps }) => {
       {...otherProps}
     />
   );
-};
-
-CTA.propTypes = {
-  text: PropTypes.string,
-  icon: PropTypes.string,
-  url: PropTypes.string,
-  isExternal: PropTypes.bool,
-  isSecondary: PropTypes.bool
-};
-
-CTA.defaultProps = {
-  isExternal: false
 };
 
 export default CTA;

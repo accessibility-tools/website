@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from './Checkbox';
+import Checkbox from './Checkbox.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper';
 
 export default {

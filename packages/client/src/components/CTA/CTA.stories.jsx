@@ -1,6 +1,6 @@
 import React from 'react';
 import { object } from '@storybook/addon-knobs';
-import CTA from './CTA';
+import CTA from './CTA.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper';
 
 export default {

@@ -6,7 +6,7 @@ import Switcher from '../components/layout-components/Switcher';
 import Stack from '../components/layout-components/Stack';
 import Center from '../components/layout-components/Center';
 import TextInput from '../components/text-input/TextInput';
-import Button from '../components/button/Button';
+import Button from '../components/button/Button.tsx';
 import ToolOverview from '../components/tool-overview/ToolOverview';
 import { webCheckerAlt } from '../constants/toolData.ts';
 

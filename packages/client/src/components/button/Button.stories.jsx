@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import Button from './Button.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper';
 
 export default {

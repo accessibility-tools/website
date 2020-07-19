@@ -5,7 +5,7 @@ import { color } from '../../shared/style.ts';
 import Stack from '../layout-components/Stack';
 import Center from '../layout-components/Center';
 import TextInput from '../text-input/TextInput';
-import Button from '../button/Button';
+import Button from '../button/Button.tsx';
 
 const SignUpBtn = styled(Button)`
   margin-left: auto;

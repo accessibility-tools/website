@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { typography, color, spacing } from '../../shared/style';
 import Icon from '../icon/Icon';
 import { IBadge } from './types';

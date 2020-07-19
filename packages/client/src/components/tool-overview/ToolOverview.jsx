@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import Switcher from '../layout-components/Switcher';
 import Stack from '../layout-components/Stack';
 import Center from '../layout-components/Center';
-import CTA from '../CTA/CTA';
+import CTA from '../CTA/CTA.tsx';
 import Link from '../links/Link';
-import Banner from '../banner/Banner';
+import Banner from '../banner/Banner.tsx';
 
 const InfoWrapper = styled(Stack)`
   max-width: 32rem;

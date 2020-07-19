@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { color } from '../../shared/style.ts';
 import Switcher from '../layout-components/Switcher';
 import Stack from '../layout-components/Stack';
-import Button from '../button/Button';
+import Button from '../button/Button.tsx';
 import Icon from '../icon/Icon.tsx';
 import OverviewCard from './OverviewCard';
 import { mockReportData } from '../../data/reportData.ts';

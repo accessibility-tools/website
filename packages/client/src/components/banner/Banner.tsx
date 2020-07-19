@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { color } from '../../shared/style.ts';
 
-const BannerWrapper = styled.div`
+import { color } from '../../shared/style';
+import { IBanner, IBannerWrapper } from './types';
+
+const BannerWrapper = styled.div<IBannerWrapper>`
   display: flex;
   height: auto;
   width: auto;
@@ -19,13 +20,8 @@ const BannerWrapper = styled.div`
   }
 `;
 
-const Banner = ({ text, width }) => {
-  return <BannerWrapper width={width}>{text}</BannerWrapper>;
-};
-
-Banner.propTypes = {
-  text: PropTypes.string,
-  width: PropTypes.string
-};
+const Banner: React.FC<IBanner> = ({ text, width }) => (
+  <BannerWrapper width={width}>{text}</BannerWrapper>
+);
 
 export default Banner;
