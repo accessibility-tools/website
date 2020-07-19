@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { color } from '../../shared/style.ts';
-import Icon from '../icon/Icon.tsx';
+
+import { color } from '../../shared/style';
+import Icon from '../icon/Icon';
+import { IDetails } from './types';
 
 export const DetailsContainer = styled.details`
   display: flex;
@@ -56,11 +57,13 @@ const StyledSummary = styled.summary`
   }
 `;
 
-const Details = ({ children, title }) => {
+const Details: React.FC<IDetails> = ({ children, title }) => {
   const [isOpened, setOpened] = useState(false);
-  const handleOpen = (event) => {
+
+  const handleOpen = (event: React.BaseSyntheticEvent): void => {
     setOpened(event.currentTarget.open);
   };
+
   return (
     <DetailsContainer onToggle={handleOpen}>
       <StyledSummary>
@@ -72,11 +75,6 @@ const Details = ({ children, title }) => {
       {children}
     </DetailsContainer>
   );
-};
-
-Details.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.any
 };
 
 export default Details;

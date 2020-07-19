@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { spacing } from '../../shared/style.ts';
-import Icon from '../icon/Icon.tsx';
+
+import { spacing } from '../../shared/style';
+import Icon from '../icon/Icon';
 import StyledLink from '../links/Link';
 
 const StyledFooter = styled.footer`
@@ -46,24 +47,22 @@ const ShortText = styled.span`
   }
 `;
 
-const Footer = () => {
-  return (
-    <StyledFooter>
-      <LicenseWrapper>
-        <LicenseLink
-          url="/"
-          isSecondary={true}
-          aria-label="license information about the tool"
-        >
-          <Icon className="icon" icon="creativeCommon1" />
-          <Icon className="icon" icon="creativeCommon2" />
-        </LicenseLink>
-        <FullText>The tool is licensed under Creative Commons CC-BY.</FullText>
-        <ShortText>CC-BY.</ShortText>
-      </LicenseWrapper>
-      <StyledLink url="/imprint" text="imprint" isSecondary={true} />
-    </StyledFooter>
-  );
-};
+const Footer: React.FC = () => (
+  <StyledFooter>
+    <LicenseWrapper>
+      <LicenseLink
+        url="/"
+        isSecondary={true}
+        aria-label="license information about the tool"
+      >
+        <Icon icon="creativeCommon1" />
+        <Icon icon="creativeCommon2" />
+      </LicenseLink>
+      <FullText>The tool is licensed under Creative Commons CC-BY.</FullText>
+      <ShortText>CC-BY.</ShortText>
+    </LicenseWrapper>
+    <StyledLink url="/imprint" text="imprint" isSecondary={true} />
+  </StyledFooter>
+);
 
 export default Footer;

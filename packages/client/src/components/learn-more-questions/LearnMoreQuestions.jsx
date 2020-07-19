@@ -1,5 +1,5 @@
 import React from 'react';
-import Details from '../details/Details';
+import Details from '../details/Details.tsx';
 import styled from 'styled-components';
 import Stack from '../layout-components/Stack';
 import Link from '../links/Link';

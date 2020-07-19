@@ -5,8 +5,7 @@ export interface IStyledButton {
   icon: string;
 }
 
-export interface IButton
-  extends IStyledButton,
+export interface IButton extends IStyledButton,
     React.HTMLAttributes<HTMLLinkElement>,
     React.HTMLAttributes<HTMLButtonElement> {
   text: string;

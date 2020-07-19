@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Nav from '../navigation/Nav';
-import Footer from '../footer/Footer';
+import Footer from '../footer/Footer.tsx';
 
 const Layout = ({ children }) => (
   <div>

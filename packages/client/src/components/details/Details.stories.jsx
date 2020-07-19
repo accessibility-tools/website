@@ -1,5 +1,5 @@
 import React from 'react';
-import Details from './Details';
+import Details from './Details.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper';
 
 export default {

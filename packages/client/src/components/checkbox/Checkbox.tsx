@@ -16,7 +16,9 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 `;
 
 const StyledCheckbox = styled.div<IStyledCheckbox>`
-  border: 3px solid ${(props) => (props.checked ? color.blue : color.primary)};
+  border: 3px solid
+    ${({ checked }: { checked: boolean }): string =>
+      checked ? color.blue : color.primary};
   border-radius: 3px;
   display: inline-block;
   height: 20px;
@@ -26,7 +28,8 @@ const StyledCheckbox = styled.div<IStyledCheckbox>`
   width: 20px;
 
   svg {
-    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
+    visibility: ${({ checked }: { checked: boolean }): string =>
+      checked ? 'visible' : 'hidden'};
     color: ${color.blue};
     position: absolute;
     right: -2px;

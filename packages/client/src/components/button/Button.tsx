@@ -41,9 +41,9 @@ const StyledButton = styled.button<IStyledButton>`
     cursor: not-allowed !important;
   }
 
-  ${(props) =>
-  props.isSecondary &&
-  `
+  ${({ isSecondary }: { isSecondary: boolean }): string | void =>
+    isSecondary &&
+    `
       background-color: ${color.white};
       border: 2px solid ${color.primary};
       color: ${color.primary};
@@ -64,8 +64,8 @@ const StyledButton = styled.button<IStyledButton>`
       }
     `}
 
-  ${(props) =>
-    !!props.icon &&
+  ${({ icon }: { icon: string }): string | void =>
+    !!icon &&
     `
     display: flex;
     align-items: center;
