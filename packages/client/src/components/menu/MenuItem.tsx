@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropType from 'prop-types';
-import { background, color, spacing } from '../../shared/style.ts';
+
+import { background, color, spacing } from '../../shared/style';
+import { IMenuItem } from './types';
 
 const ListItem = styled.li`
   box-sizing: border-box;
@@ -28,8 +29,8 @@ const ListItem = styled.li`
   &:active {
     background-color: ${color.lightPurple};
   }
-  ${({ isSelected }) =>
-    isSelected === true &&
+  ${({ isSelected }: { isSelected: boolean }): string | void =>
+    isSelected &&
     `
       &::after {
         bottom: 0;
@@ -63,18 +64,17 @@ const ListItemLink = styled.a`
   max-width: none;
 `;
 
-const MenuItem = ({ href, text, isSelected, ...otherProps }) => (
+const MenuItem: React.FC<IMenuItem> = ({
+  href,
+  text,
+  isSelected = false,
+  ...otherProps
+}) => (
   <ListItem isSelected={isSelected}>
     <ListItemLink href={href} {...otherProps}>
       {text}
     </ListItemLink>
   </ListItem>
 );
-
-MenuItem.propTypes = {
-  text: PropType.string.isRequired,
-  href: PropType.string,
-  isSelected: PropType.bool
-};
 
 export default MenuItem;

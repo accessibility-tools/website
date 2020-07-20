@@ -11,3 +11,10 @@ export interface ISVG {
   block?: boolean;
   props?: any;
 }
+
+export interface IStyledArrowIcon {
+  icon: string;
+  color?: string;
+  direction?: string;
+  isExpanded?: boolean;
+}

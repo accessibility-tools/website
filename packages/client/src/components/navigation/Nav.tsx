@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { color } from '../../shared/style.ts';
+
+import { color } from '../../shared/style';
 import MenuLabel from '../menu/MenuLabel';
 import MenuList from '../menu/MenuList';
 
@@ -23,26 +24,31 @@ const NavContainer = styled.nav`
   }
 `;
 
-const Nav = () => {
-  const [expanded, setExpanded] = useState(false);
-  const toggleExpanded = () => {
+const Nav: React.FC = () => {
+  const [expanded, setExpanded] = useState<boolean>(false);
+  const toggleExpanded = (): void => {
     setExpanded(!expanded);
   };
+
   useEffect(() => {
-    document.onkeydown = (e) => {
+    document.onkeydown = (e: KeyboardEvent) => {
       if (e.keyCode === 13) {
-        e.target.classList.add(
-          e.target.getAttribute('data-type') === 'cta-btn'
+        const target = e.target as HTMLElement;
+
+        target.classList.add(
+          target.getAttribute('data-type') === 'cta-btn'
             ? 'key-press-prim'
             : 'key-press'
         );
       }
     };
 
-    document.onkeyup = (e) => {
+    document.onkeyup = (e: KeyboardEvent) => {
       if (e.keyCode === 13) {
-        e.target.classList.remove('key-press');
-        e.target.classList.remove('key-press-prim');
+        const target = e.target as HTMLElement;
+
+        target.classList.remove('key-press');
+        target.classList.remove('key-press-prim');
       }
     };
 
@@ -54,8 +60,8 @@ const Nav = () => {
 
   return (
     <NavContainer aria-label="main navigation">
-      <MenuLabel expanded={expanded} toggleExpanded={toggleExpanded} />
-      <MenuList expanded={expanded} toggleExpanded={toggleExpanded} />
+      <MenuLabel isExpanded={expanded} toggleExpanded={toggleExpanded} />
+      <MenuList isExpanded={expanded} toggleExpanded={toggleExpanded} />
     </NavContainer>
   );
 };

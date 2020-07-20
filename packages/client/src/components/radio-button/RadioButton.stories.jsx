@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioButton from './RadioButton';
+import RadioButton from './RadioButton.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {

@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+
 import { color, spacing } from '../../shared/style.ts';
+import { IRadioButton } from './types';
 
 const StyledRadioButton = styled.span`
   border: 3px solid
-    ${({ isChecked }) => (isChecked ? color.blue : color.primary)};
+    ${({ isChecked }: { isChecked: boolean }): string =>
+      isChecked ? color.blue : color.primary};
   border-radius: 50%;
   display: inline-block;
   height: 20px;
@@ -22,7 +24,8 @@ const StyledRadioButton = styled.span`
     left: 3px;
     top: 3px;
     position: absolute;
-    visibility: ${({ isChecked }) => (isChecked ? 'visible' : 'hidden')};
+    visibility: ${({ isChecked }: { isChecked: boolean }): string =>
+      isChecked ? 'visible' : 'hidden'};
     width: 8px;
   }
 
@@ -66,10 +69,10 @@ const RadioButtonContainer = styled.label`
   }
 `;
 
-const RadioButton = ({
+const RadioButton: React.FC<IRadioButton> = ({
   label,
   value,
-  checked,
+  isChecked = false,
   handleCheckedChange,
   className
 }) => (
@@ -77,24 +80,12 @@ const RadioButton = ({
     <input
       type="radio"
       value={value}
-      checked={checked}
+      checked={isChecked}
       onChange={handleCheckedChange}
     ></input>
-    <StyledRadioButton isChecked={checked}></StyledRadioButton>
+    <StyledRadioButton isChecked={isChecked}></StyledRadioButton>
     {label}
   </RadioButtonContainer>
 );
-
-RadioButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  checked: PropTypes.bool,
-  handleCheckedChange: PropTypes.func,
-  className: PropTypes.string
-};
-
-RadioButton.defaultProps = {
-  checked: false
-};
 
 export default RadioButton;

@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { spacing, typography, background, color } from '../../shared/style.ts';
-import ArrowIcon from '../icon/ArrowIcon.tsx';
+
+import { spacing, typography, background, color } from '../../shared/style';
+import ArrowIcon from '../icon/ArrowIcon';
+import { IMenuLabel } from './types';
 
 const MenuButton = styled.button`
   display: none;
@@ -31,20 +32,15 @@ const MenuButton = styled.button`
   }
 `;
 
-const MenuLabel = ({ expanded, toggleExpanded }) => (
+const MenuLabel: React.FC<IMenuLabel> = ({ isExpanded, toggleExpanded }) => (
   <MenuButton
-    aria-expanded={expanded}
+    aria-expanded={isExpanded}
     aria-controls="menu-list"
     onClick={toggleExpanded}
   >
     <p>MENU</p>
-    <ArrowIcon icon="sArrow" direction="up" expanded={expanded} />
+    <ArrowIcon icon="sArrow" direction="up" isExpanded={isExpanded} />
   </MenuButton>
 );
-
-MenuLabel.propTypes = {
-  expanded: PropTypes.bool.isRequired,
-  toggleExpanded: PropTypes.func.isRequired
-};
 
 export default MenuLabel;

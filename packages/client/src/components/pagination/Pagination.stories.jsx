@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination from './Pagination';
+import Pagination from './Pagination.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { color } from '../../shared/style.ts';
-import MenuItem from './MenuItem';
-import Sponsor from '../sponsor/Sponsor.tsx';
 
-const menuData = {
+import { color } from '../../shared/style';
+import MenuItem from './MenuItem';
+import Sponsor from '../sponsor/Sponsor';
+import { IMenuData, IMenuDataItem, IMenuList } from './types';
+
+const menuData: IMenuData = {
   TOOLS: { title: 'the tools', href: '/#tools' },
   LEARN: { title: 'learn more', href: '/#learn-more' },
   ABOUT: { title: 'about & contact', href: '/#about' }
@@ -28,8 +29,8 @@ const StyledList = styled.ul`
     bottom: 0;
     padding: 0;
 
-    ${({ expanded }) =>
-      expanded
+    ${({ isExpanded }: { isExpanded: boolean }): string | void =>
+      isExpanded
         ? `& {
           opacity: 1;
           transition: opacity 200ms 0ms;
@@ -54,23 +55,23 @@ const StyledList = styled.ul`
   }
 `;
 
-const MenuList = ({ expanded, toggleExpanded }) => {
+const MenuList: React.FC<IMenuList> = ({ isExpanded, toggleExpanded }) => {
   const [selected, setSelected] = useState(menuData.TOOLS.title);
 
-  const handleSelectMenuItem = (value) => {
+  const handleSelectMenuItem = (value: string): void => {
     setSelected(value);
     toggleExpanded();
   };
 
   return (
-    <StyledList aria-label="menu list" id="menu-list" expanded={expanded}>
-      {Object.values(menuData).map((item) => (
+    <StyledList aria-label="menu list" id="menu-list" isExpanded={isExpanded}>
+      {Object.values(menuData).map((item: IMenuDataItem) => (
         <MenuItem
           key={'menu-' + item.title}
           href={item.href}
           text={item.title}
           isSelected={item.title === selected}
-          onClick={() => handleSelectMenuItem(item.title)}
+          onClick={(): void => handleSelectMenuItem(item.title)}
         />
       ))}
       <li>
@@ -78,11 +79,6 @@ const MenuList = ({ expanded, toggleExpanded }) => {
       </li>
     </StyledList>
   );
-};
-
-MenuList.propTypes = {
-  expanded: PropTypes.bool.isRequired,
-  toggleExpanded: PropTypes.func.isRequired
 };
 
 export default MenuList;

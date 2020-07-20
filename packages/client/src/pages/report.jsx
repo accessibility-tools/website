@@ -6,7 +6,7 @@ import Stack from '../components/layout-components/Stack.tsx';
 import ReportIntro from '../components/report/ReportIntro';
 import ReportOverview from '../components/report/ReportOverview';
 import ReportDetails from '../components/report/ReportDetails';
-import Pagination from '../components/pagination/Pagination';
+import Pagination from '../components/pagination/Pagination.tsx';
 import { mockReportData } from '../data/reportData.ts';
 
 const LoadedPageContainer = styled(Stack)`

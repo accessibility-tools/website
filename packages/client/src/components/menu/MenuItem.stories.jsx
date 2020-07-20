@@ -1,6 +1,6 @@
 import React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-import MenuItem from './MenuItem';
+import MenuItem from './MenuItem.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
