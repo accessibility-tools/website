@@ -1,7 +1,7 @@
 export const ciTool = {
   id: 'ciTool',
   title: 'Check your website with your terminal before going live',
-  img: '/illustrations/citool-placeholder.png',
+  img: '/illustrations/CITool_HighDefinition.png',
   desc:
     'You can install our continuous integration tool (CI) on your terminal by running:',
   details: [
