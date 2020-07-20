@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { color } from '../../shared/style.ts';
-import Stack from '../layout-components/Stack.tsx';
-import Link from '../links/Link.tsx';
-import ArrowIcon from '../icon/ArrowIcon.tsx';
+
+import { color } from '../../shared/style';
+import Stack from '../layout-components/Stack';
+import Link from '../links/Link';
+import ArrowIcon from '../icon/ArrowIcon';
 import FixElement from './FixElement';
+import { IDetailsCard } from './types';
 
 const Details = styled.details`
   background-color: ${color.white};
@@ -48,12 +49,13 @@ const Subtitle = styled.p`
   padding-left: 2rem;
 `;
 
-const DetailsCard = ({ issueData }) => {
-  const [isOpened, setOpened] = useState(false);
-  const handleOpen = (event) => {
-    setOpened(event.currentTarget.open);
-  };
+const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
   const { title, summary, resource, failedStandard, fixes } = issueData;
+  const [isOpened, setOpened] = useState<boolean>(false);
+
+  const handleOpen = (e: React.BaseSyntheticEvent): void => {
+    setOpened(e.currentTarget.open);
+  };
 
   return (
     <Details onToggle={handleOpen}>
@@ -76,16 +78,14 @@ const DetailsCard = ({ issueData }) => {
 
       <Stack space="medium">
         <Subtitle>Which elements should be fixed?</Subtitle>
-        {fixes.map((fix, index) => (
-          <FixElement key={`${title} required fix ${index}`} fixData={fix} />
-        ))}
+        {fixes.map(
+          (fix: any, index: number): React.ReactElement => (
+            <FixElement key={`${title} required fix ${index}`} fixData={fix} />
+          )
+        )}
       </Stack>
     </Details>
   );
-};
-
-DetailsCard.propTypes = {
-  issueData: PropTypes.object
 };
 
 export default DetailsCard;

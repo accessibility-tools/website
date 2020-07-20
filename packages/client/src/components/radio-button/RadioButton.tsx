@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { color, spacing } from '../../shared/style.ts';
+import { color, spacing } from '../../shared/style';
 import { IRadioButton } from './types';
 
 const StyledRadioButton = styled.span`
@@ -82,8 +82,8 @@ const RadioButton: React.FC<IRadioButton> = ({
       value={value}
       checked={isChecked}
       onChange={handleCheckedChange}
-    ></input>
-    <StyledRadioButton isChecked={isChecked}></StyledRadioButton>
+    />
+    <StyledRadioButton isChecked={isChecked} />
     {label}
   </RadioButtonContainer>
 );

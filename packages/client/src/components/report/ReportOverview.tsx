@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from '../../shared/style.ts';
-import Switcher from '../layout-components/Switcher.tsx';
-import Stack from '../layout-components/Stack.tsx';
-import Button from '../button/Button.tsx';
-import Icon from '../icon/Icon.tsx';
+
+import { color } from '../../shared/style';
+import Switcher from '../layout-components/Switcher';
+import Stack from '../layout-components/Stack';
+import Button from '../button/Button';
+import Icon from '../icon/Icon';
 import OverviewCard from './OverviewCard';
-import { mockReportData } from '../../data/reportData.ts';
+import { mockReportData } from '../../data/reportData';
 
 const OverviewContainer = styled(Stack)`
   padding: 0;
@@ -47,11 +48,12 @@ const NoteContainer = styled.div`
   }
 `;
 
-const ReportOverview = () => {
+const ReportOverview: React.FC = () => {
   const issueCountArr = Object.keys(mockReportData).map(
     (category) => mockReportData[category].length
   );
   const totalIssueCount = issueCountArr.reduce((a, b) => a + b, 0);
+
   return (
     <OverviewContainer>
       <Switcher threshold="35rem">

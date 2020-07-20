@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Stack from '../layout-components/Stack.tsx';
+
+import Stack from '../layout-components/Stack';
 import Badge from '../badge/Badge';
 import DetailsCard from './DetailsCard';
-import { reportIcons } from '../../constants/reportIcons.ts';
+import { reportIcons } from '../../constants/reportIcons';
+import { IDetailsCategory } from './types';
 
 const CategoryContainer = styled(Stack)`
   @media (max-width: 48rem) {
@@ -16,7 +17,7 @@ const CategoryBadge = styled(Badge)`
   max-width: fit-content;
 `;
 
-const DetailsCategory = ({ category, issues }) => (
+const DetailsCategory: React.FC<IDetailsCategory> = ({ category, issues }) => (
   <CategoryContainer space="medium">
     {issues.length > 0 && (
       <>
@@ -25,17 +26,14 @@ const DetailsCategory = ({ category, issues }) => (
           iconName={reportIcons[category].iconName}
           iconColor={reportIcons[category].iconColor}
         />
-        {issues.map((issue, index) => (
-          <DetailsCard key={`${category} issue ${index}`} issueData={issue} />
-        ))}
+        {issues.map(
+          (issue: any, index: number): React.ReactElement => (
+            <DetailsCard key={`${category} issue ${index}`} issueData={issue} />
+          )
+        )}
       </>
     )}
   </CategoryContainer>
 );
-
-DetailsCategory.propTypes = {
-  category: PropTypes.string,
-  issues: PropTypes.array
-};
 
 export default DetailsCategory;

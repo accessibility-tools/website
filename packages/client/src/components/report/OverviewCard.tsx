@@ -1,11 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { color } from '../../shared/style.ts';
-import Stack from '../layout-components/Stack.tsx';
-import { Icon } from '../icon/Icon.tsx';
+
+import { color } from '../../shared/style';
+import Stack from '../layout-components/Stack';
+import Icon from '../icon/Icon';
 import Badge from '../badge/Badge';
-import { reportIcons } from '../../constants/reportIcons.ts';
+import { reportIcons } from '../../constants/reportIcons';
+import { IOverviewCard } from './types';
 
 const CardContainer = styled(Stack)`
   background-color: ${color.white};
@@ -38,7 +39,12 @@ const IssueContainer = styled.div`
   }
 `;
 
-const OverviewCard = ({ title, subtext, isIssue, reportData }) => (
+const OverviewCard: React.FC<IOverviewCard> = ({
+  title,
+  subtext,
+  isIssue,
+  reportData
+}) => (
   <CardContainer>
     <Title>
       {isIssue ? (
@@ -51,28 +57,23 @@ const OverviewCard = ({ title, subtext, isIssue, reportData }) => (
     <p>{subtext}</p>
     {isIssue && (
       <IssueContainer>
-        {Object.keys(reportData).map((category) => {
-          const iconData = reportIcons[category];
-          return (
-            <Badge
-              key={`issue category: ${category}`}
-              label={category}
-              issueCount={reportData[category].length}
-              iconName={iconData.iconName}
-              iconColor={iconData.iconColor}
-            />
-          );
-        })}
+        {Object.keys(reportData).map(
+          (category: string): React.ReactElement => {
+            const iconData = reportIcons[category];
+            return (
+              <Badge
+                key={`issue category: ${category}`}
+                label={category}
+                issueCount={reportData[category].length}
+                iconName={iconData.iconName}
+                iconColor={iconData.iconColor}
+              />
+            );
+          }
+        )}
       </IssueContainer>
     )}
   </CardContainer>
 );
-
-OverviewCard.propTypes = {
-  title: PropTypes.string,
-  subtext: PropTypes.string,
-  isIssue: PropTypes.bool,
-  reportData: PropTypes.object
-};
 
 export default OverviewCard;

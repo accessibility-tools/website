@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Switcher from '../layout-components/Switcher.tsx';
+
+import Switcher from '../layout-components/Switcher';
+import { IReportIntro } from './types';
 
 const ReportImg = styled.img`
   width: 19rem;
@@ -19,7 +20,7 @@ const Title = styled.div`
   }
 `;
 
-const ReportIntro = ({ isLoaded }) => (
+const ReportIntro: React.FC<IReportIntro> = ({ isLoaded }) => (
   <Switcher>
     {isLoaded ? (
       <div>
@@ -46,9 +47,5 @@ const ReportIntro = ({ isLoaded }) => (
     )}
   </Switcher>
 );
-
-ReportIntro.propTypes = {
-  isLoaded: PropTypes.bool
-};
 
 export default ReportIntro;
