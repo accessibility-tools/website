@@ -1,6 +1,7 @@
 import React from 'react';
-import Details from '../details/Details.tsx';
 import styled from 'styled-components';
+
+import Details from '../details/Details';
 import Stack from '../layout-components/Stack';
 import Link from '../links/Link';
 
@@ -17,7 +18,7 @@ const LearnMoreWrapper = styled(Stack)`
   }
 `;
 
-const LearnMoreQuestions = () => (
+const LearnMoreQuestions: React.FC = () => (
   <LearnMoreWrapper>
     <Details title="What is web accessibility?">
       <p>

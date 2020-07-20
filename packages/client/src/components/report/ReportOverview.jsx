@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { color } from '../../shared/style.ts';
-import Switcher from '../layout-components/Switcher';
-import Stack from '../layout-components/Stack';
+import Switcher from '../layout-components/Switcher.tsx';
+import Stack from '../layout-components/Stack.tsx';
 import Button from '../button/Button.tsx';
 import Icon from '../icon/Icon.tsx';
 import OverviewCard from './OverviewCard';

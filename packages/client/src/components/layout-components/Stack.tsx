@@ -1,6 +1,7 @@
 // The Stack-pattern from https://every-layout.dev/
-
 import styled from 'styled-components';
+
+import { IStack } from './types';
 
 const spacing = {
   small: '1rem',
@@ -9,13 +10,13 @@ const spacing = {
   extraLarge: '8rem'
 };
 
-const Stack = styled.div`
+const Stack = styled.div<IStack>`
   --stack-space: ${({ space }) => (space ? spacing[space] : '2rem')};
   width: ${({ width }) => (width ? width : '100%')};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: ${({ center }) => center && 'center'};
+  align-items: ${({ itemsAlign }) => itemsAlign && 'center'};
 
   & > * {
     margin-top: 0;

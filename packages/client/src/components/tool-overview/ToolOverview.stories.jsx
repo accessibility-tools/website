@@ -1,7 +1,7 @@
 import React from 'react';
 import ToolOverview from './ToolOverview';
 import StoryWrapper from '../story-wrapper/StoryWrapper';
-import Center from '../layout-components/Center';
+import Center from '../layout-components/Center.tsx';
 
 export default {
   title: 'Design System|ToolOverview',

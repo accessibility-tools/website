@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Stack from '../layout-components/Stack';
+import Stack from '../layout-components/Stack.tsx';
 import Badge from '../badge/Badge';
 import DetailsCard from './DetailsCard';
 import { reportIcons } from '../../constants/reportIcons.ts';

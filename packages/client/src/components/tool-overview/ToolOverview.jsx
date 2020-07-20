@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Switcher from '../layout-components/Switcher';
-import Stack from '../layout-components/Stack';
-import Center from '../layout-components/Center';
+import Switcher from '../layout-components/Switcher.tsx';
+import Stack from '../layout-components/Stack.tsx';
+import Center from '../layout-components/Center.tsx';
 import CTA from '../CTA/CTA.tsx';
-import Link from '../links/Link';
+import Link from '../links/Link.tsx';
 import Banner from '../banner/Banner.tsx';
 
 const InfoWrapper = styled(Stack)`

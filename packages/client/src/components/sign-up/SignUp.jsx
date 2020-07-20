@@ -2,8 +2,8 @@ import React from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
 import { color } from '../../shared/style.ts';
-import Stack from '../layout-components/Stack';
-import Center from '../layout-components/Center';
+import Stack from '../layout-components/Stack.tsx';
+import Center from '../layout-components/Center.tsx';
 import TextInput from '../text-input/TextInput';
 import Button from '../button/Button.tsx';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
-import Link from './Link';
+import Link from './Link.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper';
 
 export default {

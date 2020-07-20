@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { color } from '../../shared/style.ts';
-import Stack from '../layout-components/Stack';
+import Stack from '../layout-components/Stack.tsx';
 import { Icon } from '../icon/Icon.tsx';
 import Badge from '../badge/Badge';
 import { reportIcons } from '../../constants/reportIcons.ts';

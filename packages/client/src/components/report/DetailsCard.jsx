@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { color } from '../../shared/style.ts';
-import Stack from '../layout-components/Stack';
-import Link from '../links/Link';
+import Stack from '../layout-components/Stack.tsx';
+import Link from '../links/Link.tsx';
 import ArrowIcon from '../icon/ArrowIcon.tsx';
 import FixElement from './FixElement';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { color } from '../shared/style.ts';
-import Switcher from '../components/layout-components/Switcher';
-import Stack from '../components/layout-components/Stack';
-import Center from '../components/layout-components/Center';
+import Switcher from '../components/layout-components/Switcher.tsx';
+import Stack from '../components/layout-components/Stack.tsx';
+import Center from '../components/layout-components/Center.tsx';
 
 const PageContainer = styled(Switcher)`
   background-color: ${color.extraLightPurple};

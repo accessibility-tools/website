@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { color } from '../../shared/style.ts';
-import Icon from '../icon/Icon.tsx';
+
+import { color } from '../../shared/style';
+import Icon from '../icon/Icon';
+import { ILink } from './types';
 
 const StyledLink = styled.a`
   color: ${color.blue};
@@ -41,16 +42,16 @@ const StyledLink = styled.a`
     }
   }
 
-  ${({ withIcon }) =>
-    withIcon === true &&
+  ${({ icon }: { icon: boolean }): string | void =>
+    icon &&
     `      
       svg {
         margin-right: 0.5em;
       }
     `}
 
-  ${({ isSecondary }) =>
-    isSecondary === true &&
+  ${({ isSecondary }: { isSecondary: boolean }): string | void =>
+    isSecondary &&
     `
       color: ${color.primary};
 
@@ -70,11 +71,11 @@ const StyledLink = styled.a`
     `}
 `;
 
-const Link = ({
+const Link: React.FC<ILink> = ({
   text,
   url,
   icon,
-  isExternal,
+  isExternal = false,
   isSecondary,
   children,
   ...otherProps
@@ -83,12 +84,16 @@ const Link = ({
     target: '_blank',
     rel: 'noopener noreferrer'
   };
-  if (isExternal) otherProps = { ...otherProps, ...externalConfig };
+
+  if (isExternal) {
+    otherProps = { ...otherProps, ...externalConfig };
+  }
+
   return (
     <StyledLink
       href={url}
       isSecondary={isSecondary}
-      withIcon={icon && true}
+      icon={icon}
       {...otherProps}
     >
       {icon && <Icon icon={icon} />}
@@ -96,19 +101,6 @@ const Link = ({
       {children && <span>{children}</span>}
     </StyledLink>
   );
-};
-
-Link.propTypes = {
-  text: PropTypes.string,
-  url: PropTypes.string,
-  icon: PropTypes.string,
-  isExternal: PropTypes.bool,
-  isSecondary: PropTypes.bool,
-  children: PropTypes.any
-};
-
-Link.defaultProps = {
-  isExternal: false
 };
 
 export default Link;

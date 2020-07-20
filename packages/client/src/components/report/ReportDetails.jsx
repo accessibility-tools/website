@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Stack from '../layout-components/Stack';
+import Stack from '../layout-components/Stack.tsx';
 import DetailsCategory from './DetailsCategory';
 import { mockReportData } from '../../data/reportData.ts';
 

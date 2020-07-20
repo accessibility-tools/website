@@ -1,8 +1,9 @@
 // The Switcher-pattern from https://every-layout.dev/
-
 import styled from 'styled-components';
 
-const Switcher = styled.div`
+import { ISwitcher } from './types';
+
+const Switcher = styled.div<ISwitcher>`
   --threshold: ${({ threshold }) => (threshold ? threshold : '25rem')};
   --switcher-space: ${({ space }) => (space ? space : '2rem')};
   width: ${({ width }) => (width ? width : '100%')};

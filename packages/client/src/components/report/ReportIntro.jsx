@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Switcher from '../layout-components/Switcher';
+import Switcher from '../layout-components/Switcher.tsx';
 
 const ReportImg = styled.img`
   width: 19rem;

@@ -1,5 +1,5 @@
 import React from 'react';
-import LearnMoreQuestions from './LearnMoreQuestions';
+import LearnMoreQuestions from './LearnMoreQuestions.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper';
 
 export default {

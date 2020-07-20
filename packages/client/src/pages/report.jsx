@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { background, color } from '../shared/style.ts';
-import Switcher from '../components/layout-components/Switcher';
-import Stack from '../components/layout-components/Stack';
+import Switcher from '../components/layout-components/Switcher.tsx';
+import Stack from '../components/layout-components/Stack.tsx';
 import ReportIntro from '../components/report/ReportIntro';
 import ReportOverview from '../components/report/ReportOverview';
 import ReportDetails from '../components/report/ReportDetails';
