@@ -1,6 +1,6 @@
 import React from 'react';
 import ToolOverview from './ToolOverview';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 import Center from '../layout-components/Center.tsx';
 
 export default {

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+
+import { IStoryWrapper } from './types';
 
 const Layout = styled.div`
   display: flex;
@@ -12,12 +13,8 @@ const Layout = styled.div`
   }
 `;
 
-const StoryWrapper = ({ children }) => {
-  return <Layout>{children}</Layout>;
-};
-
-StoryWrapper.propTypes = {
-  children: PropTypes.any
-};
+const StoryWrapper: React.FC<IStoryWrapper> = ({ children }) => (
+  <Layout>{children}</Layout>
+);
 
 export default StoryWrapper;

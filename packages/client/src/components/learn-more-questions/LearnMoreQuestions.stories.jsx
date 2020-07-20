@@ -1,6 +1,6 @@
 import React from 'react';
 import LearnMoreQuestions from './LearnMoreQuestions.tsx';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
   title: 'Design System|LearnMoreQuestions',

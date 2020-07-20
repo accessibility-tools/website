@@ -2,7 +2,7 @@ import React from 'react';
 import TextInput from './TextInput';
 import { text, boolean, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
   title: 'Design System|TextInput',

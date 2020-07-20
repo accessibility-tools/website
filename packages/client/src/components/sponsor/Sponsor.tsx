@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { spacing, color } from '../../shared/style.ts';
-import Icon from '../icon/Icon.tsx';
+
+import { spacing, color } from '../../shared/style';
+import Icon from '../icon/Icon';
+import { ISponsor } from './types';
 
 const Logo = styled(Icon)`
   max-width: 100%;
@@ -16,7 +17,7 @@ const LogoWrapper = styled.div`
   justify-content: flex-start;
 `;
 
-const Sponsor = ({ block }) => (
+const Sponsor: React.FC<ISponsor> = ({ block }) => (
   <LogoWrapper>
     <p>Sponsored by</p>
     <a href="https://futurice.com/">
@@ -33,10 +34,5 @@ const Sponsor = ({ block }) => (
     </a>
   </LogoWrapper>
 );
-
-Sponsor.propTypes = {
-  block: PropTypes.bool,
-  className: PropTypes.string
-};
 
 export default Sponsor;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 import MenuItem from './MenuItem';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
   title: 'Design System|Menu Item',

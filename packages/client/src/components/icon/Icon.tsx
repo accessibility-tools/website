@@ -4,14 +4,15 @@ import { icons } from '../../shared/icons';
 import { IIcon, IPath, ISVG } from './types';
 
 const Svg = styled.svg<ISVG>`
-  display: ${(props) => (props.block ? 'block' : 'inline-block')};
+  display: ${({ block }: { block: boolean }): string =>
+    block ? 'block' : 'inline-block'};
   height: 1em;
   shape-rendering: inherit;
   transform: translate3d(0, 0, 0);
 `;
 
 const Path = styled.path<IPath>`
-  fill: ${(props) => props.color || 'currentColor'};
+  fill: ${({ color }: { color: string }): string => color || 'currentColor'};
 `;
 
 /**

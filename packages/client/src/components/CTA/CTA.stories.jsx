@@ -1,7 +1,7 @@
 import React from 'react';
 import { object } from '@storybook/addon-knobs';
 import CTA from './CTA.tsx';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
   title: 'Design System|CTA',

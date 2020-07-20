@@ -6,5 +6,9 @@ export interface ILink extends React.HTMLProps<HTMLLinkElement> {
   url?: string;
   isExternal?: boolean;
   isSecondary?: boolean;
-  children?: any;
+  children?:
+    | React.ReactElement
+    | null
+    | (() => React.ReactElement | null)
+    | React.ReactElement[];
 }

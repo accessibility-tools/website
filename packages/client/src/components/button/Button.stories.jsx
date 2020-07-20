@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button.tsx';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
   title: 'Design System|Button',

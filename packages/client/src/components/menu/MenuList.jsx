@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { color } from '../../shared/style.ts';
 import MenuItem from './MenuItem';
-import Sponsor from '../sponsor/Sponsor';
+import Sponsor from '../sponsor/Sponsor.tsx';
 
 const menuData = {
   TOOLS: { title: 'the tools', href: '/#tools' },
