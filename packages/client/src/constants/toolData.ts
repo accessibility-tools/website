@@ -21,7 +21,7 @@ export const ciTool = {
 export const webChecker = {
   id: 'webChecker',
   title: 'Accessibility checker for websites',
-  img: '/illustrations/webchecker-placeholder.png',
+  img: '/illustrations/WebCheckerHighDefinition.png',
   desc:
     'Check any website for accessibility issues by simply entering a URL into our online tool.',
   details: [
@@ -40,7 +40,7 @@ export const webChecker = {
 export const webCheckerAlt = {
   id: 'webCheckerAlt',
   title: 'About the tool',
-  img: '/illustrations/webchecker-placeholder.png',
+  img: '/illustrations/WebCheckerHighDefinition.png',
   desc:
     'Check any website for accessibility issues by simply entering a URL into our online tool.',
   details: [
