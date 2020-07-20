@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { spacing, color } from '../../shared/style.ts';
-import Icon from '../icon/Icon.tsx';
+
+import { spacing, color } from '../../shared/style';
+import Icon from '../icon/Icon';
+import { IStyledInput, IStyledSubtext, ITextInput } from './types';
 
 const TextInputWrapper = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const InputWrapper = styled.div`
   align-items: center;
 `;
 
-const StyledInput = styled.input`
+const StyledInput = styled.input<IStyledInput>`
   height: 48px;
   width: -webkit-fill-available;
   width: -moz-available;
@@ -57,9 +58,10 @@ const IconWrapper = styled.span`
   right: 34px;
 `;
 
-const StyledSubtext = styled.div`
+const StyledSubtext = styled.div<IStyledSubtext>`
   padding: 1rem 0;
-  color: ${({ error }) => (error ? color.error : color.mediumGrey)};
+  color: ${({ isError }: { isError: boolean }) =>
+    isError ? color.error : color.mediumGrey};
 
   & > *:first-child {
     margin-right: 0.5rem;
@@ -70,11 +72,11 @@ const StyledSubtext = styled.div`
   }
 `;
 
-const TextInput = ({
+const TextInput: React.FC<ITextInput> = ({
   label,
   type,
   id,
-  valid,
+  isValid,
   disabled,
   placeholder,
   errorText,
@@ -94,19 +96,19 @@ const TextInput = ({
         type={type}
         id={id}
         name={id}
-        aria-invalid={valid !== undefined}
+        aria-invalid={isValid !== undefined}
         aria-describedby={(hintText || errorText) && `${id}-hint ${id}-error`}
         placeholder={placeholder}
         error={errorText}
-        valid={valid}
+        isValid={isValid}
         disabled={disabled}
         onChange={onChange}
       />
-      {(valid || errorText) && (
+      {(isValid || errorText) && (
         <IconWrapper>
           <Icon
-            icon={valid ? 'success' : 'error'}
-            color={valid ? color.darkBlue : color.error}
+            icon={isValid ? 'success' : 'error'}
+            color={isValid ? color.darkBlue : color.error}
           />
         </IconWrapper>
       )}
@@ -118,25 +120,11 @@ const TextInput = ({
       </StyledSubtext>
     )}
     {errorText && (
-      <StyledSubtext id={`${id}-error`} error>
+      <StyledSubtext id={`${id}-error`} isError>
         Error: {errorText}
       </StyledSubtext>
     )}
   </TextInputWrapper>
 );
-
-TextInput.propTypes = {
-  type: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  valid: PropTypes.bool,
-  disabled: PropTypes.bool,
-  placeholder: PropTypes.string,
-  errorText: PropTypes.string,
-  hintText: PropTypes.string,
-  hintIcon: PropTypes.string,
-  iconColor: PropTypes.string,
-  onChange: PropTypes.func
-};
 
 export default TextInput;

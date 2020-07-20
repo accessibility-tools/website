@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { color } from '../../shared/style';
 import Stack from '../layout-components/Stack';
 import Center from '../layout-components/Center';
-import TextInput from '../text-input/TextInput';
+import TextInput from '../text-input/TextInput.tsx';
 import Button from '../button/Button';
 
 const SignUpBtn = styled(Button)`

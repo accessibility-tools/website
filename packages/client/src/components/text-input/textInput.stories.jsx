@@ -1,5 +1,5 @@
 import React from 'react';
-import TextInput from './TextInput';
+import TextInput from './TextInput.tsx';
 import { text, boolean, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
@@ -19,7 +19,7 @@ export const textInput = () => (
       hintText={text('hintText', '')}
       disabled={boolean('disabled', false)}
       errorText={text('errorText', '')}
-      valid={boolean('valid', undefined)}
+      isValid={boolean('isValid', undefined)}
       required={boolean('required', false)}
       onChange={action('input-change')}
       width={number('width', 340)}
@@ -71,7 +71,7 @@ export const validTextInput = () => (
       id={text('id', 'text-input')}
       label={text('label', 'Input label')}
       placeholder={text('placeholder', 'Placeholder text')}
-      valid={boolean('valid', true)}
+      isValid={boolean('isValid', true)}
       value={text('value', 'Some appropriate text')}
       disabled={boolean('disabled', false)}
     />
@@ -88,7 +88,7 @@ export const textInputWithWidth = () => (
       hintText={text('hintText', '')}
       disabled={boolean('disabled', false)}
       errorText={text('errorText', '')}
-      valid={boolean('valid', undefined)}
+      isValid={boolean('isValid', undefined)}
       required={boolean('required', false)}
       onChange={action('input-change')}
       width={number('width', 123)}

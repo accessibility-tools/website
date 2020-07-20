@@ -1,5 +1,5 @@
 import React from 'react';
-import ToolOverview from './ToolOverview';
+import ToolOverview from './ToolOverview.tsx';
 import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 import Center from '../layout-components/Center.tsx';
 
@@ -21,7 +21,7 @@ const toolData = {
 export const webCheckerInfo = () => (
   <StoryWrapper>
     <Center>
-      <ToolOverview toolData={toolData} />
+      <ToolOverview data={toolData} />
     </Center>
   </StoryWrapper>
 );

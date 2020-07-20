@@ -5,9 +5,9 @@ import { color } from '../shared/style.ts';
 import Switcher from '../components/layout-components/Switcher.tsx';
 import Stack from '../components/layout-components/Stack.tsx';
 import Center from '../components/layout-components/Center.tsx';
-import TextInput from '../components/text-input/TextInput';
+import TextInput from '../components/text-input/TextInput.tsx';
 import Button from '../components/button/Button.tsx';
-import ToolOverview from '../components/tool-overview/ToolOverview';
+import ToolOverview from '../components/tool-overview/ToolOverview.tsx';
 import { webCheckerAlt } from '../constants/toolData.ts';
 
 const PageContainer = styled(Stack)`

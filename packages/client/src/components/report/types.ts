@@ -27,8 +27,3 @@ export interface IOverviewCard {
 export interface IReportIntro {
   isLoaded?: boolean;
 }
-
-export interface IReportOverview {
-
-}
-

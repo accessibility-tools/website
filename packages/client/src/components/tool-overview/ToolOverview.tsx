@@ -1,12 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Switcher from '../layout-components/Switcher.tsx';
-import Stack from '../layout-components/Stack.tsx';
-import Center from '../layout-components/Center.tsx';
-import CTA from '../CTA/CTA.tsx';
-import Link from '../links/Link.tsx';
-import Banner from '../banner/Banner.tsx';
+
+import Switcher from '../layout-components/Switcher';
+import Stack from '../layout-components/Stack';
+import Center from '../layout-components/Center';
+import CTA from '../CTA/CTA';
+import Link from '../links/Link';
+import Banner from '../banner/Banner';
+import { IToolImg, IToolOverview } from './types';
 
 const InfoWrapper = styled(Stack)`
   max-width: 32rem;
@@ -31,9 +32,10 @@ const InfoWrapper = styled(Stack)`
   }
 `;
 
-const ToolImg = styled.img`
+const ToolImg = styled.img<IToolImg>`
   width: 60%;
-  transform: ${({ isTransform }) => isTransform && 'scaleX(-1)'};
+  transform: ${({ isTransform }: { isTransform: boolean }): string =>
+    isTransform && 'scaleX(-1)'};
 `;
 
 const ToolLink = styled(Link)`
@@ -42,7 +44,7 @@ const ToolLink = styled(Link)`
   align-items: center;
 `;
 
-const ToolOverview = ({ data, type }) => {
+const ToolOverview: React.FC<IToolOverview> = ({ data, type }) => {
   const { id, title, img, desc, details, ctaData, linkData } = data;
 
   return (
@@ -58,9 +60,11 @@ const ToolOverview = ({ data, type }) => {
               <p>{desc}</p>
               {details && (
                 <ul>
-                  {details.map((detail, index) => (
-                    <li key={`${id} detail ${index}`}>{detail}</li>
-                  ))}
+                  {details.map(
+                    (detail: string, index: number): React.ReactNode => (
+                      <li key={`${id} detail ${index}`}>{detail}</li>
+                    )
+                  )}
                 </ul>
               )}
               {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
@@ -89,11 +93,6 @@ const ToolOverview = ({ data, type }) => {
       )}
     </Switcher>
   );
-};
-
-ToolOverview.propTypes = {
-  data: PropTypes.object,
-  type: PropTypes.string
 };
 
 export default ToolOverview;

@@ -16,7 +16,7 @@ const BannerWrapper = styled.div<IBannerWrapper>`
   align-self: flex-start;
 
   @media (min-width: 60rem) {
-    width: ${({ width }) => (width ? width : 'auto')};
+    width: ${({ width }: { width: string }) => (width ? width : 'auto')};
   }
 `;
 

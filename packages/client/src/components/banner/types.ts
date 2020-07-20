@@ -1,5 +1,5 @@
 export interface IBannerWrapper {
-  width: string;
+  width?: string;
 }
 
 export interface IBanner extends IBannerWrapper {
