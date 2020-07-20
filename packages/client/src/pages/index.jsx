@@ -158,7 +158,7 @@ const LandingPage = () => {
         <Section id="learn-more">
           <Stack space="large">
             <Center>
-              <h2>Learn more</h2>
+              <h1>Learn more</h1>
               <Subtext isTransform>
                 Why should we care about accessibility and how to get started?
               </Subtext>
@@ -174,7 +174,7 @@ const LandingPage = () => {
 
         <Section id="about">
           <Stack space="medium" center>
-            <h2>About & Contact</h2>
+            <h1>About & Contact</h1>
             <Subtext>
               We are a group of developers and designers. We are passionate
               about accessible digital products. If you want to be part of this
