@@ -1,7 +1,7 @@
 import React from 'react';
-import ToolOverview from './ToolOverview';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
-import Center from '../layout-components/Center';
+import ToolOverview from './ToolOverview.tsx';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
+import Center from '../layout-components/Center.tsx';
 
 export default {
   title: 'Design System|ToolOverview',
@@ -21,7 +21,7 @@ const toolData = {
 export const webCheckerInfo = () => (
   <StoryWrapper>
     <Center>
-      <ToolOverview toolData={toolData} />
+      <ToolOverview data={toolData} />
     </Center>
   </StoryWrapper>
 );

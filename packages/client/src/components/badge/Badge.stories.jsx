@@ -1,9 +1,9 @@
 import React from 'react';
 import { select, number } from '@storybook/addon-knobs';
 import Badge from './Badge';
-import { color } from '../../shared/style';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
-import ComingSoonBadge from './ComingSoonBadge';
+import { color } from '../../shared/style.ts';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
+import ComingSoonBadge from './ComingSoonBadge.tsx';
 
 export default {
   title: 'Design System|Badge',

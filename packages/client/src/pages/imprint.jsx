@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from '../shared/style';
-import Stack from '../components/layout-components/Stack';
+import { color } from '../shared/style.ts';
+import Stack from '../components/layout-components/Stack.tsx';
 
 const PageContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};

@@ -1,6 +1,6 @@
 import React from 'react';
-import Pagination from './Pagination';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import Pagination from './Pagination.tsx';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
   title: 'Design System|Pagination',
