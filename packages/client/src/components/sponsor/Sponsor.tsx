@@ -15,16 +15,12 @@ const LogoWrapper = styled.div`
   display: inline-flex;
   align-items: baseline;
   justify-content: flex-start;
-  font-size: initial;
-  color: initial;
-  text-decoration: initial;
-  fontSize: inital;
 `;
 
 const Sponsor: React.FC<ISponsor> = ({ block }) => (
-  <a href="https://futurice.com/">
   <LogoWrapper>
     <p>Sponsored by</p>
+    <a href="https://futurice.com/">
       <span className="visually-hidden">Futurice.com</span>
       <Logo
         viewBox="0 0 100 21"
@@ -35,8 +31,8 @@ const Sponsor: React.FC<ISponsor> = ({ block }) => (
         icon="FutuLogo"
         color={color.primary}
       ></Logo>
+    </a>
   </LogoWrapper>
-  </a>
 );
 
 export default Sponsor;
