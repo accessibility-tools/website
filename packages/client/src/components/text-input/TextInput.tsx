@@ -59,7 +59,7 @@ const IconWrapper = styled.span`
 `;
 
 const StyledSubtext = styled.div<IStyledSubtext>`
-  padding: .8rem 0;
+  padding: .2rem 0 .8rem;
   color: ${({ isError }: { isError: boolean }) =>
     isError ? color.error : color.mediumGrey};
 
