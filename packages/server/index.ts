@@ -24,7 +24,7 @@ async function main() {
 async function bootstrapClientApp(expressApp) {
   await nextApp.prepare();
 
-  expressApp.get('/report', routes.report);
+  expressApp.get('/api/report', routes.report);
   expressApp.get('*', nextApp.getRequestHandler());
 }
 

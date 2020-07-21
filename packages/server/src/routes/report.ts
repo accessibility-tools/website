@@ -7,7 +7,7 @@ import { getViolationsInfo, isUrl, mapViolationsToCategory } from '../common/uti
 
 const router = ExpressRouter();
 
-router.get('/report', async (req, res) => {
+router.get('/api/report', async (req, res) => {
   const url: string | null = decodeURIComponent(req.query.url) || null;
 
   if (!url || !(url && isUrl(url))) {
