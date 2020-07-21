@@ -55,6 +55,11 @@ const StyledSummary = styled.summary`
     left: 0;
     position: absolute;
   }
+  &:focus{
+    border-radius: 3px;
+    border: solid 4px #00119e;
+    border-top-style: none;
+  }
 `;
 
 const Details: React.FC<IDetails> = ({ children, title }) => {
