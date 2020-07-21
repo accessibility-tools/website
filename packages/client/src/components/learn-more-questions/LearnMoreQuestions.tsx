@@ -39,7 +39,7 @@ const LearnMoreQuestions: React.FC = () => (
       <Link
         text="more about web accessibility"
         icon="extLink"
-        url="/"
+        url="https://www.w3.org/WAI/fundamentals/accessibility-intro/"
         isSecondary={true}
       />
     </Details>
@@ -53,7 +53,7 @@ const LearnMoreQuestions: React.FC = () => (
       <Link
         text="more about why accessibility matters"
         icon="extLink"
-        url="/"
+        url="https://a11y-101.com/"
         isSecondary={true}
       />
     </Details>
@@ -80,7 +80,7 @@ const LearnMoreQuestions: React.FC = () => (
       <Link
         text="read the webaim survey summary"
         icon="extLink"
-        url="/"
+        url="https://webaim.org/projects/million/"
         isSecondary={true}
       />
     </Details>
@@ -100,7 +100,7 @@ const LearnMoreQuestions: React.FC = () => (
       <Link
         text="browse WCAG 2.1 guidelines"
         icon="extLink"
-        url="/"
+        url="https://www.w3.org/TR/WCAG21/"
         isSecondary={true}
       />
     </Details>

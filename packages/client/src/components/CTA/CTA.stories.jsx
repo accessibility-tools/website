@@ -12,7 +12,7 @@ const label = 'CTA-props';
 
 export const primary = () => {
   const ciTool = {
-    text: 'view on github',
+    text: 'Find out more on github',
     url: 'https://github.com/accessibility-tools/ci',
     isExternal: true
   };
@@ -27,7 +27,7 @@ export const primary = () => {
 export const secondary = () => {
   const webChecker = {
     text: 'check out the tool',
-    url: '/',
+    url: '/checker',
     isSecondary: true
   };
   const data = object(label, webChecker);
@@ -40,7 +40,7 @@ export const secondary = () => {
 
 export const primaryWithIcon = () => {
   const ciTool = {
-    text: 'view on github',
+    text: 'Find out more on github',
     url: 'https://github.com/accessibility-tools/ci',
     icon: 'extLink',
     isExternal: true
