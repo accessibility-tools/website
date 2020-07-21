@@ -95,7 +95,7 @@ const WebCheckerPage = () => {
               type="text"
               id="url"
               label="Enter a Website-URL"
-              placeholder="www.futurice.com"
+              placeholder="www.example.com"
               hintIcon="manicule"
               hintText="It can take a longer time to create reports for big websites."
               iconColor={color.blue}
