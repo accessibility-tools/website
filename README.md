@@ -7,7 +7,6 @@ This readme is still a work in progress.
 - [Yarn](https://yarnpkg.com/)
 - [NextJS](https://nextjs.org/)
 - [Storybook](https://storybook.js.org/)
-- [GraphQL](https://graphql.org/)
 - [Express](https://expressjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [styled-components](https://styled-components.com/)
@@ -53,8 +52,6 @@ yarn start
 **Note #1**: Hot reloading is already enabled in dev mode.
 
 **Note #2**: The app will be started on http://localhost:3000.
-
-**Note #3**: GraphQL playground can be found on http://localhost:3000/graphql.
 
 ### Storybook
 

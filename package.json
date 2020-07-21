@@ -10,7 +10,9 @@
         "dev": "export $(cat .env | xargs) && yarn workspace @webchecker/server run dev"
     },
     "private": true,
-    "workspaces": ["packages/*"],
+    "workspaces": [
+        "packages/*"
+    ],
     "engines": {
         "node": "14.x"
     }
