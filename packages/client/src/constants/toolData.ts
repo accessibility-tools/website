@@ -10,7 +10,7 @@ export const ciTool = {
     'aci https://example.com'
   ],
   ctaData: {
-    text: 'view on github',
+    text: 'Find out more on Github',
     url: 'https://github.com/accessibility-tools/ci',
     icon: 'extLink',
     isExternal: true
