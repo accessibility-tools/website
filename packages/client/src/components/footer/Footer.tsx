@@ -51,7 +51,7 @@ const Footer: React.FC = () => (
   <StyledFooter>
     <LicenseWrapper>
       <LicenseLink
-        url="/"
+        url="https://github.com/accessibility-tools/design-systems/blob/master/LICENSE"
         isSecondary={true}
         aria-label="license information about the tool"
       >
