@@ -1,29 +1,31 @@
 import express from 'express';
-
 import nextApp from '@webchecker/client';
-import apolloServer from '@webchecker/graphql';
+
+import routes from './src/routes';
 
 const { PORT } = process.env;
 
 async function main() {
-  const app = express();
+  try {
+    const app = express();
 
-  await bootstrapApolloServer(app);
-  await bootstrapClientApp(app);
+    await bootstrapClientApp(app);
 
-  app.listen(PORT, (err) => {
-    if (err) throw err;
-    console.log(`[ server ] ready on port ${PORT}`);
-  });
+    app.listen(PORT, (err) => {
+      if (err) throw err;
+      console.log(`[ server ] ready on port ${PORT}`);
+    });
+  } catch (e) {
+    console.error(e);
+    process.exit(1);
+  }
 }
 
 async function bootstrapClientApp(expressApp) {
   await nextApp.prepare();
-  expressApp.get('*', nextApp.getRequestHandler());
-}
 
-async function bootstrapApolloServer(expressApp) {
-  apolloServer.applyMiddleware({ app: expressApp });
+  expressApp.get('/report', routes.report);
+  expressApp.get('*', nextApp.getRequestHandler());
 }
 
 main();
