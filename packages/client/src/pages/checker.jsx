@@ -82,10 +82,7 @@ const WebCheckerPage = () => {
               <h1>Check your website for accessibility issues</h1>
             </Center>
             <Center>
-              <IntroImg
-                src="/illustrations/webchecker.svg"
-                alt="web checker illustration"
-              />
+              <IntroImg src="/illustrations/webchecker.svg" alt="web checker illustration" />
             </Center>
           </div>
         </IntroWrapper>

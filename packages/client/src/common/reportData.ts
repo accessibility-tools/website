@@ -2,20 +2,13 @@ export const mockReportData = {
   critical: [
     {
       title: 'color contrast',
-      summary:
-        'Ensure the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds.',
+      summary: 'Ensure the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds.',
       failedStandard: 'WCAG 2 AA',
       resource: '/',
       fixes: [
         {
-          summary:
-            '15 element have insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.',
-          tips: [
-            'foreground color: #0ab587',
-            'background color: #f2f2f2',
-            'font size: 45pt',
-            'font weight: bold'
-          ],
+          summary: '15 element have insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.',
+          tips: ['foreground color: #0ab587', 'background color: #f2f2f2', 'font size: 45pt', 'font weight: bold'],
           affectedElements: [
             {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
@@ -50,14 +43,8 @@ export const mockReportData = {
           ]
         },
         {
-          summary:
-            '9 elements have insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.',
-          tips: [
-            'foreground color: #0ab587',
-            'background color: #f2f2f2',
-            'font size: 45pt',
-            'font weight: bold'
-          ],
+          summary: '9 elements have insufficient color contrast of 2.35:1. The expected contrast ratio is 3:1.',
+          tips: ['foreground color: #0ab587', 'background color: #f2f2f2', 'font size: 45pt', 'font weight: bold'],
           affectedElements: [
             {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
@@ -84,8 +71,7 @@ export const mockReportData = {
     },
     {
       title: '<img> element',
-      summary:
-        'Ensure <img> elements have alternate text or a role of none or presentation.',
+      summary: 'Ensure <img> elements have alternate text or a role of none or presentation.',
       failedStandard: 'WCAG 2 AA',
       resource: '/',
       fixes: [
@@ -117,10 +103,7 @@ export const mockReportData = {
         },
         {
           summary: '3 <img> elements have no alternate text.',
-          tips: [
-            'Element does not have an alt attribute',
-            'aria-label attribute does not exist or is empty'
-          ],
+          tips: ['Element does not have an alt attribute', 'aria-label attribute does not exist or is empty'],
           affectedElements: [
             {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
@@ -202,16 +185,13 @@ export const mockReportData = {
   minor: [
     {
       title: 'display orientation',
-      summary:
-        'Ensure content is not locked to any specific display orientation, and the content is operable in all display orientations.',
+      summary: 'Ensure content is not locked to any specific display orientation, and the content is operable in all display orientations.',
       failedStandard: 'WCAG 2 AA',
       resource: '/',
       fixes: [
         {
           summary: '2 elements are not operable in all display orientations.',
-          tips: [
-            'Some page content are not operable in all display orientations'
-          ],
+          tips: ['Some page content are not operable in all display orientations'],
           affectedElements: [
             {
               page: 'https://futurice.com/careers/lead-developer-helsinki',
