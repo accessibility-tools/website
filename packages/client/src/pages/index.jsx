@@ -174,6 +174,7 @@ const LandingPage = () => {
 
         <Section id="about">
           <Stack space="medium" center>
+          <Center>
             <h1>About & Contact</h1>
             <Subtext>
               We are a group of developers and designers. We are passionate
@@ -187,6 +188,7 @@ const LandingPage = () => {
               icon="mailto"
               isSecondary={true}
             />
+            </Center>
           </Stack>
         </Section>
       </PageContainer>
