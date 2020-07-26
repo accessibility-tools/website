@@ -7,7 +7,7 @@ import Stack from '../layout-components/Stack';
 import Button from '../button/Button';
 import Icon from '../icon/Icon';
 import OverviewCard from './OverviewCard';
-import { mockReportData } from '../../data/reportData';
+import { mockReportData } from '../../common/reportData';
 
 const OverviewContainer = styled(Stack)`
   padding: 0;

@@ -5,12 +5,7 @@ module.exports = {
     jest: true,
     node: true
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    'plugin:jsx-a11y/recommended'
-  ],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended', 'plugin:jsx-a11y/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
@@ -25,11 +20,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    indent: [
-      'error',
-      2,
-      { ignoredNodes: ['ConditionalExpression'], SwitchCase: 1 }
-    ],
+    indent: ['error', 2, { ignoredNodes: ['ConditionalExpression'], SwitchCase: 1 }],
     quotes: [1, 'single'],
     semi: ['error', 'always'],
     'prettier/prettier': [
@@ -70,12 +61,7 @@ module.exports = {
     'no-use-before-define': 0,
 
     // Overriding the restricted syntax list, because we want to allow for-of statements.
-    'no-restricted-syntax': [
-      'error',
-      'ForInStatement',
-      'LabeledStatement',
-      'WithStatement'
-    ]
+    'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement']
   },
   settings: {
     react: {

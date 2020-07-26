@@ -7,7 +7,7 @@ import ReportIntro from '../components/report/ReportIntro.tsx';
 import ReportOverview from '../components/report/ReportOverview.tsx';
 import ReportDetails from '../components/report/ReportDetails.tsx';
 import Pagination from '../components/pagination/Pagination.tsx';
-import { mockReportData } from '../data/reportData.ts';
+import { mockReportData } from '../common/reportData.ts';
 
 const LoadedPageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
