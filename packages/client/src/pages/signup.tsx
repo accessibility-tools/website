@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from '../shared/style.ts';
-import Switcher from '../components/layout-components/Switcher.tsx';
-import Stack from '../components/layout-components/Stack.tsx';
-import Center from '../components/layout-components/Center.tsx';
+
+import { color } from '../shared/style';
+import Switcher from '../components/layout-components/Switcher';
+import Stack from '../components/layout-components/Stack';
+import Center from '../components/layout-components/Center';
 
 const PageContainer = styled(Switcher)`
   background-color: ${color.extraLightPurple};
@@ -27,7 +28,7 @@ const SignupImg = styled.img`
   }
 `;
 
-const SignupPage = () => (
+const SignupPage: React.FC = () => (
   <PageContainer threshold="40rem" space="0">
     <div>
       <Center>

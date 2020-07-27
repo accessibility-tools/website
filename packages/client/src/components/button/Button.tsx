@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { background, color, spacing } from '../../shared/style';
 import Icon from '../icon/Icon';
-import { IButton, IStyledButton } from './types';
+import { IButton, IButtonLink, IStyledButton } from './types';
 
 const StyledButton = styled.button<IStyledButton>`
   background-color: ${color.blue};
@@ -77,7 +77,11 @@ const StyledButton = styled.button<IStyledButton>`
   `}
 `;
 
-const Button: React.FC<IButton> = ({ text, icon, ...otherProps }) => (
+const Button: React.FC<IButton | IButtonLink> = ({
+  text,
+  icon,
+  ...otherProps
+}) => (
   <StyledButton icon={!!icon} {...otherProps}>
     {text}
     {icon && <Icon icon={icon} />}

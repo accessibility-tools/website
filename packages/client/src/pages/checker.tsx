@@ -1,14 +1,15 @@
 import React from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
-import { color } from '../shared/style.ts';
-import Switcher from '../components/layout-components/Switcher.tsx';
-import Stack from '../components/layout-components/Stack.tsx';
-import Center from '../components/layout-components/Center.tsx';
-import TextInput from '../components/text-input/TextInput.tsx';
-import Button from '../components/button/Button.tsx';
-import ToolOverview from '../components/tool-overview/ToolOverview.tsx';
-import { webCheckerAlt } from '../constants/toolData.ts';
+
+import { color } from '../shared/style';
+import Switcher from '../components/layout-components/Switcher';
+import Stack from '../components/layout-components/Stack';
+import Center from '../components/layout-components/Center';
+import TextInput from '../components/text-input/TextInput';
+import Button from '../components/button/Button';
+import ToolOverview from '../components/tool-overview/ToolOverview';
+import { webCheckerAlt } from '../constants/toolData';
 
 const PageContainer = styled(Stack)`
   background-color: ${color.white};
@@ -59,19 +60,20 @@ const IntroWrapper = styled(Switcher)`
   }
 `;
 
-const IntroImg = styled.img`
+const IntroImg = styled.img<React.ImgHTMLAttributes<HTMLImageElement>>`
   width: 80%;
   transform: scaleX(-1);
 `;
 
-const WebCheckerPage = () => {
-  const handleSubmit = (e) => {
+const WebCheckerPage: React.FC = () => {
+  const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     const { pathname } = Router;
     if (pathname === '/checker') {
       Router.push('/report');
     }
   };
+
   return (
     <PageContainer>
       <Section>
@@ -82,7 +84,10 @@ const WebCheckerPage = () => {
               <h1>Check your website for accessibility issues</h1>
             </Center>
             <Center>
-              <IntroImg src="/illustrations/webchecker.svg" alt="web checker illustration" />
+              <IntroImg
+                src="/illustrations/webchecker.svg"
+                alt="web checker illustration"
+              />
             </Center>
           </div>
         </IntroWrapper>

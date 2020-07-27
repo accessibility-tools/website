@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { background, color } from '../shared/style.ts';
-import Switcher from '../components/layout-components/Switcher.tsx';
-import Stack from '../components/layout-components/Stack.tsx';
-import ReportIntro from '../components/report/ReportIntro.tsx';
-import ReportOverview from '../components/report/ReportOverview.tsx';
-import ReportDetails from '../components/report/ReportDetails.tsx';
-import Pagination from '../components/pagination/Pagination.tsx';
-import { mockReportData } from '../common/reportData.ts';
+import { background, color } from '../shared/style';
+
+import Switcher from '../components/layout-components/Switcher';
+import Stack from '../components/layout-components/Stack';
+import ReportIntro from '../components/report/ReportIntro';
+import ReportOverview from '../components/report/ReportOverview';
+import ReportDetails from '../components/report/ReportDetails';
+import Pagination from '../components/pagination/Pagination';
+import { mockReportData } from '../common/reportData';
 
 const LoadedPageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
@@ -76,7 +77,7 @@ const BlankDetails = styled.div`
   width: inherit;
 `;
 
-const ReportPage = () =>
+const ReportPage: React.FC = () =>
   mockReportData ? (
     <LoadedPageContainer space="large">
       <Section>
