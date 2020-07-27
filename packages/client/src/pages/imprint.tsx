@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from '../shared/style.ts';
-import Stack from '../components/layout-components/Stack.tsx';
+
+import { color } from '../shared/style';
+import Stack from '../components/layout-components/Stack';
 
 const PageContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -20,7 +21,7 @@ const PageContainer = styled(Stack)`
   }
 `;
 
-const ImprintPage = () => (
+const ImprintPage: React.FC = () => (
   <PageContainer>
     <h1>Imprint</h1>
     <div>

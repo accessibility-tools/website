@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from '../shared/style.ts';
-import Switcher from '../components/layout-components/Switcher.tsx';
-import Stack from '../components/layout-components/Stack.tsx';
-import Center from '../components/layout-components/Center.tsx';
-import SEO from '../components/SEO/SEO.tsx';
-import FAQ from '../components/learn-more-questions/LearnMoreQuestions.tsx';
-import Link from '../components/links/Link.tsx';
-import ToolOverview from '../components/tool-overview/ToolOverview.tsx';
-import { ciTool, webChecker } from '../constants/toolData.ts';
+
+import { color } from '../shared/style';
+import Switcher from '../components/layout-components/Switcher';
+import Stack from '../components/layout-components/Stack';
+import Center from '../components/layout-components/Center';
+import SEO from '../components/SEO/SEO';
+import FAQ from '../components/learn-more-questions/LearnMoreQuestions';
+import Link from '../components/links/Link';
+import ToolOverview from '../components/tool-overview/ToolOverview';
+import { ciTool, webChecker } from '../constants/toolData';
 
 const PageContainer = styled(Stack)`
   background-color: ${color.extraLightPurple};
@@ -91,7 +92,7 @@ const LearnMoreImg = styled.img`
 
 const Subtext = styled.p`
   max-width: 36rem;
-  ${({ isTransform }) =>
+  ${({ isTransform }: { isTransform: boolean }) =>
     isTransform &&
     ` & {
       text-transform: uppercase;
@@ -110,7 +111,7 @@ const ContactLink = styled(Link)`
   display: inline;
 `;
 
-const LandingPage = () => {
+const LandingPage: React.FC = () => {
   return (
     <>
       <SEO siteTitle="Accessibility checking tools" />
