@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../navigation/Nav.tsx';
+import Nav from '../navigation/Nav';
 import Footer from '../footer/Footer';
 import { ILayout } from './types';
 
