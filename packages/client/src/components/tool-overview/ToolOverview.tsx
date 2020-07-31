@@ -87,7 +87,7 @@ const ToolOverview: React.FC<IToolOverview> = ({ data, type }) => {
             </InfoWrapper>
           </Center>
           <Center>
-            <ToolImg src={img} alt="image of ci tool" isTransform />
+            <ToolImg src={img} alt="image of ci tool" />
           </Center>
         </div>
       )}
