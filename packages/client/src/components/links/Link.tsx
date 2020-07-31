@@ -5,6 +5,10 @@ import { color } from '../../shared/style';
 import Icon from '../icon/Icon';
 import { ILink } from './types';
 
+export const UnStyledLink = styled.a`
+  all: inherit;
+`;
+
 const StyledLink = styled.a`
   color: ${color.blue};
   display: flex;
@@ -44,7 +48,7 @@ const StyledLink = styled.a`
 
   ${({ icon }: { icon: boolean }): string | void =>
     icon &&
-    `      
+    `
       svg {
         margin-right: 0.5em;
       }
@@ -55,13 +59,13 @@ const StyledLink = styled.a`
     `
       color: ${color.primary};
 
-      & > span {   
+      & > span {
         &::after {
           opacity: 0;
         }
       }
 
-      &:hover { 
+      &:hover {
         color: ${color.mediumGrey};
         cursor: pointer;
       }
