@@ -97,9 +97,9 @@ const WebCheckerPage: React.FC = () => {
               type="text"
               id="url"
               label="Enter a Website-URL"
-              placeholder="www.futurice.com"
+              placeholder="www.example.com"
               hintIcon="manicule"
-              hintText="Reports of bigger websites can take a some time to be created."
+              hintText="It can take a longer time to create reports for big websites."
               iconColor={color.blue}
             />
 
