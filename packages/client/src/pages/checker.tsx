@@ -10,6 +10,7 @@ import TextInput from '../components/text-input/TextInput';
 import Button from '../components/button/Button';
 import ToolOverview from '../components/tool-overview/ToolOverview';
 import { webCheckerAlt } from '../constants/toolData';
+import SEO from '../components/SEO/SEO';
 
 const PageContainer = styled(Stack)`
   background-color: ${color.white};
@@ -75,6 +76,8 @@ const WebCheckerPage: React.FC = () => {
   };
 
   return (
+    <>
+    <SEO siteTitle="Check your website for accessibility issues" />
     <PageContainer>
       <Section>
         <IntroWrapper threshold="40rem">
@@ -112,6 +115,7 @@ const WebCheckerPage: React.FC = () => {
         <ToolOverview data={webCheckerAlt} type="web" />
       </Section>
     </PageContainer>
+    </>
   );
 };
 export default WebCheckerPage;
