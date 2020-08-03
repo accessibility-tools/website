@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" aria-hidden="true" focusable="false">
     <g fill="none" fill-rule="evenodd">
         <g>
             <path fill="#464646" fill-rule="nonzero" d="M118 0c.513 0 .936.386.993.883L119 1v31.987l-1.315-1.065-.685.844V2H2v90h55.766l-.844.685L57.987 94H1c-.513 0-.936-.386-.993-.883L0 93V1C0 .487.386.064.883.007L1 0h117zm-1 33.941l2 1.619V93c0 .513-.386.936-.883.993L118 94H60.56l-1.619-2H117V33.941z" transform="translate(0 7)"/>
