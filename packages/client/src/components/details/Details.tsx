@@ -13,6 +13,10 @@ export const DetailsContainer = styled.details`
   &:active {
     background-color: ${color.purple};
   }
+  &:focus-within{
+    border-radius: 2px;
+    box-shadow: 0 0 0 3px ${color.white}, 0 0 0 7px ${color.darkBlue};
+  }
   & > * {
     margin: auto;
     max-width: 80%;
