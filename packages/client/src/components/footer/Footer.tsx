@@ -46,6 +46,10 @@ const ShortText = styled.span`
     display: none;
   }
 `;
+const Space = styled.div`
+  display:inline-block;
+  width:5px;
+`
 
 const Footer: React.FC = () => (
   <StyledFooter>
@@ -56,6 +60,7 @@ const Footer: React.FC = () => (
         aria-label="license information about the tool"
       >
         <Icon icon="creativeCommon1" />
+        <Space/>
         <Icon icon="creativeCommon2" />
       </LicenseLink>
       <FullText>The tool is licensed under Creative Commons CC-BY.</FullText>
