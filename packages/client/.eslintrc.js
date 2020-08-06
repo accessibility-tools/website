@@ -5,12 +5,12 @@ module.exports = {
     jest: true,
     node: true
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended', 'plugin:jsx-a11y/recommended'],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:jsx-a11y/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -18,18 +18,11 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['react'],
+  plugins: ['@typescript-eslint'],
   rules: {
     indent: ['error', 2, { ignoredNodes: ['ConditionalExpression'], SwitchCase: 1 }],
     quotes: [1, 'single'],
     semi: ['error', 'always'],
-    'prettier/prettier': [
-      'error',
-      {
-        tabWidth: 2,
-        tabs: false
-      }
-    ],
     'space-before-function-paren': [
       2,
       {
@@ -61,7 +54,10 @@ module.exports = {
     'no-use-before-define': 0,
 
     // Overriding the restricted syntax list, because we want to allow for-of statements.
-    'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement']
+    'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-explicit-any': 'off'
   },
   settings: {
     react: {
