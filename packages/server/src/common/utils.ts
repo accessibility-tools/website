@@ -26,11 +26,11 @@ export const getViolationsInfo = (data) =>
   }, { violations: [], pageUrls: [] });
 
 /**
- * @function mapViolationsToCategory
+ * @function mapViolationsByImpact
  * @param {Array<Object>} violations
  * @returns {Object} the violations grouped by impact level and then by issue id
  */
-export const mapViolationsToCategory = (violations) =>
+export const mapViolationsByImpact = (violations) =>
   violations.reduce(
     (acc, { nodes, id, impact, help, description, helpUrl, tags, pageUrl }) => {
       if (!acc[impact]) {
@@ -58,3 +58,14 @@ export const mapViolationsToCategory = (violations) =>
     },
     {}
   );
+
+export const countIssuesPerImpact = (violationsByCategory) => {
+  let impactCategoryCounts = { critical: 0, serious: 0, moderate: 0, minor: 0 };
+  for (let [impact, violations] of Object.entries(violationsByCategory)) {
+    for (let issue of Object.values(violations)) {
+      impactCategoryCounts[impact] += issue.nodes && issue.nodes.length;
+    }
+  }
+
+  return impactCategoryCounts;
+}
