@@ -7,7 +7,14 @@ import Stack from '../layout-components/Stack';
 import Button from '../button/Button';
 import Icon from '../icon/Icon';
 import OverviewCard from './OverviewCard';
-import { mockReportData } from '../../common/reportData';
+import { TIssuesPerImpact } from './types';
+
+
+interface IReportOverview {
+  issuesPerImpact: TIssuesPerImpact;
+  pagesScanned: string[];
+  websiteUrl: string;
+}
 
 const OverviewContainer = styled(Stack)`
   padding: 0;
@@ -48,11 +55,13 @@ const NoteContainer = styled.div`
   }
 `;
 
-const ReportOverview: React.FC = () => {
-  const issueCountArr = Object.keys(mockReportData).map(
-    (category) => mockReportData[category].length
-  );
-  const totalIssueCount = issueCountArr.reduce((a, b) => a + b, 0);
+
+const ReportOverview: React.FC<IReportOverview> = ({
+  issuesPerImpact,
+  pagesScanned,
+  websiteUrl,
+}) => {
+  const totalIssueCount = Object.values(issuesPerImpact).reduce((a, b) => a + b, 0);
 
   return (
     <OverviewContainer>
@@ -60,9 +69,9 @@ const ReportOverview: React.FC = () => {
         <div>
           <TitleContainer space="small">
             <h2>
-              Report for <span>xxx.com</span>
+              Report for <span>{websiteUrl}</span>
             </h2>
-            <Subtitle>xx pages scanned</Subtitle>
+            <Subtitle>{pagesScanned.length} pages scanned</Subtitle>
           </TitleContainer>
           <Button text="Copy URL" />
         </div>
@@ -74,7 +83,7 @@ const ReportOverview: React.FC = () => {
             subtext="Seems like there are some accessibility issues on this website to improve.
             Some are more critical than others to enable access for all users."
             isIssue
-            reportData={mockReportData}
+            issuesPerImpact={issuesPerImpact}
           />
         </div>
       </Switcher>

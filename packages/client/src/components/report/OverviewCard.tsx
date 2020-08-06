@@ -6,7 +6,7 @@ import Stack from '../layout-components/Stack';
 import Icon from '../icon/Icon';
 import Badge from '../badge/Badge';
 import { reportIcons } from '../../constants/reportIcons';
-import { IOverviewCard } from './types';
+import { IOverviewCard, TImpact } from './types';
 
 const CardContainer = styled(Stack)`
   background-color: ${color.white};
@@ -43,7 +43,7 @@ const OverviewCard: React.FC<IOverviewCard> = ({
   title,
   subtext,
   isIssue,
-  reportData
+  issuesPerImpact
 }) => (
   <CardContainer>
     <Title>
@@ -57,16 +57,17 @@ const OverviewCard: React.FC<IOverviewCard> = ({
     <p>{subtext}</p>
     {isIssue && (
       <IssueContainer>
-        {Object.keys(reportData).map(
-          (category: string): React.ReactElement => {
-            const iconData = reportIcons[category];
+        {Object.keys(issuesPerImpact).map(
+          (category): React.ReactElement => {
+            const iconData = reportIcons[category as TImpact];
+
             return (
               <Badge
                 key={`issue category: ${category}`}
                 label={category}
-                issueCount={reportData[category].length}
-                iconName={iconData.iconName}
-                iconColor={iconData.iconColor}
+                issueCount={issuesPerImpact[category as TImpact]}
+                iconName={iconData.name}
+                iconColor={iconData.color}
               />
             );
           }

@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { background, color } from '../shared/style';
 
-import Switcher from '../components/layout-components/Switcher';
 import Stack from '../components/layout-components/Stack';
 import ReportIntro from '../components/report/ReportIntro';
 import ReportOverview from '../components/report/ReportOverview';
 import ReportDetails from '../components/report/ReportDetails';
 import Pagination from '../components/pagination/Pagination';
-import { mockReportData } from '../common/reportData';
+import { useServices } from '../common/services';
+import { LoadingPage } from '../components/loading-page/loadingPage';
 
 const LoadedPageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
@@ -32,8 +32,8 @@ const Section = styled.section`
 
   &:nth-child(2) {
     background-color: ${color.extraLightPurple};
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem));
-    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem);
+    // clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem));
+    // -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem);
   } 
 `;
 
@@ -55,68 +55,75 @@ const LoadingPageContainer = styled(Stack)`
   }
 `;
 
-const BlankTitle = styled.div`
-  background-color: ${color.white};
-  height: 2rem;
-  flex: 0 0 15%;
+const ReportPage: React.FC = () => {
+  const [report, setReport] = useState<any>(null);
+  const [isFetching, setIsFetching] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const { apiClient: apiClientService } = useServices();
+  const websiteUrl = 'https://a11y-website.now.sh/';
 
-  &:first-child {
-    flex: 0 0 50%;
-    margin-right: auto;
-  }
-`;
+  useEffect(() => {
+    const fetchReport = async () => {
+      setIsFetching(true);
+      try {
+        const { report } = await apiClientService.getReport(websiteUrl);
+        setReport(report || null);
+      } catch (e) {
+        console.log('error', e);
+        setError(e);
+      } finally {
+        setIsFetching(false);
+      }
+    };
 
-const BlankCard = styled.div`
-  background-color: ${color.white};
-  height: 20rem;
-`;
+    fetchReport();
+  }, []);
 
-const BlankDetails = styled.div`
-  background-color: ${color.white};
-  height: 2rem;
-  width: inherit;
-`;
-
-const ReportPage: React.FC = () =>
-  mockReportData ? (
-    <LoadedPageContainer space="large">
-      <Section>
-        <ReportIntro isLoaded={!!mockReportData} />
-      </Section>
-      <Section>
-        <ReportOverview />
-      </Section>
-      <Section>
-        <ReportDetails />
-      </Section>
-      <Section>
-        <Pagination currentPage={1} totalPages={10} />
-      </Section>
-    </LoadedPageContainer>
-  ) : (
-    <LoadingPageContainer>
-      <ReportIntro isLoaded={!!mockReportData} />
-      <Stack>
-        <Switcher threshold="35rem">
-          <div>
-            <BlankTitle />
-            <BlankTitle />
-            <BlankTitle />
-          </div>
-        </Switcher>
-        <Switcher threshold="35rem">
-          <div>
-            <BlankCard />
-            <BlankCard />
-          </div>
-        </Switcher>
-        <Stack>
-          <BlankDetails />
-          <BlankDetails />
-          <BlankDetails />
-        </Stack>
-      </Stack>
-    </LoadingPageContainer>
+  return (
+    <>
+      {
+        !isFetching && error && (
+          <LoadedPageContainer space="large">
+            <Section>
+              <div>Error</div>
+            </Section>
+          </LoadedPageContainer>
+        )
+      }
+      {
+        isFetching && !error && (
+          <LoadingPageContainer>
+            <ReportIntro isLoading={isFetching} />
+            <LoadingPage />
+          </LoadingPageContainer>
+        )
+      }
+      {
+        !isFetching && !error && report && (
+          <LoadedPageContainer space="large">
+            <Section>
+              <ReportIntro isLoading={isFetching} />
+            </Section>
+            <Section>
+              <ReportOverview
+                pagesScanned={report.pageUrls}
+                issuesPerImpact={report.issuesPerImpact}
+                websiteUrl={websiteUrl}
+              />
+            </Section>
+            <Section>
+              <ReportDetails
+                violationsByImpact={report.violationsByImpact}
+              />
+            </Section>
+            <Section>
+              <Pagination currentPage={1} totalPages={10} />
+            </Section>
+          </LoadedPageContainer>
+        ) 
+      }
+    </>
   );
+};
 
 export default ReportPage;

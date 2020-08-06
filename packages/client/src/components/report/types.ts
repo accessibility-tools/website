@@ -1,3 +1,13 @@
+export type TImpact = 'critical' | 'minor' | 'moderate' | 'serious'
+
+export type TIssuesPerImpact = {
+  [key in TImpact]: number;
+};
+
+export type TCategories = {
+  [key: string]: any
+}
+
 export interface IFixElement {
   fixData?: any;
 }
@@ -22,8 +32,9 @@ export interface IOverviewCard {
   subtext?: string;
   isIssue?: boolean;
   reportData?: any;
+  issuesPerImpact: TIssuesPerImpact
 }
 
 export interface IReportIntro {
-  isLoaded?: boolean;
+  isLoading?: boolean;
 }
