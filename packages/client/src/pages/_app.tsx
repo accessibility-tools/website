@@ -1,22 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { GlobalStyle } from '../shared/global';
 import Layout from '../components/layout-components/Layout';
+import { createServices, IServices, ServicesContext } from '../common/services';
 
-const App = ({ Component, pageProps }) => {
+const services = createServices();
+
+
+interface IApp {
+  Component: React.ElementType;
+  pageProps: any;
+  services: IServices;
+}
+
+const App: React.FC<IApp> = ({ Component, pageProps }) => {
   return (
     <>
-      <GlobalStyle />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ServicesContext.Provider value={services}>
+        <GlobalStyle />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ServicesContext.Provider>
     </>
   );
 };
 
-App.propTypes = {
-  Component: PropTypes.elementType,
-  pageProps: PropTypes.any
-};
 
 export default App;
