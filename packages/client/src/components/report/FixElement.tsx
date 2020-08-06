@@ -42,7 +42,7 @@ const FixElement: React.FC<IFixElement> = ({ fixData }) => {
 
   return (
     <IssueContainer>
-      <Stack space="small">
+      <Stack key={'summary'} space="small">
         <SubTitle>{summary}</SubTitle>
         <p>Fix any of the following:</p>
         <ul>
@@ -53,7 +53,7 @@ const FixElement: React.FC<IFixElement> = ({ fixData }) => {
           )}
         </ul>
       </Stack>
-      <Stack space="medium">
+      <Stack key={'effected'} space="medium">
         <SubTitle>Affected elements:</SubTitle>
         <NoteContainer isBackground isPadding isMargin>
           <Icon icon="manicule" color={color.blue} />
@@ -78,7 +78,7 @@ const FixElement: React.FC<IFixElement> = ({ fixData }) => {
             { page, selectors }: { page: string; selectors: string[] },
             index: number
           ): React.ReactElement => (
-            <Stack space="small" key={`${page} affected element ${index}`}>
+            <Stack space="small" key={index + 1}>
               <NoteContainer>
                 <Icon icon="tip" />
                 <p>{`On page: ${page}`}</p>

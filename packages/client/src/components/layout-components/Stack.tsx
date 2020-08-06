@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 import { IStack } from './types';
 
-const spacing = {
+interface ISpacing {
+  [key: string]: string;
+}
+
+const spacing: ISpacing = {
   small: '1rem',
   medium: '3rem',
   large: '5rem',
@@ -11,13 +15,13 @@ const spacing = {
 };
 
 const Stack = styled.div<IStack>`
-  --stack-space: ${({ space }: { space: string }) =>
+  --stack-space: ${({ space }) =>
     space ? spacing[space] : '2rem'};
-  width: ${({ width }: { width: string }) => (width ? width : '100%')};
+  width: ${({ width }) => (width ? width : '100%')};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: ${({ itemsAlign }: { itemsAlign: string }) =>
+  align-items: ${({ itemsAlign }) =>
     itemsAlign && 'center'};
 
   & > * {

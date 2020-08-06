@@ -72,7 +72,7 @@ const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
           />
         </div>
         <div>
-          <ArrowIcon icon="bArrow" direction={!isOpened && 'up'} />
+          <ArrowIcon icon="bArrow" direction={!isOpened && 'up' || ''} />
         </div>
       </Summary>
 

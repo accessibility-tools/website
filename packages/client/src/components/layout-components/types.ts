@@ -7,9 +7,9 @@ export interface ISwitcher {
 }
 
 export interface IStack {
-  space: string;
-  width: string;
-  itemsAlign: string;
+  space?: string;
+  width?: string;
+  itemsAlign?: string;
 }
 
 export interface ILayout {
