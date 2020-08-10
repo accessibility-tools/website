@@ -40,7 +40,13 @@ export const mapViolationsByImpact = (violations) =>
       if (acc[impact][id]) {
         acc[impact][id] = {
           ...acc[impact][id],
-          nodes: [...(acc[impact][id].nodes || []), ...nodes]
+          nodesPerPage: [
+            ...acc[impact][id].nodesPerPage,
+            {
+              pageUrl,
+              nodes: [...(acc[impact][id].nodesPerPage.nodes || []), ...nodes]
+            }
+          ]
         }
       } else {
         acc[impact][id] = {
@@ -48,8 +54,12 @@ export const mapViolationsByImpact = (violations) =>
           helpUrl,
           description,
           tags,
-          nodes,
-          pageUrl,
+          nodesPerPage: [
+            {
+              pageUrl,
+              nodes
+            }
+          ],
           title: help
         }
       }
@@ -63,7 +73,8 @@ export const countIssuesPerImpact = (violationsByCategory) => {
   let impactCategoryCounts = { critical: 0, serious: 0, moderate: 0, minor: 0 };
   for (let [impact, violations] of Object.entries(violationsByCategory)) {
     for (let issue of Object.values(violations)) {
-      impactCategoryCounts[impact] += issue.nodes && issue.nodes.length;
+      const issueNodesCount = (issue.nodesPerPage || []).reduce((acc, { nodes }) => acc + nodes.length, 0)
+      impactCategoryCounts[impact] += issueNodesCount;
     }
   }
 
