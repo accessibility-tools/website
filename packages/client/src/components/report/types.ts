@@ -8,8 +8,9 @@ export type TCategories = {
   [key: string]: any
 }
 
-export interface IFixElement {
-  fixData?: any;
+export interface INodesDetails {
+  pageUrl?: string,
+  nodes?: any
 }
 
 export interface IDetailsCard {
@@ -23,7 +24,7 @@ export interface INoteContainer {
 }
 
 export interface IDetailsCategory {
-  category?: string;
+  category: string;
   issues?: any[];
 }
 
