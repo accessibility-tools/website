@@ -1,6 +1,13 @@
 import { color } from '../shared/style';
 
-export const reportIcons = {
+interface IReportIcon {
+  [key: string]: {
+    name: string,
+    color: string
+  }
+}
+
+export const reportIcons: IReportIcon = {
   critical: {
     name: 'circle',
     color: color.error
