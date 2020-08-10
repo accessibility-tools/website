@@ -5,8 +5,9 @@ import { color } from '../../shared/style';
 import Stack from '../layout-components/Stack';
 import Link from '../links/Link';
 import ArrowIcon from '../icon/ArrowIcon';
-import FixElement from './FixElement';
-import { IDetailsCard } from './types';
+import NodesDetails, { NoteContainer } from './NodesDetails';
+import { IDetailsCard, INodesDetails } from './types';
+import Icon from '../icon/Icon';
 
 const Details = styled.details`
   background-color: ${color.white};
@@ -43,17 +44,29 @@ const Summary = styled.summary`
   }
 `;
 
-const Subtitle = styled.p`
-  font-weight: bold;
-  font-size: 1.25rem;
-  padding-left: 2rem;
+const IssueContainer = styled(Stack)`
+  padding: 2rem;
+
+  &:nth-child(even) {
+    background-color: ${color.lightPurple};
+  }
+
+  ul {
+    padding-left: 0;
+  }
 `;
 
+const SubTitle = styled.h5`
+  max-width: none;
+`;
+
+
 const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
-  const { title, summary, resource, failedStandard, fixes } = issueData;
+  const { title, description, helpUrl, nodesPerPage } = issueData;
+  const issueNodes = nodesPerPage.reduce((acc: number, { nodes }: INodesDetails) => acc + nodes.length, 0);
   const [isOpened, setOpened] = useState<boolean>(false);
 
-  const handleOpen = (e: React.BaseSyntheticEvent): void => {
+  const handleOpen = (e: any): void => {
     setOpened(e.currentTarget.open);
   };
 
@@ -61,28 +74,61 @@ const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
     <Details onToggle={handleOpen}>
       <Summary>
         <div>
-          <h3>{`${title} (${fixes.length})`}</h3>
-          <p>{summary}</p>
-          <p>{`Failed accessibility standard: ${failedStandard}`}</p>
+          <h3>{`${title} (${issueNodes})`}</h3>
+          <p>{description}</p>
           <Link
-            url={resource}
+            url={helpUrl}
             text="Resource to solve this issue"
             icon="extLink"
             isExternal={true}
           />
         </div>
         <div>
-          <ArrowIcon icon="bArrow" direction={!isOpened && 'up' || ''} />
+          <ArrowIcon
+            icon="bArrow"
+            direction={!isOpened && 'up' || ''}
+          />
         </div>
       </Summary>
 
       <Stack space="medium">
-        <Subtitle>Which elements should be fixed?</Subtitle>
-        {fixes.map(
-          (fix: any, index: number): React.ReactElement => (
-            <FixElement key={`${title} required fix ${index}`} fixData={fix} />
-          )
-        )}
+        <IssueContainer>
+          <Stack
+            key={'effected'}
+            space="medium"
+          >
+            <SubTitle>Affected elements:</SubTitle>
+            <NoteContainer
+              isBackground
+              isPadding
+              isMargin
+            >
+              <Icon
+                icon="manicule"
+                color={color.blue}
+              />
+              <Stack space="small">
+                <p>
+                  <strong>Find in browser:</strong>
+                  <br/>
+                  Open the page with the affected element. Open the inspector with a
+                  right-click and choose “Inspect”. Copy the selector into the
+                  inspector search.
+                </p>
+                <p>
+                  <strong>Find in codebase:</strong>
+                  <br/>
+                  Copy the selector into the code editor search.
+                </p>
+              </Stack>
+            </NoteContainer>
+            {
+              nodesPerPage.map((data: INodesDetails, i: number) => (
+                <NodesDetails key={`Node_Details_${i + 1}`} {...data} />
+              ))
+            }
+          </Stack>
+        </IssueContainer>
       </Stack>
     </Details>
   );

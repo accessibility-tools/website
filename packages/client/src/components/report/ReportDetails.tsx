@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Stack from '../layout-components/Stack';
 import DetailsCategory from './DetailsCategory';
-import { mockReportData } from '../../common/reportData';
 
 const Subtitle = styled.p`
   text-transform: uppercase;
@@ -11,22 +10,32 @@ const Subtitle = styled.p`
   letter-spacing: 2px;
 `;
 
-const ReportDetails: React.FC = () => (
-  <Stack space="medium">
-    <div>
-      <h2>Detailed issues</h2>
-      <Subtitle>What exactly can be improved?</Subtitle>
-    </div>
-    {Object.keys(mockReportData).map(
-      (category: string): React.ReactElement => (
-        <DetailsCategory
-          key={category}
-          category={category}
-          issues={mockReportData[category]}
-        />
-      )
-    )}
-  </Stack>
-);
+interface IReportDetails {
+  violationsByImpact: any
+}
+
+const ReportDetails: React.FC<IReportDetails> = ({ violationsByImpact }) => {
+  const details: React.ReactElement[] = [];
+
+  Object.entries(violationsByImpact).forEach(([key, value]) => {
+    details.push(
+      <DetailsCategory
+        key={key}
+        category={key}
+        issues={value}
+      />
+    );
+  });
+
+  return (
+    <Stack space="medium">
+      <div>
+        <h2>Detailed issues</h2>
+        <Subtitle>What exactly can be improved?</Subtitle>
+      </div>
+      {details}
+    </Stack>
+  );
+};
 
 export default ReportDetails;

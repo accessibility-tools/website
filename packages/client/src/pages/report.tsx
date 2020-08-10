@@ -69,8 +69,7 @@ const ReportPage: React.FC = () => {
         const { report } = await apiClientService.getReport(websiteUrl);
         setReport(report || null);
       } catch (e) {
-        console.log('error', e);
-        setError(e);
+        setError(e.message);
       } finally {
         setIsFetching(false);
       }

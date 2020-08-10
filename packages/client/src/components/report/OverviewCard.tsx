@@ -48,9 +48,15 @@ const OverviewCard: React.FC<IOverviewCard> = ({
   <CardContainer>
     <Title>
       {isIssue ? (
-        <Icon icon="error" color={color.error} />
+        <Icon
+          icon="error"
+          color={color.error}
+        />
       ) : (
-        <Icon icon="success" color={color.blue} />
+        <Icon
+          icon="success"
+          color={color.blue}
+        />
       )}
       <h4>{title}</h4>
     </Title>
@@ -66,8 +72,8 @@ const OverviewCard: React.FC<IOverviewCard> = ({
                 key={`issue category: ${category}`}
                 label={category}
                 issueCount={issuesPerImpact[category as TImpact]}
-                iconName={iconData.name}
-                iconColor={iconData.color}
+                name={iconData.name}
+                color={iconData.color}
               />
             );
           }
