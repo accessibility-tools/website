@@ -30,7 +30,10 @@ const DetailsCategory: React.FC<IDetailsCategory> = ({ category, issues }) => {
   });
 
   return (
-    <CategoryContainer space="medium">
+    <CategoryContainer
+      space="medium"
+      marginTop={'1.6em'}
+    >
       <CategoryBadge
         label={category}
         name={reportIcons[category].name}

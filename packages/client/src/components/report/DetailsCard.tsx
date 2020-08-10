@@ -5,7 +5,7 @@ import { color } from '../../shared/style';
 import Stack from '../layout-components/Stack';
 import Link from '../links/Link';
 import ArrowIcon from '../icon/ArrowIcon';
-import NodesDetails, { NoteContainer } from './NodesDetails';
+import NodesDetails from './NodesDetails';
 import { IDetailsCard, INodesDetails } from './types';
 import Icon from '../icon/Icon';
 
@@ -60,6 +60,26 @@ const SubTitle = styled.h5`
   max-width: none;
 `;
 
+const InfoContainer = styled.div`
+  background-color: ${color.purple};
+  margin: 1rem 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1.5em auto;
+  align-items: baseline;
+  max-width: 39em;
+
+  p {
+    max-width: initial;
+  }
+  
+  & > div {
+    @media (max-width: 48rem) {
+      align-items: initial;
+    }
+  }
+`;
+
 
 const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
   const { title, description, helpUrl, nodesPerPage } = issueData;
@@ -94,15 +114,11 @@ const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
       <Stack space="medium">
         <IssueContainer>
           <Stack
-            key={'effected'}
+            key={'affected'}
             space="medium"
           >
             <SubTitle>Affected elements:</SubTitle>
-            <NoteContainer
-              isBackground
-              isPadding
-              isMargin
-            >
+            <InfoContainer>
               <Icon
                 icon="manicule"
                 color={color.blue}
@@ -118,13 +134,13 @@ const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
                 <p>
                   <strong>Find in codebase:</strong>
                   <br/>
-                  Copy the selector into the code editor search.
+                  Copy the CSS selector into the code editor search.
                 </p>
               </Stack>
-            </NoteContainer>
+            </InfoContainer>
             {
               nodesPerPage.map((data: INodesDetails, i: number) => (
-                <NodesDetails key={`Node_Details_${i + 1}`} {...data} />
+                <NodesDetails key={i + 1} {...data} />
               ))
             }
           </Stack>

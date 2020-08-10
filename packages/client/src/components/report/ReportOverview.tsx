@@ -18,7 +18,7 @@ interface IReportOverview {
 
 const OverviewContainer = styled(Stack)`
   padding: 0;
-  width: 80vw;
+  max-width: 80vw;
 
   span {
     color: ${color.blue};
@@ -73,7 +73,7 @@ const ReportOverview: React.FC<IReportOverview> = ({
             </h2>
             <Subtitle>{pagesScanned.length} pages scanned</Subtitle>
           </TitleContainer>
-          <Button text="Copy URL" />
+          <Button text="Copy URL"/>
         </div>
       </Switcher>
       <Switcher threshold="35rem">
@@ -88,7 +88,10 @@ const ReportOverview: React.FC<IReportOverview> = ({
         </div>
       </Switcher>
       <NoteContainer>
-        <Icon icon="manicule" color={color.blue} />
+        <Icon
+          icon="manicule"
+          color={color.blue}
+        />
         <p>
           Automated tests like this one can assess up to <strong>30%</strong> of
           accessibility issues. In addition, we recommend performing a manual

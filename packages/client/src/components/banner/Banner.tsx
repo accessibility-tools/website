@@ -7,7 +7,7 @@ import { IBanner, IBannerWrapper } from './types';
 const BannerWrapper = styled.div<IBannerWrapper>`
   display: flex;
   height: auto;
-  width: auto;
+  width: 100%;
   padding: 0.5rem;
   border-radius: 4px;
   border: solid 1px ${color.primary};
@@ -16,7 +16,7 @@ const BannerWrapper = styled.div<IBannerWrapper>`
   align-self: flex-start;
 
   @media (min-width: 60rem) {
-    width: ${({ width }: { width: string }) => (width ? width : 'auto')};
+    width: ${({ width }) => (width ? width : 'auto')};
   }
 `;
 

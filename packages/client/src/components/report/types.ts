@@ -17,12 +17,6 @@ export interface IDetailsCard {
   issueData?: any;
 }
 
-export interface INoteContainer {
-  isBackground?: boolean;
-  isPadding?: boolean;
-  isMargin?: boolean;
-}
-
 export interface IDetailsCategory {
   category: string;
   issues?: any[];

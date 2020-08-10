@@ -10,6 +10,7 @@ export interface IStack {
   space?: string;
   width?: string;
   itemsAlign?: string;
+  marginTop?: string;
 }
 
 export interface ILayout {

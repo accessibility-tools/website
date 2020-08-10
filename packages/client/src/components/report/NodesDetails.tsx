@@ -1,43 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { color } from '../../shared/style';
 import Stack from '../layout-components/Stack';
 import Icon from '../icon/Icon';
 import Banner from '../banner/Banner';
-import { INodesDetails, INoteContainer } from './types';
+import { INodesDetails } from './types';
 
-export const NoteContainer = styled.div<INoteContainer>`
-  background-color: ${({ isBackground }) => isBackground && color.extraLightPurple};
-  margin: ${({ isMargin }) => isMargin && '1rem -2rem'};
-  padding: ${({ isPadding }) => isPadding && '1rem'};
-  display: grid;
-  grid-template-columns: 3% auto;
-  align-items: baseline;
+export const NoteContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
   p {
-    max-width: 36rem;
+    margin-left: 10px;
+    max-width: initial;
+  }
+  
+  .icon {
+    width: 1.15em;
   }
 `;
 
 const NodesDetails: React.FC<INodesDetails> = ({ pageUrl, nodes }) => (
-  <Stack space="small">
+  <Stack
+    space="small"
+    marginTop={'0'}
+  >
     <NoteContainer>
       <Icon icon="tip"/>
       <p>{`On page: ${pageUrl}`}</p>
     </NoteContainer>
-    {nodes.map(({ target }: { target: string[] }, index: number): React.ReactElement => (
-      <>
-        {
-          target.map((selector: string): React.ReactElement => (
-            <Banner
-              key={`${pageUrl} affected selector ${index}`}
-              text={selector}
-              width="40rem"
-            />
-          ))
-        }
-      </>
+    {nodes.map((
+      { target }: { target: string[] }, index: number
+    ): React.ReactNode[] => (
+      target ? target.map((selector: string): React.ReactElement => (
+        <Banner
+          key={`${pageUrl} affected selector ${index + 1}`}
+          text={selector}
+          width="45rem"
+        />
+      )) : []
     ))}
   </Stack>
 );
