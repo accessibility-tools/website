@@ -3,4 +3,5 @@ export interface IBadge {
   name?: string;
   color?: string;
   issueCount?: number;
+  className?: string;
 }
