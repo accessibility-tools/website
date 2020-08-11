@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { background, color } from '../shared/style';
+import { useRouter } from 'next/router';
 
+import { background, color } from '../shared/style';
 import Stack from '../components/layout-components/Stack';
 import ReportIntro from '../components/report/ReportIntro';
 import ReportOverview from '../components/report/ReportOverview';
@@ -55,28 +56,39 @@ const LoadingPageContainer = styled(Stack)`
   }
 `;
 
+interface IReportPageQuery {
+  url?: string;
+  pageLimit?: number;
+}
+
 const ReportPage: React.FC = () => {
+  const router = useRouter();
+  const { apiClient: apiClientService } = useServices();
+
   const [report, setReport] = useState<any>(null);
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const { apiClient: apiClientService } = useServices();
-  const websiteUrl = 'https://apple.com/';
-  const pageLimit = 2;
+  const { url, pageLimit }: IReportPageQuery = router.query;
+
+  const fetchReport = async (url: string) => {
+    setIsFetching(true);
+
+    try {
+      const { report } = await apiClientService.getReport(url, pageLimit);
+      setReport(report || null);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setIsFetching(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchReport = async () => {
-      setIsFetching(true);
-      try {
-        const { report } = await apiClientService.getReport(websiteUrl, pageLimit);
-        setReport(report || null);
-      } catch (e) {
-        setError(e.message);
-      } finally {
-        setIsFetching(false);
-      }
-    };
-
-    fetchReport();
+    if (!url) {
+      router.push('/checker');
+    } else {
+      fetchReport(url);
+    }
   }, []);
 
   return (
@@ -108,7 +120,7 @@ const ReportPage: React.FC = () => {
               <ReportOverview
                 pagesScanned={report.pageUrls}
                 issuesPerImpact={report.issuesPerImpact}
-                websiteUrl={websiteUrl}
+                websiteUrl={url || ''}
               />
             </Section>
             <Section>
