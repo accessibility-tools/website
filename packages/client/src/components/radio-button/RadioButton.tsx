@@ -2,12 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { color, spacing } from '../../shared/style';
-import { IRadioButton } from './types';
+import { IRadioButton, IStyledRadioButton } from './types';
 
-const StyledRadioButton = styled.span`
-  border: 3px solid
-    ${({ isChecked }: { isChecked: boolean }): string =>
-      isChecked ? color.blue : color.primary};
+const StyledRadioButton = styled.span<IStyledRadioButton>`
+  border: 3px solid ${({ isChecked }) => isChecked ? color.blue : color.primary};
   border-radius: 50%;
   display: inline-block;
   height: 20px;
@@ -24,8 +22,7 @@ const StyledRadioButton = styled.span`
     left: 3px;
     top: 3px;
     position: absolute;
-    visibility: ${({ isChecked }: { isChecked: boolean }): string =>
-      isChecked ? 'visible' : 'hidden'};
+    visibility: ${({ isChecked }) => isChecked ? 'visible' : 'hidden'};
     width: 8px;
   }
 
@@ -83,7 +80,7 @@ const RadioButton: React.FC<IRadioButton> = ({
       checked={isChecked}
       onChange={handleCheckedChange}
     />
-    <StyledRadioButton isChecked={isChecked} />
+    <StyledRadioButton isChecked={isChecked}/>
     {label}
   </RadioButtonContainer>
 );
