@@ -17,31 +17,25 @@ const CategoryBadge = styled(Badge)`
   max-width: fit-content;
 `;
 
-const DetailsCategory: React.FC<IDetailsCategory> = ({ category, issues }) => {
-  const categories = [];
-
-  Object.entries(issues).forEach(([key, value]) => {
-    categories.push(
-      <DetailsCard
-        key={`${category} issue ${key}`}
-        issueData={value}
-      />
-    );
-  });
-
-  return (
-    <CategoryContainer
-      space="medium"
-      marginTop={'1.6em'}
-    >
-      <CategoryBadge
-        label={category}
-        name={reportIcons[category].name}
-        color={reportIcons[category].color}
-      />
-      {categories}
-    </CategoryContainer>
-  );
-};
+const DetailsCategory: React.FC<IDetailsCategory> = ({ category, issues }) => (
+  <CategoryContainer
+    space="medium"
+    marginTop={'1.6em'}
+  >
+    <CategoryBadge
+      label={category}
+      name={reportIcons[category].name}
+      color={reportIcons[category].color}
+    />
+    {
+      Object.entries(issues).map(([key, value]) => (
+        <DetailsCard
+          key={`${category} issue ${key}`}
+          issueData={value}
+        />
+      ))
+    }
+  </CategoryContainer>
+);
 
 export default DetailsCategory;

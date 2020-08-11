@@ -14,28 +14,22 @@ interface IReportDetails {
   violationsByImpact: any
 }
 
-const ReportDetails: React.FC<IReportDetails> = ({ violationsByImpact }) => {
-  const details: React.ReactElement[] = [];
-
-  Object.entries(violationsByImpact).forEach(([key, value]) => {
-    details.push(
-      <DetailsCategory
-        key={key}
-        category={key}
-        issues={value}
-      />
-    );
-  });
-
-  return (
-    <Stack space="medium">
-      <div>
-        <h2>Detailed issues</h2>
-        <Subtitle>What exactly can be improved?</Subtitle>
-      </div>
-      {details}
-    </Stack>
-  );
-};
+const ReportDetails: React.FC<IReportDetails> = ({ violationsByImpact }) => (
+  <Stack space="medium">
+    <div>
+      <h2>Detailed issues</h2>
+      <Subtitle>What exactly can be improved?</Subtitle>
+    </div>
+    {
+      Object.entries(violationsByImpact).map(([key, value]) =>
+        <DetailsCategory
+          key={key}
+          category={key}
+          issues={value}
+        />
+      )
+    }
+  </Stack>
+);
 
 export default ReportDetails;
