@@ -6,6 +6,12 @@ import { countIssuesPerImpact, getViolationsInfo, isUrl, mapViolationsByImpact }
 
 
 const router = ExpressRouter();
+const SORT_ORDER = {
+  critical: 3,
+  serious: 2,
+  moderate: 1,
+  minor: 0
+}
 
 router.get('/api/report', async (req, res) => {
   const url: string | null = decodeURIComponent(req.query.url) || null;
@@ -32,7 +38,7 @@ router.get('/api/report', async (req, res) => {
     res.status(200).send({
       report
     });
-  } catch(err) {
+  } catch (err) {
     res.status(500).send({
       message: 'Something went wrong. Please reload the page and try again.'
     });
@@ -42,7 +48,12 @@ router.get('/api/report', async (req, res) => {
 const getReport = async ({ url, options }): Promise<any> => {
   const { results } = await crawler(new URL(url), options);
   const { pageUrls, violations } = getViolationsInfo(results);
-  const violationsByImpact = mapViolationsByImpact(violations);
+  const violationsByImpact = Object.fromEntries(
+    Object.entries(mapViolationsByImpact(violations))
+      .sort(([keyA], [keyB]) =>
+        SORT_ORDER[keyB] - SORT_ORDER[keyA]
+      )
+  );
   const issuesPerImpact = countIssuesPerImpact(violationsByImpact);
 
   return {
