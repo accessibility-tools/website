@@ -11,6 +11,7 @@ export interface IStack {
   width?: string;
   itemsAlign?: string;
   marginTop?: string;
+  center?: boolean;
 }
 
 export interface ILayout {

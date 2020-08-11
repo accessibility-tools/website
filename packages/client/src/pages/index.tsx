@@ -92,7 +92,7 @@ const LearnMoreImg = styled.img`
 
 const Subtext = styled.p`
   max-width: 36rem;
-  ${({ isTransform }: { isTransform: boolean }) =>
+  ${({ isTransform }: { isTransform?: boolean }) =>
     isTransform &&
     ` & {
       text-transform: uppercase;
