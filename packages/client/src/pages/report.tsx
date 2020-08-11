@@ -116,9 +116,10 @@ const ReportPage: React.FC = () => {
                 violationsByImpact={report.violationsByImpact}
               />
             </Section>
-            <Section>
-              <Pagination currentPage={1} totalPages={10} />
-            </Section>
+            {/* TODO: implement pagination */}
+            {/*<Section>*/}
+            {/*  <Pagination currentPage={1} totalPages={10} />*/}
+            {/*</Section>*/}
           </LoadedPageContainer>
         ) 
       }
