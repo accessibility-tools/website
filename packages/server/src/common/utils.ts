@@ -25,6 +25,14 @@ export const getViolationsInfo = (data) =>
     }
   }, { violations: [], pageUrls: [] });
 
+
+export const filterNodesData = (nodes) =>
+  nodes.map(({ failureSummary, html, target }) => ({
+    failureSummary,
+    html,
+    target
+  }));
+
 /**
  * @function mapViolationsByImpact
  * @param {Array<Object>} violations
@@ -32,7 +40,9 @@ export const getViolationsInfo = (data) =>
  */
 export const mapViolationsByImpact = (violations) =>
   violations.reduce(
-    (acc, { nodes, id, impact, help, description, helpUrl, tags, pageUrl }) => {
+    (acc, { nodes, id, impact, help, description, helpUrl, pageUrl }) => {
+      const filteredNodes = filterNodesData(nodes);
+
       if (!acc[impact]) {
         acc[impact] = {};
       }
@@ -44,7 +54,7 @@ export const mapViolationsByImpact = (violations) =>
             ...acc[impact][id].nodesPerPage,
             {
               pageUrl,
-              nodes: [...(acc[impact][id].nodesPerPage.nodes || []), ...nodes]
+              nodes: [...(acc[impact][id].nodesPerPage.nodes || []), ...filteredNodes]
             }
           ]
         }
@@ -53,11 +63,10 @@ export const mapViolationsByImpact = (violations) =>
           id,
           helpUrl,
           description,
-          tags,
           nodesPerPage: [
             {
               pageUrl,
-              nodes
+              nodes: filteredNodes
             }
           ],
           title: help
