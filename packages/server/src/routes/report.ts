@@ -2,7 +2,7 @@ import { runCore as crawler } from 'accessible-pipeline';
 import { Router as ExpressRouter } from 'express';
 import { URL } from 'url';
 
-import { countIssuesPerImpact, getViolationsInfo, isUrl, mapViolationsByImpact } from '../common/utils';
+import { countViolationsPerImpact, getViolationsInfo, isUrl, mapViolationsByImpact } from '../common/utils';
 
 
 const router = ExpressRouter();
@@ -54,12 +54,12 @@ const getReport = async ({ url, options }): Promise<any> => {
         SORT_ORDER[keyB] - SORT_ORDER[keyA]
       )
   );
-  const issuesPerImpact = countIssuesPerImpact(violationsByImpact);
+  const violationsPerImpact = countViolationsPerImpact(violationsByImpact);
 
   return {
     pageUrls,
     violationsByImpact,
-    issuesPerImpact
+    violationsPerImpact
   }
 }
 

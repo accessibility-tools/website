@@ -6,7 +6,15 @@ import Stack from '../layout-components/Stack';
 import Icon from '../icon/Icon';
 import Badge from '../badge/Badge';
 import { reportIcons } from '../../constants/reportIcons';
-import { IOverviewCard, TImpact } from './types';
+import { TImpact, TViolationsPerImpact } from './types';
+
+
+interface IOverviewCard {
+  title?: string;
+  subtext?: string;
+  isViolation?: boolean;
+  violationsPerImpact: TViolationsPerImpact
+}
 
 const CardContainer = styled(Stack)`
   background-color: ${color.white};
@@ -42,12 +50,12 @@ const IssueContainer = styled.div`
 const OverviewCard: React.FC<IOverviewCard> = ({
   title,
   subtext,
-  isIssue,
-  issuesPerImpact
+  isViolation,
+  violationsPerImpact
 }) => (
   <CardContainer>
     <Title>
-      {isIssue ? (
+      {isViolation ? (
         <Icon
           icon="error"
           color={color.error}
@@ -61,17 +69,17 @@ const OverviewCard: React.FC<IOverviewCard> = ({
       <h4>{title}</h4>
     </Title>
     <p>{subtext}</p>
-    {isIssue && (
+    {isViolation && (
       <IssueContainer>
-        {Object.keys(issuesPerImpact).map(
-          (category): React.ReactElement => {
-            const iconData = reportIcons[category as TImpact];
+        {Object.keys(violationsPerImpact).map(
+          (impact): React.ReactElement => {
+            const iconData = reportIcons[impact];
 
             return (
               <Badge
-                key={`issue category: ${category}`}
-                label={category}
-                issueCount={issuesPerImpact[category as TImpact]}
+                key={`issue impact: ${impact}`}
+                label={impact}
+                issueCount={violationsPerImpact[impact as TImpact]}
                 name={iconData.name}
                 color={iconData.color}
               />

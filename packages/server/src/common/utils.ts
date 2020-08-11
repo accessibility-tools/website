@@ -78,7 +78,7 @@ export const mapViolationsByImpact = (violations) =>
     {}
   );
 
-export const countIssuesPerImpact = (violationsByCategory) => {
+export const countViolationsPerImpact = (violationsByCategory) => {
   let impactCategoryCounts = { critical: 0, serious: 0, moderate: 0, minor: 0 };
   for (let [impact, violations] of Object.entries(violationsByCategory)) {
     for (let issue of Object.values(violations)) {

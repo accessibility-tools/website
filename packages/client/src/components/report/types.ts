@@ -1,35 +1,38 @@
-export type TImpact = 'critical' | 'minor' | 'moderate' | 'serious'
+export type TImpact = 'critical' | 'serious' | 'moderate' | 'minor';
 
-export type TIssuesPerImpact = {
-  [key in TImpact]: number;
-};
-
-export type TCategories = {
-  [key: string]: any
+export interface INode {
+  failureSummary?: string;
+  target: string[];
+  html?: string;
 }
 
-export interface INodesDetails {
-  pageUrl?: string,
-  nodes?: any
+export interface INodePerPage {
+  pageUrl: string;
+  nodes: INode[];
 }
 
-export interface IDetailsCard {
-  issueData?: any;
-}
-
-export interface IDetailsCategory {
-  category: string;
-  issues?: any[];
-}
-
-export interface IOverviewCard {
+export interface IViolation {
+  id: string;
+  helpUrl?: string;
+  description?: string;
+  nodesPerPage: INodePerPage[];
   title?: string;
-  subtext?: string;
-  isIssue?: boolean;
-  reportData?: any;
-  issuesPerImpact: TIssuesPerImpact
 }
 
-export interface IReportIntro {
-  isLoading?: boolean;
+export interface IViolationsById {
+  [key: string]: IViolation;
+}
+
+export type TViolationsPerImpact = {
+  [key in TImpact]: number;
+}
+
+export type TViolationsByImpact = {
+  [key in TImpact]: IViolationsById;
+}
+
+export interface IReport {
+  pageUrls: string[];
+  violationsPerImpact: TViolationsPerImpact;
+  violationsByImpact: TViolationsByImpact;
 }

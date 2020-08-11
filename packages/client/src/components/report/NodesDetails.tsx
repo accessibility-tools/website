@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Stack from '../layout-components/Stack';
 import Icon from '../icon/Icon';
 import Banner from '../banner/Banner';
-import { INodesDetails } from './types';
+import { INode, INodePerPage } from './types';
 
 export const NoteContainer = styled.div`
   display: flex;
@@ -49,7 +49,7 @@ const convertToList = (plainText: string): React.ReactElement => {
   );
 };
 
-const NodesDetails: React.FC<INodesDetails> = ({ pageUrl, nodes }) => (
+const NodesDetails: React.FC<INodePerPage> = ({ pageUrl, nodes }) => (
   <Stack
     space="small"
     marginTop={'0'}
@@ -59,15 +59,13 @@ const NodesDetails: React.FC<INodesDetails> = ({ pageUrl, nodes }) => (
       <p>{`On page: ${pageUrl}`}</p>
     </NoteContainer>
     <Stack space="small">
-      {nodes.map((
-        { target, failureSummary }: { target: string[], failureSummary: string }, index: number
-      ): React.ReactElement => (
-        <div key={index + 1 + failureSummary}>
-          <SummaryContainer>{convertToList(failureSummary)}</SummaryContainer>
+      {nodes.map(({ target, failureSummary }: INode, i: number): React.ReactElement => (
+        <div key={i + 1}>
+          <SummaryContainer>{failureSummary && convertToList(failureSummary)}</SummaryContainer>
           {
             target.map((selector: string): React.ReactElement => (
               <Banner
-                key={`${pageUrl} affected selector ${index + 1}`}
+                key={`${pageUrl} affected selector ${i + 1}`}
                 text={selector}
                 width="45rem"
               />

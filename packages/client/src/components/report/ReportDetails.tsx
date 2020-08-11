@@ -2,17 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Stack from '../layout-components/Stack';
-import DetailsCategory from './DetailsCategory';
+import DetailsImpact from './DetailsImpact';
+import { TImpact, TViolationsByImpact } from './types';
+
+
+interface IReportDetails {
+  violationsByImpact: TViolationsByImpact;
+}
 
 const Subtitle = styled.p`
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 2px;
 `;
-
-interface IReportDetails {
-  violationsByImpact: any
-}
 
 const ReportDetails: React.FC<IReportDetails> = ({ violationsByImpact }) => (
   <Stack space="medium">
@@ -22,10 +24,10 @@ const ReportDetails: React.FC<IReportDetails> = ({ violationsByImpact }) => (
     </div>
     {
       Object.entries(violationsByImpact).map(([key, value]) =>
-        <DetailsCategory
+        <DetailsImpact
           key={key}
-          category={key}
-          issues={value}
+          impact={key as TImpact}
+          violations={value}
         />
       )
     }

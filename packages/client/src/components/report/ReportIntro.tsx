@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Switcher from '../layout-components/Switcher';
-import { IReportIntro } from './types';
+
+interface IReportIntro {
+  isLoading?: boolean;
+}
 
 const ReportImg = styled.img`
   width: 19rem;

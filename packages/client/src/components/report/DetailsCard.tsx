@@ -6,8 +6,13 @@ import Stack from '../layout-components/Stack';
 import Link from '../links/Link';
 import ArrowIcon from '../icon/ArrowIcon';
 import NodesDetails from './NodesDetails';
-import { IDetailsCard, INodesDetails } from './types';
+import { INodePerPage, IViolation } from './types';
 import Icon from '../icon/Icon';
+
+
+interface IDetailsCard {
+  violation: IViolation;
+}
 
 const Details = styled.details`
   background-color: ${color.white};
@@ -44,7 +49,7 @@ const Summary = styled.summary`
   }
 `;
 
-const IssueContainer = styled(Stack)`
+const ViolationContainer = styled(Stack)`
   padding: 2rem;
 
   &:nth-child(even) {
@@ -81,9 +86,9 @@ const InfoContainer = styled.div`
 `;
 
 
-const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
-  const { title, description, helpUrl, nodesPerPage } = issueData;
-  const issueNodes = nodesPerPage.reduce((acc: number, { nodes }: INodesDetails) => acc + nodes.length, 0);
+const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
+  const { title, description, helpUrl, nodesPerPage } = violation;
+  const issueNodes = nodesPerPage.reduce((acc: number, { nodes }: INodePerPage) => acc + nodes.length, 0);
   const [isOpened, setOpened] = useState<boolean>(false);
 
   const handleOpen = (e: any): void => {
@@ -112,7 +117,7 @@ const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
       </Summary>
 
       <Stack space="medium">
-        <IssueContainer>
+        <ViolationContainer>
           <Stack
             key={'affected'}
             space="medium"
@@ -139,12 +144,12 @@ const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
               </Stack>
             </InfoContainer>
             {
-              nodesPerPage.map((data: INodesDetails, i: number) => (
+              nodesPerPage.map((data: INodePerPage, i: number) => (
                 <NodesDetails key={i + 1} {...data} />
               ))
             }
           </Stack>
-        </IssueContainer>
+        </ViolationContainer>
       </Stack>
     </Details>
   );

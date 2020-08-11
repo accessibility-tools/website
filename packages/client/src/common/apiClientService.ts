@@ -1,16 +1,10 @@
 import { stringify as qsStringify } from 'query-string';
 
-import { TCategories, TIssuesPerImpact } from '../components/report/types';
+import { IReport } from '../components/report/types';
 
 
 export interface IReportResponse {
   report: IReport;
-}
-
-export interface IReport {
-  issuesPerImpact: TIssuesPerImpact;
-  violationsByImpact: TCategories;
-  pageUrls: string[];
 }
 
 function fetchJSON<T>(url: string, init?: any | undefined): Promise<T> {

@@ -7,11 +7,11 @@ import Stack from '../layout-components/Stack';
 import Button from '../button/Button';
 import Icon from '../icon/Icon';
 import OverviewCard from './OverviewCard';
-import { TIssuesPerImpact } from './types';
+import { TViolationsPerImpact } from './types';
 
 
 interface IReportOverview {
-  issuesPerImpact: TIssuesPerImpact;
+  violationsPerImpact: TViolationsPerImpact;
   pagesScanned: string[];
   websiteUrl: string;
 }
@@ -57,11 +57,11 @@ const NoteContainer = styled.div`
 
 
 const ReportOverview: React.FC<IReportOverview> = ({
-  issuesPerImpact,
+  violationsPerImpact,
   pagesScanned,
   websiteUrl,
 }) => {
-  const totalIssueCount = Object.values(issuesPerImpact).reduce((a, b) => a + b, 0);
+  const totalIssueCount = Object.values(violationsPerImpact).reduce((a, b) => a + b, 0);
 
   return (
     <OverviewContainer>
@@ -82,8 +82,8 @@ const ReportOverview: React.FC<IReportOverview> = ({
             title={`${totalIssueCount} Detected issues`}
             subtext="Seems like there are some accessibility issues on this website to improve.
             Some are more critical than others to enable access for all users."
-            isIssue
-            issuesPerImpact={issuesPerImpact}
+            isViolation
+            violationsPerImpact={violationsPerImpact}
           />
         </div>
       </Switcher>

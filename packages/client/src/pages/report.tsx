@@ -119,7 +119,7 @@ const ReportPage: React.FC = () => {
             <Section>
               <ReportOverview
                 pagesScanned={report.pageUrls}
-                issuesPerImpact={report.issuesPerImpact}
+                violationsPerImpact={report.violationsPerImpact}
                 websiteUrl={url || ''}
               />
             </Section>
