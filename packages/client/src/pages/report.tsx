@@ -60,13 +60,14 @@ const ReportPage: React.FC = () => {
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const { apiClient: apiClientService } = useServices();
-  const websiteUrl = 'https://a11y-website.now.sh/';
+  const websiteUrl = 'https://apple.com/';
+  const pageLimit = 2;
 
   useEffect(() => {
     const fetchReport = async () => {
       setIsFetching(true);
       try {
-        const { report } = await apiClientService.getReport(websiteUrl);
+        const { report } = await apiClientService.getReport(websiteUrl, pageLimit);
         setReport(report || null);
       } catch (e) {
         setError(e.message);
