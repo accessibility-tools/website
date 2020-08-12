@@ -7,9 +7,7 @@ export interface ISVG {
   block?: boolean;
 }
 
-export interface IStyledArrowIcon {
-  icon: string;
-  color?: string;
-  direction?: string;
+export interface IArrowIcon extends IIcon {
+  direction: string;
   isExpanded?: boolean;
 }

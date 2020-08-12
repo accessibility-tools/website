@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { IArrowIcon } from './types';
 import Icon from './Icon';
-import { IStyledArrowIcon } from './types';
 
-const handleArrowDirection = (direction: string): void | string => {
+const handleArrowDirection = (direction?: string): string => {
   switch (direction) {
     case 'left':
       return 'rotate(90deg)';
@@ -13,21 +13,15 @@ const handleArrowDirection = (direction: string): void | string => {
     case 'up':
       return 'rotate(180deg)';
     default:
-      return;
+      return '';
   }
 };
 
-const StyledArrowIcon = styled(Icon)<IStyledArrowIcon>`
-  transform: ${({
-    isExpanded,
-    direction
-  }: {
-    isExpanded: boolean;
-    direction: string;
-  }) => (isExpanded ? handleArrowDirection : handleArrowDirection(direction))};
+const StyledArrowIcon = styled(Icon)<IArrowIcon>`
+  transform: ${({ isExpanded, direction }) => (isExpanded ? handleArrowDirection() : handleArrowDirection(direction))};
 `;
 
-const ArrowIcon: React.FC<IStyledArrowIcon> = ({
+const ArrowIcon: React.FC<IArrowIcon> = ({
   icon,
   color,
   direction,
