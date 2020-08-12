@@ -11,6 +11,12 @@ import ReportDetails from '../components/report/ReportDetails';
 import { useServices } from '../common/services';
 import { LoadingPage } from '../components/loading-page/loadingPage';
 import SEO from '../components/SEO/SEO';
+import { IReport } from '../components/report/types';
+
+interface IReportPageQuery {
+  url?: string;
+  pageLimit?: number;
+}
 
 const LoadedPageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
@@ -57,16 +63,28 @@ const LoadingPageContainer = styled(Stack)`
   }
 `;
 
-interface IReportPageQuery {
-  url?: string;
-  pageLimit?: number;
-}
+/**
+ * @function mapReportForUI
+ * @description Takes report with a type IReportResponse and returns report for UI with a type IReport
+ * @description NOTE: Currently types are the same, adjust if needed
+ * @param {IReport} report
+ * @returns {IReport} Returns report
+ */
+const mapReportForUI = (report: IReport): IReport => {
+  const { pageUrls, violationsByImpact, violationsPerImpact } = report;
+
+  return {
+    pageUrls,
+    violationsPerImpact,
+    violationsByImpact
+  };
+};
 
 const ReportPage: React.FC = () => {
   const router = useRouter();
   const { apiClient: apiClientService } = useServices();
 
-  const [report, setReport] = useState<any>(null);
+  const [report, setReport] = useState<IReport | null>(null);
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const { url, pageLimit }: IReportPageQuery = router.query;
@@ -76,7 +94,8 @@ const ReportPage: React.FC = () => {
 
     try {
       const { report } = await apiClientService.getReport(url, pageLimit);
-      setReport(report || null);
+      const mappedReport = mapReportForUI(report);
+      setReport(mappedReport || null);
     } catch (e) {
       setError(e.message);
     } finally {
@@ -107,8 +126,8 @@ const ReportPage: React.FC = () => {
       {
         isFetching && !error && (
           <LoadingPageContainer>
-            <ReportIntro isLoading={isFetching} />
-            <LoadingPage />
+            <ReportIntro isLoading={isFetching}/>
+            <LoadingPage/>
           </LoadingPageContainer>
         )
       }
