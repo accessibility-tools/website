@@ -1,6 +1,8 @@
 import React from 'react';
 
-export interface ILink extends React.HTMLProps<HTMLLinkElement> {
+export type TLinkProps = React.ComponentPropsWithRef<'a'>;
+
+export interface ILink extends TLinkProps {
   text?: string;
   icon?: string;
   url?: string;
@@ -11,4 +13,9 @@ export interface ILink extends React.HTMLProps<HTMLLinkElement> {
     | null
     | (() => React.ReactElement | null)
     | React.ReactElement[];
+}
+
+export interface IStyledLink {
+  icon?: string;
+  isSecondary?: boolean;
 }

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import { color } from '../../shared/style';
 import Icon from '../icon/Icon';
-import { ILink } from './types';
+import { ILink, IStyledLink, TLinkProps } from './types';
 
-const StyledLink = styled.a`
+const StyledLink = styled.a<IStyledLink>`
   color: ${color.blue};
   display: flex;
   align-items: baseline;
@@ -42,16 +42,14 @@ const StyledLink = styled.a`
     }
   }
 
-  ${({ icon }: { icon: boolean }): string | void =>
-    icon &&
+  ${({ icon }) => !!icon &&
     `      
       svg {
         margin-right: 0.5em;
       }
     `}
 
-  ${({ isSecondary }: { isSecondary: boolean }): string | void =>
-    isSecondary &&
+  ${({ isSecondary }) => isSecondary &&
     `
       color: ${color.primary};
 
@@ -75,7 +73,7 @@ const Link: React.FC<ILink> = ({
   text,
   url,
   icon,
-  isExternal = false,
+  isExternal ,
   isSecondary,
   children,
   ...otherProps
@@ -94,7 +92,7 @@ const Link: React.FC<ILink> = ({
       href={url}
       isSecondary={isSecondary}
       icon={icon}
-      {...otherProps}
+      {...otherProps as TLinkProps}
     >
       {icon && <Icon icon={icon} />}
       {text && <span>{text}</span>}
