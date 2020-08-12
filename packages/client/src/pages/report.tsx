@@ -28,14 +28,14 @@ const LoadedPageContainer = styled(Stack)`
 `;
 
 const Section = styled.section`
-  padding: 6rem;
+  padding: 3.5rem 6rem;
 
   &:first-child {
     padding-top: 8rem;
   }
 
   &:last-child {
-    padding-top: 0;
+    padding-top: 3rem;
   }
 
   &:nth-child(2) {

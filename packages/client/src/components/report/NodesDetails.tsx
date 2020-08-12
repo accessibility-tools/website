@@ -21,6 +21,7 @@ export const NoteContainer = styled.div`
 const SimpleLink = styled.a`
   text-transform: none;
   font-weight: initial;
+  letter-spacing: normal;
   color: ${color.primary};
 
   &:hover { 

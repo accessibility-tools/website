@@ -47,10 +47,13 @@ const Summary = styled.summary`
     max-width: none;
     font-weight: normal;
   }
+  & > div:last-child {
+    padding-top: 8px;
+  }
 `;
 
 const ViolationContainer = styled(Stack)`
-  padding: 2rem;
+  padding: 0.8rem 2rem 2rem;
 
   &:nth-child(even) {
     background-color: ${color.lightPurple};
@@ -63,7 +66,7 @@ const ViolationContainer = styled(Stack)`
 
 const InfoContainer = styled.div`
   background-color: ${color.purple};
-  margin: 1rem 0;
+  margin-top: 1rem;
   padding: 1rem;
   display: grid;
   grid-template-columns: 1.5em auto;
