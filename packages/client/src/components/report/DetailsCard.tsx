@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import styled from 'styled-components';
 
 import { color } from '../../shared/style';
@@ -14,7 +14,7 @@ interface IDetailsCard {
   violation: IViolation;
 }
 
-const Details = styled.details`
+const DetailsCardContainer = styled.details`
   background-color: ${color.white};
   border-radius: 6px;
   border: solid 1px ${color.lightGrey1};
@@ -91,12 +91,12 @@ const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
   const issueNodes = nodesPerPage.reduce((acc: number, { nodes }: INodePerPage) => acc + nodes.length, 0);
   const [isOpened, setOpened] = useState<boolean>(false);
 
-  const handleOpen = (e: any): void => {
+  const handleOpen = (e: React.BaseSyntheticEvent): void => {
     setOpened(e.currentTarget.open);
   };
 
   return (
-    <Details onToggle={handleOpen}>
+    <DetailsCardContainer onToggle={handleOpen}>
       <Summary>
         <div>
           <h3>{`${title} (${issueNodes})`}</h3>
@@ -151,7 +151,7 @@ const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
           </Stack>
         </ViolationContainer>
       </Stack>
-    </Details>
+    </DetailsCardContainer>
   );
 };
 
