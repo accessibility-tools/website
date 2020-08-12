@@ -8,7 +8,7 @@ const BannerWrapper = styled.div<IBannerWrapper>`
   display: flex;
   height: auto;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 4px;
   border: solid 1px ${color.primary};
   background-color: ${color.extraLightPurple};

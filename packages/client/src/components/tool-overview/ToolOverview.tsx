@@ -33,7 +33,7 @@ const InfoWrapper = styled(Stack)`
 `;
 
 const ToolImg = styled.img<IToolImg>`
-  width: 60%;
+  width: 85%;
   transform: ${({ isTransform }) => isTransform && 'scaleX(-1)'};
 `;
 

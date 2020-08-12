@@ -47,7 +47,6 @@ const NoteContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding: 0 2rem;
 
   p {
     max-width: 36rem;

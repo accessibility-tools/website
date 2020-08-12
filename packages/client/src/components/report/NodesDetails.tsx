@@ -13,18 +13,15 @@ export const NoteContainer = styled.div`
   align-items: center;
 
   p {
-    margin-left: 5px;
+    margin-left: 8px;
     max-width: initial;
-  }
-  
-  .icon {
-    width: 1.15em;
   }
 `;
 
 const SimpleLink = styled.a`
   text-transform: none;
   font-weight: initial;
+  letter-spacing: normal;
   color: ${color.primary};
 
   &:hover { 

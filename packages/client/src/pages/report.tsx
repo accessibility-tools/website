@@ -28,21 +28,29 @@ const LoadedPageContainer = styled(Stack)`
 `;
 
 const Section = styled.section`
-  padding: 6rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 
   &:first-child {
     padding-top: 8rem;
   }
 
   &:last-child {
-    padding-top: 0;
+    padding-top: 3rem;
   }
 
   &:nth-child(2) {
+    padding-bottom: 6rem;
     background-color: ${color.extraLightPurple};
-    // clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem));
-    // -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem);
+    clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 4rem), 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 4rem), 0% 100%);
   } 
+  
+  & > div {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const LoadingPageContainer = styled(Stack)`

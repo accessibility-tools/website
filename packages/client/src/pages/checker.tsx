@@ -122,7 +122,7 @@ const WebCheckerPage: React.FC = () => {
               </Center>
               <Center>
                 <IntroImg
-                  src="/illustrations/webchecker.svg"
+                  src="/illustrations/web-checker.svg"
                   alt="web checker illustration"
                 />
               </Center>

@@ -16,10 +16,11 @@ interface IOverviewCard {
   violationsPerImpact: TViolationsPerImpact
 }
 
-const CardContainer = styled(Stack)`
+const CardContainer = styled.div`
   background-color: ${color.white};
   width: 100%;
-  padding: 2rem;
+  padding: 3rem 2.5rem;
+  
   p {
     max-width: 40rem;
   }
@@ -42,8 +43,13 @@ const Title = styled.div`
 const IssueContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1rem;
+  
   & > div {
-    margin: 0.5rem;
+    margin-left: 1rem;
+  }
+  & > div:first-child {
+    margin-left: 0;
   }
 `;
 
@@ -66,7 +72,7 @@ const OverviewCard: React.FC<IOverviewCard> = ({
           color={color.blue}
         />
       )}
-      <h4>{title}</h4>
+      <h3>{title}</h3>
     </Title>
     <p>{subtext}</p>
     {isViolation && (

@@ -1,7 +1,7 @@
 export const ciTool = {
   id: 'ciTool',
   title: 'Check your website with your terminal before going live',
-  img: '/illustrations/CI_HighDefinition.png',
+  img: '/illustrations/ci-tool.png',
   desc:
     'You can install our continuous integration tool (CI) on your terminal by running:',
   details: [
@@ -21,7 +21,7 @@ export const ciTool = {
 export const webChecker = {
   id: 'webChecker',
   title: 'Accessibility checker for websites',
-  img: '/illustrations/WebCheckerHighDefinition.png',
+  img: '/illustrations/web-checker.png',
   desc:
     'Check any website for accessibility issues by simply entering a URL into our online tool.',
   details: [
@@ -40,7 +40,7 @@ export const webChecker = {
 export const webCheckerAlt = {
   id: 'webCheckerAlt',
   title: 'About the tool',
-  img: '/illustrations/WebCheckerHighDefinition.png',
+  img: '/illustrations/web-checker.png',
   desc:
     'Check any website for accessibility issues by simply entering a URL into our online tool.',
   details: [
