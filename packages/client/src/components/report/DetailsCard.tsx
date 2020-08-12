@@ -61,10 +61,6 @@ const ViolationContainer = styled(Stack)`
   }
 `;
 
-const SubTitle = styled.h5`
-  max-width: none;
-`;
-
 const InfoContainer = styled.div`
   background-color: ${color.purple};
   margin: 1rem 0;
@@ -123,7 +119,6 @@ const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
             space="small"
           >
             <h4>Which elements should be fixed?</h4>
-            <SubTitle>Affected elements:</SubTitle>
             <InfoContainer>
               <Icon
                 icon="manicule"

@@ -7,9 +7,10 @@ import Stack from '../components/layout-components/Stack';
 import ReportIntro from '../components/report/ReportIntro';
 import ReportOverview from '../components/report/ReportOverview';
 import ReportDetails from '../components/report/ReportDetails';
-import Pagination from '../components/pagination/Pagination';
+// import Pagination from '../components/pagination/Pagination';
 import { useServices } from '../common/services';
 import { LoadingPage } from '../components/loading-page/loadingPage';
+import SEO from '../components/SEO/SEO';
 
 const LoadedPageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
@@ -93,6 +94,7 @@ const ReportPage: React.FC = () => {
 
   return (
     <>
+      <SEO siteTitle="Accessibility report"/>
       {
         !isFetching && error && (
           <LoadedPageContainer space="large">
@@ -114,7 +116,7 @@ const ReportPage: React.FC = () => {
         !isFetching && !error && report && (
           <LoadedPageContainer space="large">
             <Section>
-              <ReportIntro isLoading={isFetching} />
+              <ReportIntro isLoading={isFetching}/>
             </Section>
             <Section>
               <ReportOverview
@@ -133,7 +135,7 @@ const ReportPage: React.FC = () => {
             {/*  <Pagination currentPage={1} totalPages={10} />*/}
             {/*</Section>*/}
           </LoadedPageContainer>
-        ) 
+        )
       }
     </>
   );
