@@ -111,7 +111,7 @@ const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
         <div>
           <ArrowIcon
             icon="bArrow"
-            direction={!isOpened && 'up' || ''}
+            direction={isOpened && 'up' || ''}
           />
         </div>
       </Summary>
@@ -120,8 +120,9 @@ const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
         <ViolationContainer>
           <Stack
             key={'affected'}
-            space="medium"
+            space="small"
           >
+            <h4>Which elements should be fixed?</h4>
             <SubTitle>Affected elements:</SubTitle>
             <InfoContainer>
               <Icon
