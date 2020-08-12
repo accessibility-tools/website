@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { color } from '../../shared/style';
 import Switcher from '../layout-components/Switcher';
 import Stack from '../layout-components/Stack';
-import Button from '../button/Button';
+import { Button } from '../button/Button';
 import Icon from '../icon/Icon';
 import OverviewCard from './OverviewCard';
 import { TViolationsPerImpact } from './types';
