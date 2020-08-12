@@ -66,7 +66,7 @@ const OverviewCard: React.FC<IOverviewCard> = ({
           color={color.blue}
         />
       )}
-      <h4>{title}</h4>
+      <h3>{title}</h3>
     </Title>
     <p>{subtext}</p>
     {isViolation && (
