@@ -7,7 +7,7 @@ import { ILink, IStyledLink, TLinkProps } from './types';
 
 const StyledLink = styled.a<IStyledLink>`
   color: ${color.blue};
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
   text-decoration: none;
 

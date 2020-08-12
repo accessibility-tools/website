@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import Stack from '../layout-components/Stack';
 import Icon from '../icon/Icon';
 import Banner from '../banner/Banner';
-import { INode, INodePerPage } from './types';
+import { INodePerPage } from './types';
+import { color } from '../../shared/style';
 
 export const NoteContainer = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ export const NoteContainer = styled.div`
   align-items: center;
 
   p {
-    margin-left: 10px;
+    margin-left: 5px;
     max-width: initial;
   }
   
@@ -21,33 +22,19 @@ export const NoteContainer = styled.div`
   }
 `;
 
-const SummaryContainer = styled.div`
-  ul {
-    margin-top: 5px;
-    
-    li {
-      list-style: inside;
-      list-style-type: '-';
-    }
-  }  
+const SimpleLink = styled.a`
+  text-transform: none;
+  font-weight: initial;
+  color: ${color.primary};
+
+  &:hover { 
+    color: ${color.mediumGrey};
+    cursor: pointer;
+  }
+  &:active {
+    color: ${color.black};
+  }
 `;
-
-const convertToList = (plainText: string): React.ReactElement => {
-  const strings = plainText.split('\n ');
-
-  return (
-    <>
-      <div>{strings[0]}</div>
-      <ul>
-        {
-          strings.map((item, index) => (
-            index !== 0 && <li key={item + index + 1}>{item}</li>
-          ))
-        }
-      </ul>
-    </>
-  );
-};
 
 const NodesDetails: React.FC<INodePerPage> = ({ pageUrl, nodes }) => (
   <Stack
@@ -55,12 +42,21 @@ const NodesDetails: React.FC<INodePerPage> = ({ pageUrl, nodes }) => (
     marginTop={'0'}
   >
     <NoteContainer>
-      <Icon icon="tip"/>
-      <p>{`On page: ${pageUrl}`}</p>
+      <Icon icon="exclamationMark"/>
+      <p>On page:
+        <SimpleLink
+          href={pageUrl}
+          title={`Open in a new browser tab ${pageUrl}`}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {pageUrl}
+        </SimpleLink>
+      </p>
     </NoteContainer>
     <Stack space="small">
-      {nodes.map(({ target }: INode, i: number): React.ReactElement[] => (
-        target.map((selector: string): React.ReactElement => (
+      {nodes.map(({ target }, i) => (
+        target.map((selector) => (
           <Banner
             key={`${pageUrl} affected selector ${i + 1}`}
             text={selector}

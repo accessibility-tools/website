@@ -134,7 +134,7 @@ const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
                   <strong>Find in browser:</strong>
                   <br/>
                   Open the page with the affected element. Open the inspector with a
-                  right-click and choose “Inspect”. Copy the selector into the
+                  right-click and choose “Inspect”. Copy the CSS selector into the
                   inspector search.
                 </p>
                 <p>

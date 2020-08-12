@@ -62,6 +62,7 @@ const ReportOverview: React.FC<IReportOverview> = ({
   websiteUrl,
 }) => {
   const totalIssueCount = Object.values(violationsPerImpact).reduce((a, b) => a + b, 0);
+  const urlWithoutProtocol = websiteUrl.replace(/^https?:\/\//,'');
 
   return (
     <OverviewContainer>
@@ -69,7 +70,7 @@ const ReportOverview: React.FC<IReportOverview> = ({
         <div>
           <TitleContainer space="small">
             <h2>
-              Report for <span>{websiteUrl}</span>
+              Report for <span>{urlWithoutProtocol}</span>
             </h2>
             <Subtitle>{pagesScanned.length} pages scanned</Subtitle>
           </TitleContainer>
