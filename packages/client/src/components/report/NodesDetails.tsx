@@ -59,19 +59,14 @@ const NodesDetails: React.FC<INodePerPage> = ({ pageUrl, nodes }) => (
       <p>{`On page: ${pageUrl}`}</p>
     </NoteContainer>
     <Stack space="small">
-      {nodes.map(({ target, failureSummary }: INode, i: number): React.ReactElement => (
-        <div key={i + 1}>
-          <SummaryContainer>{failureSummary && convertToList(failureSummary)}</SummaryContainer>
-          {
-            target.map((selector: string): React.ReactElement => (
-              <Banner
-                key={`${pageUrl} affected selector ${i + 1}`}
-                text={selector}
-                width="45rem"
-              />
-            ))
-          }
-        </div>
+      {nodes.map(({ target }: INode, i: number): React.ReactElement[] => (
+        target.map((selector: string): React.ReactElement => (
+          <Banner
+            key={`${pageUrl} affected selector ${i + 1}`}
+            text={selector}
+            width="45rem"
+          />
+        ))
       ))}
     </Stack>
   </Stack>
