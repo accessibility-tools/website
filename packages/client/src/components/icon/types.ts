@@ -1,15 +1,10 @@
-export interface IIcon extends IPath, ISVG {
+export interface IIcon extends ISVG {
   icon: string;
-}
-
-export interface IPath {
   color?: string;
-  props?: any;
 }
 
 export interface ISVG {
   block?: boolean;
-  props?: any;
 }
 
 export interface IStyledArrowIcon {
