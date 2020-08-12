@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { background, color } from '../shared/style';
+import { useRouter } from 'next/router';
 
-import Switcher from '../components/layout-components/Switcher';
+import { background, color } from '../shared/style';
 import Stack from '../components/layout-components/Stack';
 import ReportIntro from '../components/report/ReportIntro';
 import ReportOverview from '../components/report/ReportOverview';
 import ReportDetails from '../components/report/ReportDetails';
-import Pagination from '../components/pagination/Pagination';
-import { mockReportData } from '../common/reportData';
+// import Pagination from '../components/pagination/Pagination';
+import { useServices } from '../common/services';
+import { LoadingPage } from '../components/loading-page/loadingPage';
+import SEO from '../components/SEO/SEO';
+import { IReport } from '../components/report/types';
+
+interface IReportPageQuery {
+  url?: string;
+  pageLimit?: number;
+}
 
 const LoadedPageContainer = styled(Stack)`
   background-color: ${background.mixedWhite};
@@ -32,8 +40,8 @@ const Section = styled.section`
 
   &:nth-child(2) {
     background-color: ${color.extraLightPurple};
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem));
-    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem);
+    // clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem));
+    // -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% calc(100% - 4rem);
   } 
 `;
 
@@ -55,68 +63,101 @@ const LoadingPageContainer = styled(Stack)`
   }
 `;
 
-const BlankTitle = styled.div`
-  background-color: ${color.white};
-  height: 2rem;
-  flex: 0 0 15%;
+/**
+ * @function mapReportForUI
+ * @description Takes report with a type IReportResponse and returns report for UI with a type IReport
+ * @description NOTE: Currently types are the same, adjust if needed
+ * @param {IReport} report
+ * @returns {IReport} Returns report
+ */
+const mapReportForUI = (report: IReport): IReport => {
+  const { pageUrls, violationsByImpact, violationsPerImpact } = report;
 
-  &:first-child {
-    flex: 0 0 50%;
-    margin-right: auto;
-  }
-`;
+  return {
+    pageUrls,
+    violationsPerImpact,
+    violationsByImpact
+  };
+};
 
-const BlankCard = styled.div`
-  background-color: ${color.white};
-  height: 20rem;
-`;
+const ReportPage: React.FC = () => {
+  const router = useRouter();
+  const { apiClient: apiClientService } = useServices();
 
-const BlankDetails = styled.div`
-  background-color: ${color.white};
-  height: 2rem;
-  width: inherit;
-`;
+  const [report, setReport] = useState<IReport | null>(null);
+  const [isFetching, setIsFetching] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const { url, pageLimit }: IReportPageQuery = router.query;
 
-const ReportPage: React.FC = () =>
-  mockReportData ? (
-    <LoadedPageContainer space="large">
-      <Section>
-        <ReportIntro isLoaded={!!mockReportData} />
-      </Section>
-      <Section>
-        <ReportOverview />
-      </Section>
-      <Section>
-        <ReportDetails />
-      </Section>
-      <Section>
-        <Pagination currentPage={1} totalPages={10} />
-      </Section>
-    </LoadedPageContainer>
-  ) : (
-    <LoadingPageContainer>
-      <ReportIntro isLoaded={!!mockReportData} />
-      <Stack>
-        <Switcher threshold="35rem">
-          <div>
-            <BlankTitle />
-            <BlankTitle />
-            <BlankTitle />
-          </div>
-        </Switcher>
-        <Switcher threshold="35rem">
-          <div>
-            <BlankCard />
-            <BlankCard />
-          </div>
-        </Switcher>
-        <Stack>
-          <BlankDetails />
-          <BlankDetails />
-          <BlankDetails />
-        </Stack>
-      </Stack>
-    </LoadingPageContainer>
+  const fetchReport = async (url: string) => {
+    setIsFetching(true);
+
+    try {
+      const { report } = await apiClientService.getReport(url, pageLimit);
+      const mappedReport = mapReportForUI(report);
+      setReport(mappedReport || null);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setIsFetching(false);
+    }
+  };
+
+  useEffect(() => {
+    if (!url) {
+      router.push('/checker');
+    } else {
+      fetchReport(url);
+    }
+  }, []);
+
+  return (
+    <>
+      <SEO siteTitle="Accessibility report"/>
+      {
+        !isFetching && error && (
+          <LoadedPageContainer space="large">
+            <Section>
+              <div>Error</div>
+            </Section>
+          </LoadedPageContainer>
+        )
+      }
+      {
+        isFetching && !error && (
+          <LoadingPageContainer>
+            <ReportIntro isLoading={isFetching}/>
+            <LoadingPage/>
+          </LoadingPageContainer>
+        )
+      }
+      {
+        !isFetching && !error && report && (
+          <LoadedPageContainer space="large">
+            <Section>
+              <ReportIntro isLoading={isFetching}/>
+            </Section>
+            <Section>
+              <ReportOverview
+                pagesScanned={report.pageUrls}
+                violationsPerImpact={report.violationsPerImpact}
+                websiteUrl={url || ''}
+              />
+            </Section>
+            <Section>
+              <ReportDetails
+                violationsByImpact={report.violationsByImpact}
+              />
+            </Section>
+            {/* TODO: implement pagination */}
+            {/*<Section>*/}
+            {/*  <Pagination currentPage={1} totalPages={10} />*/}
+            {/*</Section>*/}
+          </LoadedPageContainer>
+        )
+      }
+    </>
   );
+};
 
 export default ReportPage;

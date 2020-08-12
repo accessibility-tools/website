@@ -26,8 +26,8 @@ const StyledInput = styled.input<IStyledInput>`
   width: -moz-available;
   min-width: 18rem;
   border: 2px solid
-    ${({ error, valid }) =>
-      error ? color.error : valid ? color.blue : color.primary};
+    ${({ error, isValid }) =>
+      error ? color.error : isValid ? color.blue : color.primary};
   padding: ${spacing.padding.medium}px ${spacing.padding.small}px;
   transition: all 150ms ease-out;
   margin-top: ${spacing.padding.small}px;
@@ -60,8 +60,7 @@ const IconWrapper = styled.span`
 
 const StyledSubtext = styled.div<IStyledSubtext>`
   padding: .2rem 0 .8rem;
-  color: ${({ isError }: { isError: boolean }) =>
-    isError ? color.error : color.mediumGrey};
+  color: ${({ isError }) => isError ? color.error : color.mediumGrey};
 
   & > *:first-child {
     margin-right: 0.5rem;

@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Switcher from '../layout-components/Switcher';
-import { IReportIntro } from './types';
+
+interface IReportIntro {
+  isLoading?: boolean;
+}
 
 const ReportImg = styled.img`
   width: 19rem;
@@ -20,17 +23,17 @@ const Title = styled.div`
   }
 `;
 
-const ReportIntro: React.FC<IReportIntro> = ({ isLoaded }) => (
+const ReportIntro: React.FC<IReportIntro> = ({ isLoading }) => (
   <Switcher>
-    {isLoaded ? (
+    {isLoading ? (
       <div>
         <ReportImg
           src="/illustrations/web-checker.svg"
           alt="illustration of report page"
         />
         <Title>
-          <p>web accessibility report</p>
-          <h1>Thanks for Making the web accessible for everybody</h1>
+          <p>creating reports for big pages can take a long time</p>
+          <h1>Please give us a minute...</h1>
         </Title>
       </div>
     ) : (
@@ -40,8 +43,8 @@ const ReportIntro: React.FC<IReportIntro> = ({ isLoaded }) => (
           alt="illustration of report page"
         />
         <Title>
-          <p>creating reports for big pages can take a long time</p>
-          <h1>Please give us a minute...</h1>
+          <p>web accessibility report</p>
+          <h1>Thanks for Making the web accessible for everybody</h1>
         </Title>
       </div>
     )}

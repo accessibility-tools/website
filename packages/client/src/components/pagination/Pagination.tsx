@@ -36,7 +36,7 @@ const Pagination: React.FC<IPagination> = ({
     <PageLink
       aria-label="previous page"
       aria-disabled={currentPage === 1}
-      href={href + (currentPage - 1)}
+      href={href ? href + (currentPage - 1) : ''}
       target="_self"
     >
       <ArrowIcon
@@ -53,7 +53,7 @@ const Pagination: React.FC<IPagination> = ({
     <PageLink
       aria-label="next page"
       aria-disabled={currentPage === totalPages}
-      href={href + (currentPage + 1)}
+      href={href ? href + (currentPage - 1) : ''}
       target="_self"
     >
       <ArrowIcon

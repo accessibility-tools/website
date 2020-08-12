@@ -1,20 +1,19 @@
-export interface IIcon extends IPath, ISVG {
-  icon: string;
-}
+import React from 'react';
 
-export interface IPath {
+export type SVGProps = React.ComponentPropsWithRef<'svg'>
+
+
+export interface IIcon extends ISVG, SVGProps {
+  icon: string;
   color?: string;
-  props?: any;
+  alt?: string;
 }
 
 export interface ISVG {
   block?: boolean;
-  props?: any;
 }
 
-export interface IStyledArrowIcon {
-  icon: string;
-  color?: string;
-  direction?: string;
+export interface IArrowIcon extends IIcon {
+  direction: string;
   isExpanded?: boolean;
 }

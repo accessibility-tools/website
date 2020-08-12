@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { color } from '../../shared/style';
 import MenuItem from './MenuItem';
 import Sponsor from '../sponsor/Sponsor';
-import { IMenuData, IMenuDataItem, IMenuList } from './types';
+import { IMenuData, IMenuDataItem, IMenuList, IStyledList } from './types';
 
 const menuData: IMenuData = {
   TOOLS: { title: 'the tools', href: '/#tools' },
@@ -12,7 +12,7 @@ const menuData: IMenuData = {
   ABOUT: { title: 'about & contact', href: '/#about' }
 };
 
-const StyledList = styled.ul`
+const StyledList = styled.ul<IStyledList>`
   width: 100%;
   margin: 0;
   padding: 0 1.5rem;
@@ -29,8 +29,7 @@ const StyledList = styled.ul`
     bottom: 0;
     padding: 0;
 
-    ${({ isExpanded }: { isExpanded: boolean }): string | void =>
-      isExpanded
+    ${({ isExpanded }) => isExpanded
         ? `& {
           opacity: 1;
           transition: opacity 200ms 0ms;

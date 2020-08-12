@@ -17,8 +17,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 
 const StyledCheckbox = styled.div<IStyledCheckbox>`
   border: 3px solid
-    ${({ checked }: { checked: boolean }): string =>
-      checked ? color.blue : color.primary};
+    ${({ checked }) => checked ? color.blue : color.primary};
   border-radius: 3px;
   display: inline-block;
   height: 20px;
@@ -28,8 +27,7 @@ const StyledCheckbox = styled.div<IStyledCheckbox>`
   width: 20px;
 
   svg {
-    visibility: ${({ checked }: { checked: boolean }): string =>
-      checked ? 'visible' : 'hidden'};
+    visibility: ${({ checked }) => checked ? 'visible' : 'hidden'};
     color: ${color.blue};
     position: absolute;
     right: -2px;
@@ -82,7 +80,8 @@ const Checkbox: React.FC<ICheckbox> = ({
   ...otherProps
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
-  const handleKeyPress = (event: KeyboardEvent): void => {
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>): void => {
     if (event.key === ' ') {
       setIsChecked(!isChecked);
     }

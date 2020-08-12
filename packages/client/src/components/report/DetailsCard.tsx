@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import styled from 'styled-components';
 
 import { color } from '../../shared/style';
 import Stack from '../layout-components/Stack';
 import Link from '../links/Link';
 import ArrowIcon from '../icon/ArrowIcon';
-import FixElement from './FixElement';
-import { IDetailsCard } from './types';
+import NodesDetails from './NodesDetails';
+import { INodePerPage, IViolation } from './types';
+import Icon from '../icon/Icon';
 
-const Details = styled.details`
+
+interface IDetailsCard {
+  violation: IViolation;
+}
+
+const DetailsCardContainer = styled.details`
   background-color: ${color.white};
   border-radius: 6px;
   border: solid 1px ${color.lightGrey1};
@@ -43,14 +49,42 @@ const Summary = styled.summary`
   }
 `;
 
-const Subtitle = styled.p`
-  font-weight: bold;
-  font-size: 1.25rem;
-  padding-left: 2rem;
+const ViolationContainer = styled(Stack)`
+  padding: 2rem;
+
+  &:nth-child(even) {
+    background-color: ${color.lightPurple};
+  }
+
+  ul {
+    padding-left: 0;
+  }
 `;
 
-const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
-  const { title, summary, resource, failedStandard, fixes } = issueData;
+const InfoContainer = styled.div`
+  background-color: ${color.purple};
+  margin: 1rem 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1.5em auto;
+  align-items: baseline;
+  max-width: 39em;
+
+  p {
+    max-width: initial;
+  }
+  
+  & > div {
+    @media (max-width: 48rem) {
+      align-items: initial;
+    }
+  }
+`;
+
+
+const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
+  const { title, description, helpUrl, nodesPerPage } = violation;
+  const issueNodes = nodesPerPage.reduce((acc: number, { nodes }: INodePerPage) => acc + nodes.length, 0);
   const [isOpened, setOpened] = useState<boolean>(false);
 
   const handleOpen = (e: React.BaseSyntheticEvent): void => {
@@ -58,33 +92,62 @@ const DetailsCard: React.FC<IDetailsCard> = ({ issueData }) => {
   };
 
   return (
-    <Details onToggle={handleOpen}>
+    <DetailsCardContainer onToggle={handleOpen}>
       <Summary>
         <div>
-          <h3>{`${title} (${fixes.length})`}</h3>
-          <p>{summary}</p>
-          <p>{`Failed accessibility standard: ${failedStandard}`}</p>
+          <h3>{`${title} (${issueNodes})`}</h3>
+          <p>{description}</p>
           <Link
-            url={resource}
+            url={helpUrl}
             text="Resource to solve this issue"
             icon="extLink"
             isExternal={true}
           />
         </div>
         <div>
-          <ArrowIcon icon="bArrow" direction={!isOpened && 'up'} />
+          <ArrowIcon
+            icon="bArrow"
+            direction={isOpened && 'up' || ''}
+          />
         </div>
       </Summary>
 
       <Stack space="medium">
-        <Subtitle>Which elements should be fixed?</Subtitle>
-        {fixes.map(
-          (fix: any, index: number): React.ReactElement => (
-            <FixElement key={`${title} required fix ${index}`} fixData={fix} />
-          )
-        )}
+        <ViolationContainer>
+          <Stack
+            key={'affected'}
+            space="small"
+          >
+            <h4>Which elements should be fixed?</h4>
+            <InfoContainer>
+              <Icon
+                icon="manicule"
+                color={color.blue}
+              />
+              <Stack space="small">
+                <p>
+                  <strong>Find in browser:</strong>
+                  <br/>
+                  Open the page with the affected element. Open the inspector with a
+                  right-click and choose “Inspect”. Copy the CSS selector into the
+                  inspector search.
+                </p>
+                <p>
+                  <strong>Find in codebase:</strong>
+                  <br/>
+                  Copy the CSS selector into the code editor search.
+                </p>
+              </Stack>
+            </InfoContainer>
+            {
+              nodesPerPage.map((data: INodePerPage, i: number) => (
+                <NodesDetails key={i + 1} {...data} />
+              ))
+            }
+          </Stack>
+        </ViolationContainer>
       </Stack>
-    </Details>
+    </DetailsCardContainer>
   );
 };
 

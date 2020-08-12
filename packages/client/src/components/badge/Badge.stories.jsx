@@ -12,23 +12,23 @@ export default {
 
 const reportData = {
   CRITICAL: {
-    iconName: 'circle',
-    iconColor: color.error,
+    name: 'circle',
+    color: color.error,
     issueCount: 3
   },
   SERIOUS: {
-    iconName: 'issue',
-    iconColor: color.error,
+    name: 'issue',
+    color: color.error,
     issueCount: 7
   },
   MODERATE: {
-    iconName: 'issue',
-    iconColor: color.darkPurple,
+    name: 'issue',
+    color: color.darkPurple,
     issueCount: 10
   },
   MINOR: {
-    iconName: 'issue',
-    iconColor: color.primary,
+    name: 'issue',
+    color: color.primary,
     issueCount: 1
   }
 };
@@ -43,13 +43,13 @@ export const criticalBadge = () => {
       <Badge
         label={select(reportLabel, levels, levels[0])}
         issueCount={number('issueCount', details[0].issueCount, { min: 0 })}
-        iconName={details[0].iconName}
-        iconColor={details[0].iconColor}
+        name={details[0].name}
+        color={details[0].color}
       />
       <Badge
         label={select(reportLabel, levels, levels[0])}
-        iconName={details[0].iconName}
-        iconColor={details[0].iconColor}
+        name={details[0].name}
+        color={details[0].color}
       />
     </StoryWrapper>
   );
@@ -61,13 +61,13 @@ export const seriousBadge = () => {
       <Badge
         label={select(reportLabel, levels, levels[1])}
         issueCount={number('issueCount', details[1].issueCount, { min: 0 })}
-        iconName={details[1].iconName}
-        iconColor={details[1].iconColor}
+        name={details[1].name}
+        color={details[1].color}
       />
       <Badge
         label={select(reportLabel, levels, levels[1])}
-        iconName={details[1].iconName}
-        iconColor={details[1].iconColor}
+        name={details[1].name}
+        color={details[1].color}
       />
     </StoryWrapper>
   );
@@ -79,13 +79,13 @@ export const moderateBadge = () => {
       <Badge
         label={select(reportLabel, levels, levels[2])}
         issueCount={number('issueCount', details[2].issueCount, { min: 0 })}
-        iconName={details[2].iconName}
-        iconColor={details[2].iconColor}
+        name={details[2].name}
+        color={details[2].color}
       />
       <Badge
         label={select(reportLabel, levels, levels[2])}
-        iconName={details[2].iconName}
-        iconColor={details[2].iconColor}
+        name={details[2].name}
+        color={details[2].color}
       />
     </StoryWrapper>
   );
@@ -97,13 +97,13 @@ export const minorBadge = () => {
       <Badge
         label={select(reportLabel, levels, levels[3])}
         issueCount={number('issueCount', details[3].issueCount, { min: 0 })}
-        iconName={details[3].iconName}
-        iconColor={details[3].iconColor}
+        name={details[3].name}
+        color={details[3].color}
       />
       <Badge
         label={select(reportLabel, levels, levels[3])}
-        iconName={details[3].iconName}
-        iconColor={details[3].iconColor}
+        name={details[3].name}
+        color={details[3].color}
       />
     </StoryWrapper>
   );

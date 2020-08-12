@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Button from '../button/Button';
+import { ButtonLink } from '../button/Button';
 import { ICTA } from './types';
+import { TButtonLinkProps } from '../button/types';
 
 const CTA: React.FC<ICTA> = ({
   text,
@@ -18,15 +19,14 @@ const CTA: React.FC<ICTA> = ({
   if (isExternal) otherProps = { ...otherProps, ...externalConfig };
 
   return (
-    <Button
+    <ButtonLink
       data-type="cta-btn"
       tabIndex={0}
-      as="a"
       href={url}
       text={text}
       icon={icon}
       isSecondary={isSecondary}
-      {...otherProps}
+      {...otherProps as TButtonLinkProps}
     />
   );
 };

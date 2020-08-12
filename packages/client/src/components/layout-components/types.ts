@@ -7,9 +7,11 @@ export interface ISwitcher {
 }
 
 export interface IStack {
-  space: string;
-  width: string;
-  itemsAlign: string;
+  space?: string;
+  width?: string;
+  itemsAlign?: string;
+  marginTop?: string;
+  center?: boolean;
 }
 
 export interface ILayout {

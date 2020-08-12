@@ -34,8 +34,7 @@ const InfoWrapper = styled(Stack)`
 
 const ToolImg = styled.img<IToolImg>`
   width: 60%;
-  transform: ${({ isTransform }: { isTransform: boolean }): string =>
-    isTransform && 'scaleX(-1)'};
+  transform: ${({ isTransform }) => isTransform && 'scaleX(-1)'};
 `;
 
 const ToolLink = styled(Link)`

@@ -25,14 +25,24 @@ export const getViolationsInfo = (data) =>
     }
   }, { violations: [], pageUrls: [] });
 
+
+export const filterNodesData = (nodes) =>
+  nodes.map(({ failureSummary, html, target }) => ({
+    failureSummary,
+    html,
+    target
+  }));
+
 /**
- * @function mapViolationsToCategory
+ * @function mapViolationsByImpact
  * @param {Array<Object>} violations
  * @returns {Object} the violations grouped by impact level and then by issue id
  */
-export const mapViolationsToCategory = (violations) =>
+export const mapViolationsByImpact = (violations) =>
   violations.reduce(
-    (acc, { nodes, id, impact, help, description, helpUrl, tags, pageUrl }) => {
+    (acc, { nodes, id, impact, help, description, helpUrl, pageUrl }) => {
+      const filteredNodes = filterNodesData(nodes);
+
       if (!acc[impact]) {
         acc[impact] = {};
       }
@@ -40,16 +50,25 @@ export const mapViolationsToCategory = (violations) =>
       if (acc[impact][id]) {
         acc[impact][id] = {
           ...acc[impact][id],
-          nodes: [...(acc[impact][id].nodes || []), ...nodes]
+          nodesPerPage: [
+            ...acc[impact][id].nodesPerPage,
+            {
+              pageUrl,
+              nodes: [...(acc[impact][id].nodesPerPage.nodes || []), ...filteredNodes]
+            }
+          ]
         }
       } else {
         acc[impact][id] = {
           id,
           helpUrl,
           description,
-          tags,
-          nodes,
-          pageUrl,
+          nodesPerPage: [
+            {
+              pageUrl,
+              nodes: filteredNodes
+            }
+          ],
           title: help
         }
       }
@@ -58,3 +77,15 @@ export const mapViolationsToCategory = (violations) =>
     },
     {}
   );
+
+export const countViolationsPerImpact = (violationsByCategory) => {
+  let impactCategoryCounts = { critical: 0, serious: 0, moderate: 0, minor: 0 };
+  for (let [impact, violations] of Object.entries(violationsByCategory)) {
+    for (let issue of Object.values(violations)) {
+      const issueNodesCount = (issue.nodesPerPage || []).reduce((acc, { nodes }) => acc + nodes.length, 0)
+      impactCategoryCounts[impact] += issueNodesCount;
+    }
+  }
+
+  return impactCategoryCounts;
+}

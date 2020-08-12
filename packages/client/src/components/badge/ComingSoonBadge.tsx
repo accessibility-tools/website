@@ -16,8 +16,8 @@ const ComingSoonBadge: React.FC = () => {
   return (
     <StyledBadge
       label="Coming Soon"
-      iconName="manicule"
-      iconColor={color.blue}
+      name="manicule"
+      color={color.blue}
     />
   );
 };

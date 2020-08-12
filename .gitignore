@@ -2,6 +2,7 @@
 
 # packages
 /packages/client/node_modules
+/packages/client/storybook-static
 /packages/client/.next
 /packages/server/node_modules
 /packages/graphql/node_modules

@@ -4,14 +4,21 @@ import styled from 'styled-components';
 import { color } from '../../shared/style';
 import Switcher from '../layout-components/Switcher';
 import Stack from '../layout-components/Stack';
-import Button from '../button/Button';
+import { Button } from '../button/Button';
 import Icon from '../icon/Icon';
 import OverviewCard from './OverviewCard';
-import { mockReportData } from '../../common/reportData';
+import { TViolationsPerImpact } from './types';
+
+
+interface IReportOverview {
+  violationsPerImpact: TViolationsPerImpact;
+  pagesScanned: string[];
+  websiteUrl: string;
+}
 
 const OverviewContainer = styled(Stack)`
   padding: 0;
-  width: 80vw;
+  max-width: 80vw;
 
   span {
     color: ${color.blue};
@@ -48,11 +55,14 @@ const NoteContainer = styled.div`
   }
 `;
 
-const ReportOverview: React.FC = () => {
-  const issueCountArr = Object.keys(mockReportData).map(
-    (category) => mockReportData[category].length
-  );
-  const totalIssueCount = issueCountArr.reduce((a, b) => a + b, 0);
+
+const ReportOverview: React.FC<IReportOverview> = ({
+  violationsPerImpact,
+  pagesScanned,
+  websiteUrl,
+}) => {
+  const totalIssueCount = Object.values(violationsPerImpact).reduce((a, b) => a + b, 0);
+  const urlWithoutProtocol = websiteUrl.replace(/^https?:\/\//,'');
 
   return (
     <OverviewContainer>
@@ -60,11 +70,11 @@ const ReportOverview: React.FC = () => {
         <div>
           <TitleContainer space="small">
             <h2>
-              Report for <span>xxx.com</span>
+              Report for <span>{urlWithoutProtocol}</span>
             </h2>
-            <Subtitle>xx pages scanned</Subtitle>
+            <Subtitle>{pagesScanned.length} pages scanned</Subtitle>
           </TitleContainer>
-          <Button text="Copy URL" />
+          <Button text="Copy URL"/>
         </div>
       </Switcher>
       <Switcher threshold="35rem">
@@ -73,13 +83,16 @@ const ReportOverview: React.FC = () => {
             title={`${totalIssueCount} Detected issues`}
             subtext="Seems like there are some accessibility issues on this website to improve.
             Some are more critical than others to enable access for all users."
-            isIssue
-            reportData={mockReportData}
+            isViolation
+            violationsPerImpact={violationsPerImpact}
           />
         </div>
       </Switcher>
       <NoteContainer>
-        <Icon icon="manicule" color={color.blue} />
+        <Icon
+          icon="manicule"
+          color={color.blue}
+        />
         <p>
           Automated tests like this one can assess up to <strong>30%</strong> of
           accessibility issues. In addition, we recommend performing a manual

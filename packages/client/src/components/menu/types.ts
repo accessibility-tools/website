@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface IMenuItem {
   text: string;
   href?: string;
@@ -22,4 +24,12 @@ export interface IMenuData {
 export interface IMenuDataItem {
   title: string;
   href: string;
+}
+
+export interface IStyledList extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
+  isExpanded?: boolean;
+}
+
+export interface IStyledListItem extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
+  isSelected?: boolean;
 }
