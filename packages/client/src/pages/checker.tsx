@@ -97,7 +97,7 @@ const WebCheckerPage: React.FC = () => {
       setUrl(value);
       setError('');
     } else {
-      setError('The requested URL can not be found. Please enter a valid URL.');
+      setError('The requested URL can not be found. Please enter a URL starting with "http://" or "https://".');
     }
   };
 
@@ -138,7 +138,7 @@ const WebCheckerPage: React.FC = () => {
                 hintIcon="manicule"
                 hintText="It can take a longer time to create reports for big websites."
                 errorText={error}
-                isValid={!!url}
+                isValid={!(url.length === 0 || error)}
                 iconColor={color.blue}
                 onChange={handleInputChange}
               />

@@ -26,20 +26,27 @@ const StyledInput = styled.input<IStyledInput>`
   width: -moz-available;
   min-width: 18rem;
   border: 2px solid
-    ${({ error, isValid }) =>
-      error ? color.error : isValid ? color.blue : color.primary};
-  padding: ${spacing.padding.medium}px ${spacing.padding.small}px;
+    ${({ error, isValid }) => error ? color.error : isValid ? color.blue : color.primary};
+  padding: ${spacing.padding.small}px 44px ${spacing.padding.small}px ${spacing.padding.small}px;
   transition: all 150ms ease-out;
   margin-top: ${spacing.padding.small}px;
   margin-bottom: ${spacing.padding.small}px;
   font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
 
+  &:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px ${color.white}; /* Change the color to your own background color */ 
+  }
+  
+  &:-webkit-autofill:focus {
+      -webkit-box-shadow: inset 0 0 0 50px ${color.white}; /* Change the color to your own background color */
+  } 
+
   &:hover {
-    border-color: ${color.lightBlue};
+    border-color: ${({ error, isValid }) => error ? color.error : isValid ? color.lightBlue : color.primary};
   }
 
   &:focus {
-    border-color: ${color.blue};
+    border-color: ${({ error, isValid }) => error ? color.error : isValid ? color.blue : color.primary};
     border-radius: 2px;
   }
 
@@ -56,6 +63,7 @@ const StyledInput = styled.input<IStyledInput>`
 const IconWrapper = styled.span`
   position: relative;
   right: 34px;
+  line-height: 1;
 `;
 
 const StyledSubtext = styled.div<IStyledSubtext>`
@@ -112,15 +120,15 @@ const TextInput: React.FC<ITextInput> = ({
         </IconWrapper>
       )}
     </InputWrapper>
+    {errorText && (
+      <StyledSubtext id={`${id}-error`} isError>
+        Error: {errorText}
+      </StyledSubtext>
+    )}
     {hintText && (
       <StyledSubtext id={`${id}-hint`}>
         {hintIcon && <Icon icon={hintIcon} color={iconColor} />}
         <span>{hintText}</span>
-      </StyledSubtext>
-    )}
-    {errorText && (
-      <StyledSubtext id={`${id}-error`} isError>
-        Error: {errorText}
       </StyledSubtext>
     )}
   </TextInputWrapper>

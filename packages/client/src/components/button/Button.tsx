@@ -75,21 +75,26 @@ const StyledButton = styled.button<TButtonProps & IStyledButton>`
 `;
 
 const StyledButtonLink = styled.a<TButtonLinkProps & IStyledButton>`
-  background-color: ${color.blue};
-  color: ${color.white};
-  cursor: pointer;
-  display: inline-block;
   overflow: hidden;
+
+  display: inline-flex;
+  width: auto;
+  max-width: 100%;
   padding: ${spacing.padding.small}px ${spacing.padding.medium}px;
   position: relative;
+  
+  background-color: ${color.blue};
+
+  color: ${color.white};
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
-  transition: all 150ms ease-out;
-  transform: translate3d(0, 0, 0);
   vertical-align: top;
   white-space: nowrap;
   user-select: none;
   opacity: 1;
+  transition: all 150ms ease-out;
+  transform: translate3d(0, 0, 0);
 
   &:hover {
     background-color: ${color.lightBlue};
@@ -132,14 +137,18 @@ const StyledButtonLink = styled.a<TButtonLinkProps & IStyledButton>`
     `}
 
   ${({ icon }) => !!icon && `
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
     svg{
       margin-left: 1em;
     }
   `}
+  
+  span {
+    align-self: center;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    position: relative;
+  }
 `;
 
 
@@ -161,7 +170,9 @@ export const ButtonLink: React.FC<IButtonLink> = ({
   ...otherProps
 }) => (
   <StyledButtonLink icon={icon} {...otherProps as TButtonLinkProps}>
-    {text}
-    {icon && <Icon icon={icon} />}
+    <span>
+      <span>{text}</span>
+      <span>{icon && <Icon icon={icon} />}</span>
+    </span>
   </StyledButtonLink>
 );

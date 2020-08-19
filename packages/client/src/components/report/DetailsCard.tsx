@@ -33,7 +33,7 @@ const Summary = styled.summary`
   justify-content: space-between;
   align-items: flex-start;
   border-radius: 3px;
-  padding: 2rem;
+  padding: 2.5rem;
 
   &::-webkit-details-marker {
     display: none;
@@ -46,6 +46,9 @@ const Summary = styled.summary`
   & > div > p {
     max-width: none;
     font-weight: normal;
+    
+    margin-top: 8px;
+    margin-bottom: 16px;
   }
   & > div:last-child {
     padding-top: 8px;
@@ -53,7 +56,7 @@ const Summary = styled.summary`
 `;
 
 const ViolationContainer = styled(Stack)`
-  padding: 0.8rem 2rem 2rem;
+  padding: 0rem 2.5rem 2.5rem;
 
   &:nth-child(even) {
     background-color: ${color.lightPurple};
@@ -66,7 +69,6 @@ const ViolationContainer = styled(Stack)`
 
 const InfoContainer = styled.div`
   background-color: ${color.purple};
-  margin-top: 1rem;
   padding: 1rem;
   display: grid;
   grid-template-columns: 1.5em auto;
