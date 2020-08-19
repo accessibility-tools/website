@@ -24,6 +24,10 @@ const StyledLink = styled.a<IStyledLink>`
   &:active {
     color: ${color.darkBlue};
   }
+  
+  &.key-press {
+    background-color: initial;
+  }
 
   & > span {
     position: relative;
