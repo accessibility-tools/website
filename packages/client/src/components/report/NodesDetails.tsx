@@ -10,9 +10,10 @@ import { color } from '../../shared/style';
 export const NoteContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
 
   p {
+    margin-top: 0.5rem;
     margin-left: 8px;
     max-width: initial;
   }
