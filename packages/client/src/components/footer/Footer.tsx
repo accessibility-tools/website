@@ -46,6 +46,16 @@ const ShortText = styled.span`
     display: none;
   }
 `;
+const Space = styled.div`
+  display:inline-block;
+  width:5px;
+`;
+
+const IconAlignment = styled.div`
+  position: relative;
+  display: inline-block;
+  top: 3px;
+`;
 
 const Footer: React.FC = () => (
   <StyledFooter>
@@ -55,11 +65,14 @@ const Footer: React.FC = () => (
         isSecondary={true}
         aria-label="license information about the tool"
       >
+        <IconAlignment>
         <Icon icon="creativeCommon1" />
+        <Space/>
         <Icon icon="creativeCommon2" />
+        </IconAlignment>
       </LicenseLink>
-      <FullText>The tool is licensed under Creative Commons CC-BY.</FullText>
-      <ShortText>CC-BY.</ShortText>
+      <FullText>Copyright © 2020 Accessibility Tools</FullText>
+      <ShortText>© 2020 Accessibility Tools</ShortText>
     </LicenseWrapper>
     <StyledLink url="/imprint" text="imprint" isSecondary={true} />
   </StyledFooter>
