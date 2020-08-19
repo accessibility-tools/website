@@ -5,9 +5,20 @@ import { color } from '../../shared/style';
 import Icon from '../icon/Icon';
 import { ILink } from './types';
 
-export const UnStyledLink = styled.a`
+export const SponseredStyledLink = styled.a`
   all: inherit;
+  border: 4px solid transparent;
+  border-radius: 3px;
+  box-sizing:border-box;
+  padding: 0 2px 0 2px;
+  &:focus{
+    border-radius: 3px;
+  }
+  &:visited {
+    color: inherit;
+  }
 `;
+
 
 const StyledLink = styled.a`
   color: ${color.blue};

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { spacing, color } from '../../shared/style';
 import Icon from '../icon/Icon';
 import { ISponsor } from './types';
-import {UnStyledLink} from '../links/Link';
+import {SponseredStyledLink} from '../links/Link';
 
 const Logo = styled(Icon)`
   max-width: 100%;
@@ -19,9 +19,9 @@ const LogoWrapper = styled.div`
 `;
 
 const Sponsor: React.FC<ISponsor> = ({ block }) => (
-  <UnStyledLink href="https://futurice.com/">
+  <SponseredStyledLink href="https://futurice.com/">
     <LogoWrapper>
-      <p>Sponsored by</p>
+      Sponsored by
       <span className="visually-hidden">Futurice.com</span>
       <Logo
         viewBox="0 0 100 21"
@@ -31,9 +31,9 @@ const Sponsor: React.FC<ISponsor> = ({ block }) => (
         block={block}
         icon="FutuLogo"
         color={color.primary}
-      ></Logo>
+      />
     </LogoWrapper>
-  </UnStyledLink>
+  </SponseredStyledLink>
 );
 
 export default Sponsor;
