@@ -26,8 +26,7 @@ const StyledInput = styled.input<IStyledInput>`
   width: -moz-available;
   min-width: 18rem;
   border: 2px solid
-    ${({ error, isValid }) =>
-      error ? color.error : isValid ? color.blue : color.primary};
+    ${({ error, isValid }) => error ? color.error : isValid ? color.blue : color.primary};
   padding: ${spacing.padding.small}px 44px ${spacing.padding.small}px ${spacing.padding.small}px;
   transition: all 150ms ease-out;
   margin-top: ${spacing.padding.small}px;
@@ -43,11 +42,11 @@ const StyledInput = styled.input<IStyledInput>`
   } 
 
   &:hover {
-    border-color: ${color.lightBlue};
+    border-color: ${({ error, isValid }) => error ? color.error : isValid ? color.lightBlue : color.primary};
   }
 
   &:focus {
-    border-color: ${color.blue};
+    border-color: ${({ error, isValid }) => error ? color.error : isValid ? color.blue : color.primary};
     border-radius: 2px;
   }
 
