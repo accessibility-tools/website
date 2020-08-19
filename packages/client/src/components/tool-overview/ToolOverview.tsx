@@ -23,10 +23,6 @@ const InfoWrapper = styled(Stack)`
     text-align: left;
   }
 
-  a {
-    width: 20rem;
-  }
-
   @media (max-width: 48rem) {
     width: 90%;
   }

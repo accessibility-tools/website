@@ -18,16 +18,19 @@ const CTA: React.FC<ICTA> = ({
   };
   if (isExternal) otherProps = { ...otherProps, ...externalConfig };
 
+  // scope button with <div> to prevent button behaves based on a parent container
   return (
-    <ButtonLink
-      data-type="cta-btn"
-      tabIndex={0}
-      href={url}
-      text={text}
-      icon={icon}
-      isSecondary={isSecondary}
-      {...otherProps as TButtonLinkProps}
-    />
+    <div>
+      <ButtonLink
+        data-type="cta-btn"
+        tabIndex={0}
+        href={url}
+        text={text}
+        icon={icon}
+        isSecondary={isSecondary}
+        {...otherProps as TButtonLinkProps}
+      />
+    </div>
   );
 };
 
