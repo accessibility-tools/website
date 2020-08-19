@@ -16,6 +16,9 @@ const PageContainer = styled(Stack)`
 `;
 
 const Section = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   --paddingX: 2.5rem;
   --paddingY: 10rem;
   padding: var(--paddingY) var(--paddingX);
