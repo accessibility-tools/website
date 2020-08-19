@@ -23,6 +23,12 @@ const LearnMoreWrapper = styled(Stack)`
   li {
     list-style: disc;
     list-style-position: inside;
+    font-size: 12px;
+
+  }
+  li span {
+    font-size: 18px;
+    vertical-align: middle;
   }
 `;
 
@@ -43,8 +49,8 @@ const LearnMoreQuestions: React.FC = () => (
         <br/>
         Accessibility is a process and a set of practices.
         <ul>
-          <li>	A common example of accessibility as a practice for designers is to make 	sure they use a high enough color contrast so that it can be perceived by 	everybody.</li>
-          <li> A common example to include accessibility into the process of developers 	is to include tools ours this to their stack, to track and limit accessibility 	issues.</li>
+          <li><span>A common example of accessibility as a practice for designers is to make sure they use a high enough color contrast so that it can be perceived by everybody.</span></li>
+          <li><span>A common example to include accessibility into the process of developers is to include tools like ours to their stack, to track and limit accessibility issues.</span></li>
         </ul>
       </p>
       <Link
@@ -76,12 +82,12 @@ const LearnMoreQuestions: React.FC = () => (
         According to the WebAIM, those are:
       </p>
       <ul>
-        <li>Low text contrast</li>
-        <li>Missing alternative text for images</li>
-        <li>Empty links</li>
-        <li>Missing form input labels</li>
-        <li>Empty button</li>
-        <li>Missing document language</li>
+        <li><span>Low text contrast</span></li>
+        <li><span>Missing alternative text for images</span></li>
+        <li><span>Empty links</span></li>
+        <li><span>Missing form input labels</span></li>
+        <li><span>Empty button</span></li>
+        <li><span>Missing document language</span></li>
       </ul>
       <p>
         Making sure that all those issues are not present in your product will
