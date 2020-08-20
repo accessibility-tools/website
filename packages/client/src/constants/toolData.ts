@@ -1,3 +1,5 @@
+import { color } from '../shared/style';
+
 export const ciTool = {
   id: 'ciTool',
   title: 'Check your website with your terminal before going live',
@@ -60,3 +62,29 @@ export const webCheckerAlt = {
     isExternal: true
   }
 };
+
+interface IPageLimitOption {
+  value: any;
+  label: string;
+  name: string;
+  hintIcon?: string;
+  hintText?: string;
+  iconColor?: string;
+  isChecked?: boolean;
+}
+
+export const PAGE_LIMIT_OPTIONS_INITIAL: IPageLimitOption[] = [
+  {
+    value: 1,
+    name: 'Page limit',
+    label: 'Check the given page only'
+  },
+  {
+    value: 0,
+    name: 'Page limit',
+    label: 'Check all subpages',
+    hintIcon: 'manicule',
+    hintText: 'It can take a longer time to create reports for big websites.',
+    iconColor: color.mediumGrey
+  }
+];
