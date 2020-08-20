@@ -177,20 +177,22 @@ const LandingPage: React.FC = () => {
         </Section>
 
         <Section id="about">
-          <Stack space="medium" center>
-            <h1>About & Contact</h1>
-            <Subtext>
-              We are a group of developers and designers. We are passionate
-              about accessible digital products. If you want to be part of this
-              open source project, have questions or feedback feel free to drop
-              us a message.
-            </Subtext>
-            <ContactLink
-              text="accessibility@futurice.com"
-              url="mailto:accessibility@futurice.com"
-              icon="mailto"
-              isSecondary={true}
-            />
+          <Stack space="medium">
+            <Center>
+              <h1>About & Contact</h1>
+              <Subtext>
+                We are a group of developers and designers. We are passionate
+                about accessible digital products. If you want to be part of this
+                open source project, have questions or feedback feel free to drop
+                us a message.
+              </Subtext>
+              <ContactLink
+                text="accessibility@futurice.com"
+                url="mailto:accessibility@futurice.com"
+                icon="mailto"
+                isSecondary={true}
+              />
+            </Center>
           </Stack>
         </Section>
       </PageContainer>
