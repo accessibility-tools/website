@@ -12,23 +12,22 @@ const LearnMoreWrapper = styled(Stack)`
     line-height: 24px;
     font-size: 18px;
   }
-  ul{
-    list-style:none;
-    padding-left:1em;
+  ul {
+    padding-left: 1.75em;
   }
-  p li{
+  ul li {
     list-style: disc;
     list-style-position: outside;
-  }
-  li {
-    list-style: disc;
-    list-style-position: inside;
+    
+    padding-left: 1em;
     font-size: 12px;
-
   }
   li span {
     font-size: 18px;
     vertical-align: middle;
+  }
+  a {
+    display: block;
   }
 `;
 
@@ -48,11 +47,17 @@ const LearnMoreQuestions: React.FC = () => (
         like a broken arm or using a phone while being blinded by bright sunlight.
         <br/>
         Accessibility is a process and a set of practices.
-        <ul>
-          <li><span>A common example of accessibility as a practice for designers is to make sure they use a high enough color contrast so that it can be perceived by everybody.</span></li>
-          <li><span>A common example to include accessibility into the process of developers is to include tools like ours to their stack, to track and limit accessibility issues.</span></li>
-        </ul>
       </p>
+      <ul>
+        <li>
+          <span>A common example of accessibility as a practice for designers is to make sure they use a high enough color contrast so
+            that it can be perceived by everybody.</span>
+        </li>
+        <li>
+          <span>A common example to include accessibility into the process of developers is to include tools like ours to their stack,
+            to track and limit accessibility issues.</span>
+        </li>
+      </ul>
       <Link
         text="more about web accessibility"
         icon="extLink"
