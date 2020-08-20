@@ -23,7 +23,7 @@ router.get('/api/report', async (req, res) => {
   }
 
   try {
-    const pageLimit: number = req.query.pageLimit || 0;
+    const pageLimit: number = parseInt(req.query.pageLimit) || 0;
     let options: any = {};
 
     if (pageLimit) {
