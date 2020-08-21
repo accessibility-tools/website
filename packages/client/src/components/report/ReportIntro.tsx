@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Switcher from '../layout-components/Switcher';
+import Hourglass from '../hourglass/Hourglass';
 
 interface IReportIntro {
   isLoading?: boolean;
@@ -23,14 +24,18 @@ const Title = styled.div`
   }
 `;
 
+const HourglassContainer = styled.div`
+  width: 19rem;
+  height: 21rem;
+`;
+
 const ReportIntro: React.FC<IReportIntro> = ({ isLoading }) => (
   <Switcher>
     {isLoading ? (
       <div>
-        <ReportImg
-          src="/illustrations/web-checker.svg"
-          alt="illustration of report page"
-        />
+        <HourglassContainer>
+          <Hourglass />
+        </HourglassContainer>
         <Title>
           <p>creating reports for big pages can take a long time</p>
           <h1>Please give us a minute...</h1>
