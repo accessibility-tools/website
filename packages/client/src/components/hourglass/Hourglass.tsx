@@ -2,6 +2,42 @@ import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { color } from '../../shared/style';
 
+interface IGrain {
+  transform: string;
+  start: number;
+  end: number;
+}
+
+const ANIMATION_START = 5;
+const ANIMATION_SHIFT = 10;
+const ANIMATION_TIME = 12;
+
+const GRAINS = [
+  {
+    id: 1,
+    start: ANIMATION_START - 1,
+    end: ANIMATION_SHIFT,
+    transform: 'translate3d(-50%, 510%,0)',
+  },
+  {
+    id: 2,
+    start: ANIMATION_START * 4,
+    end: ANIMATION_START * 3 + ANIMATION_SHIFT,
+    transform: 'translate3d(-50%, 440%,0)'
+  },
+  {
+    id: 3,
+    start: ANIMATION_START * 7,
+    end: ANIMATION_START * 6 + ANIMATION_SHIFT,
+    transform: 'translate3d(-50%, 380%,0)'
+  },
+  {
+    id: 4,
+    start: ANIMATION_START * 10,
+    end: ANIMATION_START * 9 + ANIMATION_SHIFT,
+    transform: 'translate3d(-50%, 270%,0)'
+  }
+];
 
 const HourglassContainer = styled.div`
   display: flex;
@@ -18,10 +54,14 @@ const LoadingImg = styled.img`
 `;
 
 const Border = styled.div`
+  overflow: hidden;
+  width: 10rem;
+  height: 2rem;
+  
   background-color: white;
   border: 3px solid black;
-  width: 180px;
-  height: 30px;
+  
+  z-index: 2;
 `;
 
 const BorderTop = styled(Border)`
@@ -32,14 +72,14 @@ const BorderBottom = styled(Border)`
 `;
 
 const WatchContainer = styled.div`
-  position absolute;
-  position absolute;
-  right: 23%;
-  top: 20%;
-  
-  height: 80%;
   display: flex;
   flex-direction: column;
+
+  height: 80%;
+  
+  position absolute;
+  right: 23%;
+  top: 20%;  
 `;
 
 const GlassBorder = styled('div')<{ transform?: string; top?: string; left?: string; bottom?: string; right?: string; }>`
@@ -48,9 +88,12 @@ const GlassBorder = styled('div')<{ transform?: string; top?: string; left?: str
   left: ${({ left }) => left || ''};
   bottom: ${({ bottom }) => bottom || ''};
   right: ${({ right }) => right || ''};
-  border: 2px solid black;
+  
   height: calc(50% - 12px);
   width: 1px;
+  
+  border: 2px solid black;
+  
   transform: ${({ transform }) => transform || ''};
 `;
 
@@ -63,81 +106,74 @@ const GlassContainer = styled.div`
 const Sand = styled.div`
   height: 60%;
   width: 100%;
-  top: 20%;
     
   position: absolute;
+  top: 20%;
+
   clip-path: polygon(25% 0%, 75% 0%, 55% 45%, 45% 45%);
   background-color: ${color.blue};
 `;
 
 const grow = keyframes`
-  0%, 10% {
+  0%, ${ANIMATION_SHIFT}% {
     transform: translate3d(-50%,-2%,0) perspective(8px) rotateX(30deg);
   }
-  15%, 25% {
+  ${ANIMATION_START * 3}%, ${ANIMATION_START * 3 + ANIMATION_SHIFT}% {
     transform: translate3d(-50%,-2%,0) perspective(8px) rotateX(17deg);
   }
-  30%, 40% {
+  ${ANIMATION_START * 6}%, ${ANIMATION_START * 6 + ANIMATION_SHIFT}% {
     transform: translate3d(-50%,-2%,0) perspective(8px) rotateX(11deg);
   }
-  45%, 55% {
+  ${ANIMATION_START * 9}%, ${ANIMATION_START * 9 + ANIMATION_SHIFT}% {
     transform: translate3d(-50%,-2%,0) perspective(8px) rotateX(8deg);
   }
-  60%, 70% {
+  ${ANIMATION_START * 12}%, ${ANIMATION_START * 12 + ANIMATION_SHIFT}% {
     transform: translate3d(-50%,-2%,0) perspective(8px) rotateX(6deg); 
   }
-  90%, 100% {
+  ${ANIMATION_START * 16}%, 100% {
     transform: translate3d(-50%,-2%,0) perspective(8px) rotateX(30deg);
   }
 `;
 
 const SandBottom = styled.div`
-  animation: 12s ${grow} ease infinite normal;
-  background-color: ${color.blue};
-  transform-origin: center bottom 0;
-  transform-style: preserve-3D;
-  transform: translate3d(-50%,-2%,0) perspective(8px) rotateX(30deg);
-  
   height: 100%;
   width: 52%;
   
   position: absolute;
   bottom: 10%;
   left: 50%;
+  
+  animation: ${ANIMATION_TIME}s ${grow} ease infinite normal;
+  background-color: ${color.blue};
+  transform-origin: center bottom 0;
+  transform-style: preserve-3D;
+  transform: translate3d(-50%,-2%,0) perspective(8px) rotateX(30deg);
 }
 `;
 
-const generateKeyframes = (start: number, end: number, transform: string) => {
-  return keyframes`
-  ${start}% {
-    transform: translate3d(-50%, -150%,0);
-    opacity: 1;
-  }
-  ${end}% {
-    transform: ${transform};
-    opacity: 1;
-  }
-  ${end + 10}% {
-    transform: ${transform};
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+const generateKeyframes = (start: number, end: number, transform: string) =>
+  keyframes`
+    ${start}% {
+      transform: translate3d(-50%, -150%,0);
+      opacity: 1;
+    }
+    ${end}% {
+      transform: ${transform};
+      opacity: 1;
+    }
+    ${end + 10}% {
+      transform: ${transform};
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
 `;
-};
-
-
-interface IGrain {
-  transform: string;
-  start: number;
-  end: number;
-}
 
 const Grain = styled.div<IGrain>`
   animation: ${(
     { transform, start, end }
-  ) => css`12s ${generateKeyframes(start, end, transform)} cubic-bezier(.55,.0,.83,.67) infinite normal` || ''};
+  ) => css`${ANIMATION_TIME}s ${generateKeyframes(start, end, transform)} cubic-bezier(.55,.0,.83,.67) infinite normal` || ''};
 
   height: 6%;
   width: 10%;
@@ -149,34 +185,6 @@ const Grain = styled.div<IGrain>`
   
   background-color: ${color.blue};
 `;
-
-const GRAINS = [
-  {
-    id: 1,
-    start: 4,
-    end: 10,
-    transform: 'translate3d(-50%, 510%,0)',
-  },
-  {
-    id: 2,
-    start: 20,
-    end: 25,
-    transform: 'translate3d(-50%, 440%,0)'
-  },
-  {
-    id: 3,
-    start: 35,
-    end: 40,
-    transform: 'translate3d(-50%, 380%,0)'
-  },
-  {
-    id: 4,
-    start: 50,
-    end: 55,
-    transform: 'translate3d(-50%, 270%,0)'
-  }
-];
-
 
 const Hourglass: React.FC = () => (
   <HourglassContainer>
