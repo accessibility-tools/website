@@ -26,6 +26,13 @@ const DetailsCardContainer = styled.details`
   & > * {
     max-width: 100%;
   }
+  
+  &:focus, &:focus-within {
+    outline: 4px solid ${color.darkBlue}; 
+  }
+  &:active {
+    background-color: ${color.lightPurple};
+  }
 `;
 
 const Summary = styled.summary`
