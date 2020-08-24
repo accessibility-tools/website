@@ -87,7 +87,7 @@ const WebCheckerPage: React.FC = () => {
   const router = useRouter();
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
-  const [pageLimit, setPageLimit] = useState(0);
+  const [pageLimit, setPageLimit] = useState(PAGE_LIMIT_OPTIONS_INITIAL[0].value);
   const [pageLimitOptions, setPageLimitOptions] = useState(PAGE_LIMIT_OPTIONS_INITIAL);
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
@@ -129,7 +129,6 @@ const WebCheckerPage: React.FC = () => {
     })];
 
     if (newPageLimitOptions.length !== 0) {
-      console.log('curre', currentValue);
       setPageLimit(currentValue);
       setPageLimitOptions(newPageLimitOptions);
     }
