@@ -53,6 +53,8 @@ const RadioButtonInput = styled.label`
   vertical-align: middle;
   transition: all 150ms ease-out;
   transform: translate3d(0, 0, 0);
+  
+  text-transform: initial;
 
   &:focus-within {
     box-shadow: 0 0 0 4px ${color.darkBlue};
@@ -69,7 +71,7 @@ const RadioButtonInput = styled.label`
 
 const StyledSubtext = styled.div`
   padding: .2rem 0 .8rem;
-  color: ${color.mediumGrey};
+  color: ${color.primary};
 
   & > *:first-child {
     margin-right: 0.5rem;
