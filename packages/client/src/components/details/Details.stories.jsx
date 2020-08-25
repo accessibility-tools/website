@@ -1,6 +1,6 @@
 import React from 'react';
-import Details from './Details';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import Details from './Details.tsx';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
   title: 'Design System|Details',

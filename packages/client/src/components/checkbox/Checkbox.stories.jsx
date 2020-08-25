@@ -1,6 +1,6 @@
 import React from 'react';
-import Checkbox from './Checkbox';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
+import Checkbox from './Checkbox.tsx';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
 
 export default {
   title: 'Design System|Checkbox',

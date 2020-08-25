@@ -1,5 +1,5 @@
 import React from 'react';
-import Sponsor from './Sponsor';
+import Sponsor from './Sponsor.tsx';
 
 export default {
   title: 'Design System|Sponsor',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
-import Banner from './Banner';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
+import Banner from './Banner.tsx';
 
 export default {
   title: 'Design System|Banner',

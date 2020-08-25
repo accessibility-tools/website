@@ -1,7 +1,7 @@
 import React from 'react';
-import ToolOverview from './ToolOverview';
-import StoryWrapper from '../story-wrapper/StoryWrapper';
-import Center from '../layout-components/Center';
+import ToolOverview from './ToolOverview.tsx';
+import StoryWrapper from '../story-wrapper/StoryWrapper.tsx';
+import Center from '../layout-components/Center.tsx';
 
 export default {
   title: 'Design System|ToolOverview',
@@ -11,7 +11,7 @@ export default {
 const toolData = {
   id: 'ciTool',
   title: 'Accessibility checker for websites',
-  img: '/illustrations/citool-placeholder.png',
+  img: '/illustrations/ci-tool.png',
   desc: 'Run our tool in the terminal to create a report for any website:',
   details: [],
   ctaData: {},
@@ -21,7 +21,7 @@ const toolData = {
 export const webCheckerInfo = () => (
   <StoryWrapper>
     <Center>
-      <ToolOverview toolData={toolData} />
+      <ToolOverview data={toolData} />
     </Center>
   </StoryWrapper>
 );
