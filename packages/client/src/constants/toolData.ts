@@ -77,7 +77,8 @@ export const PAGE_LIMIT_OPTIONS_INITIAL: IPageLimitOption[] = [
   {
     value: 1,
     name: 'Page limit',
-    label: 'Check the given page only'
+    label: 'Check the given page only',
+    isChecked: true
   },
   {
     value: 0,

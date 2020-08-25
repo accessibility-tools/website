@@ -68,7 +68,7 @@ const IconWrapper = styled.span`
 
 const StyledSubtext = styled.div<IStyledSubtext>`
   padding: .2rem 0 .8rem;
-  color: ${({ isError }) => isError ? color.error : color.mediumGrey};
+  color: ${({ isError }) => isError ? color.error : color.primary};
 
   & > *:first-child {
     margin-right: 0.5rem;
