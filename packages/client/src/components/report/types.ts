@@ -1,29 +1,38 @@
-export interface IFixElement {
-  fixData?: any;
+export type TImpact = 'critical' | 'serious' | 'moderate' | 'minor';
+
+export interface INode {
+  failureSummary?: string;
+  target: string[];
+  html?: string;
 }
 
-export interface IDetailsCard {
-  issueData?: any;
+export interface INodePerPage {
+  pageUrl: string;
+  nodes: INode[];
 }
 
-export interface INoteContainer {
-  isBackground?: boolean;
-  isPadding?: boolean;
-  isMargin?: boolean;
-}
-
-export interface IDetailsCategory {
-  category?: string;
-  issues?: any[];
-}
-
-export interface IOverviewCard {
+export interface IViolation {
+  id: string;
+  helpUrl?: string;
+  description?: string;
+  nodesPerPage: INodePerPage[];
   title?: string;
-  subtext?: string;
-  isIssue?: boolean;
-  reportData?: any;
 }
 
-export interface IReportIntro {
-  isLoaded?: boolean;
+export interface IViolationsById {
+  [key: string]: IViolation;
+}
+
+export type TViolationsPerImpact = {
+  [key in TImpact]: number;
+}
+
+export type TViolationsByImpact = {
+  [key in TImpact]: IViolationsById;
+}
+
+export interface IReport {
+  pageUrls: string[];
+  violationsPerImpact: TViolationsPerImpact;
+  violationsByImpact: TViolationsByImpact;
 }

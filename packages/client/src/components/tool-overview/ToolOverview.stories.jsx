@@ -11,7 +11,7 @@ export default {
 const toolData = {
   id: 'ciTool',
   title: 'Accessibility checker for websites',
-  img: '/illustrations/citool-placeholder.png',
+  img: '/illustrations/ci-tool.png',
   desc: 'Run our tool in the terminal to create a report for any website:',
   details: [],
   ctaData: {},

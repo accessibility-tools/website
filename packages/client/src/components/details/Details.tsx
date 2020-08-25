@@ -60,8 +60,8 @@ const StyledSummary = styled.summary`
 const Details: React.FC<IDetails> = ({ children, title }) => {
   const [isOpened, setOpened] = useState(false);
 
-  const handleOpen = (event: React.BaseSyntheticEvent): void => {
-    setOpened(event.currentTarget.open);
+  const handleOpen = (e: React.BaseSyntheticEvent): void => {
+    setOpened(e.currentTarget.open);
   };
 
   return (

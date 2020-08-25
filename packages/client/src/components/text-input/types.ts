@@ -1,9 +1,11 @@
+import React from 'react';
+
 export interface IStyledSubtext {
   isError?: boolean;
 }
 
 export interface IStyledInput {
-  error?: boolean;
+  error?: string;
   isValid?: boolean;
 }
 
@@ -18,5 +20,5 @@ export interface ITextInput {
   hintText?: string;
   hintIcon?: string;
   iconColor?: string;
-  onChange?: () => void;
+  onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
 }

@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { color, spacing } from '../../shared/style';
-import { IRadioButton } from './types';
+import { IRadioButton, IStyledRadioButton } from './types';
+import Icon from '../icon/Icon';
 
-const StyledRadioButton = styled.span`
-  border: 3px solid
-    ${({ isChecked }: { isChecked: boolean }): string =>
-      isChecked ? color.blue : color.primary};
+const StyledRadioButton = styled.span<IStyledRadioButton>`
+  border: 3px solid ${({ isChecked }) => isChecked ? color.blue : color.primary};
   border-radius: 50%;
   display: inline-block;
   height: 20px;
@@ -24,8 +23,7 @@ const StyledRadioButton = styled.span`
     left: 3px;
     top: 3px;
     position: absolute;
-    visibility: ${({ isChecked }: { isChecked: boolean }): string =>
-      isChecked ? 'visible' : 'hidden'};
+    visibility: ${({ isChecked }) => isChecked ? 'visible' : 'hidden'};
     width: 8px;
   }
 
@@ -47,7 +45,7 @@ const StyledRadioButton = styled.span`
   }
 `;
 
-const RadioButtonContainer = styled.label`
+const RadioButtonInput = styled.label`
   border: 4px solid transparent;
   border-radius: 3px;
   display: inline-flex;
@@ -55,6 +53,8 @@ const RadioButtonContainer = styled.label`
   vertical-align: middle;
   transition: all 150ms ease-out;
   transform: translate3d(0, 0, 0);
+  
+  text-transform: initial;
 
   &:focus-within {
     box-shadow: 0 0 0 4px ${color.darkBlue};
@@ -69,22 +69,58 @@ const RadioButtonContainer = styled.label`
   }
 `;
 
+const StyledSubtext = styled.div`
+  padding: .2rem 0 .8rem;
+  color: ${color.primary};
+
+  & > *:first-child {
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 48rem) {
+    width: 35rem;
+  }
+`;
+
+const RadioButtonContainer = styled.div`
+  & > div {
+    margin-top: 5px;
+    margin-left: 34px;
+  }
+`;
+
 const RadioButton: React.FC<IRadioButton> = ({
   label,
   value,
+  name,
   isChecked = false,
-  handleCheckedChange,
-  className
+  onChange,
+  className,
+  hintText,
+  hintIcon,
+  iconColor
 }) => (
-  <RadioButtonContainer className={className}>
-    <input
-      type="radio"
-      value={value}
-      checked={isChecked}
-      onChange={handleCheckedChange}
-    />
-    <StyledRadioButton isChecked={isChecked} />
-    {label}
+  <RadioButtonContainer>
+    <RadioButtonInput className={className}>
+      <input
+        name={name}
+        type="radio"
+        value={value}
+        checked={isChecked}
+        onChange={onChange}
+      />
+      <StyledRadioButton isChecked={isChecked}/>
+      {label}
+    </RadioButtonInput>
+    {hintText && (
+      <StyledSubtext id={`${value}-hint`}>
+        {hintIcon && <Icon
+          icon={hintIcon}
+          color={iconColor}
+        />}
+        <span>{hintText}</span>
+      </StyledSubtext>
+    )}
   </RadioButtonContainer>
 );
 

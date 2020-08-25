@@ -48,7 +48,7 @@ export const bodyStyles = css`
     line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
   }
   h4 {
-    font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(20px + (22 - 20) * ((100vw - 300px) / (1600 - 300)));
     line-height: calc(1.2em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
   }
   h5,

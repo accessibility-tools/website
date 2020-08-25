@@ -25,11 +25,12 @@ const BadgeWrapper = styled.div`
 const Badge: React.FC<IBadge> = ({
   label,
   issueCount,
-  iconName,
-  iconColor
+  name,
+  color,
+  className
 }) => (
-  <BadgeWrapper>
-    {iconName && <Icon icon={iconName} color={iconColor} />}
+  <BadgeWrapper className={className}>
+    {name && <Icon icon={name} color={color} />}
     {issueCount && issueCount} {label}
     {(issueCount || issueCount === 0) && ' issues'}
   </BadgeWrapper>

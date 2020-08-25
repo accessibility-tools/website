@@ -6,12 +6,21 @@ import Stack from '../layout-components/Stack';
 import Icon from '../icon/Icon';
 import Badge from '../badge/Badge';
 import { reportIcons } from '../../constants/reportIcons';
-import { IOverviewCard } from './types';
+import { TImpact, TViolationsPerImpact } from './types';
 
-const CardContainer = styled(Stack)`
+
+interface IOverviewCard {
+  title?: string;
+  subtext?: string;
+  isViolation?: boolean;
+  violationsPerImpact: TViolationsPerImpact
+}
+
+const CardContainer = styled.div`
   background-color: ${color.white};
   width: 100%;
-  padding: 2rem;
+  padding: 3rem 2.5rem;
+  
   p {
     max-width: 40rem;
   }
@@ -34,39 +43,51 @@ const Title = styled.div`
 const IssueContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1rem;
+  
   & > div {
-    margin: 0.5rem;
+    margin-left: 1rem;
+  }
+  & > div:first-child {
+    margin-left: 0;
   }
 `;
 
 const OverviewCard: React.FC<IOverviewCard> = ({
   title,
   subtext,
-  isIssue,
-  reportData
+  isViolation,
+  violationsPerImpact
 }) => (
   <CardContainer>
     <Title>
-      {isIssue ? (
-        <Icon icon="error" color={color.error} />
+      {isViolation ? (
+        <Icon
+          icon="error"
+          color={color.error}
+        />
       ) : (
-        <Icon icon="success" color={color.blue} />
+        <Icon
+          icon="success"
+          color={color.blue}
+        />
       )}
-      <h4>{title}</h4>
+      <h3>{title}</h3>
     </Title>
     <p>{subtext}</p>
-    {isIssue && (
+    {isViolation && (
       <IssueContainer>
-        {Object.keys(reportData).map(
-          (category: string): React.ReactElement => {
-            const iconData = reportIcons[category];
+        {Object.keys(violationsPerImpact).map(
+          (impact): React.ReactElement => {
+            const iconData = reportIcons[impact];
+
             return (
               <Badge
-                key={`issue category: ${category}`}
-                label={category}
-                issueCount={reportData[category].length}
-                iconName={iconData.iconName}
-                iconColor={iconData.iconColor}
+                key={`issue impact: ${impact}`}
+                label={impact}
+                issueCount={violationsPerImpact[impact as TImpact]}
+                name={iconData.name}
+                color={iconData.color}
               />
             );
           }

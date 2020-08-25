@@ -1,7 +1,9 @@
+import { color } from '../shared/style';
+
 export const ciTool = {
   id: 'ciTool',
   title: 'Check your website with your terminal before going live',
-  img: '/illustrations/CITool_HighDefinition.png',
+  img: '/illustrations/ci-tool.png',
   desc:
     'You can install our continuous integration tool (CI) on your terminal by running:',
   details: [
@@ -21,7 +23,7 @@ export const ciTool = {
 export const webChecker = {
   id: 'webChecker',
   title: 'Accessibility checker for websites',
-  img: '/illustrations/WebCheckerHighDefinition.png',
+  img: '/illustrations/web-checker.png',
   desc:
     'Check any website for accessibility issues by simply entering a URL into our online tool.',
   details: [
@@ -40,7 +42,7 @@ export const webChecker = {
 export const webCheckerAlt = {
   id: 'webCheckerAlt',
   title: 'About the tool',
-  img: '/illustrations/WebCheckerHighDefinition.png',
+  img: '/illustrations/web-checker.png',
   desc:
     'Check any website for accessibility issues by simply entering a URL into our online tool.',
   details: [
@@ -60,3 +62,30 @@ export const webCheckerAlt = {
     isExternal: true
   }
 };
+
+interface IPageLimitOption {
+  value: any;
+  label: string;
+  name: string;
+  hintIcon?: string;
+  hintText?: string;
+  iconColor?: string;
+  isChecked?: boolean;
+}
+
+export const PAGE_LIMIT_OPTIONS_INITIAL: IPageLimitOption[] = [
+  {
+    value: 1,
+    name: 'Page limit',
+    label: 'Check the given page only',
+    isChecked: true
+  },
+  {
+    value: 0,
+    name: 'Page limit',
+    label: 'Check all subpages',
+    hintIcon: 'manicule',
+    hintText: 'It can take a longer time to create reports for big websites.',
+    iconColor: color.mediumGrey
+  }
+];

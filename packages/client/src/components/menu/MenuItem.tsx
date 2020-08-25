@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { background, color, spacing } from '../../shared/style';
-import { IMenuItem } from './types';
+import { IMenuItem, IStyledListItem } from './types';
 
-const ListItem = styled.li`
+const StyledListItem = styled.li<IStyledListItem>`
   box-sizing: border-box;
   position: relative;
 
@@ -29,8 +29,7 @@ const ListItem = styled.li`
   &:active {
     background-color: ${color.lightPurple};
   }
-  ${({ isSelected }: { isSelected: boolean }): string | void =>
-    isSelected &&
+  ${({ isSelected }) => isSelected &&
     `
       &::after {
         bottom: 0;
@@ -48,7 +47,7 @@ const ListItem = styled.li`
     `}
 `;
 
-const ListItemLink = styled.a`
+const StyledListItemLink = styled.a`
   color: ${color.primary};
   cursor: pointer;
   display: block;
@@ -70,11 +69,11 @@ const MenuItem: React.FC<IMenuItem> = ({
   isSelected = false,
   ...otherProps
 }) => (
-  <ListItem isSelected={isSelected}>
-    <ListItemLink href={href} {...otherProps}>
+  <StyledListItem isSelected={isSelected}>
+    <StyledListItemLink href={href} {...otherProps}>
       {text}
-    </ListItemLink>
-  </ListItem>
+    </StyledListItemLink>
+  </StyledListItem>
 );
 
 export default MenuItem;

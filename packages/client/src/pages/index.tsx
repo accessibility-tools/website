@@ -16,6 +16,9 @@ const PageContainer = styled(Stack)`
 `;
 
 const Section = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   --paddingX: 2.5rem;
   --paddingY: 10rem;
   padding: var(--paddingY) var(--paddingX);
@@ -92,7 +95,7 @@ const LearnMoreImg = styled.img`
 
 const Subtext = styled.p`
   max-width: 36rem;
-  ${({ isTransform }: { isTransform: boolean }) =>
+  ${({ isTransform }: { isTransform?: boolean }) =>
     isTransform &&
     ` & {
       text-transform: uppercase;
@@ -174,20 +177,22 @@ const LandingPage: React.FC = () => {
         </Section>
 
         <Section id="about">
-          <Stack space="medium" center>
-            <h1>About & Contact</h1>
-            <Subtext>
-              We are a group of developers and designers. We are passionate
-              about accessible digital products. If you want to be part of this
-              open source project, have questions or feedback feel free to drop
-              us a message.
-            </Subtext>
-            <ContactLink
-              text="accessibility@futurice.com"
-              url="mailto:accessibility@futurice.com"
-              icon="mailto"
-              isSecondary={true}
-            />
+          <Stack space="medium">
+            <Center>
+              <h1>About & Contact</h1>
+              <Subtext>
+                We are a group of developers and designers. We are passionate
+                about accessible digital products. If you want to be part of this
+                open source project, have questions or feedback feel free to drop
+                us a message.
+              </Subtext>
+              <ContactLink
+                text="accessibility@futurice.com"
+                url="mailto:accessibility@futurice.com"
+                icon="mailto"
+                isSecondary={true}
+              />
+            </Center>
           </Stack>
         </Section>
       </PageContainer>

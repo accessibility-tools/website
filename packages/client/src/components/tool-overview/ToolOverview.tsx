@@ -23,19 +23,14 @@ const InfoWrapper = styled(Stack)`
     text-align: left;
   }
 
-  a {
-    width: 20rem;
-  }
-
   @media (max-width: 48rem) {
     width: 90%;
   }
 `;
 
 const ToolImg = styled.img<IToolImg>`
-  width: 60%;
-  transform: ${({ isTransform }: { isTransform: boolean }): string =>
-    isTransform && 'scaleX(-1)'};
+  width: 85%;
+  transform: ${({ isTransform }) => isTransform && 'scaleX(-1)'};
 `;
 
 const ToolLink = styled(Link)`
@@ -87,7 +82,7 @@ const ToolOverview: React.FC<IToolOverview> = ({ data, type }) => {
             </InfoWrapper>
           </Center>
           <Center>
-            <ToolImg src={img} alt="image of ci tool" isTransform />
+            <ToolImg src={img} alt="image of ci tool" />
           </Center>
         </div>
       )}
