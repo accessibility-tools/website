@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "build": "yarn workspace @webchecker/client run build",
-        "start": "yarn workspace @webchecker/server run start",
+        "start": "NODE_ENV=production yarn workspace @webchecker/server run start",
         "dev": "export $(cat .env | xargs) && yarn workspace @webchecker/server run dev"
     },
     "private": true,
