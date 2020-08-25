@@ -3,12 +3,7 @@ import nextApp from '@webchecker/client';
 
 import routes from './src/routes';
 
-let port: any = process.env.PORT;
-let env = process.env.NODE_ENV;
-
-if (env === 'production') {
-  port = 8000;
-}
+let port: any = process.env.PORT || 5000;
 
 async function main() {
   try {
