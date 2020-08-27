@@ -113,8 +113,8 @@ const Subtext = styled.p`
 const ContactLink = styled(Link)`
   display: inline;
   svg {
-  top: .125em;
-  position: relative;
+    top: .125em;
+    position: relative;
   }
 `;
 
