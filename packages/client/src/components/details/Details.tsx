@@ -9,14 +9,21 @@ export const DetailsContainer = styled.details`
   display: flex;
   flex-direction: column;
 
+
+
   width: 100%;
   &:active {
     background-color: ${color.purple};
   }
   & > * {
-    margin: auto;
-    max-width: 80%;
+
+    max-width: 100%;
     padding: 1rem;
+  }
+
+  &:focus-within{
+    box-shadow: 0 0 0 3px ${color.white}, 0 0 0 7px ${color.darkBlue};
+    border-radius: 2px;
   }
 
   @media (max-width: 48rem) {
@@ -45,6 +52,8 @@ const StyledSummary = styled.summary`
     cursor: pointer;
   }
 
+
+
   &::before {
     content: '';
     display: block;
@@ -56,6 +65,7 @@ const StyledSummary = styled.summary`
     position: absolute;
   }
 `;
+
 
 const Details: React.FC<IDetails> = ({ children, title }) => {
   const [isOpened, setOpened] = useState(false);
