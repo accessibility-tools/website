@@ -34,7 +34,8 @@ const StyledList = styled.ul<IStyledList>`
           opacity: 1;
           transition: opacity 200ms 0ms;
         }`
-        : `& { 
+        : `& {
+          display:none;
           opacity: 0;
           transition: opacity 200ms 0ms;
         }`};
