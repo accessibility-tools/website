@@ -74,6 +74,8 @@ const Tagline = styled(Stack)`
     letter-spacing: 0.15rem;
     font-weight: 500;
     line-height: 1.56;
+    margin-top: 8px;
+    margin-bottom: 32px;
   }
 `;
 
