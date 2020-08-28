@@ -32,9 +32,6 @@ const Stack = styled.div<IStack>`
     margin-top: ${({ marginTop }) => marginTop ? marginTop : 'var(--stack-space)'};
   }
 
-  @media (max-width: 48rem) {
-    align-items: center;
-  }
 `;
 
 export default Stack;
