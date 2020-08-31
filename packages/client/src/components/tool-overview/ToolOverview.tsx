@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Switcher from '../layout-components/Switcher';
 import Stack from '../layout-components/Stack';
 import Center from '../layout-components/Center';
+import MobileCenter from '../layout-components/MobileCenter';
 import CTA from '../CTA/CTA';
 import Link from '../links/Link';
 import Banner from '../banner/Banner';
@@ -26,6 +27,21 @@ const InfoWrapper = styled(Stack)`
   @media (max-width: 48rem) {
     width: 90%;
   }
+  @media (max-width:800px){
+    ul{
+      padding-left:1rem;
+    }
+    ul li {
+      list-style: disc;
+      list-style-position: outside;
+      font-size: 12px;
+      padding-left:20px
+    }
+    span {
+        font-size: 16px;
+        vertical-align: middle;
+    }
+  }
 `;
 
 const ToolImg = styled.img<IToolImg>`
@@ -37,6 +53,13 @@ const ToolLink = styled(Link)`
   font-size: 1rem;
   margin-top: 1rem;
   align-items: center;
+  border: 2px solid grey;
+  padding: .5rem 2.7rem;
+  width: fit-content;
+  @media (max-width: 800px){
+    padding: .5rem 2.0rem;
+  }
+
 `;
 
 const ToolOverview: React.FC<IToolOverview> = ({ data, type }) => {
@@ -57,13 +80,17 @@ const ToolOverview: React.FC<IToolOverview> = ({ data, type }) => {
                 <ul>
                   {details.map(
                     (detail: string, index: number): React.ReactNode => (
-                      <li key={`${id} detail ${index}`}>{detail}</li>
+                      <li key={`${id} detail ${index}`}>
+                        <span>{detail}</span>
+                      </li>
                     )
                   )}
                 </ul>
               )}
+              <MobileCenter>
               {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
               {Object.keys(linkData).length !== 0 && <ToolLink {...linkData} />}
+              </MobileCenter>
             </InfoWrapper>
           </Center>
         </div>
