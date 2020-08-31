@@ -22,7 +22,7 @@ const CardContainer = styled.div`
   padding: 3rem 2.5rem;
   
   p {
-    max-width: 40rem;
+    max-width: 45rem;
   }
 
   @media (min-width: 48rem) {
