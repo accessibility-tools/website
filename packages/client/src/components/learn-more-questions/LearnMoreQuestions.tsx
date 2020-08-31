@@ -7,7 +7,11 @@ import Link from '../links/Link';
 
 const LearnMoreWrapper = styled(Stack)`
   flex: 2;
+  padding: 0 2em;
 
+  @media (min-width: 1200px) {
+    margin-left: 9em;
+  }
   p {
     line-height: 24px;
     font-size: 18px;
@@ -18,7 +22,7 @@ const LearnMoreWrapper = styled(Stack)`
   ul li {
     list-style: disc;
     list-style-position: outside;
-    
+
     padding-left: 1em;
     font-size: 12px;
   }

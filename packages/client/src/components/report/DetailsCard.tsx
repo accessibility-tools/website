@@ -80,7 +80,7 @@ const InfoContainer = styled.div`
   display: grid;
   grid-template-columns: 1.5em auto;
   align-items: baseline;
-  max-width: 39em;
+  max-width: 45rem;
 
   p {
     max-width: initial;

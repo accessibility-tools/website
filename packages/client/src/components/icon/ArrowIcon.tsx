@@ -27,12 +27,15 @@ const ArrowIcon: React.FC<IArrowIcon> = ({
   direction,
   isExpanded
 }) => (
+  <>
   <StyledArrowIcon
     icon={icon}
     color={color}
     direction={direction}
     isExpanded={isExpanded}
   />
+  <span className="visually-hidden">External Link</span>
+  </>
 );
 
 export default ArrowIcon;

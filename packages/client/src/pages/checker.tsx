@@ -40,10 +40,6 @@ const Section = styled.section`
 `;
 
 const IntroWrapper = styled(Switcher)`
-  & > * {
-    margin-bottom: 3rem;
-  }
-
   & > * > * :first-child {
     flex-grow: 2;
   }
