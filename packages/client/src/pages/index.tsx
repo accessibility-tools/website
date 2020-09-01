@@ -69,6 +69,13 @@ const Tagline = styled(Stack)`
     text-align: left;
   }
 
+  @media (max-width: 800px) {
+    h1,
+    h5 {
+      text-align: center;
+    }
+  }
+
   h5 {
     text-transform: uppercase;
     letter-spacing: 0.15rem;
@@ -119,6 +126,11 @@ const ContactLink = styled(Link)`
     position: relative;
   }
 `;
+const MobileAligner = styled.div`
+  @media (max-width: 800px) {
+    display:block;
+  }
+`;
 
 const LandingPage: React.FC = () => {
   return (
@@ -127,7 +139,7 @@ const LandingPage: React.FC = () => {
       <PageContainer>
         <Section>
           <Switcher threshold="35rem" space="0rem">
-            <div>
+            <MobileAligner>
               <Center>
                 <Tagline>
                   <h1>
@@ -143,7 +155,7 @@ const LandingPage: React.FC = () => {
               <Center>
                 <LandingImg src="/illustrations/intro.svg" alt="" />
               </Center>
-            </div>
+            </MobileAligner>
           </Switcher>
         </Section>
 
