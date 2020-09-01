@@ -20,7 +20,7 @@ const CardContainer = styled.div`
   background-color: ${color.white};
   width: 100%;
   padding: 3rem 2.5rem;
-  
+
   p {
     max-width: 40rem;
   }
@@ -41,15 +41,21 @@ const Title = styled.div`
 `;
 
 const IssueContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  
-  & > div {
-    margin-left: 1rem;
+  @media (min-width: 800px){
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+
+    & > div {
+      margin-left: 1rem;
+    }
+    & > div:first-child {
+      margin-left: 0;
+    }
   }
-  & > div:first-child {
-    margin-left: 0;
+
+  @media (max-width: 800px){
+    flex: 1 0 25%;
   }
 `;
 
