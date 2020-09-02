@@ -97,6 +97,15 @@ const InfoContainer = styled.div`
   }
 `;
 
+const ResourceLink = styled(Link)`
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  & > span {
+    &::after {
+      content: none;
+    }
+`;
+
 
 const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
   const { title, description, helpUrl, nodesPerPage } = violation;
@@ -113,7 +122,7 @@ const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
         <div>
           <h3>{`${title} (${issueNodes})`}</h3>
           <p>{description}</p>
-          <Link
+          <ResourceLink
             url={helpUrl}
             text="Resource to solve this issue"
             icon="extLink"
