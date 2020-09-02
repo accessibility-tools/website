@@ -50,6 +50,13 @@ const ReportIntroWrapper = styled(Switcher)`
       margin-right: auto;
     }
   }
+  @media (max-width: 800px) {
+    h1,
+    p {
+      text-align: center;
+      margin-right: auto;
+    }
+  }
 `;
 
 const ReportIntro: React.FC<IReportIntro> = ({ isLoading }) => (

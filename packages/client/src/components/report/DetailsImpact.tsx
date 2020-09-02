@@ -14,9 +14,7 @@ interface IDetailsImpact {
 }
 
 const ImpactContainer = styled(Stack)`
-  @media (max-width: 48rem) {
-    width: 80vw;
-  }
+
 `;
 
 const ImpactBadge = styled(Badge)`
