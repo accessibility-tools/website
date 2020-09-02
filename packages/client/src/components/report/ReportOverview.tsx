@@ -51,7 +51,18 @@ const NoteContainer = styled.div`
   p {
     max-width: 36rem;
     margin: 0 1rem;
+
   }
+  svg{
+    top:2px;
+  }
+  @media (max-width: 800px){
+    svg{
+      position:relative;
+      top:1em;
+    }
+  }
+
 `;
 
 
