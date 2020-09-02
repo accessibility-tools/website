@@ -35,6 +35,12 @@ const OverviewContainer = styled(Stack)`
 
 const TitleContainer = styled(Stack)`
   flex: 5;
+  @media (max-width: 800px){
+    flex: none;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -64,6 +70,12 @@ const NoteContainer = styled.div`
   }
 
 `;
+const CopyButton = styled(Button)`
+  @media (max-width: 800px){
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
 
 
 const ReportOverview: React.FC<IReportOverview> = ({
@@ -84,7 +96,7 @@ const ReportOverview: React.FC<IReportOverview> = ({
             </h2>
             <Subtitle>{pagesScanned.length} pages scanned</Subtitle>
           </TitleContainer>
-          <Button text="Copy URL"/>
+          <CopyButton text="Copy URL"/>
         </div>
       </Switcher>
       <Switcher threshold="35rem">
