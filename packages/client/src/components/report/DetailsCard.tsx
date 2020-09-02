@@ -26,9 +26,9 @@ const DetailsCardContainer = styled.details`
   & > * {
     max-width: 100%;
   }
-  
+
   &:focus, &:focus-within {
-    outline: 4px solid ${color.darkBlue}; 
+    outline: 4px solid ${color.darkBlue};
   }
   &:active {
     background-color: ${color.lightPurple};
@@ -53,7 +53,7 @@ const Summary = styled.summary`
   & > div > p {
     max-width: none;
     font-weight: normal;
-    
+
     margin-top: 8px;
     margin-bottom: 16px;
   }
@@ -85,7 +85,11 @@ const InfoContainer = styled.div`
   p {
     max-width: initial;
   }
-  
+  svg{
+    position:relative;
+    top:.1em;
+  }
+
   & > div {
     @media (max-width: 48rem) {
       align-items: initial;
