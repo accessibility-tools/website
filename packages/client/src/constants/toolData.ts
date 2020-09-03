@@ -56,9 +56,9 @@ export const webCheckerAlt = {
     icon: ''
   },
   linkData: {
-    text: 'Contribute on github',
+    text: 'view on github',
     url: 'https://github.com/accessibility-tools/website',
-    icon: 'github',
+    icon: 'extLink',
     isExternal: true
   }
 };
