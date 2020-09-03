@@ -105,7 +105,9 @@ const ToolOverview: React.FC<IToolOverview> = ({ data, type }) => {
                 <p>{details[1]}</p>
                 <Banner text={details[2]} />
               </Stack>
+              <MobileCenter>
               {Object.keys(ctaData).length !== 0 && <CTA {...ctaData} />}
+              </MobileCenter>
             </InfoWrapper>
           </Center>
           <Center>
