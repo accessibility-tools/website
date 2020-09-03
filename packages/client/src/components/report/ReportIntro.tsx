@@ -87,7 +87,7 @@ const ReportIntro: React.FC<IReportIntro> = ({ isLoading }) => (
         <Center>
           <Title>
             <p>web accessibility report</p>
-            <h1>Thanks for Making the web accessible for everybody</h1>
+            <h1>Thanks for making the web accessible for everybody</h1>
           </Title>
         </Center>
       </>
