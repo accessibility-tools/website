@@ -33,6 +33,12 @@ const LearnMoreWrapper = styled(Stack)`
   a {
     display: block;
   }
+  & > * + * {
+    margin-top: 16px !important;
+    @media (max-width: 800px) {
+      margin-top: 8px !important;
+    }
+  }
 `;
 
 const LearnMoreQuestions: React.FC = () => (
