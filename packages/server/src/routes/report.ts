@@ -24,7 +24,9 @@ router.get('/api/report', async (req, res) => {
 
   try {
     const pageLimit: number = parseInt(req.query.pageLimit) || 0;
-    let options: any = {};
+    let options: any = {
+      puppeteerChromeLaunchArgs: ['--no-sandbox', '--disable-setuid-sandbox']
+    };
 
     if (pageLimit) {
       options = {
