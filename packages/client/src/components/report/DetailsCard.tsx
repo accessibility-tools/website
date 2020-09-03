@@ -26,9 +26,9 @@ const DetailsCardContainer = styled.details`
   & > * {
     max-width: 100%;
   }
-  
+
   &:focus, &:focus-within {
-    outline: 4px solid ${color.darkBlue}; 
+    outline: 4px solid ${color.darkBlue};
   }
   &:active {
     background-color: ${color.lightPurple};
@@ -53,7 +53,7 @@ const Summary = styled.summary`
   & > div > p {
     max-width: none;
     font-weight: normal;
-    
+
     margin-top: 8px;
     margin-bottom: 16px;
   }
@@ -85,12 +85,25 @@ const InfoContainer = styled.div`
   p {
     max-width: initial;
   }
-  
+  svg{
+    position:relative;
+    top:.1em;
+  }
+
   & > div {
     @media (max-width: 48rem) {
       align-items: initial;
     }
   }
+`;
+
+const ResourceLink = styled(Link)`
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  & > span {
+    &::after {
+      content: none;
+    }
 `;
 
 
@@ -109,7 +122,7 @@ const DetailsCard: React.FC<IDetailsCard> = ({ violation }) => {
         <div>
           <h3>{`${title} (${issueNodes})`}</h3>
           <p>{description}</p>
-          <Link
+          <ResourceLink
             url={helpUrl}
             text="Resource to solve this issue"
             icon="extLink"
