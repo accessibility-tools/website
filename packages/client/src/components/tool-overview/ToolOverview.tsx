@@ -54,12 +54,21 @@ const ToolLink = styled(Link)`
   margin-top: 1rem;
   align-items: center;
   border: 2px solid grey;
-  padding: .5rem 2.7rem;
+  padding: .5rem 4.4rem;
   width: fit-content;
-  @media (max-width: 800px){
-    padding: .5rem 2.0rem;
+  color: grey;
+  &:visited {
+    color: grey;
   }
-
+  @media (max-width: 800px){
+    padding: .5rem 3.9rem;
+  }
+  span{
+    text-decoration:none;
+    &::after{
+      content: none;
+    }
+  }
 `;
 
 const ToolOverview: React.FC<IToolOverview> = ({ data, type }) => {
