@@ -16,7 +16,7 @@ const BadgeWrapper = styled.div`
   padding: 4px ${spacing.padding.small}px;
   text-transform: uppercase;
   vertical-align: top;
-  margin-top:8px;
+  margin-top: 8px;
 
   svg {
     margin-right: ${spacing.padding.small}px;
