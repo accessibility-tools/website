@@ -67,13 +67,14 @@ const IntroImg = styled.img<React.ImgHTMLAttributes<HTMLImageElement>>`
 const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
 `;
 
 const RadioButtonGroupContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 5px;
-  
+
   & > div:nth-child(n+2) {
     margin-top: 5px;
   }
