@@ -53,6 +53,7 @@ const NoteContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  margin-left:5px;
 
   p {
     max-width: 36rem;
@@ -66,6 +67,9 @@ const NoteContainer = styled.div`
     svg{
       position:relative;
       top:1em;
+    }
+    p {
+      margin: 0 1.5rem;
     }
   }
 
