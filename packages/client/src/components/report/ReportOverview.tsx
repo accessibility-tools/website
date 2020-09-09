@@ -74,31 +74,31 @@ const NoteContainer = styled.div`
   }
 
 `;
-const CopyButton = styled(Button)`
-  @media (max-width: 800px){
-    margin-left: auto;
-    margin-right: auto;
-  }
-`;
-
-const copyToClipboard = str => {
-  const el = document.createElement('textarea');
-  el.value = str;
-  el.setAttribute('readonly', '');
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  document.body.appendChild(el);
-  const selected =
-    document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-  if (selected) {
-    document.getSelection().removeAllRanges();
-    document.getSelection().addRange(selected);
-  }
-};
-
+// has been removed from the code for now until each report has a unique url
+// const CopyButton = styled(Button)`
+//   @media (max-width: 800px){
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+// `;
+//
+// const copyToClipboard = str => {
+//   const el = document.createElement('textarea');
+//   el.value = str;
+//   el.setAttribute('readonly', '');
+//   el.style.position = 'absolute';
+//   el.style.left = '-9999px';
+//   document.body.appendChild(el);
+//   const selected =
+//     document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+//   el.select();
+//   document.execCommand('copy');
+//   document.body.removeChild(el);
+//   if (selected) {
+//     document.getSelection().removeAllRanges();
+//     document.getSelection().addRange(selected);
+//   }
+// };
 
 const ReportOverview: React.FC<IReportOverview> = ({
   violationsPerImpact,
@@ -111,15 +111,12 @@ const ReportOverview: React.FC<IReportOverview> = ({
   return (
     <OverviewContainer>
       <Switcher threshold="35rem">
-        <div>
           <TitleContainer space="small">
             <h2>
               Report for <span>{urlWithoutProtocol}</span>
             </h2>
             <Subtitle>{pagesScanned.length} pages scanned</Subtitle>
           </TitleContainer>
-          <CopyButton text="Copy URL" onClick={()=>copyToClipboard(websiteUrl)}/>
-        </div>
       </Switcher>
       <Switcher threshold="35rem">
         <div>
