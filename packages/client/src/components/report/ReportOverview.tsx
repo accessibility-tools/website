@@ -74,6 +74,7 @@ const NoteContainer = styled.div`
   }
 
 `;
+// has been removed from the code for now until each report has a unique url
 // const CopyButton = styled(Button)`
 //   @media (max-width: 800px){
 //     margin-left: auto;
