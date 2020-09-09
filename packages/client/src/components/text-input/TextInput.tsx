@@ -34,12 +34,12 @@ const StyledInput = styled.input<IStyledInput>`
   font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
 
   &:-webkit-autofill {
-    -webkit-box-shadow: inset 0 0 0 50px ${color.white}; /* Change the color to your own background color */ 
+    -webkit-box-shadow: inset 0 0 0 50px ${color.white}; /* Change the color to your own background color */
   }
-  
+
   &:-webkit-autofill:focus {
       -webkit-box-shadow: inset 0 0 0 50px ${color.white}; /* Change the color to your own background color */
-  } 
+  }
 
   &:hover {
     border-color: ${({ error, isValid }) => error ? color.error : isValid ? color.lightBlue : color.primary};
@@ -73,7 +73,9 @@ const StyledSubtext = styled.div<IStyledSubtext>`
   & > *:first-child {
     margin-right: 0.5rem;
   }
-
+  @media (max-width:800px){
+    width: 24.2rem;
+  }
   @media (min-width: 48rem) {
     width: 35rem;
   }
@@ -120,7 +122,7 @@ const TextInput: React.FC<ITextInput> = ({
         </IconWrapper>
       )}
     </InputWrapper>
-    {errorText && (
+    {isValid ? (<StyledSubtext/>) : errorText && (
       <StyledSubtext id={`${id}-error`} isError>
         Error: {errorText}
       </StyledSubtext>
