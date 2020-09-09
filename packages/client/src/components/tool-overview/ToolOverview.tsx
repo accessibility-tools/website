@@ -53,12 +53,12 @@ const ToolLink = styled(Link)`
   font-size: 1rem;
   margin-top: 1rem;
   align-items: center;
-  border: 2px solid grey;
+  border: 2px solid #464646;
   padding: .5rem 4.4rem;
   width: fit-content;
-  color: grey;
+  color: #464646;
   &:visited {
-    color: grey;
+    color: #464646;
   }
   @media (max-width: 800px){
     padding: .5rem 3.9rem;
