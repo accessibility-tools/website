@@ -144,7 +144,7 @@ const WebCheckerPage: React.FC = () => {
               </Center>
               <Center>
                 <IntroImg
-                  src="/illustrations/signup-img.png"
+                  src="/illustrations/webTool.svg"
                   alt="web checker illustration"
                 />
               </Center>

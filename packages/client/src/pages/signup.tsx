@@ -39,7 +39,7 @@ const SignupPage: React.FC = () => (
       </Center>
       <Center>
         <SignupImg
-          src="/illustrations/signup-img.png"
+          src="/illustrations/webTool.svg"
           alt="illustration for signup page"
         ></SignupImg>
       </Center>

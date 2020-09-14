@@ -80,7 +80,7 @@ const ReportIntro: React.FC<IReportIntro> = ({ isLoading }) => (
       <>
         <Center>
           <ReportImg
-            src="/illustrations/signup-img.png"
+            src="/illustrations/webTool.svg"
             alt="illustration of report page"
           />
         </Center>
